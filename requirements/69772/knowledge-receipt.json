@@ -1,0 +1,66 @@
+{
+  "project": {
+    "id": "6",
+    "name": "商用订单管理系统-管理端"
+  },
+  "status": "synced_and_readback_verified",
+  "commit_id": "kcm_c44615be02d5443eb89e38dafe4879da",
+  "commit_seq": 1,
+  "committed_at": "2026-09-20T08:59:15.914+00:00",
+  "document_count": 5,
+  "index_status": "ready",
+  "index_upto_commit_seq": 1,
+  "verification_scope": "confirmed_content_written_and_full_readback_equal",
+  "documents": [
+    {
+      "title": "技术咨询单基础规则：咨询单与子单、状态、时间字段及组织归属",
+      "document_id": "doc_2644dc3ef3754f22b82c69964971cbc1",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiZmQ4NGQ2Y2RlNmVlOGM4M2FmMzMxNzc5MzVjNjcxMThjNzBjNmY2OWU2MTNhYWExMTI4MTY3OTMwMGU2MmE5YiIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzI2NDRkYzNlZjM3NTRmMjJiODJjNjk5NjQ5NzFjYmMxIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9hN2EwMzZkZmY2NGI0NzE3YjFhZDBmMDQ3ZTIwMjQ1ZiIsInNlY3Rpb25fcGF0aCI6W119XX0.J4KyAPGTCXnCbBPS4n1Wqx55J48eK6JGOv49aTWMkxQ",
+      "sha256": "ec7efb4b94fb5a8ae2784ea0f645e8f859a17f84f47502535b7ab8d994acc4e2",
+      "characters": 3428,
+      "readback_trace_id": "MCP-80FB6A57",
+      "readback_complete": true,
+      "confirmed_content_equal": true
+    },
+    {
+      "title": "69772 技术咨询单报表：功能范围、查询条件与数据可见范围",
+      "document_id": "doc_5b0498ce4cd34df0882c712c206d3625",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiM2E4MmEyNTAwODBjYTNkNmJmZjk4ODkwZGRkMTIxM2M0MzAwYWNhZTcwZDc3YjZmZDU2YzU2YTdjZjA5MWYzNiIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzViMDQ5OGNlNGNkMzRkZjA4ODJjNzEyYzIwNmQzNjI1IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lNmViN2JiNDBjYzg0NGNkOTlmZmYwOWUyOTkyNGIzMiIsInNlY3Rpb25fcGF0aCI6W119XX0.dVwyzuJTpj91GlT5VxlqY8luEvCrJb_T6bJqhsuBvqw",
+      "sha256": "dc6ab7c447fe291952a148cbe9dda7a401ff38a2ef326ef88b157c85237a584f",
+      "characters": 3308,
+      "readback_trace_id": "MCP-1FDCE8AD",
+      "readback_complete": true,
+      "confirmed_content_equal": true
+    },
+    {
+      "title": "69772 技术咨询单报表：汇总指标、答复率、周期及环比口径",
+      "document_id": "doc_6d412244509b490fb6504b98ad1a4b64",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiYjFkMWFlYWIyZmUxZmFlM2FjNWZiZGVkMmIyOTg3ZjZiMTlkNDljNTVlZDkyZTIyZDE2NDRkNTg3Mjc2YWQzOCIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzZkNDEyMjQ0NTA5YjQ5MGZiNjUwNGI5OGFkMWE0YjY0IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lNjhiZDIzNzlhZmI0Y2I3YjI1ZjJkZmJjYmRiYzFlOSIsInNlY3Rpb25fcGF0aCI6W119XX0.OqW7e1kWJcXe1NDPT-fgPXxYctlMgFyb7iKpCo5dbes",
+      "sha256": "f377534db9dc17473b17c082ef211d875c0ca05253356b4e89482fde650d92a9",
+      "characters": 5514,
+      "readback_trace_id": "MCP-C06218A7",
+      "readback_complete": true,
+      "confirmed_content_equal": true
+    },
+    {
+      "title": "技术咨询单审批统计：节点时长、驳回次数与跨审批流累计",
+      "document_id": "doc_aa419b0233df407abd54164522b567a8",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiYjc3Njk3M2ExNzE2OTJhOGRhNjQyNGQ5MzE5NmE1NmM5OTE1MGRiYWJjZGNkZTAxZDU5MzgxMDIxZGM5ZDg1ZSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2FhNDE5YjAyMzNkZjQwN2FiZDU0MTY0NTIyYjU2N2E4IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lZDQ3YWUwZTczNDU0OTExOTYwYjQ1NjJhMDMyNzIzMiIsInNlY3Rpb25fcGF0aCI6W119XX0.Wiapw1guu-qSy0sLgZa7Df2-_9Nl0kiOgVRVfNPY2Qc",
+      "sha256": "fedcb4ddc6fb25e6c50466ecb83a4d8d5933edf750c7d9e3bd6514976a0d11a6",
+      "characters": 3418,
+      "readback_trace_id": "MCP-71F50A4B",
+      "readback_complete": true,
+      "confirmed_content_equal": true
+    },
+    {
+      "title": "69772 技术咨询单报表：科室、产品、公司、行业、项目用途图表与导出",
+      "document_id": "doc_c5f2f3851f3b4b729777dabb1f725a4b",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiOWQ0NmYyZmE5ODFmNDExMmEwNzNmYTVmYTk4OTAxNWE4ODA4YjRjZmNlNWQ5NjQxZDRiNzYyMGY4NjQwZjdkMSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2M1ZjJmMzg1MWYzYjRiNzI5Nzc3ZGFiYjFmNzI1YTRiIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl8xNGM0MzdlOGZmYTc0ODc4YmJiMjYyNDIzYWY1ZjVhOSIsInNlY3Rpb25fcGF0aCI6W119XX0.QMQ1u3qNrVDxA4dyLYpjDIdD_FidWNf1yInk0Edhnic",
+      "sha256": "b248b2708d5bbf5574866fc71eaa9a921f07748bedbced6f6f78def7a5877606",
+      "characters": 5189,
+      "readback_trace_id": "MCP-A846D00B",
+      "readback_complete": true,
+      "confirmed_content_equal": true
+    }
+  ]
+}
