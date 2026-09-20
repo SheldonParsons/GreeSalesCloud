@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# 本机凭据、浏览器会话与未经脱敏的临时证据
+.local/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 临时运行产物；需保留的脱敏证据移入需求执行目录
+node_modules/
+.venv/
+__pycache__/
+playwright-report/
+test-results/
+*.log
