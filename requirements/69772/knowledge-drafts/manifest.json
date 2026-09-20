@@ -1,0 +1,43 @@
+{
+  "status": "draft_only_not_submitted",
+  "project_id": "6",
+  "project_name": "商用订单管理系统-管理端",
+  "document_count": 5,
+  "documents": [
+    {
+      "file": "01-技术咨询单基础业务.md",
+      "title": "技术咨询单基础规则：咨询单与子单、状态、时间字段及组织归属",
+      "characters": 3428,
+      "utf8_bytes": 9004,
+      "sha256": "ec7efb4b94fb5a8ae2784ea0f645e8f859a17f84f47502535b7ab8d994acc4e2"
+    },
+    {
+      "file": "02-既有审批时长与驳回统计.md",
+      "title": "技术咨询单审批统计：节点时长、驳回次数与跨审批流累计",
+      "characters": 3418,
+      "utf8_bytes": 8806,
+      "sha256": "fedcb4ddc6fb25e6c50466ecb83a4d8d5933edf750c7d9e3bd6514976a0d11a6"
+    },
+    {
+      "file": "03-69772范围查询与数据可见性.md",
+      "title": "69772 技术咨询单报表：功能范围、查询条件与数据可见范围",
+      "characters": 3308,
+      "utf8_bytes": 8438,
+      "sha256": "dc6ab7c447fe291952a148cbe9dda7a401ff38a2ef326ef88b157c85237a584f"
+    },
+    {
+      "file": "04-69772指标周期与环比.md",
+      "title": "69772 技术咨询单报表：汇总指标、答复率、周期及环比口径",
+      "characters": 5514,
+      "utf8_bytes": 13428,
+      "sha256": "f377534db9dc17473b17c082ef211d875c0ca05253356b4e89482fde650d92a9"
+    },
+    {
+      "file": "05-69772图表明细与导出.md",
+      "title": "69772 技术咨询单报表：科室、产品、公司、行业、项目用途图表与导出",
+      "characters": 5189,
+      "utf8_bytes": 13476,
+      "sha256": "b248b2708d5bbf5574866fc71eaa9a921f07748bedbced6f6f78def7a5877606"
+    }
+  ]
+}
