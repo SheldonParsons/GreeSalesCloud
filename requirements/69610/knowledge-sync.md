@@ -105,10 +105,21 @@
 - 完整回读`complete=true`、`truncated=false`，正文与成功回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjo5LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiMmI1YjI2ZGE5OTUzOWFkNmM0NGNkYmFlMDFiZDc4ZDIyYWVkZmM4MGJhYTFmMTY4ZWZkZDczNmY0ZmEzZjA4OCIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2JmNWZiYTZjMjQwZTRkYjBhNzNjOWFiNjc1MjhhYTY4IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9iODljMzZkZmEzNDc0MmQ0OTI3NGNkOGFmOWQzNDc5MyIsInNlY3Rpb25fcGF0aCI6W119XX0.onGCdvFFlb9UXrjvkSXdxAKc9_LNxLty4Y8oyzCHFj4`。
 - 当前01～06共6/8模块完成写入与回读；本轮未修改Mind或执行业务测试。
 
-## 2026-09-22 模块07启用、禁用与删除（预览待确认）
+## 2026-09-22 模块07启用、禁用与删除（已录入并回读）
 
 - 项目：6，商用订单管理系统-管理端；新增缺失模块。
 - 标题：机型非标点：启用、禁用与删除；[预览正文](knowledge-drafts/07-publication-preview.md)。
-- 预览ID：`kcf_c226ac0c5fda450998b90211f1b65db5`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 预览ID：`kcf_c226ac0c5fda450998b90211f1b65db5`已获用户确认，应用后`operation=insert`、`status=completed`。
 - 内容：状态与操作矩阵，单条及批量启禁用／删除，执行时权限与有效性复核，按行成功失败，保留待启用且调整审批中不可删、新增已驳回可删的用户确认。
 - 保留配置状态的订单限制，避免把旧启用提示误写为无条件下单；原5条技术咨询单知识不变，模块08仍未录入。
+- 用户确认后应用成功：`kcm_cd9b120515e342228189bb54d0cacc16`，项目提交序号10，2026-09-22T07:54:37.857+00:00，索引`ready`；文档`doc_118e27fd77d0450e9b4673cb3440d460`，正文哈希`b12c9f052f05f57a8ae833ca4ca17b74f5e488a04ff38bb7f88387635e502633`。
+- 完整回读`complete=true`、`truncated=false`，正文与成功回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjoxMCwicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6Ijg2ZjA1YTdiZGEzZDUyMjYzOGE4NzY1NDI3YzJlZjVhZDk4MjVjYjI5MmQwY2Y0NzBjMGJiNWZhZGFlMGUyODgiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY18xMThlMjdmZDc3ZDA0NTBlOWI0NjczY2IzNDQwZDQ2MCIsImdlbmVyYXRpb25faWQiOiJnZW5fODdlMDg5N2ZmZDZjNGJiY2I3MjM3NmI5OGY4ZDE2MDIiLCJzZWN0aW9uX3BhdGgiOltdfV19.AtBepPMwCLJhbcQ1mju0FqZjaJKNWr5jrrINREeBstU`。
+- 当前01～07共7/8模块完成；本轮未修改Mind或执行业务测试。
+
+## 2026-09-22 模块08客户端关联与订单通知（预览待确认）
+
+- 项目：6，商用订单管理系统-管理端；新增缺失模块。
+- 标题：机型非标点：客户端关联与订单通知；[预览正文](knowledge-drafts/08-publication-preview.md)。
+- 预览ID：`kcf_06a1d4aa81c948cab9b8155a104a515b`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 内容：名称与启用的既有关联，未配置时的无价及订单发起限制，未配置改为已配置且审批全部通过后的数据同步与业务字段。
+- 已配置物料可空与通知触发分别描述；接口格式、接收范围及历史订单应用方式保留材料边界。本条在管理端主维护，未向客户端重复写入，原5条咨询知识不变。
