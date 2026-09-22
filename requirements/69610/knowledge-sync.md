@@ -73,10 +73,21 @@
 - 机型非标点：批量导入与重复拦截：文档`doc_7883a235b2094077af759b73d6735ee5`保持不变，正文哈希`5e32277caaf67aa299d41eee71f09c581f616fb9c395af9d5a44b435827ea61d`；完整回读正文与回执及已确认措辞版本一致，无旧词残留。
 - 原4处措辞已改成页面说法，其他正文未改变，已同步本地模块03、04已发布正文副本。原失败预览不再使用。
 
-## 2026-09-22 模块02查询、列表与查看（预览待确认）
+## 2026-09-22 模块02查询、列表与查看（已录入并回读）
 
 - 项目：6，商用订单管理系统-管理端；新增尚不存在的独立模块。
 - 标题：机型非标点：查询、列表与查看；[预览正文](knowledge-drafts/02-publication-preview.md)。
-- 预览ID：`kcf_56a052f453af4be7b0e7ae6b7d74e6e7`，`operation=insert`、`status=input_required`；尚未录入。
+- 预览ID：`kcf_56a052f453af4be7b0e7ae6b7d74e6e7`已获用户确认，应用后`operation=insert`、`status=completed`。
 - 内容：管理端入口与权限、查询条件、配置状态单选、列表逐条展示及字段省略规则、只读查看页、调整未审批完时显示旧数据、来源及未定细节。用页面词语表述，详细配置状态和历史初始化引用已有条目。
-- 当前3/8模块已完成写入与回读；模块02待确认，其余05～08尚未录入。未修改Mind或执行测试。
+- 成功回执：`kcm_934e73f9d38248b98bc1b87999b62a68`；提交序号7，2026-09-22 15:40:44北京时间；索引`ready`。
+- 文档：`doc_f55debad742d47fc9867046c31cdc749`，正文哈希`6d677083781aecd7faa2cac05111e1a9bb09d0b5fcbff1caaf448634a3fa3f46`。完整回读`complete=true`、`truncated=false`，正文与回执逐字一致。
+- 当前引用：`ntc_eyJjb21taXRfc2VxIjo3LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiZjA3ZGRmYTNjNjUwMWRlYjQyYjhmMzU5OWIxMGFkYzQwMGVlODZmN2YyY2EwZDljMDA2MDU1NDk0NDgyZmUyNyIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2Y1NWRlYmFkNzQyZDQ3ZmM5ODY3MDQ2YzMxY2RjNzQ5IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl82Mzk2MDk0Y2NlYTk0MWVkOGE3Y2NkMGNjNjdjOWQ5NyIsInNlY3Rpb25fcGF0aCI6W119XX0.tlOLUdYFPvQIBrVRgRd6jXjyCUNyGOVBJHSiep8e7r4`。
+- 当前4/8模块已写入回读（01～04），本轮未修改Mind或执行测试。
+
+## 2026-09-22 模块05调整与审批生效（预览待确认）
+
+- 项目：6，商用订单管理系统-管理端；新增缺失模块。
+- 标题：机型非标点：调整与审批生效；[正文预览](knowledge-drafts/05-publication-preview.md)。
+- 预览ID：`kcf_212270c4c4844077aa5c81ea5b486125`，`operation=insert`、`status=input_required`，等待用户确认；未写入。
+- 正文保留已确认的原值锁定、已配置物料可空、审批前旧数据、全部通过与驳回、重提新建调整单、原已禁用仅改数量仍禁用，以及调整记录规则和原型差异。旧编码联动只作历史材料，不恢复为现行能力。
+- 模块06～08仍未录入；该模块成功后再回读并更新进度。
