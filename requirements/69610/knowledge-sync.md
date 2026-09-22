@@ -84,10 +84,20 @@
 - 当前引用：`ntc_eyJjb21taXRfc2VxIjo3LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiZjA3ZGRmYTNjNjUwMWRlYjQyYjhmMzU5OWIxMGFkYzQwMGVlODZmN2YyY2EwZDljMDA2MDU1NDk0NDgyZmUyNyIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2Y1NWRlYmFkNzQyZDQ3ZmM5ODY3MDQ2YzMxY2RjNzQ5IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl82Mzk2MDk0Y2NlYTk0MWVkOGE3Y2NkMGNjNjdjOWQ5NyIsInNlY3Rpb25fcGF0aCI6W119XX0.tlOLUdYFPvQIBrVRgRd6jXjyCUNyGOVBJHSiep8e7r4`。
 - 当前4/8模块已写入回读（01～04），本轮未修改Mind或执行测试。
 
-## 2026-09-22 模块05调整与审批生效（预览待确认）
+## 2026-09-22 模块05调整与审批生效（已录入并回读）
 
 - 项目：6，商用订单管理系统-管理端；新增缺失模块。
 - 标题：机型非标点：调整与审批生效；[正文预览](knowledge-drafts/05-publication-preview.md)。
-- 预览ID：`kcf_212270c4c4844077aa5c81ea5b486125`，`operation=insert`、`status=input_required`，等待用户确认；未写入。
+- 预览ID：`kcf_212270c4c4844077aa5c81ea5b486125`已获用户确认并应用，`operation=insert`、`status=completed`。
 - 正文保留已确认的原值锁定、已配置物料可空、审批前旧数据、全部通过与驳回、重提新建调整单、原已禁用仅改数量仍禁用，以及调整记录规则和原型差异。旧编码联动只作历史材料，不恢复为现行能力。
-- 模块06～08仍未录入；该模块成功后再回读并更新进度。
+- 回执：`kcm_c913f07d04704f94aa3653a73b17df2b`，项目提交序号8，2026-09-22 15:45:11北京时间，索引`ready`；文档`doc_996be0b989a24431a016bee4580c282b`，正文哈希`e1ea6ffb21df318b899f862ab83a888773d9278c757eb45b8a05dcd0d207b580`。
+- 完整回读`complete=true`、`truncated=false`，正文与回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjo4LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiOTBmZjlhODQwZGExODEzNTBhMzIwYjhiMDYyNmYzNGMxZmQ2NDk0ZTZkMjlkODQ4YzYxYTIwOGI1NTgxOTViMyIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzk5NmJlMGI5ODlhMjQ0MzFhMDE2YmVlNDU4MGMyODJiIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9kYjY2ZjFlMDU5NTA0MDgzOWIwN2FmNzFlMzg0OGVjOSIsInNlY3Rpb25fcGF0aCI6W119XX0.AXX3DANCt9q0RghJC8gAuVzPFaMvCRGLmAHXpfvgaBo`。
+- 当前01～05共5/8模块完成写入与回读，模块06～08尚未录入。本轮未修改Mind或执行测试。
+
+## 2026-09-22 模块06审批单与审批中心（预览待确认）
+
+- 项目：6，商用订单管理系统-管理端；新增缺失模块。
+- 标题：机型非标点：审批单与审批中心；[预览正文](knowledge-drafts/06-publication-preview.md)。
+- 预览ID：`kcf_c1bd06ba208543d78fec94497500cacf`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 内容：新增／调整单据和四类状态，组织适用审批流、权限、表单与记录、不同审批结果、批量审批添加、我提交的／我审批的、查看进度／表单及物料导出；未定细节保留，不扩为已确认规则。
+- 配置状态与调整生效引用已发布模块03、05；没有改变其他已发布知识。
