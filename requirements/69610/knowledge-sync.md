@@ -45,14 +45,17 @@
 - 完整回读`complete=true`、`truncated=false`，正文与写入回执逐字一致；引用：`ntc_eyJjb21taXRfc2VxIjo0LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiY2IxNTRiMTEzODIyMTBmNjRjOTgyZDgyMjU5ZDI4MGM2OWU5Yjc0ZGEzMjQ4Y2E0MjQ0ZTc5Zjk2MThjNTBlNSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzc4ODNhMjM1YjIwOTQwNzdhZjc1OWI3M2Q2NzM1ZWU1IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl82MTRjYzVmZGJkNTM0ZTRmYTlkNjQ1MzFlZGNiZjg1OSIsInNlY3Rpb25fcGF0aCI6W119XX0.AzaHi0gnQIrsvGgJmB6Fur7pBOgwTjqqRsmSmvHd23g`。
 - 本次仅写入模块04，未修改其他知识或Mind用例。原5条技术咨询单知识保留。
 
-## 2026-09-22 模块01配置非标点（重制预览待确认）
+## 2026-09-22 模块01配置非标点（已录入并回读）
 
 - 目标项目：6，商用订单管理系统-管理端；缺失模块新增。
 - 新标题：机型非标点：配置非标点与历史数据处理。
 - 正文：[模块01预览](knowledge-drafts/01-publication-preview.md)。
-- 原预览`kcf_3ae7c114a8ca421c93469d1b5dccd14e`已按用户措辞修正要求取消，取消回执成功，未写入。新预览`kcf_8ddf6c6e931f468f8735db8334b0c504`，`operation=insert`、`status=input_required`，待确认。
+- 原预览`kcf_3ae7c114a8ca421c93469d1b5dccd14e`已取消，未写入。重制预览`kcf_8ddf6c6e931f468f8735db8334b0c504`已获用户确认并应用，返回`operation=insert`、`status=completed`。
 - 内容：区分“配置非标点”窗口与“添加型号”、每条机型非标点独立关联、历史统一已配置、名称必填及50字符／20条限制、唯一性、编辑保存同步及不可删除；空格／大小写规则等未定细节明确隔离。
-- 配置状态详细规则引用现有模块03，不再新增单独物料可空副本。成功写入后再完整回读。
+- 配置状态详细规则引用现有模块03，不新增单独物料可空副本。
+- 成功回执：`kcm_7f1778e34860454c8c8629b964c20d9a`；项目提交序号5，索引`ready`；文档`doc_c7682b069cbe4063abe4faad9d05bcce`，正文哈希`6af33512eb2d59e2370a26ab3cd3320c572493c89c4b1d6aa0be20edc67024e5`。
+- 已完整回读：`complete=true`、`truncated=false`，正文与成功回执逐字一致，正文无“名称库”用词。
+- 当前引用：`ntc_eyJjb21taXRfc2VxIjo1LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiNTViZjU2OWNhODQ1YTJjODhlMDBlMjlmNmIwMjBiNWIyNWRhNjkwNTA2NTk5MDJmNGJlOThjMDM5YjcwMDYxZiIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2M3NjgyYjA2OWNiZTQwNjNhYmU0ZmFhZDlkMDViY2NlIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lN2U5OWY2NzAyYTE0Y2Q0YWE3ZjE1M2Y5ZjhiZTdlZSIsInNlY3Rpb25fcGF0aCI6W119XX0.9VjdNTe-M2bCgTThfhoHR0_-hpCP6sZDdz15sbCFHyc`。
 
 ## 2026-09-22 已发布条目的页面用词修正（待确认）
 
@@ -61,4 +64,7 @@
 - 最初批量文字替换返回`natural_target_authority_stale`且要求重读，没有生成提交或成功写入；重读后同样未生成预览，因此改用逐文档完整替换预览。替换正文仅包含已核对的4处文字差异，不删除任何段落或规则。
 - 模块03更新预览：`kcf_9cf7067c865a4e5f857414c8466bf387`，目标仍为原条目，不新增。
 - 模块04更新预览：`kcf_5c2d0232b8b94b0d8256e3c759e6354c`，目标仍为批量导入条目，不新增。
-- 两份返回`input_required`，均待用户确认，尚未实际更新；原成功回执对应正文仍为线上现行版本。确认后回读，再同步本地已发布正文副本及索引。
+- 上述两份已获用户确认并各应用一次，但均返回`non_retryable_failure`、`outcome=null`，没有具体错误原因。分别为`MCP-00CE6520`、`MCP-52CEDCBA`，不能猜定为权限、超时或其他原因；不重复应用原失败预览。
+- 随后完整回读两条现行正文，均仍含原4处用词，确认这两条尚未更新；模块01的成功不等于这两条也成功。
+- 恢复准备：基于最新完整正文，按工具返回的唯一文件名定位，每文档一项文本替换，合并两项为一份更新预览。新正文与用户前次确认的措辞版本逐字一致，没有扩大业务范围。
+- 合并预览：`kcf_9ea23260f1a94d38be8293346512234d`，`operation=update`、`status=input_required`，等待重新确认。旧两条仍是线上现行正文；收到确认并成功后再回读和同步本地已发布正文副本。
