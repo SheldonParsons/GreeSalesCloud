@@ -45,11 +45,20 @@
 - 完整回读`complete=true`、`truncated=false`，正文与写入回执逐字一致；引用：`ntc_eyJjb21taXRfc2VxIjo0LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiY2IxNTRiMTEzODIyMTBmNjRjOTgyZDgyMjU5ZDI4MGM2OWU5Yjc0ZGEzMjQ4Y2E0MjQ0ZTc5Zjk2MThjNTBlNSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzc4ODNhMjM1YjIwOTQwNzdhZjc1OWI3M2Q2NzM1ZWU1IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl82MTRjYzVmZGJkNTM0ZTRmYTlkNjQ1MzFlZGNiZjg1OSIsInNlY3Rpb25fcGF0aCI6W119XX0.AzaHi0gnQIrsvGgJmB6Fur7pBOgwTjqqRsmSmvHd23g`。
 - 本次仅写入模块04，未修改其他知识或Mind用例。原5条技术咨询单知识保留。
 
-## 2026-09-22 模块01名称与基本关系（预览待确认）
+## 2026-09-22 模块01配置非标点（重制预览待确认）
 
 - 目标项目：6，商用订单管理系统-管理端；缺失模块新增。
-- 标题：机型非标点：基本关系、名称配置与历史初始化。
+- 新标题：机型非标点：配置非标点与历史数据处理。
 - 正文：[模块01预览](knowledge-drafts/01-publication-preview.md)。
-- 预览ID：`kcf_3ae7c114a8ca421c93469d1b5dccd14e`；`operation=insert`、`status=input_required`，待确认，尚未写入。
-- 内容：名称库与机型绑定分开、每条机型非标点独立关联、历史统一已配置、名称必填及50字符／20条限制、唯一性、编辑保存同步及不可删除；空格／大小写规则等未定细节明确隔离。
+- 原预览`kcf_3ae7c114a8ca421c93469d1b5dccd14e`已按用户措辞修正要求取消，取消回执成功，未写入。新预览`kcf_8ddf6c6e931f468f8735db8334b0c504`，`operation=insert`、`status=input_required`，待确认。
+- 内容：区分“配置非标点”窗口与“添加型号”、每条机型非标点独立关联、历史统一已配置、名称必填及50字符／20条限制、唯一性、编辑保存同步及不可删除；空格／大小写规则等未定细节明确隔离。
 - 配置状态详细规则引用现有模块03，不再新增单独物料可空副本。成功写入后再完整回读。
+
+## 2026-09-22 已发布条目的页面用词修正（待确认）
+
+- 范围：模块03中3处、模块04中1处，用页面“配置非标点”和“非标点名称列表”替代此前概括称呼；仅改用词，不改校验、审批或其他业务规则。
+- 读取：按项目6原条目名称分别完整读取当前正文，身份及完整性均核对。
+- 最初批量文字替换返回`natural_target_authority_stale`且要求重读，没有生成提交或成功写入；重读后同样未生成预览，因此改用逐文档完整替换预览。替换正文仅包含已核对的4处文字差异，不删除任何段落或规则。
+- 模块03更新预览：`kcf_9cf7067c865a4e5f857414c8466bf387`，目标仍为原条目，不新增。
+- 模块04更新预览：`kcf_5c2d0232b8b94b0d8256e3c759e6354c`，目标仍为批量导入条目，不新增。
+- 两份返回`input_required`，均待用户确认，尚未实际更新；原成功回执对应正文仍为线上现行版本。确认后回读，再同步本地已发布正文副本及索引。
