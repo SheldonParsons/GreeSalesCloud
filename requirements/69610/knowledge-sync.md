@@ -33,10 +33,23 @@
 - 当前回读引用：`ntc_eyJjb21taXRfc2VxIjozLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiMzQxZTdiYTA3OWU3ZmUxYTY5NmY5OWZiOWM3MDM1MDE5YzZkMmU4ZDgxNThjNzA4ZGQ4YjA2NTg2NGE3MjQ3MyIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2U3NGY3NzQ0YjU1MDQ0OWViMDRkN2Y3YzdkODY3ZjFmIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl85ZmFiYmZjYjhkMGM0ZmRjYmRlNzE0YmMyYmNiMWMzMSIsInNlY3Rpb25fcGF0aCI6W119XX0.g-m0GFE3r-PiPL6auiQ1KYqYFbEbEsy6JE8ol-1RecQ`。
 - 状态：模块03已按确认正文更新并回读，其他模块尚未因此写入，5条技术咨询单知识保持不变。
 
-## 2026-09-22 模块04批量导入（预览待确认）
+## 2026-09-22 模块04批量导入（已录入并回读）
 
 - 目标项目：6，商用订单管理系统-管理端；新增缺失的独立业务模块，不重复新建配置状态主条目。
 - 标题：机型非标点：批量导入与重复拦截。
 - 正文：[模块04预览](knowledge-drafts/04-publication-preview.md)。内容包括100条上限、字段和对应关系校验、已有组合失败、配置状态可空适用、逐行导入与失败明细、导入后审批及来源边界。
-- 预览ID：`kcf_d74085740d824307bb1c623b5fe073db`；工具返回`operation=insert`、`status=input_required`。当前等待用户确认，尚未录入该模块，尚无成功回执或写入后引用。
+- 预览ID：`kcf_d74085740d824307bb1c623b5fe073db`；用户明确“确认”后已应用，工具返回`operation=insert`、`status=completed`。
 - 保留用户已确认“成功的可以导入”，不把手工新增全不提交的规则套到导入。
+- 回执：`kcm_7a66aa38b4d847788fb121aaa877f135`，项目提交序号4，2026-09-22 15:22:07北京时间；索引`ready`。
+- 文档：`doc_7883a235b2094077af759b73d6735ee5`；正文哈希：`ddacd45ec7570757c77cb0b10a85d5f3c85df6ac37f222b1b729b3c523d004e0`。
+- 完整回读`complete=true`、`truncated=false`，正文与写入回执逐字一致；引用：`ntc_eyJjb21taXRfc2VxIjo0LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiY2IxNTRiMTEzODIyMTBmNjRjOTgyZDgyMjU5ZDI4MGM2OWU5Yjc0ZGEzMjQ4Y2E0MjQ0ZTc5Zjk2MThjNTBlNSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzc4ODNhMjM1YjIwOTQwNzdhZjc1OWI3M2Q2NzM1ZWU1IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl82MTRjYzVmZGJkNTM0ZTRmYTlkNjQ1MzFlZGNiZjg1OSIsInNlY3Rpb25fcGF0aCI6W119XX0.AzaHi0gnQIrsvGgJmB6Fur7pBOgwTjqqRsmSmvHd23g`。
+- 本次仅写入模块04，未修改其他知识或Mind用例。原5条技术咨询单知识保留。
+
+## 2026-09-22 模块01名称与基本关系（预览待确认）
+
+- 目标项目：6，商用订单管理系统-管理端；缺失模块新增。
+- 标题：机型非标点：基本关系、名称配置与历史初始化。
+- 正文：[模块01预览](knowledge-drafts/01-publication-preview.md)。
+- 预览ID：`kcf_3ae7c114a8ca421c93469d1b5dccd14e`；`operation=insert`、`status=input_required`，待确认，尚未写入。
+- 内容：名称库与机型绑定分开、每条机型非标点独立关联、历史统一已配置、名称必填及50字符／20条限制、唯一性、编辑保存同步及不可删除；空格／大小写规则等未定细节明确隔离。
+- 配置状态详细规则引用现有模块03，不再新增单独物料可空副本。成功写入后再完整回读。
