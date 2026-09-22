@@ -94,10 +94,21 @@
 - 完整回读`complete=true`、`truncated=false`，正文与回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjo4LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiOTBmZjlhODQwZGExODEzNTBhMzIwYjhiMDYyNmYzNGMxZmQ2NDk0ZTZkMjlkODQ4YzYxYTIwOGI1NTgxOTViMyIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzk5NmJlMGI5ODlhMjQ0MzFhMDE2YmVlNDU4MGMyODJiIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9kYjY2ZjFlMDU5NTA0MDgzOWIwN2FmNzFlMzg0OGVjOSIsInNlY3Rpb25fcGF0aCI6W119XX0.AXX3DANCt9q0RghJC8gAuVzPFaMvCRGLmAHXpfvgaBo`。
 - 当前01～05共5/8模块完成写入与回读，模块06～08尚未录入。本轮未修改Mind或执行测试。
 
-## 2026-09-22 模块06审批单与审批中心（预览待确认）
+## 2026-09-22 模块06审批单与审批中心（已录入并回读）
 
 - 项目：6，商用订单管理系统-管理端；新增缺失模块。
 - 标题：机型非标点：审批单与审批中心；[预览正文](knowledge-drafts/06-publication-preview.md)。
-- 预览ID：`kcf_c1bd06ba208543d78fec94497500cacf`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 预览ID：`kcf_c1bd06ba208543d78fec94497500cacf`已获用户确认，应用后`operation=insert`、`status=completed`。
 - 内容：新增／调整单据和四类状态，组织适用审批流、权限、表单与记录、不同审批结果、批量审批添加、我提交的／我审批的、查看进度／表单及物料导出；未定细节保留，不扩为已确认规则。
 - 配置状态与调整生效引用已发布模块03、05；没有改变其他已发布知识。
+- 成功回执：`kcm_7dd7c862c4ae429d8b208349a41edf15`，项目提交序号9，2026-09-22 15:49:26北京时间，索引`ready`；文档`doc_bf5fba6c240e4db0a73c9ab67528aa68`，正文哈希`21c76c1b19286103a6acfe1168b4ebdc84bf3059cea073f01308334976680329`。
+- 完整回读`complete=true`、`truncated=false`，正文与成功回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjo5LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiMmI1YjI2ZGE5OTUzOWFkNmM0NGNkYmFlMDFiZDc4ZDIyYWVkZmM4MGJhYTFmMTY4ZWZkZDczNmY0ZmEzZjA4OCIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2JmNWZiYTZjMjQwZTRkYjBhNzNjOWFiNjc1MjhhYTY4IiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9iODljMzZkZmEzNDc0MmQ0OTI3NGNkOGFmOWQzNDc5MyIsInNlY3Rpb25fcGF0aCI6W119XX0.onGCdvFFlb9UXrjvkSXdxAKc9_LNxLty4Y8oyzCHFj4`。
+- 当前01～06共6/8模块完成写入与回读；本轮未修改Mind或执行业务测试。
+
+## 2026-09-22 模块07启用、禁用与删除（预览待确认）
+
+- 项目：6，商用订单管理系统-管理端；新增缺失模块。
+- 标题：机型非标点：启用、禁用与删除；[预览正文](knowledge-drafts/07-publication-preview.md)。
+- 预览ID：`kcf_c226ac0c5fda450998b90211f1b65db5`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 内容：状态与操作矩阵，单条及批量启禁用／删除，执行时权限与有效性复核，按行成功失败，保留待启用且调整审批中不可删、新增已驳回可删的用户确认。
+- 保留配置状态的订单限制，避免把旧启用提示误写为无条件下单；原5条技术咨询单知识不变，模块08仍未录入。
