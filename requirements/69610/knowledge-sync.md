@@ -1,5 +1,7 @@
 # 69610 知识同步记录
 
+当前状态（2026-09-22）：8/8模块已按各次确认正文完成入库与完整回读。模块03原位扩充，其他缺失模块新增；管理端项目6现有13条（8条机型非标点、5条原技术咨询单），索引ready。下文按操作发生顺序保留历史状态，当前结果以末尾全量核对为准。
+
 ## 2026-09-22 已配置时物料允许为空
 
 - 用户授权：同步本次规则变化到思维导图和知识库；不等于授权把所有尚未确认的完整底稿一并录入。
@@ -57,7 +59,7 @@
 - 已完整回读：`complete=true`、`truncated=false`，正文与成功回执逐字一致，正文无“名称库”用词。
 - 当前引用：`ntc_eyJjb21taXRfc2VxIjo1LCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjYiLCJ0YXJnZXRfZGlnZXN0IjoiNTViZjU2OWNhODQ1YTJjODhlMDBlMjlmNmIwMjBiNWIyNWRhNjkwNTA2NTk5MDJmNGJlOThjMDM5YjcwMDYxZiIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2M3NjgyYjA2OWNiZTQwNjNhYmU0ZmFhZDlkMDViY2NlIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lN2U5OWY2NzAyYTE0Y2Q0YWE3ZjE1M2Y5ZjhiZTdlZSIsInNlY3Rpb25fcGF0aCI6W119XX0.9VjdNTe-M2bCgTThfhoHR0_-hpCP6sZDdz15sbCFHyc`。
 
-## 2026-09-22 已发布条目的页面用词修正（待确认）
+## 2026-09-22 已发布条目的页面用词修正（已完成并回读）
 
 - 范围：模块03中3处、模块04中1处，用页面“配置非标点”和“非标点名称列表”替代此前概括称呼；仅改用词，不改校验、审批或其他业务规则。
 - 读取：按项目6原条目名称分别完整读取当前正文，身份及完整性均核对。
@@ -116,10 +118,21 @@
 - 完整回读`complete=true`、`truncated=false`，正文与成功回执逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjoxMCwicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6Ijg2ZjA1YTdiZGEzZDUyMjYzOGE4NzY1NDI3YzJlZjVhZDk4MjVjYjI5MmQwY2Y0NzBjMGJiNWZhZGFlMGUyODgiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY18xMThlMjdmZDc3ZDA0NTBlOWI0NjczY2IzNDQwZDQ2MCIsImdlbmVyYXRpb25faWQiOiJnZW5fODdlMDg5N2ZmZDZjNGJiY2I3MjM3NmI5OGY4ZDE2MDIiLCJzZWN0aW9uX3BhdGgiOltdfV19.AtBepPMwCLJhbcQ1mju0FqZjaJKNWr5jrrINREeBstU`。
 - 当前01～07共7/8模块完成；本轮未修改Mind或执行业务测试。
 
-## 2026-09-22 模块08客户端关联与订单通知（预览待确认）
+## 2026-09-22 模块08客户端关联与订单通知（已录入并回读）
 
 - 项目：6，商用订单管理系统-管理端；新增缺失模块。
 - 标题：机型非标点：客户端关联与订单通知；[预览正文](knowledge-drafts/08-publication-preview.md)。
-- 预览ID：`kcf_06a1d4aa81c948cab9b8155a104a515b`，`operation=insert`、`status=input_required`，等待用户确认，尚未录入。
+- 预览ID：`kcf_06a1d4aa81c948cab9b8155a104a515b`已获用户确认，应用后`operation=insert`、`status=completed`。
 - 内容：名称与启用的既有关联，未配置时的无价及订单发起限制，未配置改为已配置且审批全部通过后的数据同步与业务字段。
 - 已配置物料可空与通知触发分别描述；接口格式、接收范围及历史订单应用方式保留材料边界。本条在管理端主维护，未向客户端重复写入，原5条咨询知识不变。
+- 成功回执：`kcm_07efd1b0f8654619a12eb40674c20473`，项目提交序号11，2026-09-22 16:01:12北京时间，索引`ready`；文档`doc_dd852c39e33947c1a3e288728aa5e4c3`，正文哈希`773fc6ee7e3487ec57f45d7fa2e3415c51ce3171b9892f7e572e04257e6f171d`。
+- 完整回读`complete=true`、`truncated=false`，正文与回执及本地已确认正文逐字一致。引用：`ntc_eyJjb21taXRfc2VxIjoxMSwicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6IjJkOGMyMDJmMThhMGY5YjM4NmZjMmFjMTM0NTFjZDQxNzA4ZWRhY2UzYzE1MTRiNWU2ZmE0ZjdjYmRjMzEzMjAiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY19kZDg1MmMzOWUzMzk0N2MxYTNlMjg4NzI4YWE1ZTRjMyIsImdlbmVyYXRpb25faWQiOiJnZW5fNmQ3OGJjNWJjYmQ2NDUyOWFmMTM4ODdlNGU1ZGRmOWUiLCJzZWN0aW9uX3BhdGgiOltdfV19.GnGk0qavy06esAKzHib7kpVl-mBMsTZAPJNZFYcwtcM`。
+
+## 2026-09-22 八模块入库收尾核对
+
+- 实时盘点返回项目6“商用订单管理系统-管理端”，13条、无后续页：8条机型非标点和5条技术咨询单。索引ready，覆盖提交序号11。
+- 从当前目录引用重新完整读取八条机型非标点正文，全部无截断；逐字比较与01～08已确认正文副本一致。具名的跨条目引用均能对应现有条目或已记录的正文标题。
+- 模块03仍使用原文档身份及目录名称“机型非标点：已配置时增减物料允许为空”，正文已扩充为添加、编辑与配置状态；没有另建重复条目。其余七模块按缺失范围新增。
+- 原5条技术咨询单保留；未清空知识库，未向客户端项目另建重复全文。本次没有修改Mind或执行业务测试。
+- 完成范围为已逐项确认的八模块正文及回读，不表示未确认细节已解决。订单接收和重算、接口传输格式、部分状态组合等边界仍在相应正文中明确保留。
+- 后续工作：按当前知识只读核对本期Mind覆盖，列出实际缺项；未经后续范围确认不恢复用户删除的用例，不自动扩展历史功能测试。
