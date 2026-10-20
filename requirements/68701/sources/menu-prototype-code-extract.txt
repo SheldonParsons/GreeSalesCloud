@@ -1,0 +1,90 @@
+来源：用户指定本地菜单原型的静态代码，仅说明演示实现，不作为新增验收规则。
+读取日期：2026-10-20。未执行保存、删除、复制或拖动。
+
+原文件 runtime/app.js:1981-2001
+1981: function menus() {
+1982:   const systemName = "金叶轮奖评审平台";
+1983:   return `<div class="identity-admin-page menu-admin-page">
+1984:     ${pageTitle("菜单管理")}
+1985:     <section class="card section identity-list-shell">
+1986:       <div class="system-tabs"><button class="active">${systemName}</button><span>角色权限仅可引用当前已启用菜单</span></div>
+1987:       <div class="admin-toolbar reference-toolbar"><div class="toolbar"><button class="btn primary" data-action="newMenu">＋ 新增</button><button class="btn" data-action="newMenu">批量新增</button><button class="btn" data-action="copyAllMenus">复制全部</button></div></div>
+1988:       <div class="menu-config-tree">
+1989:         ${menu.map((group,groupIndex) => menuGroupRow(group, groupIndex)).join("")}
+1990:       </div>
+1991:     </section></div>`;
+1992: }
+1993:
+1994: function menuGroupRow(group, groupIndex) {
+1995:   const open = state.menuExpanded[group.group] !== false;
+1996:   return `<section class="menu-tree-group">
+1997:     <div class="menu-config-row group-row"><button class="tree-toggle" data-menu-group-toggle="${group.group}" aria-label="${open ? "收起" : "展开"}${group.group}">${open ? "▾" : "▸"}</button><span class="menu-kind">菜单</span><strong>${group.group}</strong><span class="route-code">标识：${group.group}</span><span class="tag green">启用</span><div class="row-actions"><button data-action="deleteMenu">删除</button><button data-action="newChildMenu" data-group-index="${groupIndex}">新增</button><button data-action="copyMenu" data-group-index="${groupIndex}" data-item-index="0">复制</button><button data-action="editMenu" data-group-index="${groupIndex}" data-item-index="0">修改</button></div></div>
+1998:     ${open ? group.items.map(([id,name],itemIndex) => `<div class="menu-config-row child-row"><span class="tree-branch">└</span><span class="menu-kind">菜单</span><strong>${escapeHtml(name)}</strong><span class="route-code">${id} ｜ /${id} ｜ 排序${itemIndex + 1}</span><span class="tag ${state.menuStatuses[id] === "停用" ? "" : "green"}">${state.menuStatuses[id] || "启用"}</span><div class="row-actions"><button data-action="deleteMenu">删除</button><button data-action="newChildMenu" data-group-index="${groupIndex}">新增</button><button data-action="copyMenu" data-group-index="${groupIndex}" data-item-index="${itemIndex}">复制</button><button data-action="editMenu" data-group-index="${groupIndex}" data-item-index="${itemIndex}">修改</button></div></div>`).join("") : ""}
+1999:   </section>`;
+2000: }
+2001:
+原文件 runtime/app.js:2560-2568
+2560: function menuEditorModal() {
+2561:   const edit = state.editingMenu || {};
+2562:   const existing = Number.isInteger(edit.groupIndex) && Number.isInteger(edit.itemIndex) ? menu[edit.groupIndex]?.items[edit.itemIndex] : null;
+2563:   const name = existing?.[1] || "";
+2564:   const route = existing?.[0] || "";
+2565:   const parent = Number.isInteger(edit.groupIndex) ? menu[edit.groupIndex]?.group : menu[0].group;
+2566:   return `<div class="config-sections"><section><div class="config-heading"><b>1</b><div><h2>菜单信息</h2><p>字段按统一用户管理平台菜单配置维护</p></div></div><div class="grid grid-2"><div class="field"><label>类型 *</label><select id="menuType"><option>菜单</option><option>按钮</option></select></div><div class="field"><label>名称 *</label><input id="menuName" value="${escapeHtml(name)}" maxlength="30" /></div><div class="field"><label>上级菜单</label><select id="menuParent">${menu.map(group => `<option ${group.group === parent ? "selected" : ""}>${group.group}</option>`).join("")}</select></div><div class="field"><label>标识编码/跳转路径 *</label><input id="menuRoute" value="${route}" maxlength="100" /></div><div class="field"><label>排序 *</label><input id="menuSort" type="number" min="0" max="9999" value="1" /></div><div class="field"><label>URL路径</label><input id="menuUrl" value="/${route}" maxlength="200" /></div><div class="field"><label>权限标识</label><input id="menuPermission" value="/${route}" maxlength="100" /></div><div class="field"><label>状态 *</label><select id="menuStatus"><option ${state.menuStatuses[route] !== "停用" ? "selected" : ""}>启用</option><option ${state.menuStatuses[route] === "停用" ? "selected" : ""}>停用</option></select></div><div class="field"><label>备注</label><textarea id="menuRemark" maxlength="200"></textarea></div><div class="field"><label>嵌入页面</label><select id="menuEmbed"><option>否</option><option>是</option></select></div></div></section></div>`;
+2567: }
+2568:
+原文件 runtime/app.js:3754-3807
+3754:   if (action === "newMenu") {
+3755:     state.editingMenu = null;
+3756:     state.modal = "menuEditor:";
+3757:   }
+3758:   if (action === "newChildMenu") {
+3759:     state.editingMenu = { groupIndex: Number(el.dataset.groupIndex) };
+3760:     state.modal = "menuEditor:";
+3761:   }
+3762:   if (action === "editMenu") {
+3763:     state.editingMenu = { groupIndex: Number(el.dataset.groupIndex), itemIndex: Number(el.dataset.itemIndex) };
+3764:     state.modal = "menuEditor:";
+3765:   }
+3766:   if (action === "saveMenu") {
+3767:     const edit = state.editingMenu || {};
+3768:     const name = $("#menuName")?.value?.trim();
+3769:     const parent = $("#menuParent")?.value || menu[0].group;
+3770:     const route = $("#menuRoute")?.value?.trim() || "";
+3771:     if (!name) flash("请填写菜单名称");
+3772:     else if (Number.isInteger(edit.groupIndex) && Number.isInteger(edit.itemIndex)) {
+3773:       const target = menu[edit.groupIndex]?.items[edit.itemIndex];
+3774:       if (target) target[1] = name;
+3775:       if (route) state.menuStatuses[route] = $("#menuStatus")?.value === "停用" ? "停用" : "启用";
+3776:       state.modal = null;
+3777:       flash("菜单名称和状态已同步更新");
+3778:     } else {
+3779:       const targetGroup = menu.find(group => group.group === parent) || menu[0];
+3780:       const menuId = route || `menu_${Date.now()}`;
+3781:       targetGroup.items.push([menuId, name]);
+3782:       state.menuStatuses[menuId] = $("#menuStatus")?.value === "停用" ? "停用" : "启用";
+3783:       state.modal = null;
+3784:       flash("菜单配置已保存");
+3785:     }
+3786:   }
+3787:   if (action === "copyMenu") {
+3788:     const item = menu[Number(el.dataset.groupIndex)]?.items[Number(el.dataset.itemIndex)];
+3789:     if (item) {
+3790:       const group = menu[Number(el.dataset.groupIndex)];
+3791:       const route = `${item[0]}_copy`;
+3792:       group.items.push([route, `${item[1]}-副本`]);
+3793:       state.menuStatuses[route] = "启用";
+3794:       flash("菜单副本已创建");
+3795:     }
+3796:   }
+3797:   if (action === "copyAllMenus") {
+3798:     flash("批量复制尚未接入，未更改菜单配置");
+3799:   }
+3800:   if (action === "toggleMenuStatus") {
+3801:     const menuId = el.dataset.menuId;
+3802:     state.menuStatuses[menuId] = state.menuStatuses[menuId] === "停用" ? "启用" : "停用";
+3803:     flash(`${menuId}菜单已${state.menuStatuses[menuId]}`);
+3804:   }
+3805:   if (action === "deleteMenu") {
+3806:     flash("当前菜单暂不可删除");
+3807:   }

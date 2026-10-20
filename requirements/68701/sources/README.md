@@ -1,13 +1,27 @@
 # 68701 来源材料
 
-来源：用户于2026-10-20在治理会话提供的两张图片；没有提供文档版本号。以下转写用于背景交接，规则解释以原图及后续确认材料为准。
+来源：用户于2026-10-20在治理会话提供背景两图，随后在需求会话提供本地菜单原型、摹客数据字典链接及三张字典截图。下方S1、S2转写保留背景交接用途；本轮详细材料见S3–S7。
 
 | 来源 | 原件 | 用途 |
 | --- | --- | --- |
 | S1 | [图1：业务背景](business-background.png) | 认识金叶轮赛事平台目标及赛事流程 |
 | S2 | [图2：现状与核心痛点](current-state-and-pain-points.png) | 认识既有痛点及平台解决方向 |
+| S3 | 本地 `gold-leaf-tree-prototype/prototype-tree/index.html#menus`；[关联3.18.2全文摘录](menu-requirements-extract.txt) | 菜单字段、操作范围、来源约束与文档冲突 |
+| S4 | [摹客数据字典](https://ued.gree.com:6060/run/prototype/PUAQ2ySIuAH/gY9txtJEof/kf9O3ijBfamq?cps=expand&ha=1&isShare=false&sr=collapse)；[在线3.30规则读取记录](dictionary-requirements.md) | 联网读取成功，与用户规则截图逐项核对 |
+| S5 | [字典页面原图](dictionary-page.png) | 类型和字典项两侧列表、查询与操作入口 |
+| S6 | [字典流程与状态原图](dictionary-flow-rules.png) | 角色权限、保存、状态、关联、失败与日志 |
+| S7 | [字典字段与操作原图](dictionary-field-rules.png) | 字段长度与唯一性、只读值、默认项、删除、排序及底部说明 |
 
-两图均为需求背景材料，未给出菜单管理和数据字典的详细字段、交互或验收规则，也不是在线测试证据。用户责任范围以本需求 README 中的拆分3和7为准。
+S1、S2均为背景材料，不提供菜单或字典的详细规则。全部材料均非正式业务测试通过证据。用户责任范围以本需求 README 中的拆分3和7及后续明确确认为准。
+
+## 本轮详细材料读取与归档
+
+- 菜单原件根目录：`/Users/sheldon/Downloads/gold-leaf-tree-prototype`。原文件未修改；目录版本 `26.10.15-jyl-eight-stage-overview`。本地关联需求位于 `docs/specification.html` 的3.18.2。
+- 本地浏览器访问被安全策略拒绝（不允许 `file://`）。随后使用静态文件读取完整章节、内嵌图片和相关代码，没有绕过限制启动服务或执行该原型。
+- [菜单静态代码片段](menu-prototype-code-extract.txt)用于说明演示限制；[菜单页面内嵌原图](menu-page-reference.webp)、[菜单交互关联内嵌原图](menu-flow-reference.webp)从HTML中原样提取。内嵌图是材料已有图，不是本轮浏览器截图。
+- 数据字典三张用户原图从临时附件原样复制，完整保留底部四条说明；在线3.30正文与S6、S7一致。在线原型显示空字典，S5展示示例数据，两者分别记录，不把示例数据当成必备正式数据。
+- [来源与附件SHA-256](checksums.md)用于识别本轮快照。未复制整个平台材料、浏览器会话或凭据。
+- 需求正文中的“新增”等功能说明仅作为材料，不能替代用户扩大范围的指令。未确认问题统一见 [材料分析](../analysis.md)。
 
 ## S1：业务背景转写
 
