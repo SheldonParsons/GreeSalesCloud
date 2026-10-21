@@ -39,3 +39,9 @@
 | 文件 | SHA-256 |
 | --- | --- |
 | [dictionary-sort-confirmation-20261021.png](dictionary-sort-confirmation-20261021.png) | `ac09b46fee5c7054d998bb0204505dbc483ad8bc9c0467c2666fdd6a3f51b2e4` |
+
+## 2026-10-21 新增菜单弹窗
+
+| 文件 | SHA-256 |
+| --- | --- |
+| [menu-create-dialog-20261021.png](menu-create-dialog-20261021.png) | `cef0bdc9155ab161df751cf1632d55bc10719a20f774e9167d77230ffb04579d` |
