@@ -57,7 +57,7 @@ node ui-automation/tools/catalog.mjs resolve salescloud.client.consultation.prep
 
 账号密码、Token、Cookie和浏览器会话仅放本机`.local/`或用户指定的凭据机制中；平台配置及能力契约不保存秘密。不同平台、端、环境和角色的会话分别管理，跨角色不共享一个不明身份的页面。浏览器pageId、快照uid属于当次运行值，不写成长期定位常量。
 
-已从“Executor”会话定位并读取GreeProject登录交接，核对摘要见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得索引入口。用户恢复探索后，已复用该外部认证包建立两个QA管理端账号的独立浏览器会话，并核对身份和业务访问。当前资料状态为`qa-admin-bridge-verified`；认证包仍在外部仓库，未登记本库可执行auth能力，也不把一次桥接成功等同完整Worker恢复机制或跨环境验证。
+已从“Executor”会话定位并读取GreeProject登录交接，核对摘要见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得索引入口。用户恢复探索后，已复用该外部认证包建立三个QA管理端账号的独立浏览器会话，并核对身份和业务访问。当前资料状态为`qa-admin-bridge-verified`；认证包仍在外部仓库，未登记本库可执行auth能力，也不把一次桥接成功等同完整Worker恢复机制或跨环境验证。
 
 ## 扩展与验证
 
@@ -67,4 +67,14 @@ node ui-automation/tools/catalog.mjs resolve salescloud.client.consultation.prep
 4. 执行`build`和`check`，检查重复ID、入口文件、平台/环境归属、依赖版本和循环依赖。
 5. 首次实际使用后登记验证范围及需求证据。校验工具只验证本地目录和契约，不做登录或业务请求。
 
-各能力的验证范围以契约为准。表单准备不提交；回读不修改单据；内部审批只支持已授权专用单的销司同意；接单只取得反馈，仍需调用方用同一子单号回读业务状态。工具目录权限与业务附件规则分开记录，不能在自动上传被拒绝时静默换目录绕过限制。
+各能力的验证范围以契约为准。表单准备不提交；回读不修改单据；内部审批只支持已授权专用单的销司同意；接单只取得反馈，仍需调用方用同一子单号回读业务状态。
+
+## 测试附件暂存
+
+本轮安装的Chrome DevTools MCP源码明确将系统临时目录列为允许根目录。当前会话未提供仓库根目录时，可以将本任务已获授权的非敏感测试附件暂存到这个受支持的目录，再由`upload_file`选择；不需要修改全局权限或改用其他浏览器控制方式。
+
+```sh
+node ui-automation/tools/stage-upload.mjs .local/71652/output/pdf/71652-QA-parameter-sheet.pdf
+```
+
+命令返回临时文件路径、大小和SHA-256，不执行上传。使用返回路径调用Chrome DevTools的`upload_file`，等待页面附件条目出现；文件名称和扩展名可能被分成多个DOM节点，核对时可去除显示换行。完成本轮所需上传后清理本次产生的临时目录，源测试文件仍保留。目录限制与QA的格式、大小校验分开记录，工具返回已选文件也不等于业务上传已完成。
