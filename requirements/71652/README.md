@@ -2,6 +2,8 @@
 
 ## 需求会话
 
+2026-10-21用户明确要求另建“咨询历史查看与审批”专项会话，资料见 [专项入口](consultation-history/README.md)。同一需求共用本目录，专项文件在该子目录维护，保留原会话及下列既有分析与确认。
+
 - 创建时指定标题：71652｜项目技术咨询单交互优化与历史版本查看。
 - 任务 ID：`01a1580e-2a1c-7292-97df-2cd2f14a0d59`，主机：`local`。
 - 工作目录：`/Users/sheldon/Documents/GithubProject/GreeSalesCloud`，未创建 worktree。
