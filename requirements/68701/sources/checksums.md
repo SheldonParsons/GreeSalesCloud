@@ -25,3 +25,11 @@
 | [menu-prototype-code-extract.txt](menu-prototype-code-extract.txt) | `cbd94a72bcc8f6c56b7ce2827e6bd8ab0c761e985d9729540ed609a48bd3bf00` |
 | [menu-flow-reference.webp](menu-flow-reference.webp) | `3ce697dbe2af08d0fb767ee3bad00068c55804e120d9f8da5f6a4059e456ebe9` |
 | [menu-page-reference.webp](menu-page-reference.webp) | `f41662c148edc4ccbb5c2878a2e284bc9b3243f8a9e81263a4254b7ffee60386` |
+
+## 2026-10-21 补充材料
+
+用户转交的需求人员菜单操作规则原图，原样复制。
+
+| 文件 | SHA-256 |
+| --- | --- |
+| [menu-operation-rules-20261021.png](menu-operation-rules-20261021.png) | `6ae8cd15fe8783b9970bd42f8e2ecb6a7a8691c03273811b08656d8ef710dd8a` |
