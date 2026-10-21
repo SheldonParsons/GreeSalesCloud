@@ -1,0 +1,23 @@
+{
+  "id": "salescloud",
+  "name": "商用订单管理系统（智能供销云平台）",
+  "surfaces": {
+    "client": { "name": "销司订货客户端" },
+    "admin": { "name": "管理端" }
+  },
+  "environments": {
+    "qa": {
+      "client": { "origin": "https://qasalescloud.gree.com", "loginPath": "/login" },
+      "admin": { "origin": "https://qasalescloud.gree.com", "loginPath": "/admin/login" }
+    }
+  },
+  "references": [
+    {
+      "id": "login-handoff",
+      "title": "商用客户端与管理端登录交接核对",
+      "file": "shared/auth/login-handoff-review.md",
+      "status": "reviewed-not-integrated"
+    }
+  ],
+  "notes": "这里只登记当前已明确使用的QA入口；不自动切换环境。客户端登录页已于2026-10-21观察；管理端本轮未操作。源登录交接涉及UAT，不代表本库已接入或获准执行UAT。"
+}

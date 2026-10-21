@@ -1,0 +1,44 @@
+{
+  "id": "salescloud.client.consultation.prepare-nonstandard",
+  "version": "0.1.0",
+  "title": "准备非标产品选型咨询单的单张卡片",
+  "platform": "salescloud",
+  "surface": "client",
+  "module": "consultation",
+  "kind": "flow",
+  "entry": {
+    "file": "run.js",
+    "functionName": "prepareNonstandardConsultation",
+    "runtime": "browser-function",
+    "adapter": "chrome-devtools"
+  },
+  "environments": ["qa"],
+  "dependencies": [],
+  "preconditions": [
+    "已登录指定账号，处于/consult/consult-technology/add",
+    "已选择指定项目，页面恰好1张咨询卡片，无未处理弹窗",
+    "待填文字为空或与本轮指定输入一致"
+  ],
+  "inputs": {
+    "account": "页面应显示的账号标识，不是密码",
+    "projectCode": "页面已绑定的项目编号",
+    "category": "产品大类",
+    "subcategory": "产品小类",
+    "series": "产品系列",
+    "model": "完整产品机型名称",
+    "modelSearch": "检索机型的关键词",
+    "engineeringDescription": "本轮工程详细说明",
+    "selectionRequirement": "本轮选型需求"
+  },
+  "outputs": ["ready_to_submit", "blocked"],
+  "effects": ["填写当前未提交表单", "通过页面查询和选择产品"],
+  "limits": ["不提交", "不存草稿", "不修改派单规则", "不替用户完成滑块"],
+  "verification": {
+    "status": "verified",
+    "date": "2026-10-21",
+    "environment": "qa",
+    "scope": "指定项目及GCM系列的单卡片填写和字段回读；不包含提交成功验证",
+    "evidence": "requirements/71652/page-discovery-20261021.md"
+  },
+  "keywords": ["项目技术咨询", "非标产品选型", "产品系列", "机型选择", "表单准备"]
+}
