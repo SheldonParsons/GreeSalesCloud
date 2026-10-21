@@ -33,3 +33,9 @@
 | 文件 | SHA-256 |
 | --- | --- |
 | [menu-operation-rules-20261021.png](menu-operation-rules-20261021.png) | `6ae8cd15fe8783b9970bd42f8e2ecb6a7a8691c03273811b08656d8ef710dd8a` |
+
+## 2026-10-21 用户排序纠正图
+
+| 文件 | SHA-256 |
+| --- | --- |
+| [dictionary-sort-confirmation-20261021.png](dictionary-sort-confirmation-20261021.png) | `ac09b46fee5c7054d998bb0204505dbc483ad8bc9c0467c2666fdd6a3f51b2e4` |
