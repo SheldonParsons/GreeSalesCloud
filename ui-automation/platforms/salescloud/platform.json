@@ -16,8 +16,8 @@
       "id": "login-handoff",
       "title": "商用客户端与管理端登录交接核对",
       "file": "shared/auth/login-handoff-review.md",
-      "status": "reviewed-not-integrated"
+      "status": "qa-admin-bridge-verified"
     }
   ],
-  "notes": "这里只登记当前已明确使用的QA入口；不自动切换环境。客户端登录页已于2026-10-21观察；管理端本轮未操作。源登录交接涉及UAT，不代表本库已接入或获准执行UAT。"
+  "notes": "这里只登记当前已明确使用的QA入口；不自动切换环境。2026-10-21观察客户端页面登录，并复用外部认证包建立sheldon及lilytest的独立QA管理端会话、核对页面身份。源登录交接涉及UAT，不代表本库已接入或获准执行UAT。"
 }

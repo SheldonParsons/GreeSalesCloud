@@ -1,0 +1,40 @@
+{
+  "id": "salescloud.client.consultation.read-child-detail",
+  "version": "0.1.0",
+  "title": "从列表打开指定子单并核对详情",
+  "platform": "salescloud",
+  "surface": "client",
+  "module": "consultation",
+  "kind": "flow",
+  "entry": {
+    "file": "run.js",
+    "functionName": "readConsultationChildDetail",
+    "runtime": "browser-function",
+    "adapter": "chrome-devtools"
+  },
+  "environments": ["qa"],
+  "dependencies": [],
+  "preconditions": ["指定账号已登录QA客户端项目技术咨询列表", "已按真实子单号查询，目标行在当前页唯一", "无未处理弹窗或抽屉"],
+  "inputs": {
+    "account": "预期页面账号",
+    "childNumber": "本轮真实咨询子单号",
+    "mainNumber": "对应真实咨询主单号",
+    "projectCode": "预期项目编号",
+    "series": "预期产品系列名称",
+    "model": "预期完整机型",
+    "engineeringDescription": "预期工程详细说明",
+    "selectionRequirement": "预期选型需求",
+    "expectedStatus": "列表状态单元格完整可见文字"
+  },
+  "outputs": ["detail_verified", "blocked"],
+  "effects": ["在目标行点击查看，打开详情抽屉", "核对身份、文字和列表状态，仅返回匹配结果"],
+  "limits": ["不代替调用方清理筛选条件", "不修改或审批单据", "不输出完整详情、电话及会话信息"],
+  "verification": {
+    "status": "verified",
+    "date": "2026-10-21",
+    "environment": "qa",
+    "scope": "本轮真实新单在已接单及驳回重提后的待确认状态下，列表身份与详情七项字段回读；错误页面前置条件拒绝执行",
+    "evidence": "requirements/71652/runs/20261021-ui-discovery.md"
+  },
+  "keywords": ["项目技术咨询", "查看", "子单号", "创建回读", "接单回读"]
+}

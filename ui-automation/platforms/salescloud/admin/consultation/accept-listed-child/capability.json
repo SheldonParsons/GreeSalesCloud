@@ -1,0 +1,19 @@
+{
+  "id": "salescloud.admin.consultation.accept-listed-child",
+  "version": "0.1.0",
+  "title": "从目标子单查看抽屉接单",
+  "platform": "salescloud",
+  "surface": "admin",
+  "module": "consultation",
+  "kind": "flow",
+  "entry": {"file": "run.js", "functionName": "acceptListedConsultation", "runtime": "browser-function", "adapter": "chrome-devtools"},
+  "environments": ["qa"],
+  "dependencies": [],
+  "preconditions": ["本轮明确授权指定管理端账号接单", "销售公司咨询单目标行在当前页唯一且待接单", "无未处理弹窗"],
+  "inputs": {"accountLabel": "已验证的页面账号显示名", "childNumber": "真实子单号", "projectCode": "项目编号", "model": "完整机型", "marker": "本轮测试标识"},
+  "outputs": ["accept_feedback_observed", "blocked", "reconcile_required"],
+  "effects": ["在目标行查看并核对详情", "单击接单一次"],
+  "limits": ["接单反馈不代替保存状态核对", "接单后本账号可能失去查看权限，调用方须在客户端回读同一子单", "不自动指派、驳回或重试写操作"],
+  "verification": {"status": "verified", "date": "2026-10-21", "environment": "qa", "scope": "本轮重提后由李博接单一次并取得反馈；调用方随后在客户端查询同一子单，核对已接单", "evidence": "requirements/71652/runs/20261021-ui-discovery.md"},
+  "keywords": ["接单", "销售公司咨询单", "查看抽屉"]
+}

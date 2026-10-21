@@ -29,15 +29,136 @@
           "id": "login-handoff",
           "title": "商用客户端与管理端登录交接核对",
           "file": "shared/auth/login-handoff-review.md",
-          "status": "reviewed-not-integrated",
+          "status": "qa-admin-bridge-verified",
           "resolvedFile": "platforms/salescloud/shared/auth/login-handoff-review.md"
         }
       ],
-      "notes": "这里只登记当前已明确使用的QA入口；不自动切换环境。客户端登录页已于2026-10-21观察；管理端本轮未操作。源登录交接涉及UAT，不代表本库已接入或获准执行UAT。",
+      "notes": "这里只登记当前已明确使用的QA入口；不自动切换环境。2026-10-21观察客户端页面登录，并复用外部认证包建立sheldon及lilytest的独立QA管理端会话、核对页面身份。源登录交接涉及UAT，不代表本库已接入或获准执行UAT。",
       "manifest": "platforms/salescloud/platform.json"
     }
   ],
   "capabilities": [
+    {
+      "id": "salescloud.admin.consultation.accept-listed-child",
+      "version": "0.1.0",
+      "title": "从目标子单查看抽屉接单",
+      "platform": "salescloud",
+      "surface": "admin",
+      "module": "consultation",
+      "kind": "flow",
+      "entry": {
+        "file": "run.js",
+        "functionName": "acceptListedConsultation",
+        "runtime": "browser-function",
+        "adapter": "chrome-devtools",
+        "resolvedFile": "platforms/salescloud/admin/consultation/accept-listed-child/run.js"
+      },
+      "environments": [
+        "qa"
+      ],
+      "dependencies": [],
+      "preconditions": [
+        "本轮明确授权指定管理端账号接单",
+        "销售公司咨询单目标行在当前页唯一且待接单",
+        "无未处理弹窗"
+      ],
+      "inputs": {
+        "accountLabel": "已验证的页面账号显示名",
+        "childNumber": "真实子单号",
+        "projectCode": "项目编号",
+        "model": "完整机型",
+        "marker": "本轮测试标识"
+      },
+      "outputs": [
+        "accept_feedback_observed",
+        "blocked",
+        "reconcile_required"
+      ],
+      "effects": [
+        "在目标行查看并核对详情",
+        "单击接单一次"
+      ],
+      "limits": [
+        "接单反馈不代替保存状态核对",
+        "接单后本账号可能失去查看权限，调用方须在客户端回读同一子单",
+        "不自动指派、驳回或重试写操作"
+      ],
+      "verification": {
+        "status": "verified",
+        "date": "2026-10-21",
+        "environment": "qa",
+        "scope": "本轮重提后由李博接单一次并取得反馈；调用方随后在客户端查询同一子单，核对已接单",
+        "evidence": "requirements/71652/runs/20261021-ui-discovery.md"
+      },
+      "keywords": [
+        "接单",
+        "销售公司咨询单",
+        "查看抽屉"
+      ],
+      "manifest": "platforms/salescloud/admin/consultation/accept-listed-child/capability.json"
+    },
+    {
+      "id": "salescloud.client.consultation.approve-internal",
+      "version": "0.1.0",
+      "title": "销售公司技术主管审批同意",
+      "platform": "salescloud",
+      "surface": "client",
+      "module": "consultation",
+      "kind": "flow",
+      "entry": {
+        "file": "run.js",
+        "functionName": "approveInternalConsultation",
+        "runtime": "browser-function",
+        "adapter": "chrome-devtools",
+        "resolvedFile": "platforms/salescloud/client/consultation/approve-internal/run.js"
+      },
+      "environments": [
+        "qa"
+      ],
+      "dependencies": [],
+      "preconditions": [
+        "本轮已授权同意指定专用测试单",
+        "指定客户端账号已登录，目标行在当前页唯一",
+        "当前为待确认的技术主管审批；允许关闭同一子单的查看抽屉"
+      ],
+      "inputs": {
+        "account": "页面账号",
+        "childNumber": "真实子单号",
+        "projectCode": "项目编号",
+        "marker": "详情中的本轮测试标识",
+        "comment": "本轮审批意见"
+      },
+      "outputs": [
+        "approved",
+        "already_approved",
+        "blocked",
+        "reconcile_required"
+      ],
+      "effects": [
+        "打开指定子单审批抽屉",
+        "选择同意、填写意见并提交一次",
+        "回读同一子单待接单状态"
+      ],
+      "limits": [
+        "不查询或选取其他单据",
+        "写结果不明时不重试",
+        "不支持管理端审批或驳回"
+      ],
+      "verification": {
+        "status": "verified",
+        "date": "2026-10-21",
+        "environment": "qa",
+        "scope": "本轮专用子单驳回重提后，连续关闭查看、审批同意并回读待接单",
+        "evidence": "requirements/71652/runs/20261021-ui-discovery.md"
+      },
+      "keywords": [
+        "内部审批",
+        "技术主管审批",
+        "待确认",
+        "待接单"
+      ],
+      "manifest": "platforms/salescloud/client/consultation/approve-internal/capability.json"
+    },
     {
       "id": "salescloud.client.consultation.prepare-nonstandard",
       "version": "0.1.0",
@@ -102,6 +223,70 @@
         "表单准备"
       ],
       "manifest": "platforms/salescloud/client/consultation/prepare-nonstandard/capability.json"
+    },
+    {
+      "id": "salescloud.client.consultation.read-child-detail",
+      "version": "0.1.0",
+      "title": "从列表打开指定子单并核对详情",
+      "platform": "salescloud",
+      "surface": "client",
+      "module": "consultation",
+      "kind": "flow",
+      "entry": {
+        "file": "run.js",
+        "functionName": "readConsultationChildDetail",
+        "runtime": "browser-function",
+        "adapter": "chrome-devtools",
+        "resolvedFile": "platforms/salescloud/client/consultation/read-child-detail/run.js"
+      },
+      "environments": [
+        "qa"
+      ],
+      "dependencies": [],
+      "preconditions": [
+        "指定账号已登录QA客户端项目技术咨询列表",
+        "已按真实子单号查询，目标行在当前页唯一",
+        "无未处理弹窗或抽屉"
+      ],
+      "inputs": {
+        "account": "预期页面账号",
+        "childNumber": "本轮真实咨询子单号",
+        "mainNumber": "对应真实咨询主单号",
+        "projectCode": "预期项目编号",
+        "series": "预期产品系列名称",
+        "model": "预期完整机型",
+        "engineeringDescription": "预期工程详细说明",
+        "selectionRequirement": "预期选型需求",
+        "expectedStatus": "列表状态单元格完整可见文字"
+      },
+      "outputs": [
+        "detail_verified",
+        "blocked"
+      ],
+      "effects": [
+        "在目标行点击查看，打开详情抽屉",
+        "核对身份、文字和列表状态，仅返回匹配结果"
+      ],
+      "limits": [
+        "不代替调用方清理筛选条件",
+        "不修改或审批单据",
+        "不输出完整详情、电话及会话信息"
+      ],
+      "verification": {
+        "status": "verified",
+        "date": "2026-10-21",
+        "environment": "qa",
+        "scope": "本轮真实新单在已接单及驳回重提后的待确认状态下，列表身份与详情七项字段回读；错误页面前置条件拒绝执行",
+        "evidence": "requirements/71652/runs/20261021-ui-discovery.md"
+      },
+      "keywords": [
+        "项目技术咨询",
+        "查看",
+        "子单号",
+        "创建回读",
+        "接单回读"
+      ],
+      "manifest": "platforms/salescloud/client/consultation/read-child-detail/capability.json"
     }
   ]
 }

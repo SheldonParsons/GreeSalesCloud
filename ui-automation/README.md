@@ -1,6 +1,6 @@
 # UI自动化通用件
 
-本目录是多个平台、多个会话共用的页面操作依赖入口。现阶段只有一个经QA表单核对的能力，属于试行基础，不代表完整执行器已建立。
+本目录是多个平台、多个会话共用的页面操作依赖入口。当前有四项经指定QA数据核对的能力：表单准备、子单详情回读、客户端内部审批、管理端接单。属于试行基础，不代表完整执行器已建立。
 
 ## 分类与目录
 
@@ -57,7 +57,7 @@ node ui-automation/tools/catalog.mjs resolve salescloud.client.consultation.prep
 
 账号密码、Token、Cookie和浏览器会话仅放本机`.local/`或用户指定的凭据机制中；平台配置及能力契约不保存秘密。不同平台、端、环境和角色的会话分别管理，跨角色不共享一个不明身份的页面。浏览器pageId、快照uid属于当次运行值，不写成长期定位常量。
 
-已从“Executor”会话定位并读取GreeProject登录交接，核对摘要见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得索引入口。当前登记为`reviewed-not-integrated`，未新增可执行登录能力、未运行纯代码登录；源认证桥、会话隔离和恢复边界不能直接当成本库已经实现的功能。
+已从“Executor”会话定位并读取GreeProject登录交接，核对摘要见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得索引入口。用户恢复探索后，已复用该外部认证包建立两个QA管理端账号的独立浏览器会话，并核对身份和业务访问。当前资料状态为`qa-admin-bridge-verified`；认证包仍在外部仓库，未登记本库可执行auth能力，也不把一次桥接成功等同完整Worker恢复机制或跨环境验证。
 
 ## 扩展与验证
 
@@ -67,4 +67,4 @@ node ui-automation/tools/catalog.mjs resolve salescloud.client.consultation.prep
 4. 执行`build`和`check`，检查重复ID、入口文件、平台/环境归属、依赖版本和循环依赖。
 5. 首次实际使用后登记验证范围及需求证据。校验工具只验证本地目录和契约，不做登录或业务请求。
 
-目前唯一能力的表单准备已在QA核对；其后一次独立提交因系列指派规则提示失败。用户随后说明已手工配置好该规则，尚未重试确认。
+各能力的验证范围以契约为准。表单准备不提交；回读不修改单据；内部审批只支持已授权专用单的销司同意；接单只取得反馈，仍需调用方用同一子单号回读业务状态。工具目录权限与业务附件规则分开记录，不能在自动上传被拒绝时静默换目录绕过限制。

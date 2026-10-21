@@ -1,0 +1,19 @@
+{
+  "id": "salescloud.client.consultation.approve-internal",
+  "version": "0.1.0",
+  "title": "销售公司技术主管审批同意",
+  "platform": "salescloud",
+  "surface": "client",
+  "module": "consultation",
+  "kind": "flow",
+  "entry": {"file": "run.js", "functionName": "approveInternalConsultation", "runtime": "browser-function", "adapter": "chrome-devtools"},
+  "environments": ["qa"],
+  "dependencies": [],
+  "preconditions": ["本轮已授权同意指定专用测试单", "指定客户端账号已登录，目标行在当前页唯一", "当前为待确认的技术主管审批；允许关闭同一子单的查看抽屉"],
+  "inputs": {"account": "页面账号", "childNumber": "真实子单号", "projectCode": "项目编号", "marker": "详情中的本轮测试标识", "comment": "本轮审批意见"},
+  "outputs": ["approved", "already_approved", "blocked", "reconcile_required"],
+  "effects": ["打开指定子单审批抽屉", "选择同意、填写意见并提交一次", "回读同一子单待接单状态"],
+  "limits": ["不查询或选取其他单据", "写结果不明时不重试", "不支持管理端审批或驳回"],
+  "verification": {"status": "verified", "date": "2026-10-21", "environment": "qa", "scope": "本轮专用子单驳回重提后，连续关闭查看、审批同意并回读待接单", "evidence": "requirements/71652/runs/20261021-ui-discovery.md"},
+  "keywords": ["内部审批", "技术主管审批", "待确认", "待接单"]
+}
