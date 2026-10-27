@@ -1,6 +1,6 @@
 # 71652 独立场景节点状态表
 
-更新时间：2026-10-27T11:45:46+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
+更新时间：2026-10-27T11:58:35+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
 
 | node_id | 分片 | 场景 | 状态 |
 |---|---|---|---|
@@ -76,28 +76,28 @@
 | mcp-node-mvhyu8c6-18 | nonstandard | 改文重提，旧文字和当前文字均保留（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-34 | nonstandard | 原文重提，两次相同文字仍为两条记录（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-50 | nonstandard | 连续三次提交，升序排列且最近一条标当前（审批页） | 通过（Mind已回读） |
-| mcp-node-mvhyu8c7-10 | nonstandard | 旧长文字默认单行，展开可读完整原文（审批页） | 待补测：长文输入与原场景不同 |
+| mcp-node-mvhyu8c7-10 | nonstandard | 旧长文字默认单行，展开可读完整原文（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c7-26 | nonstandard | 当前长文字完整显示，不需要先展开（审批页） | 失败（Mind已回读） |
 | mcp-node-mvhyu8c7-42 | nonstandard | 上线前旧单首次重提后，保留最后旧原文及本次提交（审批页） | 待补测：缺少多次部署前提交的非标旧单 |
 | mcp-node-mvhv2gll-51 | technical | 首次提交后，完整展示本次技术要求（查看页） | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-1 | technical | 首节点驳回后修改技术要求重提，旧文字保留且子单号不变 | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-24 | technical | 首节点驳回后原文重提，仍新增一条技术要求历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-45 | technical | 连续三次提交技术要求，按时间升序且第三次完整显示 | 失败（Mind已回读） |
-| mcp-node-mvhv2glm-62 | technical | 展开旧的长技术要求，可读到该次提交的完整原文 | 待补测：现有样本提交次数不符 |
-| mcp-node-mvhz03tp-19 | technical | 当前为长文字时默认完整显示，滚动可读首中尾 | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhv2glm-62 | technical | 展开旧的长技术要求，可读到该次提交的完整原文 | 通过（Mind已回读） |
+| mcp-node-mvhz03tp-19 | technical | 当前为长文字时默认完整显示，滚动可读首中尾 | 失败（Mind已回读） |
 | mcp-node-mvhz03tp-35 | technical | 上线前旧单首次重提后，保留最后旧原文及本次提交（查看页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-1 | technical | 首次提交后，完整展示本次技术要求（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-16 | technical | 改文重提，旧文字和当前文字均保留（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-32 | technical | 原文重提，两次相同文字仍为两条记录（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-48 | technical | 连续三次提交，升序排列且最近一条标当前（审批页） | 失败（Mind已回读） |
-| mcp-node-mvhyu8c9-4 | technical | 旧长文字默认单行，展开可读完整原文（审批页） | 待补测：现有样本提交次数不符 |
-| mcp-node-mvhyu8c9-21 | technical | 当前长文字完整显示，不需要先展开（审批页） | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhyu8c9-4 | technical | 旧长文字默认单行，展开可读完整原文（审批页） | 通过（Mind已回读） |
+| mcp-node-mvhyu8c9-21 | technical | 当前长文字完整显示，不需要先展开（审批页） | 失败（Mind已回读） |
 | mcp-node-mvhyu8c9-37 | technical | 上线前旧单首次重提后，保留最后旧原文及本次提交（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhv2gln-29 | nonstandard | 非标选型第二节点逐级驳回后重提，保留原子单和两次选型需求 | 通过（Mind已回读） |
 | mcp-node-mvhv2glo-1 | nonstandard | 两次提交后按答复衍生机流程审批至完结，历史文字和最终答复均保留 | 通过（Mind已回读） |
 | mcp-node-mvhz03tp-49 | technical | 技术咨询第二节点逐级驳回后重提，保留原子单和两次技术要求 | 通过（Mind已回读） |
 | mcp-node-mvhv2glo-29 | nonstandard | 内部审批、接单及管理端同意不额外增加客户端提交历史 | 通过（Mind已回读） |
-| mcp-node-mvhv2glo-45 | nonstandard | 同项目同机型的两个子单，各自只展示自己的提交历史 | 待补测：A单节点状态与前置不符 |
+| mcp-node-mvhv2glo-45 | nonstandard | 同项目同机型的两个子单，各自只展示自己的提交历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2gll-33 | nonstandard | 同一子单在查看页与审批页展示相同选型需求历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2gln-11 | technical | 同一子单在查看页与审批页展示相同技术要求历史 | 通过（Mind已回读） |
 | mcp-node-mvhz03tq-7 | nonstandard | 同一主单两子单独立保存历史，查看页切换不串记录 | 通过（Mind已回读） |
