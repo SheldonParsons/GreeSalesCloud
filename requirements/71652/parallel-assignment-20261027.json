@@ -1,0 +1,808 @@
+{
+  "batch": "20261027-ui-full",
+  "formal_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_项目技术咨询单交互优化与历史版本查看_lb_20261030.amind",
+  "baseline_sha256": "1315c966cd783ef4b05e6314dd1fed0a2ad42588bb86758ac4da42ccc388c454",
+  "captured_at": "2026-10-27T10:58:09.534662+08:00",
+  "status_notice": "baseline_status仅为分派时快照；新会话须复核本批记录与当前Mind，已通过/失败/用户跳过不重跑。其他状态按自己范围实际核对。",
+  "mind_writer": "01a17af7-3d66-78f3-a55a-2b8e843b1c07",
+  "owners": {
+    "bulk": {
+      "thread_id": "01a17af7-3d66-78f3-a55a-2b8e843b1c07",
+      "count": 52
+    },
+    "nonstandard": {
+      "thread_id": "01a17b4c-7eba-7ca2-9c02-7ed885edec28",
+      "count": 30
+    },
+    "technical": {
+      "thread_id": "01a17b4c-b73c-7fd1-929b-4c96d7122687",
+      "count": 16
+    }
+  },
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhyu8bm-2",
+      "title": "默认手工填写，批量入口及数量提示统一为50",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bm-13",
+      "title": "下载官方模板，六个导入字段齐全",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bm-23",
+      "title": "模板核价字段为是/否下拉，新增数据行默认否且不允许空值",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bn-7",
+      "title": "未选择导入文件时不能进入校验执行",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bn-18",
+      "title": "校验后返回上一步更换文件，统计刷新且尚未生成卡片",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bn-32",
+      "title": "手工模式仍可新增和删除卡片，原卡内容保留",
+      "group": "批量导入——入口与官方模板",
+      "group_id": "mcp-node-mvhyu8bm-1",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bn-43",
+      "title": "产品大类为空，仅拒绝该行并保留有效行",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bn-63",
+      "title": "产品小类为空，仅拒绝该行并保留有效行",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bo-20",
+      "title": "产品系列为空，仅拒绝该行并保留有效行",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bo-40",
+      "title": "选型要求为空，仅拒绝该行并保留有效行",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bp-10",
+      "title": "是否咨询核价为空，仅拒绝该行并保留有效行",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bp-21",
+      "title": "产品大类为系统不存在的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bp-41",
+      "title": "产品小类为系统不存在的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bq-17",
+      "title": "产品系列为系统不存在的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bq-38",
+      "title": "产品小类为已存在但不属于本行上级的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8br-9",
+      "title": "产品系列为已存在但不属于本行上级的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8br-30",
+      "title": "产品大类超过100字符，该行不能导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bs-2",
+      "title": "产品大类为100字符且系统有合法归属时可以导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "skipped"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bs-24",
+      "title": "产品小类超过100字符，该行不能导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bs-44",
+      "title": "产品小类为100字符且系统有合法归属时可以导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "skipped"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bt-17",
+      "title": "产品系列超过100字符，该行不能导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bt-38",
+      "title": "产品系列为100字符且系统有合法归属时可以导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "skipped"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bt-59",
+      "title": "申请型号留空仍可导入，其他五项完整保存",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bu-19",
+      "title": "申请型号100字符可以导入且不被截断",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bu-39",
+      "title": "申请型号101字符被拒绝，有效行仍生成卡片",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bu-59",
+      "title": "申请型号保留中英文、空格、反斜线、罗马数字和温度符号",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bv-20",
+      "title": "选型要求400字符可以导入并完整保存",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bw-3",
+      "title": "选型要求401字符被拒绝，有效行仍可导入",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bw-23",
+      "title": "核价填入是和否之外的值，该行导入失败",
+      "group": "批量导入——六字段校验",
+      "group_id": "mcp-node-mvhyu8bn-42",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bw-45",
+      "title": "已有1张加48行有效数据，合计49张可以导入",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bx-6",
+      "title": "已有1张加49行有效数据，合计50张可以导入",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bx-22",
+      "title": "已有1张加50行有效数据，合计51张优先拦截",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bx-39",
+      "title": "已有49张加2行，其中1行重复，仍按51张优先拦截",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8by-6",
+      "title": "已有49张加2行，其中1行错误，仍按51张优先拦截",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8by-22",
+      "title": "已有48张加2行达到50条，再按字段校验仅导入有效行",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8by-38",
+      "title": "已有50张再上传1行，不能新增第51张",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bz-2",
+      "title": "删除一张卡片后按当前数量重新导入，计数及时更新",
+      "group": "批量导入——50条上限与优先校验",
+      "group_id": "mcp-node-mvhyu8bw-44",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bz-16",
+      "title": "同一文件两行六字段完全一致，仅生成一张并报告重复",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8bz-36",
+      "title": "导入行与已有手工卡六字段一致，忽略新增并报告重复",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c0-5",
+      "title": "仅申请型号不同，不按相同系列误判重复",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c0-25",
+      "title": "仅选型要求不同，同机型生成两张独立卡片",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c0-46",
+      "title": "仅是否咨询核价不同，生成两张卡并分别回填核价选择",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c1-12",
+      "title": "分类路径不同且各自合法，不因其余字段相同合并",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c1-32",
+      "title": "有效、重复和错误混合时，共有3可导入1无法导入2",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c1-53",
+      "title": "全部数据不合规时不生成卡片，原手工输入保留",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c2-14",
+      "title": "同一文件再次导入，已有导入卡片参与去重",
+      "group": "批量导入——六字段去重与部分成功",
+      "group_id": "mcp-node-mvhyu8bz-15",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c2-28",
+      "title": "手工与批量卡片共同提交，生成同主单下三个独立子单",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c2-45",
+      "title": "导入卡片的要求可编辑，提交后保存编辑后的文字",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c3-4",
+      "title": "切换手工和批量填写方式，已有卡片与数量均保留",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c3-16",
+      "title": "第二次导入有效新数据，继续追加在已有卡片下方",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c3-27",
+      "title": "导入执行期间显示进度且不能提前完成退出",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c3-40",
+      "title": "下载失败说明，文件名、列与两种失败原因准确对应",
+      "group": "批量导入——卡片编辑及提交创建",
+      "group_id": "mcp-node-mvhyu8c2-27",
+      "owner": "bulk",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c3-56",
+      "title": "主单技术要求附件不上传，也可提交咨询单",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c4-10",
+      "title": "主单技术要求上传10个小附件，提交后全部保留",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c4-22",
+      "title": "已有10个主单附件再选第11个，不能超过上限",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c4-34",
+      "title": "单个约45M有效附件可以上传并保存",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c4-46",
+      "title": "单个约55M有效附件被拒绝且保留其他附件",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c5-1",
+      "title": "同主单的公共附件与两张卡片附件分别保存",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c5-15",
+      "title": "管理端查看页能查看并下载本主单技术要求附件",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c5-30",
+      "title": "管理端审批页能查看并下载本主单技术要求附件",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c5-44",
+      "title": "同项目两个主单的技术附件不串单",
+      "group": "咨询主单技术要求附件",
+      "group_id": "mcp-node-mvhyu8c3-55",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glj-44",
+      "title": "首次提交后，完整展示本次选型需求（查看页）",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glk-5",
+      "title": "首节点驳回后修改选型需求重提，旧文字保留且子单号不变",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glk-28",
+      "title": "首节点驳回后原文重提，仍新增一条选型需求历史",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gll-18",
+      "title": "连续三次提交选型需求，按时间升序且第三次完整显示",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gll-16",
+      "title": "展开旧的长选型需求，可读到该次提交的完整原文",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03to-18",
+      "title": "当前为长文字时默认完整显示，滚动可读首中尾",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-5",
+      "title": "上线前旧单首次重提后，仅展示上线后的B（查看页）",
+      "group": "非标产品选型历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2glj-43",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c6-2",
+      "title": "首次提交后，完整展示本次选型需求（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c6-18",
+      "title": "改文重提，旧文字和当前文字均保留（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c6-34",
+      "title": "原文重提，两次相同文字仍为两条记录（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c6-50",
+      "title": "连续三次提交，升序排列且最近一条标当前（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c7-10",
+      "title": "旧长文字默认单行，展开可读完整原文（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c7-26",
+      "title": "当前长文字完整显示，不需要先展开（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c7-42",
+      "title": "上线前旧单首次重提后，仅展示上线后的B（审批页）",
+      "group": "非标产品选型历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c6-1",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gll-51",
+      "title": "首次提交后，完整展示本次技术要求（查看页）",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-1",
+      "title": "首节点驳回后修改技术要求重提，旧文字保留且子单号不变",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-24",
+      "title": "首节点驳回后原文重提，仍新增一条技术要求历史",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-45",
+      "title": "连续三次提交技术要求，按时间升序且第三次完整显示",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-62",
+      "title": "展开旧的长技术要求，可读到该次提交的完整原文",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-19",
+      "title": "当前为长文字时默认完整显示，滚动可读首中尾",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-35",
+      "title": "上线前旧单首次重提后，仅展示上线后的B（查看页）",
+      "group": "技术咨询历史——管理端查看页",
+      "group_id": "mcp-node-mvhv2gll-50",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-1",
+      "title": "首次提交后，完整展示本次技术要求（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-16",
+      "title": "改文重提，旧文字和当前文字均保留（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-32",
+      "title": "原文重提，两次相同文字仍为两条记录（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-48",
+      "title": "连续三次提交，升序排列且最近一条标当前（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-4",
+      "title": "旧长文字默认单行，展开可读完整原文（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-21",
+      "title": "当前长文字完整显示，不需要先展开（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-37",
+      "title": "上线前旧单首次重提后，仅展示上线后的B（审批页）",
+      "group": "技术咨询历史——管理端审批页",
+      "group_id": "mcp-node-mvhyu8c8-49",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gln-29",
+      "title": "非标选型第二节点逐级驳回后重提，保留原子单和两次选型需求",
+      "group": "审批深度与完结回归",
+      "group_id": "mcp-node-mvhv2gln-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glo-1",
+      "title": "两次提交后按答复衍生机流程审批至完结，历史文字和最终答复均保留",
+      "group": "审批深度与完结回归",
+      "group_id": "mcp-node-mvhv2gln-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-49",
+      "title": "技术咨询第二节点逐级驳回后重提，保留原子单和两次技术要求",
+      "group": "审批深度与完结回归",
+      "group_id": "mcp-node-mvhv2gln-28",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glo-29",
+      "title": "内部审批、接单及管理端同意不额外增加客户端提交历史",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glo-45",
+      "title": "同项目同机型的两个子单，各自只展示自己的提交历史",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gll-33",
+      "title": "同一子单在查看页与审批页展示相同选型需求历史",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gln-11",
+      "title": "同一子单在查看页与审批页展示相同技术要求历史",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "technical",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tq-7",
+      "title": "同一主单两子单独立保存历史，查看页切换不串记录",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tq-22",
+      "title": "同一主单两子单独立保存历史，审批页切换不串记录",
+      "group": "历史关联、跨页及子单隔离",
+      "group_id": "mcp-node-mvhv2glo-28",
+      "owner": "nonstandard",
+      "baseline_status": "not_finished"
+    }
+  ]
+}
