@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "source": "用户答复已配置；UI触发的保存请求后重新查询角色接口，关联同一目标用户",
+  "assigned_roles": {
+    "code": "00000",
+    "data": [
+      {
+        "roleId": 269,
+        "roleName": "系统管理岗"
+      },
+      {
+        "roleId": 336,
+        "roleName": "Rain-订货"
+      },
+      {
+        "roleId": 276,
+        "roleName": "林的角色-订单"
+      },
+      {
+        "roleId": 4,
+        "roleName": "林的角色"
+      }
+    ],
+    "msg": "一切ok",
+    "popupType": 1
+  },
+  "business_change_by_agent": false
+}

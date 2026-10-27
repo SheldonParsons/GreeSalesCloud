@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "inherited_evidence": "employment-check-resume-point.json",
+  "historical_action_review": {
+    "three_isolated_contexts": true,
+    "real_SSO_UI_authorization": true,
+    "no_original_screenshots_found": true
+  },
+  "supplement_scope": "仅CRM补截图和认证响应，不重跑另外两平台",
+  "state_semantics": {
+    "0": "在职",
+    "1": "离职",
+    "source": "IAM修改账号实页radio value及重新查询回读"
+  },
+  "before_auth": {
+    "workingState": 1,
+    "readback_by_reopening": true,
+    "all_system_switches_enabled": true,
+    "emailEmpty": true
+  },
+  "crm": {
+    "businessCode": "00000",
+    "authenticationMethod": "openId",
+    "usernameMatches": true,
+    "userIdMatches": true,
+    "isNewUser": true,
+    "path": "/home",
+    "loginFormVisible": false,
+    "identityLabelVisible": true,
+    "businessMenusVisible": true,
+    "accessAllowed": true
+  },
+  "restoration": {
+    "workingState": 0,
+    "label": "在职",
+    "emailEmpty": true,
+    "all_system_switches_enabled": true,
+    "independent_query_and_reopen": true
+  },
+  "result": "失败",
+  "bug": "BUG-71417-004",
+  "limitation": "原离职提示文案基线未取得，但登录放行已违反明确拦截要求；服务端根因未定位。",
+  "screenshots": {
+    "state-raw.png": "8c84f6e7e81d82815da37746831adcd604ec43852b3668593054ee3b4a233f33",
+    "crm-raw.png": "97ebd647655e8636ca1a2f01a2035ee14617d19af756a96400535b86b58df4a9"
+  }
+}

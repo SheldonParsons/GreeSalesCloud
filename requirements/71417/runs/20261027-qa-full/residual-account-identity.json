@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "business_input_ref": "qa.commercial_client.primary",
+  "business_password_input": "WrongOnlyFor71417!",
+  "method": "独立新会话，仅在默认账号密码页填另一真实业务账号及错误测试口令；不切手机号页签、不提交原账密登录，勾选协议后发起SSO",
+  "results": [
+    {
+      "platform": "crm",
+      "expectedUrl": "https://qacrm.gree.com/customer",
+      "businessAccountRef": "qa.commercial_client.primary",
+      "url": "https://qacrm.gree.com/home",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "admin",
+      "expectedUrl": "https://qasalescloud.gree.com/admin/order-management/cancel-order",
+      "businessAccountRef": "qa.commercial_client.primary",
+      "url": "https://qasalescloud.gree.com/admin/order-management/order",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "client",
+      "expectedUrl": "https://qasalescloud.gree.com/order-center/order",
+      "businessAccountRef": "qa.commercial_client.primary",
+      "url": "https://qasalescloud.gree.com/",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    }
+  ],
+  "conclusion": "三平台均登录为格力互联身份对应的主账号，未采用业务页残留账号。本例身份检查通过；独立的回跳BUG-71417-002仍存在。",
+  "discardedAttempt": "先前组合尝试包含额外手机号页签切换，在CRM遇独立入口状态问题；未将该组合结果用于判定本例。"
+}

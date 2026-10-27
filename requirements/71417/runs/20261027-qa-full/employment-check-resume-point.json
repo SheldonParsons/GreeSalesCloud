@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "temporary_working_state_code": 1,
+  "state_readback_before_authentication": true,
+  "system_permissions_unchanged_before_authentication": true,
+  "platform_results": [
+    {
+      "platform": "crm",
+      "url": "https://qacrm.gree.com/home",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "businessMessage": "一切ok",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "admin",
+      "url": "https://qasalescloud.gree.com/admin/order-management/order",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "businessMessage": "一切ok",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "client",
+      "url": "https://qasalescloud.gree.com/",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "businessMessage": "一切ok",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    }
+  ],
+  "restoration": {
+    "accountMatches": true,
+    "workingState": 0,
+    "inServiceRestored": true,
+    "emailEmpty": true,
+    "systemPermissionsUnchanged": true,
+    "mobileDisplayUnchanged": true
+  },
+  "next_action": "用户插入优先任务：仅提交BUG-71417-003到禅道。提交完成后继续归档本场景结果并推进原测试；不重跑已经完成的认证。",
+  "status": "当前离职场景已观察三平台均登录成功，恢复在职已确认；结果待正式回写和缺陷取证整理"
+}

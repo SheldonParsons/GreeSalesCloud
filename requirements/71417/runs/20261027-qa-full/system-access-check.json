@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "precondition": {
+    "workingState": 0,
+    "emailEmpty": true,
+    "originalSwitches": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "temporarySwitches": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "reopenReadback": true,
+    "roleChanges": false
+  },
+  "platforms": {
+    "crm": {
+      "actualResponse": {
+        "code": "A0210",
+        "msg": "用户名或密码错误",
+        "popupType": 1
+      },
+      "realSSOExecuted": true,
+      "protectedPageRejected": true,
+      "loginFormVisible": true,
+      "businessIdentityVisible": false
+    },
+    "admin": {
+      "actualResponse": {
+        "code": "A0210",
+        "msg": "用户名或密码错误",
+        "popupType": 1
+      },
+      "realSSOExecuted": true,
+      "protectedPageRejected": true,
+      "loginFormVisible": true,
+      "businessIdentityVisible": false
+    },
+    "client": {
+      "actualResponse": {
+        "code": "A0210",
+        "msg": "用户名或密码错误",
+        "popupType": 1
+      },
+      "realSSOExecuted": true,
+      "protectedPageRejected": true,
+      "loginFormVisible": true,
+      "businessIdentityVisible": false
+    }
+  },
+  "restoration": {
+    "switches": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "workingState": 0,
+    "emailEmpty": true,
+    "reopenReadback": true
+  },
+  "status": "待确认",
+  "reason": "三平台实际拒绝登录，接口返回A0210/用户名或密码错误；旧系统资格提示基线未取得，不能判沿用文案通过，也不能仅凭该文案新增BUG。"
+}

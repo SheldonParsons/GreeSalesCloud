@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "network": "外网（用户已确认）",
+  "preconditions": {
+    "role_configuration_rechecked": true,
+    "all_target_pages_accessible": true,
+    "account_inputs_empty": true,
+    "password_inputs_empty": true,
+    "business_slider_not_used": true,
+    "business_sms_not_requested": true,
+    "contexts": "三个新建独立未登录上下文；未注入/恢复登录态"
+  },
+  "platforms": [
+    {
+      "platform": "crm",
+      "expected_url": "https://qacrm.gree.com/customer",
+      "expected_page": "客户管理",
+      "actual_url": "https://qacrm.gree.com/home",
+      "authenticated_business_page_visible": true,
+      "returned_to_original": false,
+      "target_kind": "列表页，无单条业务记录标识"
+    },
+    {
+      "platform": "admin",
+      "expected_url": "https://qasalescloud.gree.com/admin/order-management/cancel-order",
+      "expected_page": "订单取消申请",
+      "actual_url": "https://qasalescloud.gree.com/admin/order-management/order",
+      "authenticated_business_page_visible": true,
+      "returned_to_original": false,
+      "target_kind": "列表页，无单条业务记录标识"
+    },
+    {
+      "platform": "client",
+      "expected_url": "https://qasalescloud.gree.com/order-center/order",
+      "expected_page": "我的订单",
+      "actual_url": "https://qasalescloud.gree.com/",
+      "authenticated_business_page_visible": true,
+      "returned_to_original": false,
+      "target_kind": "列表页，无单条业务记录标识"
+    }
+  ],
+  "bug": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/71417/BUG-71417-002.md",
+  "boundary": "同次执行同时具备账号密码为空、未做业务滑块及外网条件；各场景按其明确预期分别判定，角色修复后的正常认证不等于原页面回跳通过。"
+}

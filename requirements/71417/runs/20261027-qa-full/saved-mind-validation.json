@@ -1,18 +1,22 @@
 {
   "case_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_ 单点登录_lb_20261030.amind",
-  "sha256": "17ddc8ac580d750a5d3d773ac8f51860b28ee99eb47485584583342107131aa3",
+  "sha256": "565674141dc7295461a97401ec348eb3ebc34d90016d92b29b3888f98538908d",
   "scenario_count": 34,
   "node_count": 470,
   "counts": {
     "阻塞": 15,
-    "通过": 3,
-    "未开始": 15,
-    "待确认": 1
+    "通过": 6,
+    "失败": 6,
+    "待确认": 2,
+    "用户跳过": 5
   },
   "markers_match_state": true,
   "structure_preserved": true,
+  "independent_step_numbering": true,
   "metadata_preserved": true,
   "other_boards_preserved": true,
   "replacement_characters": 0,
-  "business_acceptance_complete": false
+  "business_acceptance_complete": false,
+  "latest_mcp_revision": "39",
+  "note": "MCP整树回读后以保存ZIP只读复核；长工具返回出现乱码，不能仅凭返回判断磁盘损坏。"
 }

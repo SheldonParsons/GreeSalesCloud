@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "preparation": {
+    "originalEmail": "空",
+    "temporaryEmail": "q71417@example.invalid",
+    "uiPath": "统一用户平台→基础设置→账号管理→按账号查询唯一行→修改→电子邮箱→确定",
+    "savedValueReadback": "q7****@example.invalid",
+    "rule": "字段值与互联内邮号不同；不改账号字段"
+  },
+  "platforms": [
+    {
+      "platform": "crm",
+      "url": "https://qacrm.gree.com/home",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "admin",
+      "url": "https://qasalescloud.gree.com/admin/order-management/order",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "client",
+      "url": "https://qasalescloud.gree.com/",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    }
+  ],
+  "restoration": {
+    "emailEmpty": true,
+    "accountUnchanged": true,
+    "mobileDisplayUnchanged": true,
+    "workingStateUnchanged": true,
+    "systemPermissionsUnchanged": true,
+    "roleAssociationsUnchanged": true
+  },
+  "notes": "首个构造值超过实页30字符限制，前端校验阻止，未写入；改用合规长度值后保存并回读。测试结束已恢复原空邮箱，未将数据准备校验视为SSO BUG。"
+}

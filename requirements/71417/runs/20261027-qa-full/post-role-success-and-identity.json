@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "role_configuration": "用户自行配置后，保存请求成功并重新查询到4个角色；Agent未改角色",
+  "user_record": {
+    "account_exact_match": true,
+    "user_id_matches_auth_responses": true,
+    "email_empty": true,
+    "workingState": 0,
+    "isLocked": false
+  },
+  "platforms": {
+    "crm": {
+      "username_matches": true,
+      "user_id_matches": true,
+      "authenticationMethod": "openId",
+      "isNewUser": true,
+      "business_page_visible": true,
+      "ui_identity": "个人中心可见账号与指定账号一致；业务页面可访问",
+      "forced_password_change": false,
+      "default_landing": "/home"
+    },
+    "admin": {
+      "username_matches": true,
+      "user_id_matches": true,
+      "authenticationMethod": "openId",
+      "isNewUser": true,
+      "business_page_visible": true,
+      "ui_identity": "个人中心可见账号与指定账号一致；业务页面可访问",
+      "forced_password_change": false,
+      "default_landing": "/admin/order-management/order"
+    },
+    "client": {
+      "username_matches": true,
+      "user_id_matches": true,
+      "authenticationMethod": "openId",
+      "isNewUser": true,
+      "business_page_visible": true,
+      "ui_identity": "业务首页显示本人昵称；登录响应账号/用户ID与IAM唯一记录匹配",
+      "forced_password_change": false,
+      "default_landing": "/"
+    }
+  },
+  "limits": "本记录证明身份及空电子邮箱不阻止登录；非默认原页面回跳仍另行执行，不据默认落地判通过"
+}

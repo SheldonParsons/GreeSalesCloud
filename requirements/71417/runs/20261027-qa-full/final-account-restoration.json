@@ -1,0 +1,11 @@
+{
+  "account_ref": "qa-sso-primary",
+  "workingState": 0,
+  "emailEmpty": true,
+  "all_system_switches_enabled": true,
+  "roles_unchanged": true,
+  "role_count": 4,
+  "lockNormal": true,
+  "save_readback": "每次临时字段恢复后通过查询及重新打开修改页核对，角色从页面触发的查询响应核对。",
+  "no_pending_form": true
+}

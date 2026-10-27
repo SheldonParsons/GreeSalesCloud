@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-27",
+  "crm": {
+    "platform": "crm",
+    "pageId": 77,
+    "result": "切手机号页签→返回账号密码页签→鼠标勾选可见隐私协议→点击单点登录，仍停留业务登录页",
+    "visibleConsentChecked": true,
+    "ssoPointerEvents": "none",
+    "noCredentialInput": true
+  },
+  "comparison": [
+    {
+      "platform": "admin",
+      "pageId": 78,
+      "result": "纯页面点击复现，未输入账号或密码",
+      "visibleConsentChecked": true,
+      "ssoPointerEvents": "auto",
+      "afterUrl": "https://wfserver.gree.com/sso/oauth/show",
+      "stayedOnLogin": false
+    },
+    {
+      "platform": "client",
+      "pageId": 79,
+      "result": "纯页面点击复现，未输入账号或密码",
+      "visibleConsentChecked": true,
+      "ssoPointerEvents": "auto",
+      "afterUrl": "https://wfserver.gree.com/sso/oauth/show",
+      "stayedOnLogin": false
+    }
+  ],
+  "ordinaryUiOnly": true,
+  "scope": "CRM独立会话纯点击复现；未输入任何凭据，也未通过脚本改协议或链接交互状态",
+  "bug": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/71417/BUG-71417-003.md",
+  "smsCaseOtherPlatforms": [
+    {
+      "platform": "admin",
+      "expectedUrl": "https://qasalescloud.gree.com/admin/order-management/cancel-order",
+      "url": "https://qasalescloud.gree.com/admin/order-management/order",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    },
+    {
+      "platform": "client",
+      "expectedUrl": "https://qasalescloud.gree.com/order-center/order",
+      "url": "https://qasalescloud.gree.com/",
+      "loginFormVisible": false,
+      "nicknameVisible": true,
+      "alerts": [],
+      "tokenStatus": 200,
+      "businessCode": "00000",
+      "usernameMatches": true,
+      "isNewUser": true,
+      "authenticationMethod": "openId",
+      "userIdMatchesExpected": true
+    }
+  ]
+}
