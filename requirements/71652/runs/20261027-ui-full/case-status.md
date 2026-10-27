@@ -1,6 +1,6 @@
 # 71652 独立场景节点状态表
 
-更新时间：2026-10-27T13:41:33+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
+更新时间：2026-10-27T13:46:20+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
 
 | node_id | 分片 | 场景 | 状态 |
 |---|---|---|---|
@@ -62,8 +62,8 @@
 | mcp-node-mvhyu8c4-34 | nonstandard | 单个约45M有效附件可以上传并保存 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c4-46 | nonstandard | 单个约55M有效附件被拒绝且保留其他附件 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c5-1 | nonstandard | 同主单的公共附件与两张卡片附件分别保存 | 通过（Mind已回读） |
-| mcp-node-mvhyu8c5-15 | nonstandard | 管理端查看页能查看并下载本主单技术要求附件 | 待确认：页面预览验收口径 |
-| mcp-node-mvhyu8c5-30 | nonstandard | 管理端审批页能查看并下载本主单技术要求附件 | 待确认：页面预览验收口径 |
+| mcp-node-mvhyu8c5-15 | nonstandard | 管理端查看页能查看并下载本主单技术要求附件 | 通过（Mind已回读） |
+| mcp-node-mvhyu8c5-30 | nonstandard | 管理端审批页能查看并下载本主单技术要求附件 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c5-44 | nonstandard | 同项目两个主单的技术附件不串单 | 通过（Mind已回读） |
 | mcp-node-mvhv2glj-44 | nonstandard | 首次提交后，完整展示本次选型需求（查看页） | 通过（Mind已回读） |
 | mcp-node-mvhv2glk-5 | nonstandard | 首节点驳回后修改选型需求重提，旧文字保留且子单号不变 | 通过（Mind已回读） |
