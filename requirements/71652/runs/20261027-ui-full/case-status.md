@@ -1,6 +1,6 @@
 # 71652 独立场景节点状态表
 
-更新时间：2026-10-27T13:46:20+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
+更新时间：2026-10-27T13:47:32+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
 
 | node_id | 分片 | 场景 | 状态 |
 |---|---|---|---|
@@ -54,7 +54,7 @@
 | mcp-node-mvhyu8c2-45 | bulk | 导入卡片的要求可编辑，提交后保存编辑后的文字 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c3-4 | bulk | 切换手工和批量填写方式，已有卡片与数量均保留 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c3-16 | bulk | 第二次导入有效新数据，继续追加在已有卡片下方 | 通过（Mind已回读） |
-| mcp-node-mvhyu8c3-27 | bulk | 导入执行期间显示进度且不能提前完成退出 | 待补测：执行中间态未观察到 |
+| mcp-node-mvhyu8c3-27 | bulk | 批量导入完成后自动返回表单，49张卡片完整生成 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c3-40 | bulk | 下载失败说明，文件名、列与两种失败原因准确对应 | 失败（Mind已回读） |
 | mcp-node-mvhyu8c3-56 | nonstandard | 主单技术要求附件不上传，也可提交咨询单 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c4-10 | nonstandard | 主单技术要求上传10个小附件，提交后全部保留 | 通过（Mind已回读） |
@@ -71,14 +71,14 @@
 | mcp-node-mvhv2gll-18 | nonstandard | 连续三次提交选型需求，按时间升序且第三次完整显示 | 通过（Mind已回读） |
 | mcp-node-mvhv2gll-16 | nonstandard | 展开旧的长选型需求，可读到该次提交的完整原文 | 通过（Mind已回读） |
 | mcp-node-mvhz03to-18 | nonstandard | 当前为长文字时默认完整显示，滚动可读首中尾 | 失败（Mind已回读） |
-| mcp-node-mvhz03tp-5 | nonstandard | 上线前旧单首次重提后，保留最后旧原文及本次提交（查看页） | 待补测：缺少多次部署前提交的非标旧单 |
+| mcp-node-mvhz03tp-5 | nonstandard | 上线前旧单首次重提后，保留最后旧原文及本次提交（查看页） | 用户跳过 |
 | mcp-node-mvhyu8c6-2 | nonstandard | 首次提交后，完整展示本次选型需求（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-18 | nonstandard | 改文重提，旧文字和当前文字均保留（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-34 | nonstandard | 原文重提，两次相同文字仍为两条记录（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-50 | nonstandard | 连续三次提交，升序排列且最近一条标当前（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c7-10 | nonstandard | 旧长文字默认单行，展开可读完整原文（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c7-26 | nonstandard | 当前长文字完整显示，不需要先展开（审批页） | 失败（Mind已回读） |
-| mcp-node-mvhyu8c7-42 | nonstandard | 上线前旧单首次重提后，保留最后旧原文及本次提交（审批页） | 待补测：缺少多次部署前提交的非标旧单 |
+| mcp-node-mvhyu8c7-42 | nonstandard | 上线前旧单首次重提后，保留最后旧原文及本次提交（审批页） | 用户跳过 |
 | mcp-node-mvhv2gll-51 | technical | 首次提交后，完整展示本次技术要求（查看页） | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-1 | technical | 首节点驳回后修改技术要求重提，旧文字保留且子单号不变 | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-24 | technical | 首节点驳回后原文重提，仍新增一条技术要求历史 | 通过（Mind已回读） |
