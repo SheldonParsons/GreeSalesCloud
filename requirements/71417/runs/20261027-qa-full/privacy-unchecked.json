@@ -1,0 +1,26 @@
+{
+  "scenario": "mcp-node-mvgg85d7-10",
+  "date": "2026-10-27",
+  "account": "未输入",
+  "crm": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Successfully clicked on the element\n## Latest page snapshot\nuid=5_0 RootWebArea \"GREE-CRM\" url=\"https://qacrm.gree.com/login\"\n  uid=5_1 image \"logo\" url=\"https://qacrm.gree.com/static/svg/logo-1c45fe08.svg\"\n  uid=5_2 \"欢迎登录\"\n  uid=5_3 \"客户资源管理系统\"\n  uid=5_4 \"测试\"\n  uid=5_5 tab \"账号密码登录\" selectable selected\n  uid=5_6 tab \"手机号登录\" selectable\n  uid=5_7 tabpanel \"账号密码登录\" focusable focused\n    uid=5_8 form\n      uid=5_9 textbox \"请输入账号\" required\n      uid=5_10 textbox \"请输入密码\" required\n      uid=5_11 image \"eye-invisible\"\n      uid=5_12 button \"忘记密码?\"\n      uid=5_13 button \"登 录\" disableable disabled\n      uid=8_0 link \"单点登录\" url=\"https://wfserver.gree.com/sso/oauth/show?appid=REDACTED\"\n      uid=5_14 checkbox \"我已阅读并同意格力营销一体化平台《隐私协议》  \"\n      uid=5_15 \"我已阅读并同意格力营销一体化平台\"\n      uid=5_16 \"《隐私协议》\"\n      \" \"\n"
+      }
+    ]
+  },
+  "admin": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Successfully clicked on the element\n## Latest page snapshot\nuid=6_0 RootWebArea \"GREE-订单管理系统\" url=\"https://qasalescloud.gree.com/admin/login\"\n  uid=6_1 \"欢迎登录\"\n  uid=6_2 heading \"智能供销云平台\" level=\"3\"\n  uid=6_3 \"测试\"\n  uid=6_4 tab \"账号密码登录\" selectable selected\n  uid=6_5 tab \"手机号登录\" selectable\n  uid=6_6 tabpanel \"账号密码登录\" focusable focused\n    uid=6_7 form\n      uid=6_8 textbox \"请输入账号\" required\n      uid=6_9 textbox \"请输入密码\" required\n      uid=6_10 image \"eye-invisible\"\n      uid=6_11 button \"忘记密码?\"\n      uid=6_12 \"当前进入：管理人员后台登录入口\"\n      uid=6_13 \"测试环境\"\n      uid=6_14 button \"登录后台管理端\" disableable disabled\n      uid=6_15 link \"单点登录\" url=\"https://wfserver.gree.com/sso/oauth/show?appid=REDACTED\"\n      uid=6_17 checkbox \"我已阅读并同意格力营销一体化平台《隐私协议》  \"\n      uid=6_18 \"我已阅读并同意格力营销一体化平台\"\n      uid=6_19 \"《隐私协议》\"\n      \" \"\n"
+      }
+    ]
+  },
+  "client": {
+    "page": "https://qasalescloud.gree.com/login",
+    "consent": false,
+    "after_click": "同一业务登录页；文档请求仅为login，无认证导航"
+  }
+}

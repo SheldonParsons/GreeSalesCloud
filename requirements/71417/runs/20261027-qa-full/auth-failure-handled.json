@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-27",
+  "scenario": "mcp-node-mvgg85d8-9",
+  "input": {
+    "username": "QA71417_NO_SUCH_USER_20261027",
+    "password": "InvalidOnly71417!",
+    "kind": "构造的失败测试输入，非真实凭据；未对主账号试错"
+  },
+  "platforms": {
+    "crm": {
+      "alert": "域用户名或者密码错误.",
+      "after": "仍在格力互联CRM测试应用认证页"
+    },
+    "admin": {
+      "alert": "域用户名或者密码错误.",
+      "after": "仍在格力互联管理端测试应用认证页"
+    },
+    "client": {
+      "alert": "域用户名或者密码错误.",
+      "after": "仍在格力互联客户端测试应用认证页"
+    }
+  },
+  "tool_boundary": "首次click附带快照遇网页alert而超时；只接受已观察到的alert，没有重放提交。不是业务BUG。"
+}

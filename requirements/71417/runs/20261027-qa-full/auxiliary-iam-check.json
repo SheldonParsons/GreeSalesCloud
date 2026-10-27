@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-27",
+  "purpose": "只读核对单点登录匹配用户与角色，不测试IAM自身SSO入口",
+  "browser_context": "本任务独立IAM会话",
+  "credential_ref": "qa.commercial_admin.primary",
+  "actions": [
+    "填写本机QA管理员账密",
+    "勾选隐私协议",
+    "点击登 录一次"
+  ],
+  "observed": "页面进入统一用户平台，当前身份显示系统管理员",
+  "state": "辅助登录完成，开始只读核对",
+  "no_business_write": true,
+  "no_session_injection": true,
+  "human_action": "用户明确回复已手动完成滑块"
+}

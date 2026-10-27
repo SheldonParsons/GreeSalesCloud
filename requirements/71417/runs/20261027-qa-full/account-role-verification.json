@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "helper_account_ref": "qa.commercial_admin.primary",
+  "steps": [
+    "用户人工完成辅助IAM登录滑块",
+    "基础设置→账号管理，在账号筛选框输入指定内邮账号并查询",
+    "回读唯一账号行，打开该行账号角色",
+    "分别查看CRM、订单管理端、订单订货端页签；未修改或保存角色"
+  ],
+  "identity": {
+    "exact_account_match": true,
+    "query_result_count": 1,
+    "role_query_user_id_matches_account_record": true
+  },
+  "data": {
+    "userRolesResponse": {
+      "code": "00000",
+      "data": [],
+      "msg": "一切ok",
+      "popupType": 1
+    },
+    "email_empty": true,
+    "permissionStatus": null,
+    "isLocked": false,
+    "workingState": 0,
+    "type": null,
+    "orgType": 1
+  },
+  "ui": {
+    "crm": "暂无数据",
+    "admin": "暂无数据",
+    "client": "暂无数据"
+  },
+  "conclusion": "当前账号未关联角色，先前已配置角色的用户口头确认与实页/接口记录不一致；普通登录前置不满足。BUG-71417-001撤回为数据问题，保留历史证据；等待指定目标角色后配置。",
+  "business_write": false
+}

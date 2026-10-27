@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa-sso-primary",
+  "network": "外网（2026-10-27用户确认）",
+  "preparation": {
+    "business_inputs": "空",
+    "consent": "已勾选",
+    "business_sms_requested": false,
+    "business_slider_completed": false
+  },
+  "auth": {
+    "controls": [
+      "密码登陆",
+      "请输入邮箱号",
+      "请输入开机密码",
+      "授权并登录"
+    ],
+    "identity": "本机指定的内邮短账号",
+    "action": "每个平台真实UI授权提交一次",
+    "returned_to_source": true
+  },
+  "platforms": {
+    "crm": {
+      "source": "CRM QA",
+      "after": "返回CRM登录页",
+      "status": 400,
+      "code": "B0327",
+      "message": "请联系管理员绑定账号的角色!",
+      "ui_alert_observed": true
+    },
+    "admin": {
+      "source": "订单管理端QA",
+      "after": "返回管理端登录页",
+      "status": 400,
+      "code": "B0327",
+      "message": "请联系管理员绑定账号的角色!",
+      "ui_alert_observed": true
+    },
+    "client": {
+      "source": "订单客户端QA",
+      "after": "返回客户端登录页",
+      "status": 400,
+      "code": "B0327",
+      "message": "请联系管理员绑定账号的角色!",
+      "ui_alert_observed": false,
+      "response_observed": true
+    }
+  },
+  "decision": "权限资格待确认；非完整登录通过，不先归为BUG",
+  "sensitive_values_omitted": [
+    "password",
+    "account value",
+    "authorization code",
+    "token",
+    "cookies",
+    "complete callback URL"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-27",
+  "account_ref": "qa.commercial_admin.silence7",
+  "qualification": {
+    "exactAccountFound": true,
+    "workingState": "在职",
+    "lockState": "正常",
+    "systemsEnabled": [
+      "CRM",
+      "订单管理端",
+      "订单订货端"
+    ],
+    "assignedRoleCount": 4
+  },
+  "pages": {
+    "crm": {
+      "context": "sso71417-20261027-legacy-crm",
+      "ui": "拖动滑块完成拼图"
+    },
+    "admin": {
+      "context": "sso71417-20261027-legacy-admin",
+      "ui": "拖动滑块完成拼图"
+    },
+    "client": {
+      "context": "sso71417-20261027-legacy-client",
+      "ui": "拖动滑块完成拼图"
+    }
+  },
+  "actions": "分别提交原账密登录一次，未使用SSO或会话注入",
+  "state": "等待人工验证码；原滑块存在仅为部分检查，不代表完整登录通过"
+}

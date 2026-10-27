@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-27",
+  "network": "外网，用户确认",
+  "account_ref": "qa-sso-primary",
+  "qualification_source": "用户明确确认已配置三平台可登录角色",
+  "platforms": {
+    "crm": {
+      "original_page": "https://qacrm.gree.com/",
+      "callback": "CRM登录页",
+      "response": {
+        "status": 400,
+        "code": "B0327",
+        "message": "请联系管理员绑定账号的角色!"
+      }
+    },
+    "admin": {
+      "original_page": "https://qasalescloud.gree.com/admin/material-center/material-management",
+      "callback": "订单管理端登录页",
+      "response": {
+        "status": 400,
+        "code": "B0327",
+        "message": "请联系管理员绑定账号的角色!"
+      }
+    },
+    "client": {
+      "original_page": "https://qasalescloud.gree.com/order-center/order",
+      "callback": "订单客户端登录页",
+      "response": {
+        "status": 400,
+        "code": "B0327",
+        "message": "请联系管理员绑定账号的角色!"
+      }
+    }
+  },
+  "request_evidence": {
+    "grantType": "gree_sso",
+    "authcode": "实际存在，值不记录",
+    "password_in_business_request": false
+  },
+  "bug": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/71417/archive/BUG-71417-001.md",
+  "screenshots": "本机BUG assets/BUG-71417-001，已查看原图与标注图，原图未改动",
+  "classification": "失败；业务登录接口返回角色拒绝，初步指派后端，根因待定位",
+  "historical_bug_path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/71417/BUG-71417-001.md",
+  "current_status": "已撤回：实页与接口确认角色为空，测试前置不满足",
+  "superseded_by": "account-role-verification.json"
+}

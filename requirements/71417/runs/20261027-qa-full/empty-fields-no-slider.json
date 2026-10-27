@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-27",
+  "scenarios": [
+    "mcp-node-mvgg85d7-34",
+    "mcp-node-mvgg85d7-40",
+    "mcp-node-mvi081rx-5"
+  ],
+  "sharedExecution": "同一组真实页面动作同时满足业务账密为空、未做业务滑块、业务短信为空三个前段条件；只检查到进入互联，不计完整场景通过",
+  "platforms": [
+    {
+      "platform": "crm",
+      "originalUrl": "https://qacrm.gree.com/",
+      "phoneAndCode": "空，未点击获取验证码",
+      "businessAccountAndPassword": "显式清空",
+      "businessSlider": "未触发或完成",
+      "consent": true,
+      "enteredGreeInterconnect": true,
+      "authSubmitted": false,
+      "remaining": "主账号角色待补齐，最终业务登录及回跳尚未执行"
+    },
+    {
+      "platform": "admin",
+      "originalUrl": "https://qasalescloud.gree.com/admin/material-center/material-management",
+      "phoneAndCode": "空，未点击获取验证码",
+      "businessAccountAndPassword": "显式清空",
+      "businessSlider": "未触发或完成",
+      "consent": true,
+      "enteredGreeInterconnect": true,
+      "authSubmitted": false,
+      "remaining": "主账号角色待补齐，最终业务登录及回跳尚未执行"
+    },
+    {
+      "platform": "client",
+      "originalUrl": "https://qasalescloud.gree.com/order-center/order",
+      "phoneAndCode": "空，未点击获取验证码",
+      "businessAccountAndPassword": "显式清空",
+      "businessSlider": "未触发或完成",
+      "consent": true,
+      "enteredGreeInterconnect": true,
+      "authSubmitted": false,
+      "remaining": "主账号角色待补齐，最终业务登录及回跳尚未执行"
+    }
+  ]
+}

@@ -1,0 +1,688 @@
+{
+  "run_id": "20261027-qa-full",
+  "case_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_ 单点登录_lb_20261030.amind",
+  "window_key": "mind:workspace#doc:1793061468634:1760da4a9af3d8",
+  "scope": [
+    "crm",
+    "admin",
+    "client"
+  ],
+  "iam_scope": "自身SSO入口/登录不适用；用户映射依赖保留",
+  "marker_mapping": {
+    "通过": "task:100",
+    "失败": "other:error",
+    "阻塞": "other:time",
+    "待确认": "other:question",
+    "不适用": "other:ignore"
+  },
+  "cases": [
+    {
+      "node_id": "mcp-node-mvgg85d7-1",
+      "title": "内网登录页显示单点入口，原登录方式保留",
+      "group": "登录页入口",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "case-status.json（network字段）"
+      ],
+      "bugs": [],
+      "reason": "用户确认本轮电脑在外网，尚无已确认内网接入条件；本轮没有切换网络，不能用外网入口结果代替内网场景。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvi081rw-1",
+      "title": "外网登录页显示单点入口，原登录方式保留",
+      "group": "登录页入口",
+      "status": "通过",
+      "platforms": {
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "external-entry.json"
+      ],
+      "bugs": [],
+      "reason": "用户确认外网；三个QA默认账密登录页可见单点入口，账密/手机号两种原入口及其原控件保留。手机号页签自身无单点入口，仅记页面结构差异，不擅自扩大需求为所有页签都必须展示。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-7",
+      "title": "输入经销商账号后，单点登录按钮仍显示",
+      "group": "登录页入口",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "尚未核实一个可用于本例的真实经销商身份账号。现有客户端参考账号为销售公司账号；IAM定向查询未取得已确认经销商候选，不能用普通员工/销司账号代替。待原登录回归会话就绪后继续定位经销商测试数据。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-10",
+      "title": "未勾选隐私协议，不能发起单点登录",
+      "group": "登录页入口",
+      "status": "通过",
+      "platforms": {
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "privacy-unchecked.json"
+      ],
+      "bugs": [],
+      "reason": "三个适用QA登录页均在协议未勾选时点击【单点登录】，仍停留本平台登录页，未出现格力互联认证页面。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-13",
+      "title": "账号具备访问资格，单点登录后回到原业务页面",
+      "group": "格力互联授权与回跳",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "three-platform-auth.json",
+        "bug-001-reproduction.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "已查询确认qa-sso-primary当前角色列表为空，普通成功登录前置不满足；等待用户指定目标角色后配置并重测。",
+      "original_markers": [],
+      "original_note": "",
+      "history": [
+        {
+          "status": "阻塞",
+          "reason": "qa-sso-primary 已在三平台完成格力互联认证并回到来源系统，但业务登录均返回B0327无角色提示；权限资格与原业务目标尚未确认，不能验证具备资格后的原页面回跳。",
+          "evidence": [
+            "three-platform-auth.json"
+          ]
+        },
+        {
+          "status": "失败",
+          "reason": "用户确认测试账号已配置三平台可登录角色；重新从CRM业务入口、管理端物料管理页、客户端订单页发起真实SSO，三平台均返回B0327无角色提示，未进入业务页。",
+          "bugs": [
+            "BUG-71417-001"
+          ],
+          "superseded_by": "account-role-verification.json"
+        }
+      ],
+      "retracted_bugs": [
+        "archive/BUG-71417-001.md"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-4",
+      "title": "外网使用内邮短账号授权，登录后返回原页面",
+      "group": "格力互联授权与回跳",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "three-platform-auth.json",
+        "bug-001-reproduction.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "已查询确认qa-sso-primary当前角色列表为空，普通成功登录前置不满足；等待用户指定目标角色后配置并重测。",
+      "original_markers": [],
+      "original_note": "外网能力、内邮短账号登录及返回原页面来自用户确认；本轮未实际执行。",
+      "history": [
+        {
+          "status": "失败",
+          "reason": "外网已由用户确认；三平台真实使用内邮短账号完成格力互联认证并返回来源系统，但都被B0327角色提示拒绝，未完成业务登录和原页面回跳。",
+          "bugs": [
+            "BUG-71417-001"
+          ],
+          "superseded_by": "account-role-verification.json"
+        }
+      ],
+      "retracted_bugs": [
+        "archive/BUG-71417-001.md"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-19",
+      "title": "从目标平台发起授权，由该平台领取本人内邮",
+      "group": "格力互联授权与回跳",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "three-platform-auth.json"
+      ],
+      "bugs": [],
+      "reason": "前端已核对不同来源应用的互联认证页及本系统登录请求，但页面和token请求没有服务端领取内邮的凭证归属/返回内邮记录。缺可关联本次授权的脱敏联调证据，不能凭页面回跳推定该内部检查通过。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-9",
+      "title": "格力互联认证失败，由格力互联页面处理",
+      "group": "格力互联授权与回跳",
+      "status": "通过",
+      "platforms": {
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "auth-failure-handled.json"
+      ],
+      "bugs": [],
+      "reason": "三平台分别发起SSO，在格力互联使用构造无效账号输入提交；均由格力互联弹出“域用户名或者密码错误”，确认后仍停留格力互联，没有登录业务系统。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-12",
+      "title": "授权已返回但未取得内邮，提示重新登录",
+      "group": "格力互联授权与回跳",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "未提供或定位到“授权返回但领取内邮失败”的受控条件。当前真实返回为角色拦截，不等同未领到内邮；未改服务凭证、破坏共享配置或篡改回调冒充本例。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-15",
+      "title": "领取内邮失败后恢复，重新授权可登录",
+      "group": "格力互联授权与回跳",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "缺可控制的一次领取内邮失败及恢复条件；当前账号也尚缺正常可登录角色基线。未执行故障注入或重放授权回调。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-22",
+      "title": "统一平台【账号】匹配内邮号，【电子邮箱】不同仍可登录",
+      "group": "内邮与业务账号匹配",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvi081rw-16",
+      "title": "统一平台【账号】匹配内邮号，【电子邮箱】为空仍可登录",
+      "group": "内邮与业务账号匹配",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-25",
+      "title": "统一平台无匹配【账号】，即使【电子邮箱】匹配，也提示“账号未绑定”",
+      "group": "内邮与业务账号匹配",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "当前唯一已提供的有效互联身份在QA已有同名【账号】，电子邮箱为空，不满足“仅电子邮箱命中且无同名账号”的条件。实页【员工账号】不可修改；未删除/重建现有用户。需另一可认证身份及受控映射数据。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-31",
+      "title": "内邮没有对应账号时，未绑定",
+      "group": "内邮与业务账号匹配",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "当前有效互联身份已在QA唯一命中同名【账号】，不满足无匹配前置；实页账号不可修改。没有另一已授权的有效互联测试身份，未删除现有账号或虚构认证成功。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-34",
+      "title": "业务账号密码留空，仍可单点登录",
+      "group": "单点登录校验",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "empty-fields-no-slider.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "已在三平台显式清空业务账号密码，勾选协议后均进入格力互联；最终登录和原页面回跳因当前主账号缺角色未完成。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-37",
+      "title": "业务页填错账号密码，仍按格力互联身份登录",
+      "group": "单点登录校验",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "wrong-business-inputs.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "残留错误业务账密未阻止进入格力互联；后续身份及登录结果因测试账号当前角色列表为空而阻塞，已撤回BUG依赖。",
+      "original_markers": [],
+      "original_note": "",
+      "history": [
+        {
+          "status": "阻塞",
+          "reason": "三平台已填另一业务账号和固定错误口令，均可经单点入口进入格力互联，未提交原账密登录；最终应以互联身份登录的检查受BUG-71417-001阻塞，不能据入口可用判整条通过。",
+          "bugs": [
+            "BUG-71417-001（阻塞依赖）"
+          ],
+          "superseded_by": "account-role-verification.json"
+        }
+      ],
+      "retracted_bugs": [
+        "archive/BUG-71417-001.md"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-40",
+      "title": "未完成业务滑块，仍可单点登录",
+      "group": "单点登录校验",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "empty-fields-no-slider.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "三平台均在未触发/完成业务滑块时进入格力互联；完整SSO后续不追加业务滑块及回原页面的检查，因当前主账号缺角色未完成。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvi081rx-5",
+      "title": "业务短信验证码留空，仍可单点登录",
+      "group": "单点登录校验",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "empty-fields-no-slider.json",
+        "account-role-verification.json"
+      ],
+      "bugs": [],
+      "reason": "三平台手机号和短信验证码保持为空、未请求验证码；按实页切回账密页签后均能进入格力互联。最终业务登录因主账号缺角色未完成。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-43",
+      "title": "未绑定双因子手机，仍可单点登录",
+      "group": "单点登录校验",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-46",
+      "title": "密码到期，单点登录不强制改密",
+      "group": "单点登录校验",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-49",
+      "title": "首次登录，单点登录不强制改密",
+      "group": "单点登录校验",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-52",
+      "title": "弱密码状态，单点登录不强制改密",
+      "group": "单点登录校验",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-55",
+      "title": "仅因输错密码锁定，仍可单点登录",
+      "group": "单点登录校验",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-58",
+      "title": "账号已禁用，单点登录仍被拦截",
+      "group": "账号访问资格",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d7-61",
+      "title": "用户已离职，单点登录仍被拦截",
+      "group": "账号访问资格",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-56",
+      "title": "未获准登录目标系统，单点登录仍被拦截",
+      "group": "账号访问资格",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-3",
+      "title": "缺少目标系统角色，单点登录仍被拦截",
+      "group": "账号访问资格",
+      "status": "待确认",
+      "platforms": {
+        "crm": "待确认",
+        "admin": "待确认",
+        "client": "待确认",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "account-role-verification.json",
+        "three-platform-auth.json"
+      ],
+      "bugs": [],
+      "reason": "已核对指定账号角色接口为空、在职、锁定正常且三个系统允许登录；现有三平台真实SSO结果均被B0327及“请联系管理员绑定账号的角色!”拦截。拒绝登录行为已有证据，但原有提示的独立基线未取得（知识库有界检索未命中），尚不能完成文案沿用比对。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-6",
+      "title": "关联渠道公司停用，仍按原规则拦截",
+      "group": "账号访问资格",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-18",
+      "title": "正确账密完成原验证后，仍可登录",
+      "group": "原登录方式",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [
+        "legacy-login-in-progress.json"
+      ],
+      "bugs": [],
+      "reason": "已核对备用业务账号在职、未锁定、三平台允许登录且已有角色；已在本任务三个独立回归会话填写正确业务账密并点击原登录，均出现拼图滑块。等待人工完成验证后核对实际登录结果。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-21",
+      "title": "有效短信验证码完成原验证后，仍可登录",
+      "group": "原登录方式",
+      "status": "阻塞",
+      "platforms": {
+        "crm": "阻塞",
+        "admin": "阻塞",
+        "client": "阻塞",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "尚无已确认完整测试手机号、对应业务账号及本次验证码取得方式；不能把互联开机密码或固定示例码当作短信验证码。未向任何手机号发码。",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-24",
+      "title": "原账密登录中，密码到期仍要求改密",
+      "group": "原登录方式",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvi081rx-40",
+      "title": "原账密登录中，首次登录仍要求改密",
+      "group": "原登录方式",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvi081ry-12",
+      "title": "原账密登录中，弱密码仍要求改密",
+      "group": "原登录方式",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    },
+    {
+      "node_id": "mcp-node-mvgg85d8-27",
+      "title": "账号仍处于密码锁定期，原账密登录被拦截",
+      "group": "原登录方式",
+      "status": "未开始",
+      "platforms": {
+        "crm": "未开始",
+        "admin": "未开始",
+        "client": "未开始",
+        "iam": "不适用"
+      },
+      "evidence": [],
+      "bugs": [],
+      "reason": "",
+      "original_markers": [],
+      "original_note": ""
+    }
+  ],
+  "network": "外网（2026-10-27用户确认）"
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-27",
+  "scenario": "mcp-node-mvgg85d7-37",
+  "results": [
+    {
+      "platform": "crm",
+      "business_account_ref": "qa.commercial_client.primary",
+      "business_password_input": "WrongOnlyFor71417!",
+      "original_login_clicked": false,
+      "entered_gree_interconnect": true,
+      "continued_authentication": false,
+      "reason": "后续登录身份检查受BUG-71417-001阻塞，未重复提交相同已知失败认证"
+    },
+    {
+      "platform": "admin",
+      "business_account_ref": "qa.commercial_client.primary",
+      "business_password_input": "WrongOnlyFor71417!",
+      "original_login_clicked": false,
+      "entered_gree_interconnect": true,
+      "continued_authentication": false,
+      "reason": "后续登录身份检查受BUG-71417-001阻塞，未重复提交相同已知失败认证"
+    },
+    {
+      "platform": "client",
+      "business_account_ref": "qa.commercial_client.primary",
+      "business_password_input": "WrongOnlyFor71417!",
+      "original_login_clicked": false,
+      "entered_gree_interconnect": true,
+      "continued_authentication": false,
+      "reason": "后续登录身份检查受BUG-71417-001阻塞，未重复提交相同已知失败认证"
+    }
+  ]
+}
