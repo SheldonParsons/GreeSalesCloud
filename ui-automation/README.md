@@ -59,7 +59,7 @@ node ui-automation/tools/catalog.mjs resolve salescloud.client.consultation.prep
 
 账号密码、Token、Cookie和浏览器会话仅放本机`.local/`或用户指定的凭据机制中；平台配置及能力契约不保存秘密。不同平台、端、环境和角色的会话分别管理，跨角色不共享一个不明身份的页面。浏览器pageId、快照uid属于当次运行值，不写成长期定位常量。
 
-已从“Executor”会话定位并读取GreeProject登录交接，核对摘要见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得索引入口。用户恢复探索后，已复用该外部认证包建立三个QA管理端账号的独立浏览器会话，并核对身份和业务访问。当前资料状态为`qa-admin-bridge-verified`；认证包仍在外部仓库，未登记本库可执行auth能力，也不把一次桥接成功等同完整Worker恢复机制或跨环境验证。
+GreeProject外部认证来源及具体实测范围统一见[平台登录资料](platforms/salescloud/shared/auth/login-handoff-review.md)，可通过`platform salescloud`取得入口。该资料已包含三个QA管理端账号及2026-10-27新增的CQRain03客户端桥接证据。认证包仍在外部仓库，本库未登记可执行auth能力；页面身份、业务结果、下载及被测SSO链路分别验证，不把桥接成功等同完整Worker恢复或跨环境验证。
 
 ## 扩展与验证
 
