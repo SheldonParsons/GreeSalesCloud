@@ -12,7 +12,7 @@
 
 - 治理任务：维护本次分工、交接边界和跨任务审计。
 - 原主要任务：`01a1580e-2a1c-7292-97df-2cd2f14a0d59`，保留C01—C10、业务规则、覆盖和采样上下文，负责整理交接及调度。
-- 新执行任务：由原主要任务通过create_thread创建，模型明确为`gpt-6.1-terra`，保存的本地GreeSalesCloud项目，`environment.type=local`。不得创建worktree或子代理。
+- 新执行任务：原主要任务已通过create_thread创建，任务ID `01a17af7-3d66-78f3-a55a-2b8e843b1c07`，标题“71652｜UI测试执行（Terra）”。治理已读取创建调用，确认指定模型为`gpt-6.1-terra`；任务列表确认位于当前本地GreeSalesCloud项目。不得创建worktree或子代理。
 - 正式Mind唯一入口：`/Users/sheldon/Documents/crm/2026/1030/V7.32版本_项目技术咨询单交互优化与历史版本查看_lb_20261030.amind`，已核对文件存在。仓库内残留同名文件不作为维护入口。
 - 原任务负责需求README及调度资料；执行任务启动后负责本批runs、正式Mind结果回写和本地BUG。避免两个任务并发编辑同一Mind或暂存同一文件；原任务通过只读产物和任务状态获取结果。
 
@@ -59,4 +59,4 @@ BUG标题：【环境-客户端/管理端-功能】BUG描述（按实际发生�
 
 [OpenAI官方说明](https://learn.chatgpt.com/docs/whats-new/october-26-30-2026#use-gpt-61-terra-for-visual-reasoning-and-computer-use)将GPT-6.1 Terra定位于图像／屏幕理解与电脑操作，支持用它承接页面执行的选择；没有据此证明本项目执行准确率、总耗时或Token成本一定更优。模型变化不改变业务验收、Chrome DevTools工具约定、证据要求和权限范围。
 
-新任务的创建ID、准备结果与实际执行事实以原主要任务返回为准。治理本次未操作QA、修改Mind或创建BUG。
+新任务已开始只读准备，仍等待用户明确启动业务执行；准备和执行结果以原主要任务及执行任务真实回执为准。治理本次未操作QA、修改Mind或创建BUG。
