@@ -1,6 +1,6 @@
 # 71652 独立场景节点状态表
 
-更新时间：2026-10-27T11:11:04+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
+更新时间：2026-10-27T11:19:48+08:00。按 node_id 去重；Mind标记和本批已核实记录优先，分片最新报告须核对后才合并。历史标记不能单独证明本批执行。
 
 | node_id | 分片 | 场景 | 状态 |
 |---|---|---|---|
@@ -19,12 +19,12 @@
 | mcp-node-mvhyu8bp-41 | bulk | 产品小类为系统不存在的值，该行导入失败 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bq-17 | bulk | 产品系列为系统不存在的值，该行导入失败 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bq-38 | bulk | 产品小类为已存在但不属于本行上级的值，该行导入失败 | 通过（Mind已回读） |
-| mcp-node-mvhyu8br-9 | bulk | 产品系列为已存在但不属于本行上级的值，该行导入失败 | 未开始 |
-| mcp-node-mvhyu8br-30 | bulk | 产品大类超过100字符，该行不能导入 | 未开始 |
+| mcp-node-mvhyu8br-9 | bulk | 产品系列为已存在但不属于本行上级的值，该行导入失败 | 通过（Mind已回读） |
+| mcp-node-mvhyu8br-30 | bulk | 产品大类超过100字符，该行不能导入 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bs-2 | bulk | 产品大类为100字符且系统有合法归属时可以导入 | 用户跳过 |
-| mcp-node-mvhyu8bs-24 | bulk | 产品小类超过100字符，该行不能导入 | 未开始 |
+| mcp-node-mvhyu8bs-24 | bulk | 产品小类超过100字符，该行不能导入 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bs-44 | bulk | 产品小类为100字符且系统有合法归属时可以导入 | 用户跳过 |
-| mcp-node-mvhyu8bt-17 | bulk | 产品系列超过100字符，该行不能导入 | 未开始 |
+| mcp-node-mvhyu8bt-17 | bulk | 产品系列超过100字符，该行不能导入 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bt-38 | bulk | 产品系列为100字符且系统有合法归属时可以导入 | 用户跳过 |
 | mcp-node-mvhyu8bt-59 | bulk | 申请型号留空仍可导入，其他五项完整保存 | 通过（Mind已回读） |
 | mcp-node-mvhyu8bu-19 | bulk | 申请型号100字符可以导入且不被截断 | 通过（Mind已回读） |
@@ -41,7 +41,7 @@
 | mcp-node-mvhyu8by-22 | bulk | 已有48张加2行达到50条，再按字段校验仅导入有效行 | 未开始 |
 | mcp-node-mvhyu8by-38 | bulk | 已有50张再上传1行，不能新增第51张 | 未开始 |
 | mcp-node-mvhyu8bz-2 | bulk | 删除一张卡片后按当前数量重新导入，计数及时更新 | 未开始 |
-| mcp-node-mvhyu8bz-16 | bulk | 同一文件两行六字段完全一致，仅生成一张并报告重复 | 未开始 |
+| mcp-node-mvhyu8bz-16 | bulk | 同一文件两行六字段完全一致，仅生成一张并报告重复 | 失败（Mind已回读） |
 | mcp-node-mvhyu8bz-36 | bulk | 导入行与已有手工卡六字段一致，忽略新增并报告重复 | 失败（Mind已回读） |
 | mcp-node-mvhyu8c0-5 | bulk | 仅申请型号不同，不按相同系列误判重复 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c0-25 | bulk | 仅选型要求不同，同机型生成两张独立卡片 | 失败（Mind已回读） |
@@ -62,19 +62,19 @@
 | mcp-node-mvhyu8c4-34 | nonstandard | 单个约45M有效附件可以上传并保存 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c4-46 | nonstandard | 单个约55M有效附件被拒绝且保留其他附件 | 通过（Mind已回读） |
 | mcp-node-mvhyu8c5-1 | nonstandard | 同主单的公共附件与两张卡片附件分别保存 | 通过（Mind已回读） |
-| mcp-node-mvhyu8c5-15 | nonstandard | 管理端查看页能查看并下载本主单技术要求附件 | 未开始 |
-| mcp-node-mvhyu8c5-30 | nonstandard | 管理端审批页能查看并下载本主单技术要求附件 | 未开始 |
-| mcp-node-mvhyu8c5-44 | nonstandard | 同项目两个主单的技术附件不串单 | 未开始 |
+| mcp-node-mvhyu8c5-15 | nonstandard | 管理端查看页能查看并下载本主单技术要求附件 | 阻塞：隔离管理端附件未完成预览和下载落地 |
+| mcp-node-mvhyu8c5-30 | nonstandard | 管理端审批页能查看并下载本主单技术要求附件 | 阻塞：隔离管理端附件未完成预览和下载落地 |
+| mcp-node-mvhyu8c5-44 | nonstandard | 同项目两个主单的技术附件不串单 | 通过（Mind已回读） |
 | mcp-node-mvhv2glj-44 | nonstandard | 首次提交后，完整展示本次选型需求（查看页） | 通过（Mind已回读） |
 | mcp-node-mvhv2glk-5 | nonstandard | 首节点驳回后修改选型需求重提，旧文字保留且子单号不变 | 通过（Mind已回读） |
 | mcp-node-mvhv2glk-28 | nonstandard | 首节点驳回后原文重提，仍新增一条选型需求历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2gll-18 | nonstandard | 连续三次提交选型需求，按时间升序且第三次完整显示 | 通过（Mind已回读） |
 | mcp-node-mvhv2gll-16 | nonstandard | 展开旧的长选型需求，可读到该次提交的完整原文 | 未开始 |
-| mcp-node-mvhz03to-18 | nonstandard | 当前为长文字时默认完整显示，滚动可读首中尾 | 未开始 |
-| mcp-node-mvhz03tp-5 | nonstandard | 上线前旧单首次重提后，仅展示上线后的B（查看页） | 待核对：分片报告阻塞 |
+| mcp-node-mvhz03to-18 | nonstandard | 当前为长文字时默认完整显示，滚动可读首中尾 | 执行中 |
+| mcp-node-mvhz03tp-5 | nonstandard | 上线前旧单首次重提后，仅展示上线后的B（查看页） | 阻塞：旧单首次重提样本已消耗 |
 | mcp-node-mvhyu8c6-2 | nonstandard | 首次提交后，完整展示本次选型需求（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-18 | nonstandard | 改文重提，旧文字和当前文字均保留（审批页） | 通过（Mind已回读） |
-| mcp-node-mvhyu8c6-34 | nonstandard | 原文重提，两次相同文字仍为两条记录（审批页） | 待核对：分片报告通过 |
+| mcp-node-mvhyu8c6-34 | nonstandard | 原文重提，两次相同文字仍为两条记录（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c6-50 | nonstandard | 连续三次提交，升序排列且最近一条标当前（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c7-10 | nonstandard | 旧长文字默认单行，展开可读完整原文（审批页） | 未开始 |
 | mcp-node-mvhyu8c7-26 | nonstandard | 当前长文字完整显示，不需要先展开（审批页） | 未开始 |
@@ -83,22 +83,22 @@
 | mcp-node-mvhv2glm-1 | technical | 首节点驳回后修改技术要求重提，旧文字保留且子单号不变 | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-24 | technical | 首节点驳回后原文重提，仍新增一条技术要求历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2glm-45 | technical | 连续三次提交技术要求，按时间升序且第三次完整显示 | 失败（Mind已回读） |
-| mcp-node-mvhv2glm-62 | technical | 展开旧的长技术要求，可读到该次提交的完整原文 | 待核对：分片报告通过 |
-| mcp-node-mvhz03tp-19 | technical | 当前为长文字时默认完整显示，滚动可读首中尾 | 待核对：分片报告失败 |
-| mcp-node-mvhz03tp-35 | technical | 上线前旧单首次重提后，仅展示上线后的B（查看页） | 未开始 |
-| mcp-node-mvhyu8c8-1 | technical | 首次提交后，完整展示本次技术要求（审批页） | 待核对：分片报告通过 |
+| mcp-node-mvhv2glm-62 | technical | 展开旧的长技术要求，可读到该次提交的完整原文 | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhz03tp-19 | technical | 当前为长文字时默认完整显示，滚动可读首中尾 | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhz03tp-35 | technical | 上线前旧单首次重提后，仅展示上线后的B（查看页） | 失败（Mind已回读） |
+| mcp-node-mvhyu8c8-1 | technical | 首次提交后，完整展示本次技术要求（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-16 | technical | 改文重提，旧文字和当前文字均保留（审批页） | 通过（Mind已回读） |
-| mcp-node-mvhyu8c8-32 | technical | 原文重提，两次相同文字仍为两条记录（审批页） | 待核对：分片报告通过 |
+| mcp-node-mvhyu8c8-32 | technical | 原文重提，两次相同文字仍为两条记录（审批页） | 通过（Mind已回读） |
 | mcp-node-mvhyu8c8-48 | technical | 连续三次提交，升序排列且最近一条标当前（审批页） | 失败（Mind已回读） |
-| mcp-node-mvhyu8c9-4 | technical | 旧长文字默认单行，展开可读完整原文（审批页） | 待核对：分片报告通过 |
-| mcp-node-mvhyu8c9-21 | technical | 当前长文字完整显示，不需要先展开（审批页） | 待核对：分片报告失败 |
-| mcp-node-mvhyu8c9-37 | technical | 上线前旧单首次重提后，仅展示上线后的B（审批页） | 未开始 |
+| mcp-node-mvhyu8c9-4 | technical | 旧长文字默认单行，展开可读完整原文（审批页） | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhyu8c9-21 | technical | 当前长文字完整显示，不需要先展开（审批页） | 待补测：现有样本提交次数不符 |
+| mcp-node-mvhyu8c9-37 | technical | 上线前旧单首次重提后，仅展示上线后的B（审批页） | 失败（Mind已回读） |
 | mcp-node-mvhv2gln-29 | nonstandard | 非标选型第二节点逐级驳回后重提，保留原子单和两次选型需求 | 未开始 |
 | mcp-node-mvhv2glo-1 | nonstandard | 两次提交后按答复衍生机流程审批至完结，历史文字和最终答复均保留 | 未开始 |
-| mcp-node-mvhz03tp-49 | technical | 技术咨询第二节点逐级驳回后重提，保留原子单和两次技术要求 | 未开始 |
-| mcp-node-mvhv2glo-29 | nonstandard | 内部审批、接单及管理端同意不额外增加客户端提交历史 | 待核对：分片报告通过 |
-| mcp-node-mvhv2glo-45 | nonstandard | 同项目同机型的两个子单，各自只展示自己的提交历史 | 执行中 |
-| mcp-node-mvhv2gll-33 | nonstandard | 同一子单在查看页与审批页展示相同选型需求历史 | 待核对：分片报告通过 |
+| mcp-node-mvhz03tp-49 | technical | 技术咨询第二节点逐级驳回后重提，保留原子单和两次技术要求 | 通过（Mind已回读） |
+| mcp-node-mvhv2glo-29 | nonstandard | 内部审批、接单及管理端同意不额外增加客户端提交历史 | 通过（Mind已回读） |
+| mcp-node-mvhv2glo-45 | nonstandard | 同项目同机型的两个子单，各自只展示自己的提交历史 | 待汇总/回写：分片报告通过 |
+| mcp-node-mvhv2gll-33 | nonstandard | 同一子单在查看页与审批页展示相同选型需求历史 | 通过（Mind已回读） |
 | mcp-node-mvhv2gln-11 | technical | 同一子单在查看页与审批页展示相同技术要求历史 | 通过（Mind已回读） |
-| mcp-node-mvhz03tq-7 | nonstandard | 同一主单两子单独立保存历史，查看页切换不串记录 | 未开始 |
-| mcp-node-mvhz03tq-22 | nonstandard | 同一主单两子单独立保存历史，审批页切换不串记录 | 未开始 |
+| mcp-node-mvhz03tq-7 | nonstandard | 同一主单两子单独立保存历史，查看页切换不串记录 | 通过（Mind已回读） |
+| mcp-node-mvhz03tq-22 | nonstandard | 同一主单两子单独立保存历史，审批页切换不串记录 | 通过（Mind已回读） |
