@@ -1,0 +1,32 @@
+{
+  "node_id": "mcp-node-mvhyu8bm-23",
+  "owner": "bulk",
+  "worker": "technical",
+  "updated_at": "2026-10-27T12:14:58.442108+08:00",
+  "status": "failed",
+  "baseline": "not_finished",
+  "method": "只读检查已实际下载官方模板的工作表、OOXML数据验证、单元格、公式、表、名称与扩展；基于原件副本仅填A3:E4，保持F列和验证XML原样，经QA客户端独立表单上传校验，实际浏览器下载失败说明。",
+  "input": {
+    "environment": "QA，版本未知",
+    "account": "CQRain03",
+    "project": "重明2-26-09",
+    "marker": "71652-TECH-TEMPLATE-20261027",
+    "source_sha256": "356df836b27df301923ea3bc8a512159f2542f68ba808e1d516851985835449a",
+    "copy_sha256": "507f924e990bb3032dbc3051aa3362d189916f83ece50c9a63d98ffc14a13764",
+    "models": [
+      "GCM620 顶(配GD-ALTF480-A4)",
+      "GCM620D 顶(配GD-ALTD480-B)"
+    ],
+    "edited_cells": "仅A3:E4；F3/F4与数据验证XML逐字节等同源模板"
+  },
+  "expected": "每个填写行核价默认否，提供是/否选择且不可空",
+  "actual": "模板F3=否，F4至F102为空；F3:F102有列表验证是/否、allowBlank=false、showErrorMessage=false，无公式、表、VBA或扩展机制；说明页称空白沿用默认否。上传结果2/1/1，浏览器下载失败说明指出GCM620D行“是否咨询核价不能为空”。",
+  "limitations": "未使用或点击Excel GUI，下拉交互及手动清空时Excel实际提示未直接验证；allowBlank=false不等于已实测输入阻止。空行导入结果与原始F4内容、实际失败说明对应；未导入卡片或提交业务单。",
+  "bug": "BUG-71652-TECH-003",
+  "evidence": [
+    "requirements/71652/runs/20261027-ui-full/workers/technical/template-check.md",
+    "本机BUG-71652-TECH-003输入、失败说明及标注截图"
+  ],
+  "case_revision_needed": true,
+  "revision_reason": "本次文件级检查结合真实上传；第二数据行默认值不符导致失败，未操作Excel GUI，不声称手动选择或Excel非空提示已验证。"
+}
