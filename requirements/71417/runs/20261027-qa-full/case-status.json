@@ -607,7 +607,16 @@
       ],
       "reason": "原三平台真实SSO均在离职workingState=1时登录成功；续接核对字段语义并在CRM补真实认证、业务页面及截图。要求离职仍被拦截，实际放行。账号已恢复在职、邮箱为空、系统开关保持。",
       "original_markers": [],
-      "original_note": ""
+      "original_note": "",
+      "zentao_bugs": [
+        {
+          "local_bug": "BUG-71417-004",
+          "id": 344620,
+          "url": "https://ztpm.gree.com:8888/bug-view-344620.html",
+          "assignedTo": "汪坤",
+          "status": "已提交并核对字段/正文及两次绕缓存图片；接收方可见性未验证"
+        }
+      ]
     },
     {
       "node_id": "mcp-node-mvgg85d8-56",
