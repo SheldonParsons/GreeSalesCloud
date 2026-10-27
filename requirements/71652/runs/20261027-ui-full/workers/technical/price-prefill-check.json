@@ -1,0 +1,27 @@
+{
+  "additional_assertions_only": true,
+  "parent_case_node_id": "mcp-node-mvhyu8c0-46",
+  "updated_at": "2026-10-27T12:59:49.849101+08:00",
+  "environment": "QA，版本未知",
+  "status": "passed",
+  "yes": {
+    "status": "passed",
+    "input_sha256": "fc91a4de29c259a02e2291ceb4f27e3facfa2ede774c54cdc55117e45ae7e4e4",
+    "actual": "单行核价是校验1/1/0；导入后GCM620D新卡核价信息选中、咨询货期未选中，手工GCM620卡保持未选中。"
+  },
+  "no": {
+    "status": "passed",
+    "input_sha256": "abebea7a90da7b81104b64a769ae3d726ac43a286dfd771ffeda1f8c957ebf9b",
+    "actual": "单行核价否校验1/1/0；导入后GCM620D新卡核价信息未选中、咨询货期未选中；手工卡未改变。"
+  },
+  "original_case": "两行组合因去重失败、BUG-71652-007保留；此项只核对回填，不新增场景计数。",
+  "account": "CQRain03",
+  "project": "重明2-26-09",
+  "marker": "71652-TECH-PRICE-PREFILL",
+  "method": "同一未提交表单先导入是、检查后删除该新卡，再导入否；每次均单行，手工卡保留。",
+  "input": "均采用官方模板副本，分类为离心机/磁悬浮变频离心式压缩机/GCM系列，导入型号GCM620D、手工卡型号GCM620；两者要求不同。",
+  "form_end": "取消表单，未存草稿或提交业务单",
+  "evidence": [
+    "requirements/71652/runs/20261027-ui-full/workers/technical/price-prefill-check.md"
+  ]
+}
