@@ -1,0 +1,241 @@
+{
+  "owner": "technical",
+  "updated_at": "2026-10-27T11:22:41.296465+08:00",
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhv2gll-51",
+      "title": "首次提交后，完整展示本次技术要求（查看页）",
+      "status": "passed",
+      "input": "QA；CQRain03、李博、林莉；M=重明220261027009JS，S=重明220261027009JS-001，R=71652-TECH-20261027-FIRST，T1=11:02:30",
+      "expected": "仅展示首次完整技术要求，无其他未提交文字",
+      "actual": "查看页只显示本次完整原文；同M/S",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际采用独立R作为文字前缀；用例中部署前历史说明已过时。"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-1",
+      "title": "首节点驳回后修改技术要求重提，旧文字保留且子单号不变",
+      "status": "passed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A、B见证据",
+      "expected": "同一M/S保留A/T1及当前B/T2",
+      "actual": "查看页历史1为A/09:54:23，当前为B/09:55:54；M/S不变",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/README.md:40-51",
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际复用本批专用单及不同的A/B文本；步骤中的申请时间存在乱码。"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-24",
+      "title": "首节点驳回后原文重提，仍新增一条技术要求历史",
+      "status": "passed",
+      "input": "QA；M=重明220261027009JS、S=重明220261027009JS-001，R=71652-TECH-20261027-FIRST，原文见证据",
+      "expected": "原文重提后同S有两条相同文字和各自提交时间",
+      "actual": "查看页历史1 11:02:30及当前 11:04:15均显示相同完整原文，M/S不变",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际使用本片专用单和R原文。"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-45",
+      "title": "连续三次提交技术要求，按时间升序且第三次完整显示",
+      "status": "failed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B/C全文见证据",
+      "expected": "三次记录升序、当前C默认完整显示，可读首中尾",
+      "actual": "三条时间顺序及当前标识正确；C为单行省略，需点击展开才能读完整",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机BUG-71652-TECH-001标注截图"
+      ],
+      "bug": "BUG-71652-TECH-001",
+      "case_revision_needed": true,
+      "revision_reason": "实际C为长文、复用本批专用技术单；分组中旧的未部署说明已过时。"
+    },
+    {
+      "node_id": "mcp-node-mvhv2glm-62",
+      "title": "展开旧的长技术要求，可读到该次提交的完整原文",
+      "status": "passed",
+      "input": "QA；M=重明220261027002JS，S=重明220261027002JS-001；历史3 C/T3=11:07:19，当前D/T4=11:09:45",
+      "expected": "旧长文默认单行，展开读取完整原文",
+      "actual": "历史3默认省略，点击展开后完整C可读且与客户端提交一致，当前为D",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "四次提交中第三次长文转历史，满足独立检查；复用本片专用单。"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-19",
+      "title": "当前为长文字时默认完整显示，滚动可读首中尾",
+      "status": "failed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B/C全文见证据",
+      "expected": "三次记录升序、当前C默认完整显示，可读首中尾",
+      "actual": "三条时间顺序及当前标识正确；C为单行省略，需点击展开才能读完整",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机BUG-71652-TECH-001标注截图"
+      ],
+      "bug": "BUG-71652-TECH-001",
+      "case_revision_needed": true,
+      "revision_reason": "实际C为长文、复用本批专用技术单；分组中旧的未部署说明已过时。"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-35",
+      "title": "上线前旧单首次重提后，保留最后旧原文及本次提交（查看页）",
+      "status": "passed",
+      "input": "QA；旧技术单M=重明220261021002JS，S=重明220261021002JS-001；部署前A 2026-10-21 17:36:38，部署后B 2026-10-27 11:11:43",
+      "expected": "查看页首次重提后仅显示部署前最后一次提交为历史1及部署后B为当前，后续重提继续累积",
+      "actual": "查看页首次显示最后旧文/2026-10-21 17:36:38为历史1、B/2026-10-27 11:11:43为当前，无更早版本；再次重提后历史1旧文、历史2 B、当前C/11:16:48",
+      "evidence": [
+        "requirements/71652/runs/20261021-coverage-gap-probe.md",
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机撤回归档BUG-71652-TECH-002原图"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "用户修正规则：保留部署前最后一次已提交版本；正式场景标题和预期须同步修订。实际采用10月21日专用单。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-1",
+      "title": "首次提交后，完整展示本次技术要求（审批页）",
+      "status": "passed",
+      "input": "QA；林莉；M=重明220261027009JS，S=重明220261027009JS-001，R=71652-TECH-20261027-FIRST，T1=11:02:30",
+      "expected": "首节点审批页仅显示首次完整原文",
+      "actual": "同M/S审批页仅显示完整原文，取消退出",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际采用独立R作为文字前缀。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-16",
+      "title": "改文重提，旧文字和当前文字均保留（审批页）",
+      "status": "passed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B见证据",
+      "expected": "审批页保留历史A/T1和当前B/T2；跨页文字、时间、顺序和当前标识一致",
+      "actual": "审批页历史1 A/09:54:23，当前 B/09:55:54；与林莉查看页一致；取消后S仍已接单",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/README.md:40-52",
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际复用本批专用单及不同的A/B文本；旧记录较短无需展开。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-32",
+      "title": "原文重提，两次相同文字仍为两条记录（审批页）",
+      "status": "passed",
+      "input": "QA；M=重明220261027009JS、S=重明220261027009JS-001，R=71652-TECH-20261027-FIRST，原文见证据",
+      "expected": "审批页同S两次相同原文分别展示",
+      "actual": "历史1 11:02:30及当前 11:04:15为相同完整原文，取消退出",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际使用本片专用单和R原文。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c8-48",
+      "title": "连续三次提交，升序排列且最近一条标当前（审批页）",
+      "status": "failed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B/C全文见证据",
+      "expected": "三次升序、最新标当前且长文默认完整显示",
+      "actual": "三条时间及当前标识正确，但当前长文单行省略，需点击展开",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机BUG-71652-TECH-001标注截图"
+      ],
+      "bug": "BUG-71652-TECH-001",
+      "case_revision_needed": true,
+      "revision_reason": "实际C为长文，复用本批专用单；实际输入和示例不同。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-4",
+      "title": "旧长文字默认单行，展开可读完整原文（审批页）",
+      "status": "passed",
+      "input": "QA；M=重明220261027002JS，S=重明220261027002JS-001；历史3 C/T3=11:07:19，当前D/T4=11:09:45",
+      "expected": "审批页旧长文默认单行，展开可读完整原文",
+      "actual": "首节点历史3默认省略，点击展开后C全文多行完整，与提交一致；取消退出",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际为四次提交后第三次长文转历史；复用本片专用单。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-21",
+      "title": "当前长文字完整显示，不需要先展开（审批页）",
+      "status": "failed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B/C全文见证据",
+      "expected": "三次升序、最新标当前且长文默认完整显示",
+      "actual": "三条时间及当前标识正确，但当前长文单行省略，需点击展开",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机BUG-71652-TECH-001标注截图"
+      ],
+      "bug": "BUG-71652-TECH-001",
+      "case_revision_needed": true,
+      "revision_reason": "实际C为长文，复用本批专用单；实际输入和示例不同。"
+    },
+    {
+      "node_id": "mcp-node-mvhyu8c9-37",
+      "title": "上线前旧单首次重提后，保留最后旧原文及本次提交（审批页）",
+      "status": "passed",
+      "input": "QA；旧技术单M=重明220261021002JS，S=重明220261021002JS-001；部署前A 2026-10-21 17:36:38，部署后B 2026-10-27 11:11:43",
+      "expected": "审批页首次重提后仅显示部署前最后一次提交为历史1及部署后B为当前，后续重提继续累积",
+      "actual": "审批页首次显示最后旧文/2026-10-21 17:36:38为历史1、B/2026-10-27 11:11:43为当前，无更早版本；再次重提后历史1旧文、历史2 B、当前C/11:16:48",
+      "evidence": [
+        "requirements/71652/runs/20261021-coverage-gap-probe.md",
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md",
+        "本机撤回归档BUG-71652-TECH-002原图"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "用户修正规则：保留部署前最后一次已提交版本；正式场景标题和预期须同步修订。实际采用10月21日专用单。"
+    },
+    {
+      "node_id": "mcp-node-mvhz03tp-49",
+      "title": "技术咨询第二节点逐级驳回后重提，保留原子单和两次技术要求",
+      "status": "passed",
+      "input": "QA；M=重明220261027011JS，S=重明220261027011JS-001，R=71652-TECH-20261027-DEEP；A/T1=11:13:39，B/T2=11:15:22",
+      "expected": "第二节点驳回回首节点，再驳回销司重提，保留原M/S和两次技术要求",
+      "actual": "第二节点驳回后列表答复中、审批节点回商经部；驳回销司后客户端重提B，M/S不变；查看页历史1 A/T1及当前B/T2",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际使用本片独立单的R及A/B文字。"
+    },
+    {
+      "node_id": "mcp-node-mvhv2gln-11",
+      "title": "同一子单在查看页与审批页展示相同技术要求历史",
+      "status": "passed",
+      "input": "QA；林莉；M=重明220261027002JS，S=重明220261027002JS-001，R=71652-20261027-TECH-01；A/B见证据",
+      "expected": "审批页保留历史A/T1和当前B/T2；跨页文字、时间、顺序和当前标识一致",
+      "actual": "审批页历史1 A/09:54:23，当前 B/09:55:54；与林莉查看页一致；取消后S仍已接单",
+      "evidence": [
+        "requirements/71652/runs/20261027-ui-full/README.md:40-52",
+        "requirements/71652/runs/20261027-ui-full/workers/technical/README.md"
+      ],
+      "bug": null,
+      "case_revision_needed": true,
+      "revision_reason": "实际复用本批专用单及不同的A/B文本；旧记录较短无需展开。"
+    }
+  ]
+}
