@@ -1,6 +1,6 @@
 {
   "owner": "nonstandard",
-  "updated_at": "2026-10-27T11:30:05.695438+08:00",
+  "updated_at": "2026-10-27T13:40:30.745763+08:00",
   "cases": [
     {
       "node_id": "mcp-node-mvhv2gll-33",
@@ -269,26 +269,26 @@
     {
       "node_id": "mcp-node-mvhyu8c5-15",
       "source": "nonstandard_execution",
-      "status": "blocked",
+      "status": "passed",
       "input": "R=71652-20261027-ATTACH-01；M=重明220261027001JS；S=重明220261027001JS-001；71652-ATTACH-01-main.pdf",
       "expected": "管理端查看页预览并下载主单PDF，核对正文、落地文件大小和摘要",
-      "actual": "林莉查看页回读同M/S及主单PDF名称；审批页确认商经部技术人员答复并取消。原执行记录曾点击文件且触发请求，但未完成预览和浏览器文件落地。隔离上下文存在原生保存框限制，按交接未重复触发下载；不能以请求成功代替落地。",
+      "actual": "新建普通Chrome标签以lilytest显示林莉，按项目及S查询唯一已接单非标单，查看页核对R/M/S和主单PDF；点击文件名一次直接下载，未见内置预览窗。Downloads实际新文件1390字节，SHA-256与源文件22b4814fb460178faf5b2f3e76aeb3303cdf62c712aa61b86c1dbe11a4107766一致；pypdf打开并读到正文QA 71652-20261027-ATTACH-01 main attachment。",
       "evidence": "README.md#管理端附件下载",
       "bug": null,
       "case_operation_revision_needed": true,
-      "revision_reason": "使用已有符合条件的主单PDF并按实际文件名核对；下载与预览待完成。"
+      "revision_reason": "页面文件名与下载图标属于同一下载入口；点击后直接下载而非内置预览。建议步骤改为下载后打开本地PDF核对正文及摘要，按实际文件名和正文。"
     },
     {
       "node_id": "mcp-node-mvhyu8c5-30",
       "source": "nonstandard_execution",
-      "status": "blocked",
+      "status": "passed",
       "input": "R=71652-20261027-ATTACH-01；M=重明220261027001JS；S=重明220261027001JS-001；71652-ATTACH-01-main.pdf",
       "expected": "管理端审批页预览并下载主单PDF，核对正文、落地文件大小和摘要",
-      "actual": "林莉审批页回读同M/S及主单PDF名称；审批页确认商经部技术人员答复并取消。原执行记录曾点击文件且触发请求，但未完成预览和浏览器文件落地。隔离上下文存在原生保存框限制，按交接未重复触发下载；不能以请求成功代替落地。",
+      "actual": "普通Chrome新标签林莉，按S及项目查询已接单；审批页核对R/M/S和商经部技术人员答复节点，点击主单附件下载图标一次直接下载，未出现内置预览窗。Downloads新文件71652-ATTACH-01-main (1).pdf为1390字节，SHA-256 22b4814fb460178faf5b2f3e76aeb3303cdf62c712aa61b86c1dbe11a4107766，与源一致；pypdf打开正文QA 71652-20261027-ATTACH-01 main attachment。取消审批后同S回读已接单。",
       "evidence": "README.md#管理端附件下载",
       "bug": null,
       "case_operation_revision_needed": true,
-      "revision_reason": "使用已有符合条件的主单PDF并按实际文件名核对；下载与预览待完成。"
+      "revision_reason": "文件名与下载图标为同一下载入口；页面直接下载，无独立预览窗。建议下载后打开本地PDF核对正文、大小和摘要，并按实际文件名/正文执行。"
     },
     {
       "node_id": "mcp-node-mvhyu8c7-26",
