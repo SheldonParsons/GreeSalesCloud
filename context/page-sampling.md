@@ -64,6 +64,8 @@
 
 多执行者仅在用户明确授权时使用，划分互斥场景和单一Mind写入方、维护独立页面／数据；细则见 [UI目录维护](../ui-automation/maintenance.md)。这些方法来自71652的阶段实测与用户纠偏；不将其业务规则或未收尾的阶段数字推广到其他需求。
 
+本地BUG提交到禅道属于另一个获授权的操作阶段。用户明确指定提交对象后，参考 [禅道提单交接](../ui-automation/platforms/zentao/shared/bugs/submission-handoff.md) 核对身份、动态字段、图片、单次创建及回读；API创建本身不证明所有字段和图片已保存。该提单方法不改变被测系统UI必须真实操作的验收边界，也不授权提交其他BUG。
+
 ## 现有实践入口
 
 - [71652需求与覆盖](../requirements/71652/README.md)、[组件发现](../requirements/71652/page-discovery-20261021.md)。

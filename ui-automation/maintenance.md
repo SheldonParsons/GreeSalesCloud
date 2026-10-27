@@ -24,6 +24,8 @@
 
 ## 新片段如何进入目录
 
+只有操作实证、尚无通用脚本时，可先将说明放在对应平台目录并由入口README链接，明确“资料、未登记可执行能力”；不要为了让catalog可检索而伪造入口或契约。示例为 [禅道提单交接](platforms/zentao/shared/bugs/submission-handoff.md)。有完整实现、恢复策略和证据后再登记platform.json／capability.json，当前资料型目录不表示工具已安装。
+
 - 只沉淀真实页面中已识别的稳定片段；不为每条用例或需求复制一套脚本，不给陌生路径挂“已验证”。共享目录仅在行为与输入输出确实跨平台一致时使用。
 - 采用现有 `platforms/<平台ID>/<端ID>/<模块>/<能力名>/`，包括 `run.js` 与 `capability.json`。平台环境登记在 `platform.json`，不按QA/UAT或需求编号复制实现。
 - 沿现有契约填写稳定ID、版本、入口/runtime/adapter、输入输出、前置、effects、limits、环境、依赖及verification。在前置、输出或limits中说明权限、人工介入、配置阻塞、异步等待、部分完成和写结果未知如何处理，不发明当前工具不支持的新状态值。
