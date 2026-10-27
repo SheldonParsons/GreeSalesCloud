@@ -73,7 +73,7 @@ GreeProject外部认证来源及具体实测范围统一见[平台登录资料](
 
 ## 平台操作说明（尚未登记为可执行能力）
 
-- [禅道BUG提交交接](platforms/zentao/shared/bugs/submission-handoff.md)：2026-10-27已验证一次授权样本的图片上传、API单次创建、同账号正常编辑页补齐计划及完整回读。包含权限、动态ID、图片渲染与不明结果防重复边界；未提供独立提单MCP或通用脚本。
+- [禅道BUG提交交接](platforms/zentao/shared/bugs/submission-handoff.md)：已记录API单次创建、同账号编辑页补齐计划及上传者回读。**图片跨账号可见性未验证，2026-10-27用户报告他人不可见，图片链路暂不作为完整成功模板推广。** 原任务核查正式关联和权限中，勿重复建单；未提供独立提单MCP或通用脚本。
 
 这些资料只供检索和学习，没有capability.json／run.js时不能通过catalog作为能力执行。实际提交仍需本次具体BUG或批次授权；不得因有说明就提交其他本地BUG。
 
