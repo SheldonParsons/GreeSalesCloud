@@ -41,7 +41,7 @@
 
 登录本身是被测功能时，必须走真实待测入口、认证、回跳及必要会话处理，不能以协议登录、会话注入或恢复快照跳过该链路再宣称SSO通过。
 
-无关辅助角色准备只有在已验证适配范围和授权内才可考虑复用认证实现。当前本库的 [认证交接](../ui-automation/platforms/salescloud/shared/auth/login-handoff-review.md) 是外部来源及部分QA桥接证据，不是已登记的可执行auth能力，不证明CRM、IAM、客户端纯代码登录、UAT或完整Worker恢复可用。维护边界见 [UI目录维护](../ui-automation/maintenance.md)。
+无关辅助角色准备只有在已验证适配范围和授权内才可考虑复用认证实现。具体已验证的账号、端、环境、日期和证据统一读取 [平台认证交接](../ui-automation/platforms/salescloud/shared/auth/login-handoff-review.md) 的最新限定范围，本通用说明不另行维护固定账号名单或“某端尚未验证”清单。认证资料存在不等于已交付可执行auth能力，需另查当前索引和入口；某个商用QA账号的认证桥成功不能自动推广到其他账号、CRM/IAM、UAT、完整Worker恢复或被测SSO链路。维护边界见 [UI目录维护](../ui-automation/maintenance.md)。
 
 ## 证据、Mind和交接
 
