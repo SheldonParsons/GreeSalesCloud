@@ -1,19 +1,20 @@
 {
-  "reviewed_at": "2026-10-28T16:18:35.379382+08:00",
+  "reviewed_at": "2026-10-28T16:57:48.128046+08:00",
   "reviewer_thread_id": "01a15800-d006-7412-b639-9d37ccbe45b8",
   "bugs": [
     {
       "bug_id": "BUG-68701-001",
       "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-001-新增菜单初始类型及排序.md",
-      "sha256": "3f987b7ab32e6fa3d480a6a7705438e948734e8db13024a35e68a99a8c6f70b8",
+      "sha256": "1be060f3df2e2e070a373979e40c30accffabc5e3fd6418ba25706a62a220cf1",
       "related_node_ids": [
         "mcp-node-mvi0xm4i-1"
       ],
       "status": "local_reviewed",
-      "visual_check": "已直接查看标注PNG：两个红框分别准确圈出未选中的四类型与空排序，箭头落点正确，中文可读，不遮挡被测控件。",
-      "body_check": "步骤、结果、期望和已确认默认值一致；有真实截图内嵌，无普通链接；严重程度和优先级3，前端张文波；禅道目标字段仍待提供。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
       "images": [
         {
+          "markdown_src": "assets/BUG-68701-001/marked.png",
           "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-001/marked.png",
           "sha256": "b0b20f78bf24234238899a0da2cd93b47e548c4a864f16d9cad7ee206b62da8c",
           "width_height": [
@@ -27,17 +28,18 @@
     {
       "bug_id": "BUG-68701-002",
       "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-002-菜单备注未回显.md",
-      "sha256": "c868ffd52c33e7beb2bd78f8b2fb6612e73492ec0b1a515cdf8a13742f77b598",
+      "sha256": "154332bcba199bb6dcfc441803086142e0fbc5518ec7cf2caeb4c127da27dfb8",
       "related_node_ids": [
         "mcp-node-mvhu73w2-33"
       ],
-      "classification": "extra_finding",
+      "classification": "failed_case",
       "status": "local_reviewed",
-      "review_notes": "菜单备注与字典备注根因未证实相同，分开记录；不因额外发现自动增加场景失败数。",
-      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
-      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "review_notes": "先作为流程额外发现建档，执行者补齐完整主流程后确认其备注回显断言失败，关联该场景；账号导航/图标/刷新/重登已核对，日志未核验。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
       "images": [
         {
+          "markdown_src": "assets/BUG-68701-002/marked.png",
           "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-002/marked.png",
           "sha256": "55f0e5272bc82ab5066f0a04a783d77f3057be9d0cc4471a9dc06fd6d2f9aac4",
           "width_height": [
@@ -51,17 +53,18 @@
     {
       "bug_id": "BUG-68701-003",
       "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-003-字典类型备注未回显.md",
-      "sha256": "5b2c7e11e181e43719e6ac5c66cf3e871f894cd39765b4a46a2772a5e9b162af",
+      "sha256": "be9635055d77002821066c0b93d1a258afee13d3c716341026f8f699c6f00185",
       "related_node_ids": [
         "mcp-node-mvhu73we-37"
       ],
       "classification": "failed_case",
       "status": "local_reviewed",
       "review_notes": "已核对创建请求备注及真实编辑空值；保留未确认存储状态；目标类型43后续删除，不声称仍保留。",
-      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
-      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
       "images": [
         {
+          "markdown_src": "assets/BUG-68701-003/marked.png",
           "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-003/marked.png",
           "sha256": "e25ff99022e3626be32192317c4c3424f887ac9dcd83267ae0f36bcce741582b",
           "width_height": [
@@ -75,17 +78,18 @@
     {
       "bug_id": "BUG-68701-004",
       "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-004-含字典项类型仍可删除.md",
-      "sha256": "c65b34f85f52a0bae75d3a80aaef251b6b29b714edf2dac8fad572b56e513b6e",
+      "sha256": "e775274153b103f18506d776d0ed598c1f8290ef1d4788f8b31282f52946b056",
       "related_node_ids": [
         "mcp-node-mvhu73wn-48"
       ],
       "classification": "failed_case",
       "status": "local_reviewed",
       "review_notes": "已核对删除前两项、实际DELETE及刷新查询无记录；未推断级联删除；服务端删除保护交叶芳华排查。",
-      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
-      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
       "images": [
         {
+          "markdown_src": "assets/BUG-68701-004/marked-v2.png",
           "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-004/marked-v2.png",
           "sha256": "dc8978f1c67c9f3838d3052a1eb6df73e7e33344daa738da79920b9f214a7f03",
           "width_height": [
@@ -95,6 +99,342 @@
         }
       ],
       "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-005",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-005-菜单名称30字符被截断.md",
+      "sha256": "9af620685316ca882d0e1f4702eaac95822bf015d59978d5b6fa3e4aad5fd7a4",
+      "related_node_ids": [
+        "mcp-node-mvhu73w4-22"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "菜单名称30字符真实输入仅保留20；未提交，不虚报保存验证。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-005/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-005/marked.png",
+          "sha256": "46c362a146b71f3b930c03b741aeb99544c6630e6eaa3b06e50ccab2f2ff0b3e",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-006",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-006-已创建字典项值仍可输入修改.md",
+      "sha256": "e08270c2ae7b9243623817109f8ec99483d2efd9ace5ee7a13e1709ccb5a3807",
+      "related_node_ids": [
+        "mcp-node-mvhu73wl-27"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "已创建项值可真实输入替换值，违反只读；取消后原值保留，未声称替换值已保存。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-006/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-006/marked.png",
+          "sha256": "1429ccd417d568a72c56baa9a8bc77770898ce57c1fe8449150ee6174eda0ee7",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-007",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-007-同类型允许新增同名字典项.md",
+      "sha256": "25ad3efd489df40d964c87ce62b3228d76f1debaca9db5f96df6c57ebe3c77d6",
+      "related_node_ids": [
+        "mcp-node-mvhu73wj-32",
+        "mcp-node-mvhu73wl-37"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "合并新增和编辑两入口的同类型名称唯一性违反，均有独立复现和截图，不宣称内部技术根因已证实相同。",
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-007/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-007/marked.png",
+          "sha256": "4a20d33373350899605842820c0e9f0bcd214240a11c13fd4f1d8c41d4811e58",
+          "width_height": [
+            1440,
+            900
+          ]
+        },
+        {
+          "markdown_src": "assets/BUG-68701-007/marked-edit.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-007/marked-edit.png",
+          "sha256": "84ab289afe8f895848d168e5022c61442723a5f725259fac5f0859c2e7bc730b",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-008",
+      "related_node_ids": [
+        "mcp-node-mvhu73w7-46"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "三层菜单104→105→107刷新响应与截图一致；最多两层规则明确。",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-008-二级菜单仍可新增第三层.md",
+      "sha256": "3c6ff1534beb7ce1b39c9f987b3bba50d273f842efcf60324324a6c7ac4ca055",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-008/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-008/marked.png",
+          "sha256": "59c44404968927ad2ee0e34b819e938fcf308f8b2d0a1f00ee38d0b300c18dca",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-009",
+      "related_node_ids": [
+        "mcp-node-mvhu73wf-30",
+        "mcp-node-mvhu73we-50"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "首尾空格保留由请求响应核对，截图显示原44及新增46两类型；同一名称规范化和唯一性约束。",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-009-类型名称空格绕过唯一校验.md",
+      "sha256": "a6b82a0485c99f3c2b8a0236940c852a2a0f3234f616a3509f7de9e7a637faca",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-009/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-009/marked.png",
+          "sha256": "8cfcf703a763bb3d13382b3e82dcbf1425cfed27a753765d73a974e1e546beef",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-010",
+      "related_node_ids": [
+        "mcp-node-mvhu73wm-24",
+        "mcp-node-mvhu73wn-6"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "补拍1920x1080宽幅真实截图后默认列清晰；141/142均启用且默认，由响应交叉核对。",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-010-同类型存在两个有效默认项.md",
+      "sha256": "e70fe83c2854ffbc7a89118908dded3505f2c150da20285803e7d3cad52dd0b4",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-010/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-010/marked.png",
+          "sha256": "1a64e2f6f6296dd15fb873af876292971d4dd00b57512f9e11d6314b3603ac00",
+          "width_height": [
+            1920,
+            1080
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-011",
+      "related_node_ids": [
+        "mcp-node-mvhu73wg-54",
+        "mcp-node-mvhu73wg-44",
+        "mcp-node-mvhu73wk-32",
+        "mcp-node-mvhu73wk-41"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "两个标识字段的100/101输入分别实际验证，仅接收60字符；合并输入限制问题，不推断共享内部实现。",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-011-类型编码被截断为60字符.md",
+      "sha256": "1f224f62b8428c85a378f5da0661c54ccd7a26d959f5ef1516d6ebcde1ec5dc7",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-011/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-011/marked.png",
+          "sha256": "05a1441bee4babaf6e22f2714837bcc4e407dc3ebcdbbbeec13705a931659c28",
+          "width_height": [
+            1440,
+            900
+          ]
+        },
+        {
+          "markdown_src": "assets/BUG-68701-011/marked-item.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-011/marked-item.png",
+          "sha256": "caf0521d9146cb62a2dc046987d8f13b9add884f57281f99579279faab73f723",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-012",
+      "related_node_ids": [
+        "mcp-node-mvhu73wi-16"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-012-编辑字典类型允许名称重复.md",
+      "sha256": "6ee7832a14695d2b85ab0642a7c4fcbbf57217db067aa7c308a5b022c8a2342d",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-012/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-012/marked.png",
+          "sha256": "32ee527d9ab528cb461f31e605fe46df0272283970dfe26cec2f2799c4d91829",
+          "width_height": [
+            1920,
+            1080
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-013",
+      "related_node_ids": [
+        "mcp-node-mvhu73w6-35"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "zentao_submitted": false,
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-013-菜单排序9999被改为1000.md",
+      "sha256": "f2612a78361344ffd58e5ebf776708a0e65bf810cf564a0791b3fae4d20093b8",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-013/marked.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-013/marked.png",
+          "sha256": "2ede148e62a7ac9e31244f5ffb8c2aa7f8d28e965f3b539346dca96687931476",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-014",
+      "related_node_ids": [
+        "mcp-node-mvhu73wh-8",
+        "mcp-node-mvhu73wh-17",
+        "mcp-node-mvhu73wk-50",
+        "mcp-node-mvhu73wl-7"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "zentao_submitted": false,
+      "review_notes": "类型和字典项共用500字符备注规则，两表单500/501均有独立输入和证据；与备注保存后不回显分开记录。",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-014-字典备注只能输入255字符.md",
+      "sha256": "2b5dabf8c1ac5603671b596d9b24f01e073bc9071a897dad9c185b7cadf34868",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-014/marked-type-v2.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-014/marked-type-v2.png",
+          "sha256": "c122c1585544561fa1dbd5955710d3f3594510748e88931b7a14579f670c883e",
+          "width_height": [
+            1440,
+            900
+          ]
+        },
+        {
+          "markdown_src": "assets/BUG-68701-014/marked-item-v2.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-014/marked-item-v2.png",
+          "sha256": "f2fdceea1f078c31e04c5f50d1ad4ca8934e8c5fb7134b9716a6eaa2735dc5c3",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
+    },
+    {
+      "bug_id": "BUG-68701-015",
+      "related_node_ids": [
+        "mcp-node-mvhu73wm-46",
+        "mcp-node-mvhu73wm-55"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "zentao_submitted": false,
+      "review_notes": "按同一先调整默认再停用/删除的保护规则合并，停用和删除分别有独立对象和前后状态证据。",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-015-默认项可直接停用或删除.md",
+      "sha256": "a69ff5c12b5afdfe0bc8e105cb3c421f8ac35119cd04583ffde19ca46242550d",
+      "images": [
+        {
+          "markdown_src": "assets/BUG-68701-015/marked-disable.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-015/marked-disable.png",
+          "sha256": "4183707cd2721f8babcdfbdabd3df10430fa9a92719133fa99b09a308ddccc4c",
+          "width_height": [
+            1920,
+            1080
+          ]
+        },
+        {
+          "markdown_src": "assets/BUG-68701-015/marked-delete.png",
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-015/marked-delete.png",
+          "sha256": "41f968f019d1b02de33ff1045863b15af3bd42c4b4ca6756fca5edc9d57b4950",
+          "width_height": [
+            1920,
+            1080
+          ]
+        }
+      ],
+      "visual_check": "原图和最终标注图已查看，关键字段/状态均可见；014调整标签避免将255换行拆开。",
+      "body_check": "相对附件路径；已渲染原Markdown并核对所有图片加载，BUG001/014整页已视觉核对。"
     }
-  ]
+  ],
+  "document_image_fix": {
+    "user_report": "Obsidian中原绝对路径图片引用显示找不到。此前只核对PNG可读，未核对文档嵌入，属于审查遗漏。",
+    "files": 11,
+    "images": 12,
+    "change": "所有正文图片使用相对当前Markdown的assets/...路径；保留原图和标注图。",
+    "verification": "独立Chrome DevTools文档预览使用marked渲染修正后的原Markdown；12个img均完成decode且naturalWidth>0，BUG001整页截图已查看。",
+    "reader_boundary": "未自动检查Obsidian原生界面：本机CLI未启用；没有改其设置或重启应用。",
+    "private_receipt": ".local/68701/qa-ui-20261028/brain/rendered-images-check.json",
+    "private_visual": ".local/68701/qa-ui-20261028/brain/BUG-001-rendered-relative.png"
+  },
+  "latest_document_render": {
+    "documents": 15,
+    "images": 19,
+    "broken": 0,
+    "receipt": ".local/68701/qa-ui-20261028/brain/rendered-images-check-15.json",
+    "boundary": "本地marked+Chrome渲染，未控制Obsidian原生界面。"
+  }
 }
