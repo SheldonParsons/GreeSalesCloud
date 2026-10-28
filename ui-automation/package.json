@@ -1,0 +1,10 @@
+{
+  "name": "greesalescloud-ui-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20.19"},
+  "scripts": {"test": "node --test tests/*.test.mjs", "check": "node tools/catalog.mjs check", "run": "node tools/run.mjs"},
+  "dependencies": {"@modelcontextprotocol/sdk": "1.32.2", "smol-toml": "1.9.1"},
+  "devDependencies": {"js-tiktoken": "1.0.21"}
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "live_comparison_completed",
+  "capability": "salescloud.client.consultation.query-and-read-child",
+  "version": "0.1.0",
+  "dependency": "salescloud.client.consultation.read-child-detail@0.1.1",
+  "environment": "qa",
+  "accountRef": "qa.commercial_client.primary",
+  "target": "重明220261021001JS-001",
+  "sameHeadlessSession": true,
+  "viewport": {
+    "width": 1728,
+    "height": 803,
+    "dpr": 2
+  },
+  "samplesPerMode": 3,
+  "warmupsPerModeExcluded": 1,
+  "assertionsPerRun": 15,
+  "resultParity": true,
+  "medians": {
+    "baseline": {
+      "durationMs": 2753.65,
+      "toolCalls": 9,
+      "modelVisibleOutputChars": 24122,
+      "estimatedOutputTokens": 11089,
+      "internalResponseChars": 24122,
+      "outerDispatches": 9
+    },
+    "optimized": {
+      "durationMs": 2520.87,
+      "toolCalls": 6,
+      "modelVisibleOutputChars": 423,
+      "estimatedOutputTokens": 139,
+      "internalResponseChars": 19634,
+      "outerDispatches": 1
+    }
+  },
+  "samples": [
+    {
+      "mode": "baseline",
+      "round": 1,
+      "durationMs": 2949.06,
+      "toolCalls": 9,
+      "modelVisibleOutputChars": 24122,
+      "estimatedOutputTokens": 11089,
+      "internalResponseChars": 24122,
+      "outerDispatches": 9
+    },
+    {
+      "mode": "optimized",
+      "round": 1,
+      "durationMs": 2613.07,
+      "toolCalls": 6,
+      "modelVisibleOutputChars": 423,
+      "estimatedOutputTokens": 139,
+      "internalResponseChars": 19634,
+      "outerDispatches": 1
+    },
+    {
+      "mode": "optimized",
+      "round": 2,
+      "durationMs": 2520.87,
+      "toolCalls": 6,
+      "modelVisibleOutputChars": 423,
+      "estimatedOutputTokens": 139,
+      "internalResponseChars": 19634,
+      "outerDispatches": 1
+    },
+    {
+      "mode": "baseline",
+      "round": 2,
+      "durationMs": 2707.66,
+      "toolCalls": 9,
+      "modelVisibleOutputChars": 24122,
+      "estimatedOutputTokens": 11089,
+      "internalResponseChars": 24122,
+      "outerDispatches": 9
+    },
+    {
+      "mode": "baseline",
+      "round": 3,
+      "durationMs": 2753.65,
+      "toolCalls": 9,
+      "modelVisibleOutputChars": 24694,
+      "estimatedOutputTokens": 11089,
+      "internalResponseChars": 24694,
+      "outerDispatches": 9
+    },
+    {
+      "mode": "optimized",
+      "round": 3,
+      "durationMs": 2509.58,
+      "toolCalls": 6,
+      "modelVisibleOutputChars": 423,
+      "estimatedOutputTokens": 139,
+      "internalResponseChars": 20153,
+      "outerDispatches": 1
+    }
+  ],
+  "tokenMeasurement": {
+    "kind": "offline_tool_output_projection",
+    "tokenizer": "js-tiktoken@1.0.21/o200k_base",
+    "actualCodexUsageAvailable": false,
+    "baseline": "JSON.stringify后的逐步MCP回执全部计入模型可见输出",
+    "optimized": "仅一次统一入口的summary JSON计入模型可见输出",
+    "excluded": [
+      "系统提示",
+      "历史上下文",
+      "工具定义",
+      "调用输入",
+      "模型思考",
+      "图像",
+      "缓存计费"
+    ],
+    "limits": "不是两个模型会话的实付Token A/B；若旧流程已在主机端裁剪/批处理，节省幅度会更小。"
+  },
+  "timingMeasurement": {
+    "includes": "已就绪会话中的执行段；新入口包含本机回执持久化",
+    "excludes": [
+      "浏览器启动",
+      "认证准备",
+      "共同关闭上一轮详情",
+      "截图",
+      "离线分词",
+      "模型思考与调度等待"
+    ],
+    "limits": "每模式仅3次，同机器网络存在波动，不作为统计显著性或完整任务耗时结论"
+  },
+  "sources": {
+    "entrySha256": "ed2ccae4148d47d26310638eb68d8c793f1b0dee5677c4ab32002531af0d4904",
+    "readDependencySha256": "41900fc136cb6cc5572462c30b7bc474c2044a4323c8cd42d0efba95a537d4dd",
+    "readDependencySourceUnchanged": true,
+    "priorReadDependencyEvidence": "requirements/71652/runs/20261021-ui-discovery.md"
+  },
+  "localEvidence": ".local/ui-entry-benchmarks/a0833685-6205-4685-b149-a895c86a04cd",
+  "preparationFailuresExcluded": [
+    "头像字母与昵称相连，改为精确匹配独立可见账号节点",
+    "抽屉遮罩过渡导致点击目标被遮挡，保留有界可操作性等待",
+    "脚本点击查询未得到目标结果，保留MCP原生输入与原生查询点击；未将事件内部原因当作已定位产品缺陷"
+  ],
+  "scopeLimits": [
+    "仅接入两项只读能力；审批/接单/填表能力被新入口拒绝",
+    "认证bootstrap仍是调用方提供的本机模块，未注册新的通用认证能力",
+    "未更改Mind、BUG、业务单据或全量需求通过统计"
+  ],
+  "cliBatchValidation": {
+    "exitCode": 0,
+    "sharedConnection": true,
+    "sameTargetRepeatedTwice": true,
+    "captureEnabled": true,
+    "records": [
+      {
+        "runId": "4080a5fc-3af6-40f5-a28c-e262afd7622f",
+        "status": "passed",
+        "toolCalls": 7,
+        "durationMs": 2866,
+        "screenshotBytes": 666459,
+        "screenshotWidth": 3456,
+        "screenshotHeight": 1606
+      },
+      {
+        "runId": "ee3744c2-064c-48a5-aa68-bff546ed905e",
+        "status": "passed",
+        "toolCalls": 7,
+        "durationMs": 2680,
+        "screenshotBytes": 680147,
+        "screenshotWidth": 3456,
+        "screenshotHeight": 1606
+      }
+    ],
+    "preparationNetworkFailureExcluded": true
+  },
+  "unitTestsPassed": 10,
+  "canonicalBootstrapValidation": {
+    "module": "ui-automation/examples/greeproject-qa-client-bootstrap.mjs",
+    "exitCode": 0,
+    "runId": "c8d1d9b1-308d-4e01-bfda-16c4260fb67d",
+    "status": "passed",
+    "durationMs": 2862,
+    "toolCalls": 7,
+    "screenshotBytes": 634997,
+    "screenshotWidth": 3456,
+    "screenshotHeight": 1606
+  }
+}

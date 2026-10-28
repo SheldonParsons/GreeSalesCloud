@@ -1,0 +1,75 @@
+{
+  "id": "salescloud.client.consultation.query-and-read-child",
+  "version": "0.1.0",
+  "title": "按子单号查询并核对咨询详情",
+  "platform": "salescloud",
+  "surface": "client",
+  "module": "consultation",
+  "kind": "flow",
+  "entry": {
+    "file": "run.mjs",
+    "functionName": "queryAndReadConsultation",
+    "runtime": "node-function",
+    "adapter": "chrome-devtools"
+  },
+  "invocation": {
+    "effect": "read",
+    "successStatuses": [
+      "query_detail_verified"
+    ]
+  },
+  "environments": [
+    "qa"
+  ],
+  "dependencies": [
+    {
+      "id": "salescloud.client.consultation.read-child-detail",
+      "version": "0.1.1"
+    }
+  ],
+  "preconditions": [
+    "指定账号已登录本次独立QA客户端咨询列表",
+    "没有其他单据或可编辑弹窗",
+    "指定子单及预期字段来自本轮已确认数据"
+  ],
+  "inputs": {
+    "account": "预期页面账号",
+    "childNumber": "真实咨询子单号",
+    "mainNumber": "对应主单号",
+    "projectCode": "预期项目编号",
+    "series": "预期系列",
+    "model": "完整机型",
+    "engineeringDescription": "应出现的工程说明",
+    "selectionRequirement": "应出现的选型需求",
+    "expectedStatus": "预期列表状态"
+  },
+  "outputs": [
+    "query_detail_verified",
+    "blocked"
+  ],
+  "effects": [
+    "必要时关闭同一目标的只读详情",
+    "重置筛选、原生输入子单号并查询",
+    "打开指定行的查看抽屉并核对字段"
+  ],
+  "limits": [
+    "仅查询与查看，不创建、修改、提交或审批",
+    "不处理登录，不复用跨角色的页面",
+    "不迁就实际值改写预期",
+    "默认只返回简洁回执，原始MCP证据仅保存本机"
+  ],
+  "verification": {
+    "status": "verified",
+    "date": "2026-10-28",
+    "environment": "qa",
+    "scope": "CQRain03在Chrome156无界面1728x803/DPR2中查询既有已完结子单，15项断言；同会话重复核验三轮。仅该只读路径，无业务写入。",
+    "evidence": "governance/runs/20261028-ui-entry/summary.json"
+  },
+  "keywords": [
+    "项目技术咨询",
+    "列表查询",
+    "查看",
+    "组合只读流程",
+    "简洁回执"
+  ]
+}

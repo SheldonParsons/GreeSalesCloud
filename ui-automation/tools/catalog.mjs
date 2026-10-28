@@ -4,8 +4,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const repo = path.dirname(root);
+export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const repo = path.dirname(root);
 const indexFile = path.join(root, 'catalog.json');
 const relative = file => path.relative(root, file).split(path.sep).join('/');
 const assert = (value, message) => { if (!value) throw new Error(message); };
@@ -26,7 +26,7 @@ async function filesIn(dir, name) {
   return found;
 }
 
-async function loadCatalog() {
+export async function loadCatalog() {
   const platformFiles = await filesIn(path.join(root, 'platforms'), 'platform.json');
   const platforms = new Map();
   for (const file of platformFiles) {
@@ -64,6 +64,10 @@ async function loadCatalog() {
     assert(/^\d+\.\d+\.\d+$/.test(c.version), `缺少实现版本：${c.id}`);
     assert(['auth', 'navigation', 'component', 'flow'].includes(c.kind), `未知能力类型：${c.id}`);
     assert(c.title && c.module && c.inputs && Array.isArray(c.outputs) && c.outputs.length, `输入/输出契约缺失：${c.id}`);
+    if (c.invocation) {
+      assert(['read', 'form-fill', 'write'].includes(c.invocation.effect), `调用效果无效：${c.id}`);
+      assert(Array.isArray(c.invocation.successStatuses) && c.invocation.successStatuses.length && c.invocation.successStatuses.every(s => c.outputs.includes(s)), `成功状态未在输出中声明：${c.id}`);
+    }
     for (const key of ['preconditions', 'effects', 'dependencies', 'environments']) assert(Array.isArray(c[key]), `缺少${key}：${c.id}`);
     if (c.platform !== 'shared') {
       const p = platforms.get(c.platform);
@@ -115,6 +119,7 @@ async function loadCatalog() {
   };
 }
 
+async function main() {
 try {
   const [command = 'list', ...args] = process.argv.slice(2);
   const catalog = await loadCatalog();
@@ -142,3 +147,6 @@ try {
     console.log(JSON.stringify(items.map(({id,version,title,kind,platform,surface,verification})=>({id,version,title,kind,platform,surface,verification})), null, 2));
   } else throw new Error('命令：build | check | list | platform <id> | get <id> | resolve <id>');
 } catch (error) { console.error(error.message); process.exitCode = 1; }
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main();
