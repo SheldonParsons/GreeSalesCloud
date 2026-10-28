@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "run_id": "20261028-headless-pilot",
+  "date": "2026-10-28",
+  "environment": "QA",
+  "deployment_build": "unknown",
+  "scope": "客户端项目技术咨询：列表按子单号查询及查看详情；不含认证功能验收或业务写入",
+  "account_ref": "qa.commercial_client.primary",
+  "mcp_version": "1.12.0",
+  "chrome_major_version": 156,
+  "viewport": {
+    "width": 1728,
+    "height": 803,
+    "devicePixelRatio": 2
+  },
+  "samples_per_mode": 3,
+  "warmups_excluded_per_mode": 1,
+  "sampling_order": [
+    "baseline-1",
+    "headless-1",
+    "headless-2",
+    "baseline-2",
+    "baseline-3",
+    "headless-3"
+  ],
+  "timing_definition": "页面真实click事件到匹配结果DOM就绪；另记录MCP click调用耗时。排除认证、建页、输入准备、截图、焦点采样与模型思考。",
+  "stats": {
+    "baseline": {
+      "query": {
+        "ui_samples_ms": [
+          411,
+          435.1,
+          430.6
+        ],
+        "ui_median_ms": 430.6,
+        "mcp_click_samples_ms": [
+          403.07,
+          432.56,
+          441.07
+        ],
+        "mcp_click_median_ms": 432.56
+      },
+      "detail": {
+        "ui_samples_ms": [
+          220.8,
+          203.3,
+          233.3
+        ],
+        "ui_median_ms": 220.8,
+        "mcp_click_samples_ms": [
+          409.78,
+          392.65,
+          420.79
+        ],
+        "mcp_click_median_ms": 409.78
+      }
+    },
+    "headless": {
+      "query": {
+        "ui_samples_ms": [
+          318.5,
+          341.3,
+          373.8
+        ],
+        "ui_median_ms": 341.3,
+        "mcp_click_samples_ms": [
+          332.43,
+          326.08,
+          365.54
+        ],
+        "mcp_click_median_ms": 332.43
+      },
+      "detail": {
+        "ui_samples_ms": [
+          188.7,
+          214,
+          197.7
+        ],
+        "ui_median_ms": 197.7,
+        "mcp_click_samples_ms": [
+          396.53,
+          396.81,
+          395.95
+        ],
+        "mcp_click_median_ms": 396.53
+      }
+    }
+  },
+  "samples": [
+    {
+      "mode": "baseline",
+      "round": 1,
+      "query_ui_ms": 411,
+      "detail_ui_ms": 220.8,
+      "query_request_ms": 246.5,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    },
+    {
+      "mode": "baseline",
+      "round": 2,
+      "query_ui_ms": 435.1,
+      "detail_ui_ms": 203.3,
+      "query_request_ms": 234.9,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    },
+    {
+      "mode": "baseline",
+      "round": 3,
+      "query_ui_ms": 430.6,
+      "detail_ui_ms": 233.3,
+      "query_request_ms": 222.3,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    },
+    {
+      "mode": "headless",
+      "round": 1,
+      "query_ui_ms": 318.5,
+      "detail_ui_ms": 188.7,
+      "query_request_ms": 216.3,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    },
+    {
+      "mode": "headless",
+      "round": 2,
+      "query_ui_ms": 341.3,
+      "detail_ui_ms": 214,
+      "query_request_ms": 230.7,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    },
+    {
+      "mode": "headless",
+      "round": 3,
+      "query_ui_ms": 373.8,
+      "detail_ui_ms": 197.7,
+      "query_request_ms": 239.2,
+      "query_identity_checks": true,
+      "detail_identity_checks": true,
+      "row_sha256": "c3620e5a7d0ac86be5aba7f345847e743dd84038a5721eafb9f50c122da9a27f",
+      "detail_sha256": "4137bec7d4bce4b5e75198241dc937bc4c303a77b671414e4bbb4e9a2d22c95a"
+    }
+  ],
+  "content_parity": {
+    "list_all_match": true,
+    "detail_all_match": true,
+    "screenshots_reviewed": true,
+    "pixel_perfect_comparison": false
+  },
+  "focus": {
+    "headless_onscreen_windows_at_check": 0,
+    "headless_focus_observations": 110,
+    "headless_process_foreground_observations": 0,
+    "continuous_monitoring": false,
+    "baseline_creation_note": "有界面新建隔离对照页前后观测到前台从其他应用变为Chrome；用户同时在操作电脑，未独立归因，不能把background=true当不抢焦点保证。"
+  },
+  "configuration": {
+    "new_server": "chrome-devtools-headless",
+    "original_config_prefix_sha256": "1deb12abf17184cf018955157b1cc0b603718e6ac5359d0dd02ec0d055056041",
+    "original_configuration_still_byte_identical": true,
+    "codex_cli_get_recognized": true,
+    "tested_via": "官方Chrome DevTools MCP的独立stdio客户端，使用新增配置的相同参数",
+    "current_chat_native_tools_hot_loaded": false
+  },
+  "cleanup": {
+    "owned_page_storage_cleared": true,
+    "owned_pages_closed": true,
+    "pilot_connections_closed": true,
+    "headless_process_exited": true,
+    "original_chrome_process_preserved": true,
+    "business_records_created_modified_approved": false
+  },
+  "excluded_setup_issues": [
+    "预热时直接DOM赋值未更新实际筛选状态，改用MCP原生输入后验证通过，未计入样本",
+    "本地交互客户端调整，不计入页面性能样本",
+    "抽屉关闭选择器按实页修正，未执行任何保存操作",
+    "Resource Timing默认缓冲区达到250导致一次测量缺请求证据；界面结果正确，修正为每轮清理并设1000后补测；无效尝试不计入三轮统计"
+  ],
+  "limits": [
+    "仅一个账号、一个只读页面组合、每模式三次，不证明全量回归或端到端Agent提速",
+    "没有验证SSO、滑块、文件上传下载、系统弹窗、业务写入或多会话同时使用专用profile",
+    "接收配置不等于当前会话工具目录热加载；本轮已独立完成MCP握手和工具执行",
+    "不把MCP工具或DOM校验通过当作71652全需求验收"
+  ]
+}
