@@ -51,7 +51,7 @@ Chrome运行方式另见[无界面只读试验](../ui-automation/experiments/hea
 
 ## 禅道BUG提单
 
-操作入口见 [禅道提交交接](../ui-automation/platforms/zentao/shared/bugs/submission-handoff.md)。BUG 344582已有正常UI表单、编辑器上传和一次保存的实证：字段齐全，图片在保存后及重新打开详情后均绕缓存可读，用户另行确认同事可见。Agent未跨账号亲测，长期保存未验证；原344562直接上传后API创建的图片问题仍独立保留，不能当作已修复。不得重提BUG或从旧本地稿覆盖用户修复。当前没有独立提单MCP或通用脚本。
+操作入口见 [禅道提交交接](../ui-automation/platforms/zentao/shared/bugs/submission-handoff.md)。2026-10-28已在测试BUG 344754验证API图片修复：通过REST文件接口上传、携带同一uid建单，文件正式关联，保存/重开/API编辑后均绕缓存可读，用户确认同事可见；旧编辑器上传混用REST创建的对照图则失效。正常UI提单的344582证据仍保留。具体调用顺序、权限与字段边界见交接，不覆盖用户修复或重提已有BUG。当前没有独立提单MCP或通用脚本。
 
 当前AsyncTest适配器的登录／查询经验、报告MCP可用性与创建BUG能力分开确认。提交前核对本次具体授权、身份、目标ID和归属、严重程度／优先级／类型及去重范围；一次创建后以BUG ID完成补齐和回读，不未知重放。只保存本地BUG的授权不自动扩大为上传或提单授权。
 

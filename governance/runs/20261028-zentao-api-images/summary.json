@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "scope": "用户授权的禅道测试2.0项目API图片上传/建单验证",
+  "bugId": 344754,
+  "bugUrl": "https://ztpm.gree.com:8888/bug-view-344754.html",
+  "title": "【测试-API图片】上传关联与跨账号可见性对照（API-IMAGE-20261028-fd6a487a）",
+  "target": {
+    "product": 632,
+    "project": 4818,
+    "execution": 4819,
+    "openedBuild": [
+      "trunk"
+    ],
+    "severity": 3,
+    "pri": 3,
+    "type": "automation",
+    "assignedTo": null
+  },
+  "createdBugCount": 1,
+  "userNotifiedImmediatelyAfterCreation": true,
+  "sameSessionAndUidForBothUploadsAndCreate": true,
+  "bodyImageUrlFormatForBoth": "/file-read-{fileId}.png",
+  "fixtures": "Synthetic PNGs clearly labeled as API image tests; not business-defect screenshots",
+  "results": [
+    {
+      "label": "A",
+      "method": "POST /file-ajaxUpload-{uid}.html",
+      "fileId": 986593,
+      "beforeCreate": {
+        "label": "A",
+        "fileId": 986593,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 43115,
+        "sha256": "c93699f52605f08aae7111c00c7f3519dab0a4648f5b177c06d1ac8c694443a6",
+        "sourceMatch": true,
+        "dimensions": {
+          "width": 900,
+          "height": 320
+        }
+      },
+      "afterCreate": {
+        "label": "A",
+        "fileId": 986593,
+        "http": 200,
+        "mime": "text/html; Language=UTF-8;charset=UTF-8",
+        "bytes": 449,
+        "sourceMatch": false,
+        "sha256": "7bf8973c03c461fbeeef96460e5792e4be7eefa5a1ef0720efc3c70f707f139d",
+        "dimensions": null
+      },
+      "afterReopen": {
+        "fileId": 986593,
+        "http": 200,
+        "mime": "text/html; Language=UTF-8;charset=UTF-8",
+        "bytes": 437,
+        "dimensions": null,
+        "sha256": "dfede286ee37014aacf71d5250ea6438b20760ee3e3e8a8b19613686ac3c2c7c"
+      },
+      "associatedWithBug": false,
+      "recipientVisible": false
+    },
+    {
+      "label": "B",
+      "method": "POST /api.php/v1/files?uid={uid}",
+      "fileId": 986594,
+      "beforeCreate": {
+        "label": "B",
+        "fileId": 986594,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 42084,
+        "sha256": "79581b23333ce6a37c78cd8eca4bf28bf11477ad8b6788715612cd831ba846ac",
+        "sourceMatch": true,
+        "dimensions": {
+          "width": 900,
+          "height": 320
+        }
+      },
+      "afterCreate": {
+        "label": "B",
+        "fileId": 986594,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 42084,
+        "sourceMatch": true,
+        "sha256": "79581b23333ce6a37c78cd8eca4bf28bf11477ad8b6788715612cd831ba846ac",
+        "dimensions": {
+          "width": 900,
+          "height": 320
+        }
+      },
+      "afterReopen": {
+        "fileId": 986594,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 42084,
+        "dimensions": {
+          "width": 900,
+          "height": 320
+        },
+        "sha256": "79581b23333ce6a37c78cd8eca4bf28bf11477ad8b6788715612cd831ba846ac"
+      },
+      "associatedWithBug": {
+        "objectType": "bug",
+        "objectID": 344754
+      },
+      "recipientVisible": true,
+      "afterApiEdit": {
+        "id": 986594,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 42084,
+        "width": 900,
+        "height": 320,
+        "sha256": "79581b23333ce6a37c78cd8eca4bf28bf11477ad8b6788715612cd831ba846ac"
+      }
+    }
+  ],
+  "recipientVerification": {
+    "confirmedBy": "用户转述同事使用自己的账号查看",
+    "result": "B图可见，A图不可见",
+    "date": "2026-10-28",
+    "assistantSecondAccountLogin": false
+  },
+  "correctedSequence": [
+    "GET当前新建表单的独立uid，保持同一认证会话",
+    "POST /api.php/v1/files?uid={uid}，multipart字段imgFile",
+    "POST /api.php/v1/products/{productId}/bugs，JSON携带同一uid和图片HTML",
+    "GET /api.php/v1/bugs/{id}核对字段和图片对象关联",
+    "保存后、重开后绕缓存读取并解码、比对源文件摘要",
+    "接收方用独立账号确认可见"
+  ],
+  "state": "api_image_workflow_verified_in_this_instance",
+  "limits": [
+    "本次在当前企业版12.5实例、李博会话和测试项目验证，不代表所有实例/认证方式",
+    "公开源码仅作为机制解释；未取得公司部署源码逐行比对",
+    "未重新操作或覆盖已被用户修复的344562",
+    "仅验证图片链路，不证明REST创建已支持所有计划等字段",
+    "A图保留为失败对照，测试记录未自动删除或关闭"
+  ],
+  "publicSourceReference": {
+    "repository": "https://github.com/easysoft/zentaopms",
+    "commit": "d5bfff8c91cea48018275381e0a127ed6fa5c79f",
+    "downloadedFilesMatchPinnedCommit": true,
+    "companyDeploymentSourceVerified": false
+  }
+}
