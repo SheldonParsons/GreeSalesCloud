@@ -1,0 +1,40 @@
+{
+  "purpose": "本轮独占图标输入；尚未上传/执行",
+  "files": [
+    {
+      "file": "icon-ok.svg",
+      "bytes": 512,
+      "sha256": "96af4c2b994a191c847b434f7c67fb4025f9d8554216c774b2eed546e423d033"
+    },
+    {
+      "file": "icon-small-900000.svg",
+      "bytes": 900000,
+      "sha256": "0806350bf7ff66b4be97a3e5ebce025ea572b793e7c63f3938f7002e0e0fdfd8"
+    },
+    {
+      "file": "icon-limit-decimal.svg",
+      "bytes": 1000000,
+      "sha256": "25962c559f87411c86586c4f76d62196ccfd3c1b5bea3ac27b7d5e801ca9b5fc"
+    },
+    {
+      "file": "icon-limit-binary.svg",
+      "bytes": 1048576,
+      "sha256": "9ff21c34e2798e65d35627fba0422eeaa441b2ff4d6df88480ac8ecbc13d32a4"
+    },
+    {
+      "file": "icon-oversize.svg",
+      "bytes": 1100000,
+      "sha256": "e7b4b58807cf6b6d486b361399269c5888a81fe2b117e906fe503b69077c84ef"
+    },
+    {
+      "file": "icon-alt.svg",
+      "bytes": 136,
+      "sha256": "8a17c9637c5c97a9c780e01b8a0b18f08fa05d19bb60d3a6a75829cf1aa8f0cf"
+    },
+    {
+      "file": "icon-wrong-format.png",
+      "bytes": 68,
+      "sha256": "bdf01fb2726b2517523dce60e512ed7494a04e3b1128cc50844ac2b1c7a6a940"
+    }
+  ]
+}

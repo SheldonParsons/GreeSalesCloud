@@ -1,0 +1,30 @@
+{
+  "node_id": "mcp-node-mvi0xm4i-21",
+  "at": "2026-10-28T07:26:26.296Z",
+  "account_ref": "qa.jinyelun.admin",
+  "actions": [
+    "新增菜单",
+    "选择按钮",
+    "切回菜单",
+    "取消"
+  ],
+  "checks": {
+    "chosenTypeOnly": true,
+    "menuOnlyAfterSwitch": true,
+    "treeUnchanged": true
+  },
+  "actual": {
+    "chosen": [
+      "按钮"
+    ],
+    "back": [
+      "菜单"
+    ],
+    "treeRowCount": 5
+  },
+  "screenshots": [
+    "/Users/sheldon/Documents/GithubProject/GreeSalesCloud/.local/68701/qa-ui-20261028/screens/type-button.png",
+    "/Users/sheldon/Documents/GithubProject/GreeSalesCloud/.local/68701/qa-ui-20261028/screens/type-button-back-menu.png"
+  ],
+  "verdict": "passed"
+}

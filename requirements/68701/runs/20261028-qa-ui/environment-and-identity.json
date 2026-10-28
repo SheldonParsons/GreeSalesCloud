@@ -1,0 +1,25 @@
+{
+  "origin": "http://gree-gis-frontend.gis-qa",
+  "browser": "Chrome DevTools MCP headless, task-isolated profile",
+  "actual_build_version": "unknown",
+  "actors": [
+    {
+      "account_ref": "qa.jinyelun.admin",
+      "credential_username_matches_login_response": true,
+      "server_role_type": 2,
+      "platform_settings_menu_entries_visible": true
+    },
+    {
+      "account_ref": "qa.jinyelun.tester",
+      "credential_username_matches_login_response": true,
+      "server_role_type": 0,
+      "platform_settings_menu_entries_visible": true
+    }
+  ],
+  "login_preparation": "existing local slider recognizer and UI mouse-event trajectory through MCP; no stored session injection, no direct login API submission",
+  "ui_scope": [
+    "菜单管理",
+    "数据字典"
+  ],
+  "excluded_default_landing": "登录默认到公告页面，仅观察，不执行业务操作"
+}

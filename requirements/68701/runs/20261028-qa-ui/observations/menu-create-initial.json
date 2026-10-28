@@ -1,0 +1,35 @@
+{
+  "node_id": "mcp-node-mvi0xm4i-1",
+  "environment": "QA",
+  "account_ref": "qa.jinyelun.admin",
+  "page": "/system/menu",
+  "observed_at": "2026-10-28T15:19:08.858516+08:00",
+  "actions": [
+    "平台设置→菜单管理→新增菜单",
+    "核对初始类型、排序、状态及提交/取消入口",
+    "点击取消关闭抽屉"
+  ],
+  "actual": {
+    "types": [
+      "菜单",
+      "子菜单",
+      "按钮",
+      "信息"
+    ],
+    "checked_types": [],
+    "sort_input_value": "",
+    "sort_placeholder": "请输入排序",
+    "enabled": true,
+    "name_maxLength": 20,
+    "code_maxLength": 50,
+    "permission_maxLength": 255,
+    "remark_maxLength": 255,
+    "sort_control_max": 1000
+  },
+  "verdict": "failed",
+  "bug_refs": [
+    "BUG-68701-001"
+  ],
+  "screenshot": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-001/marked.png",
+  "boundary": "其他长度/范围属性仅作后续取证线索，尚未据此把相关场景判定通过或失败。"
+}
