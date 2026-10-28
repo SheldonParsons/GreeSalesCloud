@@ -1,0 +1,3543 @@
+{
+  "module": "菜单管理",
+  "source_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_金叶轮菜单管理与数据字典_lb_20261030.amind",
+  "source_sha256_at_baseline": "16e9e35ca3e24969afb25c7a985ff18368fa4fedb5f2258dde54ba360b15ccbd",
+  "source_node_count": 1335,
+  "count": 65,
+  "owner_thread_id": "01a18177-e668-79d0-a41f-fbd147241cf4",
+  "cases": [
+    {
+      "node_id": "mcp-node-mvi1s9vr-31",
+      "module": "菜单管理",
+      "function": "菜单树与访问",
+      "title": "未关联目标角色的账号不能看到或直达该菜单",
+      "note": "依据：S11用户明确菜单绑定角色、角色绑定账号，调整后需用账号验证；结合S3/S8菜单及有效授权规则。未执行。角色仅作为已核对关联，不展开角色管理功能；具体账号侧入口按P-ACCOUNT落实。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi1s9vr-32",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-33",
+              "text": "按同目录case-preparation.md的P0、P-BIND和P-ACCOUNT准备隔离会话；A维护菜单，B为已绑定普通账号，N为未授权对照账号。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-34",
+              "text": "P-BIND确认M_PRIVATE仅经R_AUTH关联B；N未关联R_AUTH，且无其他角色授予该菜单或同一目标页面的权限。P-ROUTE提供其受限目标的实际路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-35",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-36",
+              "text": "1、B隔离登录并核对账号，确认本人可见M_PRIVATE且点击进入约定目标页。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-37",
+              "text": "2、使用另一隔离会话登录N并核对账号，查看本人导航。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-38",
+              "text": "3、在N会话直接打开刚才记录的M_PRIVATE目标路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-39",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-40",
+              "text": "步骤1：正向账号与菜单→角色→账号关系一致。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-41",
+              "text": "步骤2：N没有M_PRIVATE的可用菜单入口，不串用B的菜单数据。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-42",
+              "text": "步骤3：受限访问被拒绝，N不能仅凭已知路径绕过有效授权；不以隐藏导航代替访问权限检查。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w2-2",
+      "module": "菜单管理",
+      "function": "菜单树与访问",
+      "title": "展开再收起根菜单，子级显示与父子归属保持一致",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w2-3",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-4",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-5",
+              "text": "按P1准备根菜单R_A及子级C_A1、C_A2，另有根菜单R_B；记录各ID及父级。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-6",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-7",
+              "text": "1、在【菜单管理】按记录的名称和编码找到R_A，点击左侧展开控件。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-8",
+              "text": "2、核对C_A1、C_A2后收起R_A，再次展开。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-9",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-10",
+              "text": "步骤1：R_A下显示C_A1、C_A2，R_B不成为R_A子级；树最多显示两层菜单。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-11",
+              "text": "步骤2：收起时该根的子级隐藏；再次展开后仍为原两个子级，名称、编码和父级关系不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w2-12",
+      "module": "菜单管理",
+      "function": "菜单树与访问",
+      "title": "没有菜单管理权限的账号不能进入菜单维护页",
+      "note": "依据：S3权限与失败规则。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w2-13",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-14",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-15",
+              "text": "P0账号U无菜单管理权限；A先记录【菜单管理】的实际访问路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-16",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-17",
+              "text": "1、在隔离浏览器会话以U登录金叶轮管理端，查看【平台设置】。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-18",
+              "text": "2、在U会话打开A记录的菜单管理路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-19",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-20",
+              "text": "步骤1：U没有可用的菜单管理维护入口。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-21",
+              "text": "步骤2：页面拒绝未授权维护；U不能读取可编辑配置或完成新增、修改、删除操作。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w2-22",
+      "module": "菜单管理",
+      "function": "菜单树与访问",
+      "title": "撤销操作权限后提交已打开的菜单编辑，配置不改变",
+      "note": "依据：S3每次请求鉴权、失败保留输入。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w2-23",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-24",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-25",
+              "text": "P0账号C初始有编辑权限，已打开R_A编辑；由授权管理员通过隔离会话撤销其编辑权限，保留目标基线。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-26",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-27",
+              "text": "1、在C的已打开编辑窗口，将R_A名称改为“权限变化测试”，点击【保存菜单】。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-28",
+              "text": "2、以A重新定位R_A并打开编辑，核对名称和其他字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w2-29",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w2-30",
+              "text": "步骤1：本次提交被权限校验拒绝，输入保留；不能仅依赖打开窗口时的旧权限。"
+            },
+            {
+              "id": "mcp-node-mvhu73w2-31",
+              "text": "步骤2：R_A仍为准备时的名称和字段值，没有保存C的修改。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w2-33",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "新增菜单绑定角色和账号后，账号显示正确名称与图标",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w2-34",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w3-1",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-2",
+              "text": "P2准备M_NEW及ICON_OK.svg；P-ACCOUNT提供普通账号B和既有测试角色R_AUTH。新增后由配置负责人按P-BIND关联真实菜单ID与R_AUTH，再核对R_AUTH已关联B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w3-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w3-4",
+              "text": "1、A在【菜单管理】点击【新增】，类型选菜单，名称填“菜单新增验证”、编码填M_NEW，权限、排序、备注按P2填写，保持启用，上传ICON_OK.svg。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-5",
+              "text": "2、A点击【保存】，记录实际菜单ID；刷新后重新打开，核对根级归属及全部可见字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-6",
+              "text": "3、将本次实际菜单ID交给配置负责人，按P-BIND完成菜单→R_AUTH→B的绑定并回读确认，记录角色ID、账号ID和菜单ID对应关系。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-7",
+              "text": "4、在B的隔离会话登录金叶轮，核对当前账号，再查看本人实际导航菜单中的M_NEW对应节点。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-1",
+              "text": "5、B退出后重新登录，重新找到同一菜单；A按P-LOG以实际对象ID、账号和时间核对新增日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w3-8",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w3-9",
+              "text": "步骤1—2：新增对象为根级，类型、名称、编码、图标、权限、排序、备注和启用状态与输入一致。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-10",
+              "text": "步骤3：绑定记录指向本次真实菜单ID、实际角色ID及B账号ID，不能用另一条同名菜单替代。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-11",
+              "text": "步骤4：B本人导航出现配置的菜单名称及对应图标，位于正确根级，不是只在A的菜单管理树里可见。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-12",
+              "text": "步骤5：重新登录仍显示同一配置；日志记录实际新增对象、操作者、时间和新增值。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "in_progress"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4i-1",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "打开新增菜单弹窗，四种类型及初始值与界面要求一致",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4i-2",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-3",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-4",
+              "text": "当前无未完成的新增操作，以用户S10新增初始截图为本场景界面基线。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-5",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-6",
+              "text": "1、点击【菜单管理】顶部【新增】，查看标题、类型选项和可见字段。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-7",
+              "text": "2、核对排序、启用勾选、文件选择和底部按钮；取消退出。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-8",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-9",
+              "text": "步骤1：标题为“新增菜单”；类型提供菜单、子菜单、按钮、信息四个单选项，当前只选中菜单；类型、名称、编码、图标带必填标识。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-10",
+              "text": "步骤2：排序初始显示0，启用初始勾选，图标未选择文件并提示“SVG，最大1MB”；底部有取消、保存，右上角有关闭入口。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "failed"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4i-21",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "选择按钮后仅该类型选中，切回菜单仍保持单选",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4i-22",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-23",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-24",
+              "text": "打开新增菜单但不填写、不提交数据；本场景仅验证四种类型的单选交互。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-25",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-26",
+              "text": "1、在【新增菜单】的【类型】区域点击【按钮】单选项。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-27",
+              "text": "2、再点击【菜单】单选项，核对选中状态后点击【取消】。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-28",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-29",
+              "text": "步骤1：只有按钮处于选中状态，菜单及其他两项未选中。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-30",
+              "text": "步骤2：只有菜单处于选中状态；没有因切换类型创建任何节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4i-31",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "选择信息后仅该类型选中，切回菜单仍保持单选",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4i-32",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-33",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-34",
+              "text": "打开新增菜单但不填写、不提交数据；本场景仅验证四种类型的单选交互。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-35",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-36",
+              "text": "1、在【新增菜单】的【类型】区域点击【信息】单选项。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-37",
+              "text": "2、再点击【菜单】单选项，核对选中状态后点击【取消】。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4i-38",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4i-39",
+              "text": "步骤1：只有信息处于选中状态，菜单及其他两项未选中。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4i-40",
+              "text": "步骤2：只有菜单处于选中状态；没有因切换类型创建任何节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "passed"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w4-3",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "名称留空时，根菜单不能保存",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w4-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-6",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-7",
+              "text": "P2有效新增基线；仅本场景指定必填字段为空，其余输入满足已知约束。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-8",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-9",
+              "text": "1、点击【新增】，按P2填写数据，将【名称】清空。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-10",
+              "text": "2、点击【保存】，检查字段反馈及菜单树。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-11",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-12",
+              "text": "步骤2：【名称】未通过必填校验；不新增菜单，其他已输入内容保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w4-22",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "名称为30字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w4-23",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-24",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-25",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-26",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-27",
+              "text": "1、点击【新增】，将【名称】填为P-LEN对应的30个汉字边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-28",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-29",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-30",
+              "text": "步骤2：该字段完整保存30字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w4-31",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "名称超过30字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w4-32",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-33",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-34",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-35",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-36",
+              "text": "1、点击【新增】，尝试在【名称】输入P-LEN对应的31字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-22",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-1",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-2",
+              "text": "步骤1—2：该字段受到30字符上限限制；不能保存含31字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w4-13",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "编码留空时，根菜单不能保存",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w4-14",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-15",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-16",
+              "text": "P2有效新增基线；仅本场景指定必填字段为空，其余输入满足已知约束。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-17",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-18",
+              "text": "1、点击【新增】，按P2填写数据，将【编码】清空。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-19",
+              "text": "2、点击【保存】，检查字段反馈及菜单树。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-20",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-21",
+              "text": "步骤2：【编码】未通过必填校验；不新增菜单，其他已输入内容保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-3",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "编码为100字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-5",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-6",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-7",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-8",
+              "text": "1、点击【新增】，将【编码】填为P-LEN对应的100个符合现有格式规则的ASCII字符边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-9",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-10",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-11",
+              "text": "步骤2：该字段完整保存100字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-12",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "编码超过100字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-13",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-14",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-15",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-16",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-17",
+              "text": "1、点击【新增】，尝试在【编码】输入P-LEN对应的101字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-18",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-19",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-20",
+              "text": "步骤1—2：该字段受到100字符上限限制；不能保存含101字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-2",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "图标未选择时，点击保存不能创建菜单",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4j-1",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-3",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-4",
+              "text": "P2提供有效唯一名称和编码，类型为菜单，其他字段符合要求；图标保持未选择文件。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-5",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-6",
+              "text": "1、点击【新增】，填写名称、编码，保持【启用】勾选，不点击图标【选择文件】。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-7",
+              "text": "2、点击【保存】，检查图标必填反馈，再按编码核对树。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-8",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-9",
+              "text": "步骤2：图标必填校验未通过，不创建该编码的菜单；已输入名称、编码等内容保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-10",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "选择小于1MB的合法SVG后，菜单图标可保存并回查",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4j-11",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-12",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-13",
+              "text": "P-ICON提供内容有效、900000字节的ICON_SMALL.svg；P2提供本场景唯一编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-14",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-15",
+              "text": "1、打开【新增菜单】，填写名称和编码，在图标区域点击【选择文件】，选择ICON_SMALL.svg。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-16",
+              "text": "2、点击【保存】，记录新菜单实际ID，重新打开该节点编辑核对图标。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-17",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-18",
+              "text": "步骤1：图标选择区反映已选择ICON_SMALL.svg，不将有效的小文件判为格式或大小超限。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-19",
+              "text": "步骤2：菜单保存，重新打开后图标对应本次选择的SVG，未丢失或换成其他文件。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-20",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "SVG文件大小恰好为1MB上限时，可以保存",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4j-21",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-22",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-23",
+              "text": "P-ICON提供ICON_LIMIT.svg，内容有效、字节数恰好等于已确认的LIMIT_BYTES；1MB字节口径未落实时本场景保持未执行。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-24",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-25",
+              "text": "1、打开【新增菜单】，填写有效名称和编码，选择ICON_LIMIT.svg。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-26",
+              "text": "2、点击【保存】，按实际ID重新打开该菜单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-27",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-28",
+              "text": "步骤1—2：等于上限的有效SVG允许保存，回查对应图标仍为该文件；不把“最大1MB”实现成严格小于上限。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-29",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "SVG文件超过1MB时，图标校验阻止菜单保存",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4j-30",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-31",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-32",
+              "text": "P-ICON提供内容有效、1100000字节的ICON_OVERSIZE.svg，超过十进制及二进制两种常用1MB口径；其他输入有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-33",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-34",
+              "text": "1、打开【新增菜单】，填写名称和编码，选择ICON_OVERSIZE.svg。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-35",
+              "text": "2、尝试点击【保存】，刷新树按本次编码核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-36",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-37",
+              "text": "步骤1—2：超限文件被拒绝或明确标为无效，不能作为该菜单图标保存；不创建对应菜单，也不静默截断文件后保存。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-38",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "选择PNG文件时，不能按SVG图标要求保存",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4j-39",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-40",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-41",
+              "text": "P-ICON提供有效PNG文件ICON_PNG.png，大小小于1MB；名称和编码等其他字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-42",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-43",
+              "text": "1、打开【新增菜单】，点击图标【选择文件】，尝试选择ICON_PNG.png。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4j-44",
+              "text": "2、若文件选择器允许选入，点击【保存】，按本次编码核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4j-45",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4j-46",
+              "text": "步骤1—2：非SVG文件不能成为有效图标，不能使用该PNG创建菜单；区分选择器过滤和保存校验，未进入保存请求不声称后端已验证。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4j-47",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "重新选择另一份合法SVG后，保存的是最后选择的图标",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4k-30",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-1",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-2",
+              "text": "P-ICON提供外观可区分且均小于1MB的ICON_OK.svg与ICON_ALT.svg；P2提供唯一菜单编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-4",
+              "text": "1、打开【新增菜单】，填写有效字段，先选择ICON_OK.svg。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-5",
+              "text": "2、再次点击【选择文件】，改选ICON_ALT.svg，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-6",
+              "text": "3、按实际菜单ID重新打开编辑核对图标。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-7",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-8",
+              "text": "步骤1：选择区反映第一份文件已选择。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-9",
+              "text": "步骤2—3：最终保存的图标为ICON_ALT.svg，不仍使用第一份文件；本次只新增一个菜单节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4k-20",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "权限和备注留空时，仍可保存满足必填项的菜单",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4k-21",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-22",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-23",
+              "text": "P2提供唯一名称和编码；图标使用P-ICON合法SVG，类型为菜单，排序0，启用勾选。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-24",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-25",
+              "text": "1、打开【新增菜单】，填写名称、编码并选择图标，将【权限】和【备注】保持为空。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-26",
+              "text": "2、点击【保存】，记录菜单ID，刷新后重新打开核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-27",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-28",
+              "text": "步骤2：菜单可保存；权限和备注仍为空，类型、名称、编码、图标、排序及启用状态与输入一致。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-40",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "权限为100字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-41",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-42",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-43",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-44",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-45",
+              "text": "1、点击【新增】，将【权限】填为P-LEN对应的100个符合现有格式规则的字符边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-46",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-47",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-48",
+              "text": "步骤2：该字段完整保存100字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-49",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "权限超过100字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-1",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-2",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-4",
+              "text": "1、点击【新增】，尝试在【权限】输入P-LEN对应的101字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-5",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-6",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-7",
+              "text": "步骤1—2：该字段受到100字符上限限制；不能保存含101字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-26",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写0时，可保存该整数",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-28",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-29",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-31",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为0。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-32",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-34",
+              "text": "步骤2：菜单保存，回查排序值为0。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-35",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写9999时，可保存该整数",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-37",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-38",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-39",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-40",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为9999。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-41",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-42",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-43",
+              "text": "步骤2：菜单保存，回查排序值为9999。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-44",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写-1时，不能保存该值",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-45",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-46",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-43",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-1",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-2",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为-1。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-3",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-4",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-5",
+              "text": "步骤2：排序不符合0—9999整数范围，不能保存该值；未新增目标菜单，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-6",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写10000时，不能保存该值",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-9",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-11",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为10000。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-12",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-14",
+              "text": "步骤2：排序不符合0—9999整数范围，不能保存该值；未新增目标菜单，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-15",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写1.5时，不能保存该值",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-16",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-17",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-18",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-19",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-20",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为1.5。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-21",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-22",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-23",
+              "text": "步骤2：排序不符合0—9999整数范围，不能保存该值；未新增目标菜单，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-8",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "备注为200字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-9",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-10",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-11",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-12",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-13",
+              "text": "1、点击【新增】，将【备注】填为P-LEN对应的200个汉字边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-14",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-16",
+              "text": "步骤2：该字段完整保存200字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-17",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "备注超过200字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-20",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-22",
+              "text": "1、点击【新增】，尝试在【备注】输入P-LEN对应的201字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-23",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-25",
+              "text": "步骤1—2：该字段受到200字符上限限制；不能保存含201字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4k-10",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "取消启用勾选后新增菜单，保存为停用状态",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4k-11",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-12",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-13",
+              "text": "P2有效新菜单数据，P-ICON提供合法小于1MB的SVG；本场景使用独占编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-14",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-15",
+              "text": "1、打开【新增菜单】，填写名称、编码并选择图标，取消【启用】复选框勾选。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-16",
+              "text": "2、点击【保存】，记录菜单ID，刷新并重新打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-17",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-18",
+              "text": "步骤1：启用复选框处于未勾选状态。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-19",
+              "text": "步骤2：菜单已创建且状态为停用，重新打开时启用仍未勾选；其他字段按输入保存。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-21",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "URL路径为200字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S10新增弹窗当前选中菜单，未展示URL路径/嵌入页面；本场景须先按P-ROUTE核对具备跳转配置的适用类型及入口，不能在该截图中臆造控件。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-23",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-24",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-25",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-26",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-27",
+              "text": "1、点击【新增】，将【URL路径】填为P-LEN对应的200个字符的有效测试地址边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-28",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-29",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-30",
+              "text": "步骤2：该字段完整保存200字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-31",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "URL路径超过200字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S10新增弹窗当前选中菜单，未展示URL路径/嵌入页面；本场景须先按P-ROUTE核对具备跳转配置的适用类型及入口，不能在该截图中臆造控件。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-32",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-33",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-34",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-35",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-36",
+              "text": "1、点击【新增】，尝试在【URL路径】输入P-LEN对应的201字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-37",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-38",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-39",
+              "text": "步骤1—2：该字段受到200字符上限限制；不能保存含201字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w3-23",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "取消新增根菜单后，不创建已填写的菜单",
+      "note": "依据：S3失败/保存边界；取消不保存。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w3-24",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w3-25",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w3-26",
+              "text": "P2准备唯一标识M_CANCEL及有效根菜单数据，开始前确认树中没有该标识。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w3-27",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w3-28",
+              "text": "1、点击顶部【新增】，填写M_CANCEL及其余有效字段，上传ICON_OK。"
+            },
+            {
+              "id": "mcp-node-mvhu73w4-5",
+              "text": "2、点击【取消】，刷新菜单树并按M_CANCEL核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w4-1",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w4-2",
+              "text": "步骤2：没有M_CANCEL节点；已有菜单数量和配置保持准备时状态。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi0xm4k-29",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "通过右上角关闭并放弃输入后，不创建菜单",
+      "note": "依据：S10用户提供新增菜单弹窗；S3字段规则、S8操作规则及S9澄清。执行状态：未执行。类型切换后的条件字段仅按后续实际页面核对，不根据这一张菜单类型截图猜测。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi0xm4k-31",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4k-32",
+              "text": "按同目录case-preparation.md的P0以管理员A进入金叶轮【菜单管理】，执行环境和权限已落实。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4k-33",
+              "text": "P2提供本场景唯一编码M_CLOSE，开始前确认树中不存在该编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4k-34",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4l-1",
+              "text": "1、打开【新增菜单】，填写名称、M_CLOSE及合法SVG，不点击保存。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4l-2",
+              "text": "2、点击右上角【×】关闭；若出现未保存提示，选择放弃本次输入的操作。"
+            },
+            {
+              "id": "mcp-node-mvi0xm4l-3",
+              "text": "3、刷新菜单树，按M_CLOSE核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi0xm4l-4",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi0xm4l-5",
+              "text": "步骤2—3：弹窗关闭且本次输入未保存，树中没有M_CLOSE节点；已有节点保持原样。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-34",
+      "module": "菜单管理",
+      "function": "新增子菜单",
+      "title": "新增子菜单绑定角色和账号后，账号能从正确父菜单打开目标页",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-35",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-36",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-37",
+              "text": "P1准备R_A、R_B；P2提供C_NEW，P-ROUTE提供适用类型和已完成目标页PAGE_NEW。P-ACCOUNT的B已通过R_AUTH取得需保留菜单权限，新子菜单创建后需明确补入绑定，不假设自动继承。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-38",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-39",
+              "text": "1、A在R_B行点击【新增】，核对父级固定为R_B。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-40",
+              "text": "2、A填写C_NEW及该类型必需字段，并按已核对入口配置PAGE_NEW的跳转目标，完成保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-41",
+              "text": "3、A记录子菜单实际ID，刷新展开R_A、R_B，核对字段、层级和所属父级。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-2",
+              "text": "4、把根及新增子菜单实际ID交给配置负责人，按P-BIND确认这些节点经R_AUTH关联B。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-3",
+              "text": "5、B在隔离会话登录并核对身份，展开本人导航中的R_B，找到新增子菜单并点击。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-42",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-44",
+              "text": "步骤1：父级为R_B且不能改成R_A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-45",
+              "text": "步骤2—3：C_NEW仅作为R_B第二层子级创建一次；R_A不变，各字段与输入一致。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-4",
+              "text": "步骤4：角色及账号关系包含本次真实子菜单ID和所需父级，没有用推定的授权代替核对。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-5",
+              "text": "步骤5：B在R_B下看到对应名称，点击进入PAGE_NEW；页面标识和地址与P-ROUTE记录一致，不串到R_A或其他页面。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-46",
+      "module": "菜单管理",
+      "function": "新增子菜单",
+      "title": "二级节点不能继续新增第三级菜单",
+      "note": "依据：S9菜单最多两层。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-48",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-49",
+              "text": "P1的C_A1为第二层节点，当前结构只有根菜单和子级。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-1",
+              "text": "1、展开R_A，查看C_A1行是否提供可用的【新增】子级入口。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-2",
+              "text": "2、若页面仍提供该入口，尝试打开并提交由P2提供的合法第三层配置，刷新树核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-4",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-5",
+              "text": "步骤1—2：不能创建C_A1的子级；入口不可用或提交被拒绝，树中不出现第三层节点，原父子关系不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w8-6",
+      "module": "菜单管理",
+      "function": "新增子菜单",
+      "title": "信息节点不允许新增子级",
+      "note": "依据：S8父节点类别限制。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w8-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-9",
+              "text": "P3提供类别已核实的R_INFO及其实际ID，需位于第一层以隔离两层上限的影响；数据未提供时保持未执行。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-11",
+              "text": "1、在【菜单管理】按实际ID对应编码定位R_INFO，查看该行【新增】子级入口。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-12",
+              "text": "2、如入口仍可操作，尝试新增P2有效子级并重新读取该节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-14",
+              "text": "步骤1—2：不能在该类别节点下创建子级，原节点及其他树结构不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w8-15",
+      "module": "菜单管理",
+      "function": "新增子菜单",
+      "title": "非新开按钮节点不允许新增子级",
+      "note": "依据：S8父节点类别限制。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w8-16",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-17",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-18",
+              "text": "P3提供类别已核实的R_BUTTON_INLINE及其实际ID，需位于第一层以隔离两层上限的影响；数据未提供时保持未执行。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-19",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-20",
+              "text": "1、在【菜单管理】按实际ID对应编码定位R_BUTTON_INLINE，查看该行【新增】子级入口。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-21",
+              "text": "2、如入口仍可操作，尝试新增P2有效子级并重新读取该节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-22",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-23",
+              "text": "步骤1—2：不能在该类别节点下创建子级，原节点及其他树结构不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w8-24",
+      "module": "菜单管理",
+      "function": "新增子菜单",
+      "title": "第一层新开页面按钮允许新增第二层子级",
+      "note": "依据：S8允许新开页面按钮子级；S9两层。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w8-25",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-26",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-27",
+              "text": "P3提供已核实为新开页面按钮且位于第一层的R_BUTTON_PAGE；P2提供唯一子级数据。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-28",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-29",
+              "text": "1、在R_BUTTON_PAGE行点击【新增】，核对父级后填写P2子级数据。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-30",
+              "text": "2、点击【保存菜单】，刷新并展开该节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-31",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-32",
+              "text": "步骤1：父级为R_BUTTON_PAGE且不可更换。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-33",
+              "text": "步骤2：新子级位于该按钮下第二层，字段与输入一致，没有生成第三层。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w8-35",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "修改非首个菜单名称后，绑定账号显示新名称且其他菜单不变",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w8-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-37",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-38",
+              "text": "P1记录R_A、R_B全部字段，R_B不是首个菜单；P-ACCOUNT确认两菜单经R_AUTH关联B，B已记录修改前本人导航中的名称。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-39",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-40",
+              "text": "1、A在R_B行点击【修改】，逐项对照R_B快照，确认不是R_A或目录首个菜单项。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-41",
+              "text": "2、A把名称改为“菜单编辑验证B”、备注改为“只修改B”，保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-42",
+              "text": "3、A刷新后分别打开R_A、R_B回查实际ID与字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-43",
+              "text": "4、B在原隔离会话重新加载本人导航，核对账号ID，再按R_B实际ID对应的新名称定位菜单；不重新分配角色。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-6",
+              "text": "5、A按P-LOG查询本次R_B编辑日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w8-44",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w8-45",
+              "text": "步骤1：回显R_B完整字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-46",
+              "text": "步骤2—3：仅R_B名称和备注更新，其余字段与实际ID保持；R_A原配置不变。"
+            },
+            {
+              "id": "mcp-node-mvhu73w8-47",
+              "text": "步骤4：B看到“菜单编辑验证B”，同一节点不再显示旧名称或额外副本；R_A仍显示原名称，角色关联仍指向原R_B。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-7",
+              "text": "步骤5：日志对应R_B、A和本次时间，名称/备注前后值正确。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi1s9vr-9",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "更换菜单图标后，绑定账号显示新图标且入口仍可用",
+      "note": "依据：S11用户明确菜单绑定角色、角色绑定账号，调整后需用账号验证；结合S3/S8菜单及有效授权规则。未执行。角色仅作为已核对关联，不展开角色管理功能；具体账号侧入口按P-ACCOUNT落实。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi1s9vr-10",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-11",
+              "text": "按同目录case-preparation.md的P0、P-BIND和P-ACCOUNT准备隔离会话；A维护菜单，B为已绑定普通账号，N为未授权对照账号。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-12",
+              "text": "P-BIND确认目标菜单M_ICON→R_AUTH→B，账号导航中该菜单实际展示图标；P-ICON提供外观可区分的两份合法SVG，记录原图标、名称和实际菜单ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-13",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-14",
+              "text": "1、B在隔离会话登录并核对身份，记录目标菜单当前图标和名称。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-15",
+              "text": "2、A打开M_ICON编辑，只把图标从ICON_OK.svg改为ICON_ALT.svg并保存，回查实际ID及配置。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-16",
+              "text": "3、B重新加载本人导航，再退出重新登录复核图标；点击该菜单或其已约定可跳转子菜单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-17",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-18",
+              "text": "步骤2：仅图标按本次输入更新，菜单实际ID、名称及角色关联不变。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-19",
+              "text": "步骤3：B显示ICON_ALT.svg对应的新图标，不残留旧图标或新增重复入口；可跳转节点仍打开原约定目标页。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi1s9vr-20",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "修改菜单跳转目标后，绑定账号进入新目标页",
+      "note": "依据：S11用户明确菜单绑定角色、角色绑定账号，调整后需用账号验证；结合S3/S8菜单及有效授权规则。未执行。角色仅作为已核对关联，不展开角色管理功能；具体账号侧入口按P-ACCOUNT落实。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi1s9vr-21",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-22",
+              "text": "按同目录case-preparation.md的P0、P-BIND和P-ACCOUNT准备隔离会话；A维护菜单，B为已绑定普通账号，N为未授权对照账号。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-23",
+              "text": "P-ROUTE提供可编辑跳转目标的叶子菜单M_ROUTE、原目标PAGE_A和新目标PAGE_B，两页面均已完成；P-BIND确认M_ROUTE→R_AUTH→B，记录其实际ID与当前路径。条件字段控件须先核对，不在无该字段的菜单类型中臆造输入。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-24",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-25",
+              "text": "1、B隔离登录并核对账号，点击M_ROUTE，确认当前进入PAGE_A。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-26",
+              "text": "2、A打开M_ROUTE编辑，把跳转目标改为PAGE_B实际地址并保存，按原菜单ID回查。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-27",
+              "text": "3、B重新加载导航后点击原菜单入口，核对实际地址及页面标识。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1s9vr-28",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi1s9vr-29",
+              "text": "步骤2：跳转配置更新为PAGE_B，菜单ID和菜单→角色→账号关系保持。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-30",
+              "text": "步骤3：B从原菜单入口进入PAGE_B，不仍进入PAGE_A，也不误入其他页面。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w9-46",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "编辑已有菜单时类型不可改，其他可见字段保存后可回查",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w9-1",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-2",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-3",
+              "text": "P2提供可编辑根菜单R_EDIT及完整变更值，均已通过现有格式约束核对；根图标使用另一个已接受样本ICON_ALT。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-4",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-5",
+              "text": "1、打开R_EDIT的【修改】，查看【类型】是否可更改。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-6",
+              "text": "2、修改名称、标识、排序、URL路径、权限标识、备注、嵌入页面、状态和图标等实际可见字段，使用P2变更值后保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-7",
+              "text": "3、刷新并按记录的实际ID及新标识重新打开R_EDIT。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-8",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-9",
+              "text": "步骤1：类型只读或不可更换。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-10",
+              "text": "步骤2—3：类型保持原值，其他本次修改的可见字段完整保存；仍定位同一条编辑对象，不新增另一条菜单。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w9-11",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "取消菜单编辑后，绑定账号仍看到原名称和原顺序",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w9-12",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-13",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-14",
+              "text": "P1记录R_A原字段和树位置；P-ACCOUNT确认R_A经R_AUTH关联B，并记录B本人导航的原名称和次序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-15",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-16",
+              "text": "1、A打开R_A【修改】，更改名称、备注和排序。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-17",
+              "text": "2、A点击【取消】，刷新并重新打开R_A。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-8",
+              "text": "3、B在隔离会话核对身份并重新加载本人导航，定位R_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-18",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-19",
+              "text": "步骤2：R_A名称、备注、排序和树位置均与准备快照一致。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-9",
+              "text": "步骤3：B仍看到原名称和原次序，不显示本次未保存名称，也未产生新的菜单节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w9-20",
+      "module": "菜单管理",
+      "function": "编辑菜单",
+      "title": "菜单保存被服务拒绝后，绑定账号的有效菜单不改变",
+      "note": "依据：S3失败保留输入且不改有效记录。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w9-21",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-22",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-23",
+              "text": "P1记录R_A原字段；P-ACCOUNT已确认R_A→R_AUTH→B及B导航基线；P-FAIL保证本次保存被服务明确拒绝而不是结果未知。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-24",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-25",
+              "text": "1、A打开R_A【修改】，名称填“拒绝保存验证”，备注填“保留输入验证”。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-26",
+              "text": "2、A在P-FAIL条件下点击保存，检查反馈和编辑内容。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-27",
+              "text": "3、A在独立读取会话核对R_A有效记录。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-10",
+              "text": "4、B在自己的隔离会话核对身份并刷新本人导航，定位原R_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w9-28",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-29",
+              "text": "步骤2：反馈保存未完成，名称与备注输入保留，不把本地输入当成已保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-30",
+              "text": "步骤3：有效记录仍为准备快照，没有部分更新。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-11",
+              "text": "步骤4：B显示原菜单名称和位置，不显示被拒绝的名称；原有可用菜单未因此丢失。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi1pj3e-3",
+      "module": "菜单管理",
+      "function": "启用与停用",
+      "title": "停用已绑定菜单后，账号不再获得该菜单的可用入口",
+      "note": "依据：S11用户明确菜单绑定角色、角色绑定账号，调整后需用账号验证；结合S3/S8菜单及有效授权规则。未执行。角色仅作为已核对关联，不展开角色管理功能；具体账号侧入口按P-ACCOUNT落实。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi1pj3e-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-5",
+              "text": "按同目录case-preparation.md的P0、P-BIND和P-ACCOUNT准备隔离会话；A维护菜单，B为已绑定普通账号，N为未授权对照账号。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-6",
+              "text": "选择已启用且可跳转的独占叶子菜单M_STATE，已确认M_STATE→R_AUTH→B；B无其他角色授权该目标；R_KEEP为仍需可用的对照。记录原页面路径，不测试父级停用对下级的未明确联动。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1pj3e-7",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-8",
+              "text": "1、B隔离登录并核对身份，点击M_STATE确认可访问，记录本人导航基线。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-9",
+              "text": "2、A编辑M_STATE，将其设为停用并保存，回查有效状态。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-10",
+              "text": "3、B在原会话重新加载导航，核对M_STATE和R_KEEP；再用新登录会话复核并尝试旧路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1pj3e-11",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-12",
+              "text": "步骤2：M_STATE有效状态为停用，其他菜单配置不变。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-13",
+              "text": "步骤3：B不再取得M_STATE的有效可用入口，也不能仅凭旧路径继续获得该菜单受限能力；R_KEEP仍可访问。是否清理或保留绑定记录不在本场景额外规定。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvi1pj3e-14",
+      "module": "菜单管理",
+      "function": "启用与停用",
+      "title": "启用仍有有效绑定关系的菜单后，账号可重新进入目标页",
+      "note": "依据：S11用户明确菜单绑定角色、角色绑定账号，调整后需用账号验证；结合S3/S8菜单及有效授权规则。未执行。角色仅作为已核对关联，不展开角色管理功能；具体账号侧入口按P-ACCOUNT落实。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvi1pj3e-15",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-16",
+              "text": "按同目录case-preparation.md的P0、P-BIND和P-ACCOUNT准备隔离会话；A维护菜单，B为已绑定普通账号，N为未授权对照账号。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-17",
+              "text": "M_STATE当前停用，P-BIND已核实该菜单与R_AUTH、B的关联仍存在；目标页面已完成。不得假设停用一定保留绑定，需据真实记录满足本场景前置。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1pj3e-18",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-19",
+              "text": "1、B在隔离会话核对身份，确认当前没有M_STATE的可用入口。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-20",
+              "text": "2、A把M_STATE改为启用并保存，回查状态及同一实际菜单ID。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-21",
+              "text": "3、在不额外重建菜单的情况下，B重新登录，找到M_STATE并点击。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvi1pj3e-22",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvi1pj3e-23",
+              "text": "步骤2：菜单有效状态为启用，仍为原对象。"
+            },
+            {
+              "id": "mcp-node-mvi1pj3e-24",
+              "text": "步骤3：B出现该菜单可用入口，名称与配置一致，点击进入原约定目标页；不能只以管理端状态变化判定账号侧生效。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w9-32",
+      "module": "菜单管理",
+      "function": "复制菜单",
+      "title": "复制带子级菜单后，管理树和绑定账号菜单都不增加副本",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w9-33",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w9-34",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73w9-35",
+              "text": "P1准备R_A及C_A1、C_A2，记录树数量/编码集合；P-ACCOUNT已确认这组节点经R_AUTH关联B，并记录其导航基线；P4可核对编码内容。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-35",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-1",
+              "text": "1、A在R_A行点击【复制】，记录实际输出EXPORT_A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-2",
+              "text": "2、按P4读取EXPORT_A，核对完整节点、子级及校验签名。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-3",
+              "text": "3、A关闭复制界面并刷新管理树。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-12",
+              "text": "4、B在隔离会话核对身份并重新加载本人导航，检查这组已绑定菜单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-4",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-5",
+              "text": "步骤1—2：得到GISMENU.1.内容，包含R_A及两个子级完整配置和校验签名。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-6",
+              "text": "步骤3：管理树数量及编码集合不变，不自动创建副本。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-13",
+              "text": "步骤4：B原菜单名称、父子关系和次序保持，导航中不因复制出现额外副本。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wa-7",
+      "module": "菜单管理",
+      "function": "复制菜单",
+      "title": "复制全部生成可供批量新增读取的内容，原树不增加节点",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wa-8",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-9",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-10",
+              "text": "记录当前复制全部入口所属应用上下文和原树快照；P4可解析输出，具体导出全集边界仍按分析记录补证。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-11",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-12",
+              "text": "1、在【菜单管理】点击【复制全部】，取得编码内容EXPORT_ALL。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-13",
+              "text": "2、打开【批量新增】，粘贴EXPORT_ALL并进行完整性校验和预览，不提交新增。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-14",
+              "text": "3、取消批量新增并重新查看原树。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-16",
+              "text": "步骤1—2：得到GISMENU.1.编码内容，校验可通过并展示已有/新增节点预览；复制动作本身不创建记录。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-17",
+              "text": "步骤3：原树节点和字段不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wa-18",
+      "module": "菜单管理",
+      "function": "复制菜单",
+      "title": "剪贴板不可用时，可手工取得复制弹框中的完整内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wa-19",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-20",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-21",
+              "text": "P-CLIP提供当前浏览器拒绝剪贴板访问的可恢复条件；R_A可被复制。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-22",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-23",
+              "text": "1、在剪贴板不可用条件下，点击R_A行【复制】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-24",
+              "text": "2、从弹框中手工选择并复制全部编码内容，粘贴到【批量新增】输入区并校验，不提交。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-25",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-26",
+              "text": "步骤1：弹框仍提供完整复制内容，不因剪贴板失败而丢失编码。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-27",
+              "text": "步骤2：手工取得的内容能够完成完整性校验和预览；原树未因复制或预览新增节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wa-29",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "批量新增选中菜单并绑定账号后，账号显示所选结构且能打开目标页",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wa-30",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-31",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-32",
+              "text": "P4的B_VALID包含两组可新增菜单，第一组可跳转子菜单都有P-ROUTE已完成页面；P-ACCOUNT准备R_AUTH和B，不假设导入会自动复制角色授权。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wa-33",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wa-34",
+              "text": "1、A在【批量新增】粘贴B_VALID，完成校验和预览。"
+            },
+            {
+              "id": "mcp-node-mvhu73wa-36",
+              "text": "2、A只选择第一组根及其需新增子级，记录所选编码集合后提交。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-21",
+              "text": "3、A刷新回查所选节点实际ID、完整字段及两层父子关系，确认未选第二组未创建。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-1",
+              "text": "4、将实际新增ID集合交给配置负责人，按P-BIND只把本次需要授权的节点关联R_AUTH和B，并回读绑定结果。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-14",
+              "text": "5、B隔离登录并核对身份，查看本人导航中的新增根和子级，逐一点击本次已授权且可跳转的子菜单。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-15",
+              "text": "6、A按P-LOG使用本次新增ID集合和时间核对日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-2",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-3",
+              "text": "步骤1：预览区分已有与待新增节点。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-4",
+              "text": "步骤2—3：仅所选节点各新增一次，字段与预览一致，不创建未选第二组。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-5",
+              "text": "步骤4：真实菜单ID经实际角色ID关联到B，不把“创建成功”视为“已经授权”。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-16",
+              "text": "步骤5：B显示所选授权结构、名称和同级次序，能进入各自约定目标页；不出现未选节点或重复入口。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-17",
+              "text": "步骤6：日志对应实际新增节点、操作者、时间和新增值，未选节点不被记作新增。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wb-6",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "导入包含已有节点的有效内容，不重复创建已有节点",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wb-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-9",
+              "text": "P4的B_MIX含当前已存在节点E和待新增节点N；E现有ID、字段和数量已记录，N父级可满足。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-11",
+              "text": "1、打开【批量新增】粘贴B_MIX，校验并查看E、N的预览分类。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-12",
+              "text": "2、只选择可新增的N并提交，刷新后核对E和N。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-14",
+              "text": "步骤1：E被识别为已有节点，不作为重复新增对象。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-15",
+              "text": "步骤2：E仍只有原一条且配置未被导入覆盖；N新增一次并具有可回查的实际ID。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wb-16",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "有节点缺少父级时，整批不新增",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wb-17",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-18",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-19",
+              "text": "P4提供B_MISSING_PARENT，含可合法新增的对照节点及仅本场景错误的节点；错误样本可重复验证，记录原树快照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-20",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-22",
+              "text": "1、在【批量新增】粘贴B_MISSING_PARENT，触发完整性校验及预览。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-23",
+              "text": "2、若页面仍允许提交所选集合，尝试提交，再刷新菜单树并核对对照节点与错误节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-25",
+              "text": "步骤1—2：缺少有效父级触发阻止，整批均不新增；合法对照节点也不部分保存，已有记录保持原值。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wb-26",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "批量中编码冲突时整批不新增，账号现有菜单保持不变",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wb-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-28",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-29",
+              "text": "P4提供B_CONFLICT，含合法对照与编码冲突节点；P-ACCOUNT记录B经R_AUTH已获得的原菜单集合和导航基线。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-31",
+              "text": "1、A在【批量新增】粘贴B_CONFLICT并触发校验与预览。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-32",
+              "text": "2、若仍允许提交，A尝试提交该集合；随后刷新管理树核对错误节点及合法对照。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-18",
+              "text": "3、B在隔离会话核对身份并重新加载本人导航，按原实际菜单ID对应名称核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-34",
+              "text": "步骤1—2：编码冲突阻止整批新增，合法对照也不部分保存，已有配置不变。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-19",
+              "text": "步骤3：B原有菜单集合、名称和顺序保持，不丢失入口，也不出现本次失败导入的新增节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wb-35",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "复制内容结构无效时，整批不新增",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wb-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-37",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-38",
+              "text": "P4提供B_BAD_STRUCTURE，含可合法新增的对照节点及仅本场景错误的节点；错误样本可重复验证，记录原树快照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wb-39",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wb-40",
+              "text": "1、在【批量新增】粘贴B_BAD_STRUCTURE，触发完整性校验及预览。"
+            },
+            {
+              "id": "mcp-node-mvhu73wb-41",
+              "text": "2、若页面仍允许提交所选集合，尝试提交，再刷新菜单树并核对对照节点与错误节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-42",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-1",
+              "text": "步骤1—2：结构无效触发阻止，整批均不新增；合法对照节点也不部分保存，已有记录保持原值。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wc-2",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "复制内容签名无效时，整批不新增",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wc-3",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-4",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-5",
+              "text": "P4提供B_BAD_SIGNATURE，含可合法新增的对照节点及仅本场景错误的节点；错误样本可重复验证，记录原树快照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-6",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-7",
+              "text": "1、在【批量新增】粘贴B_BAD_SIGNATURE，触发完整性校验及预览。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-8",
+              "text": "2、若页面仍允许提交所选集合，尝试提交，再刷新菜单树并核对对照节点与错误节点。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-9",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-10",
+              "text": "步骤1—2：校验签名无效触发阻止，整批均不新增；合法对照节点也不部分保存，已有记录保持原值。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wc-11",
+      "module": "菜单管理",
+      "function": "批量新增",
+      "title": "取消已完成预览的批量新增后，不创建所选节点",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wc-12",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-13",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-14",
+              "text": "P4有效B_VALID，其中本轮待新增编码均不存在。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-15",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-16",
+              "text": "1、在【批量新增】粘贴B_VALID，校验并选择待新增节点。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-17",
+              "text": "2、点击【取消】，刷新菜单树按待新增编码核对。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-18",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-19",
+              "text": "步骤2：所有本次待新增编码仍不存在，原树未发生变化。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wc-21",
+      "module": "菜单管理",
+      "function": "删除菜单",
+      "title": "删除已绑定根菜单后，账号不再显示该菜单及全部子级",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wc-22",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-23",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-24",
+              "text": "P1独占R_DELETE含两个子级，另有R_KEEP；P-BIND确认B仅经R_AUTH取得目标及保留菜单，P-ACCOUNT记录原子菜单直达路径；P-BIZ记录相关业务对象快照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-25",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-26",
+              "text": "1、B在隔离会话登录并核对账号，确认R_DELETE、两个子级及R_KEEP均可定位，记录实际菜单ID与显示名称对应关系。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-27",
+              "text": "2、A在R_DELETE行点击【删除】，核对目标后确认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-28",
+              "text": "3、A刷新树并回读角色菜单关系，核对目标及子级ID集合；按P-BIZ读取原业务对象。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-29",
+              "text": "4、B在原会话重新加载本人导航，核对目标和子级消失，再点击R_KEEP对应的可用入口。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-20",
+              "text": "5、B退出并重新登录，复核菜单集合；尝试原子菜单的已记录直达路径。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-21",
+              "text": "6、A按P-LOG查询该次删除日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-30",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-31",
+              "text": "步骤1：账号侧基线与真实绑定关系一致，验证账号不是绕过授权的超级管理员。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-32",
+              "text": "步骤2—3：根及全部子级删除，其角色菜单关系同步清除；R_KEEP及其他关系保留，业务对象ID、内容和状态未被菜单删除改变。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-33",
+              "text": "步骤4：B不再取得目标及子级的有效入口，R_KEEP仍可用。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-22",
+              "text": "步骤5：重新登录结果一致；无其他授权来源的B不能靠旧路径继续取得该菜单的受限访问能力。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-23",
+              "text": "步骤6：删除日志对应本次目标、操作者、时间及删除前后状态。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wc-34",
+      "module": "菜单管理",
+      "function": "删除菜单",
+      "title": "取消删除菜单后，绑定账号仍保留原菜单和子级",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wc-35",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-36",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-37",
+              "text": "P1记录R_A及其子级、授权和顺序；P-ACCOUNT记录B经R_AUTH获得这些节点的导航基线。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-38",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-39",
+              "text": "1、A在R_A行点击【删除】，在确认环节取消。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-40",
+              "text": "2、A刷新树并回读目标、子级及角色菜单关系。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-1",
+              "text": "3、B在隔离会话核对身份，重新加载导航并展开R_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-41",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-43",
+              "text": "步骤2：目标、子级和授权关系保持准备时状态。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-2",
+              "text": "步骤3：B仍显示原根和子级，名称和次序不变，不因取消操作丢失菜单。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wc-44",
+      "module": "菜单管理",
+      "function": "删除菜单",
+      "title": "删除已绑定叶子菜单后，账号只失去该入口且兄弟菜单仍可用",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wc-45",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-46",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-47",
+              "text": "P1的C_A1、C_A2同属R_A；P-BIND确认根及两子级经R_AUTH关联B，P-ROUTE提供两个已完成目标页及实际路径。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wc-48",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wc-49",
+              "text": "1、B隔离登录并核对账号，确认R_A下两个子菜单及对应目标页。"
+            },
+            {
+              "id": "mcp-node-mvhu73wc-50",
+              "text": "2、A在C_A1行点击【删除】，核对目标并确认。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-24",
+              "text": "3、A刷新树及角色菜单关系，核对R_A、C_A1、C_A2。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-25",
+              "text": "4、B重新加载导航后再重新登录复核，展开R_A并点击C_A2。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-1",
+              "text": "步骤2—3：仅C_A1及其角色菜单关系被清除，R_A和C_A2及其关系保留。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vq-26",
+              "text": "步骤4：B不再看到C_A1；R_A下仍有C_A2，点击进入其原约定目标页，不误删或误跳其他菜单。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-3",
+      "module": "菜单管理",
+      "function": "菜单排序",
+      "title": "同级菜单排序保存后，绑定账号按新顺序显示且跳转不变",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。 S11：菜单→角色→账号；账号B验证实际菜单效果，角色仅作准备关联，未展开角色管理规则。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-5",
+              "text": "按同目录case-preparation.md的P0、P-BIND与P-ACCOUNT准备隔离会话；A调整菜单，B为通过已核对角色获得菜单权限的普通账号。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-6",
+              "text": "P1的R_A下有C_A1、C_A2、C_A3，原次序固定；P-BIND确认全部节点经R_AUTH关联B，P-ROUTE记录三个可跳转子菜单的目标页。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-7",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-8",
+              "text": "1、A在R_A下将C_A3拖到C_A1之前，按P-SORT完成保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-9",
+              "text": "2、A刷新管理树，核对新顺序及节点原字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-10",
+              "text": "3、B在隔离会话核对身份并重新加载本人导航，展开R_A核对顺序。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-3",
+              "text": "4、B按新顺序依次点击三个子菜单，逐一核对目标页标识和地址。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-4",
+              "text": "5、A按P-LOG查询本次排序日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-11",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-12",
+              "text": "步骤1—2：顺序为C_A3、C_A1、C_A2并持久保存；父级、ID、编码、路径等非排序配置不变。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-13",
+              "text": "步骤3：B导航中的同级相对次序也是C_A3、C_A1、C_A2，不只在管理树中变化。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-5",
+              "text": "步骤4：三个子菜单仍各自打开原目标页，不因排序错配路由或权限。"
+            },
+            {
+              "id": "mcp-node-mvi1s9vr-6",
+              "text": "步骤5：日志记录真实操作者、时间和原/新顺序。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-14",
+      "module": "菜单管理",
+      "function": "菜单排序",
+      "title": "把子菜单拖到另一个父菜单下，父子结构不改变",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-16",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-17",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-18",
+              "text": "P1的C_A1属于R_A，C_B1属于R_B，记录两组原顺序和父级。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-19",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-20",
+              "text": "1、尝试把C_A1拖到R_B的子级区域。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-21",
+              "text": "2、刷新并分别展开R_A、R_B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-22",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-23",
+              "text": "步骤1—2：跨父级拖放不改变结构；C_A1仍在R_A下，R_B未获得该节点，既有有效次序不被跨级操作改写。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-24",
+      "module": "菜单管理",
+      "function": "菜单排序",
+      "title": "把二级菜单拖为根级，仍保留原层级",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-25",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-26",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-27",
+              "text": "P1的C_A1为R_A的第二层子级。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-28",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-29",
+              "text": "1、尝试把C_A1拖到根菜单排列区域，完成拖放。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-30",
+              "text": "2、刷新并核对C_A1的父级和层数。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-31",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-32",
+              "text": "步骤1—2：C_A1仍属于R_A第二层，不变为根菜单，也不生成新节点。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-33",
+      "module": "菜单管理",
+      "function": "菜单排序",
+      "title": "排序保存失败时，有效顺序保持原值",
+      "note": "依据：S3失败不改有效记录；S8同级排序。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-34",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-35",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-36",
+              "text": "P1固定R_A子级原顺序；P-FAIL提供确定拒绝排序保存的条件。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-37",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-38",
+              "text": "1、在R_A内调整子级顺序，并在P-FAIL条件下触发保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-39",
+              "text": "2、在隔离A会话重新读取R_A子级顺序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-40",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-41",
+              "text": "步骤1：明确反馈排序未保存，不能提示已完成持久化。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-42",
+              "text": "步骤2：有效顺序保持准备时原值，父子结构和节点字段均未改变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    }
+  ]
+}

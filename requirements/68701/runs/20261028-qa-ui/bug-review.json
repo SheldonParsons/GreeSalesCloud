@@ -1,0 +1,100 @@
+{
+  "reviewed_at": "2026-10-28T16:18:35.379382+08:00",
+  "reviewer_thread_id": "01a15800-d006-7412-b639-9d37ccbe45b8",
+  "bugs": [
+    {
+      "bug_id": "BUG-68701-001",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-001-新增菜单初始类型及排序.md",
+      "sha256": "3f987b7ab32e6fa3d480a6a7705438e948734e8db13024a35e68a99a8c6f70b8",
+      "related_node_ids": [
+        "mcp-node-mvi0xm4i-1"
+      ],
+      "status": "local_reviewed",
+      "visual_check": "已直接查看标注PNG：两个红框分别准确圈出未选中的四类型与空排序，箭头落点正确，中文可读，不遮挡被测控件。",
+      "body_check": "步骤、结果、期望和已确认默认值一致；有真实截图内嵌，无普通链接；严重程度和优先级3，前端张文波；禅道目标字段仍待提供。",
+      "images": [
+        {
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-001/marked.png",
+          "sha256": "b0b20f78bf24234238899a0da2cd93b47e548c4a864f16d9cad7ee206b62da8c",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-002",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-002-菜单备注未回显.md",
+      "sha256": "c868ffd52c33e7beb2bd78f8b2fb6612e73492ec0b1a515cdf8a13742f77b598",
+      "related_node_ids": [
+        "mcp-node-mvhu73w2-33"
+      ],
+      "classification": "extra_finding",
+      "status": "local_reviewed",
+      "review_notes": "菜单备注与字典备注根因未证实相同，分开记录；不因额外发现自动增加场景失败数。",
+      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
+      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "images": [
+        {
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-002/marked.png",
+          "sha256": "55f0e5272bc82ab5066f0a04a783d77f3057be9d0cc4471a9dc06fd6d2f9aac4",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-003",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-003-字典类型备注未回显.md",
+      "sha256": "5b2c7e11e181e43719e6ac5c66cf3e871f894cd39765b4a46a2772a5e9b162af",
+      "related_node_ids": [
+        "mcp-node-mvhu73we-37"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "已核对创建请求备注及真实编辑空值；保留未确认存储状态；目标类型43后续删除，不声称仍保留。",
+      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
+      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "images": [
+        {
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-003/marked.png",
+          "sha256": "e25ff99022e3626be32192317c4c3424f887ac9dcd83267ae0f36bcce741582b",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    },
+    {
+      "bug_id": "BUG-68701-004",
+      "file": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-004-含字典项类型仍可删除.md",
+      "sha256": "c65b34f85f52a0bae75d3a80aaef251b6b29b714edf2dac8fad572b56e513b6e",
+      "related_node_ids": [
+        "mcp-node-mvhu73wn-48"
+      ],
+      "classification": "failed_case",
+      "status": "local_reviewed",
+      "review_notes": "已核对删除前两项、实际DELETE及刷新查询无记录；未推断级联删除；服务端删除保护交叶芳华排查。",
+      "visual_check": "已直接查看原图及最终标注图，中文可读、标注目标正确，箭头不遮挡关键证据；004调整标签位置后再次视觉检查。",
+      "body_check": "独立步骤/实际/期望齐备，内嵌图文件可读，无普通链接，无口令/Token；禅道字段待提供。",
+      "images": [
+        {
+          "path": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-004/marked-v2.png",
+          "sha256": "dc8978f1c67c9f3838d3052a1eb6df73e7e33344daa738da79920b9f214a7f03",
+          "width_height": [
+            1440,
+            900
+          ]
+        }
+      ],
+      "zentao_submitted": false
+    }
+  ]
+}

@@ -1,0 +1,3464 @@
+{
+  "module": "数据字典",
+  "source_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_金叶轮菜单管理与数据字典_lb_20261030.amind",
+  "source_sha256_at_baseline": "16e9e35ca3e24969afb25c7a985ff18368fa4fedb5f2258dde54ba360b15ccbd",
+  "source_node_count": 1335,
+  "count": 68,
+  "owner_thread_id": "01a1818d-9ad8-75e1-a34b-3d29bc82961f",
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhu73wd-44",
+      "module": "数据字典",
+      "function": "字典查询",
+      "title": "字典为空时展示空态，不自动生成示例数据",
+      "note": "依据：S4空字典与禁止自动导入演示枚举。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-45",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-46",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-47",
+              "text": "P5提供独立、确认为空的字典测试上下文；不得通过清空共享业务字典制造前置。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-48",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-49",
+              "text": "1、以A进入【平台设置 / 数据字典】，查看左侧类型和右侧字典项区域。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-50",
+              "text": "2、刷新页面，再次核对两侧记录。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wd-51",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-52",
+              "text": "步骤1—2：展示空态或待选择类型提示，没有自动生成“审批流程”“通过/pass”等示例记录。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-53",
+      "module": "数据字典",
+      "function": "字典查询",
+      "title": "切换字典类型后，右侧只显示所选类型的字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wd-54",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wd-55",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wd-56",
+              "text": "P5中D_A有I_A1、I_A2，D_B有I_B1；记录类型与项的真实ID及名称。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-1",
+              "text": "1、在左侧点击D_A类型名称，核对右侧标题和字典项。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-2",
+              "text": "2、切换到D_B，再切回D_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-3",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-4",
+              "text": "步骤1：右侧对应D_A，并显示I_A1、I_A2的名称、值、状态和默认属性。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-5",
+              "text": "步骤2：D_B下显示I_B1，不混入D_A的项；切回D_A后数据仍归属原类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-6",
+      "module": "数据字典",
+      "function": "字典查询",
+      "title": "按字典名称查询能定位目标类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73we-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-9",
+              "text": "P5准备D_A及D_B；本场景使用已记录的完整值，不推定模糊匹配或大小写折叠规则。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-11",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-12",
+              "text": "1、在【字典名称或编码】输入框填写D_A的完整名称，点击【查询】。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-13",
+              "text": "2、从结果中按类型编码核对D_A，点击其名称查看字典项。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-14",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-15",
+              "text": "步骤1：结果中可以定位D_A，其名称、编码、状态与准备记录一致。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-16",
+              "text": "步骤2：右侧展示D_A的字典项，不串到D_B。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-17",
+      "module": "数据字典",
+      "function": "字典查询",
+      "title": "按字典编码查询能定位目标类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73we-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-20",
+              "text": "P5准备D_A及D_B；本场景使用已记录的完整值，不推定模糊匹配或大小写折叠规则。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-22",
+              "text": "1、在【字典名称或编码】输入框填写D_A的完整类型编码，点击【查询】。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-23",
+              "text": "2、从结果中按类型编码核对D_A，点击其名称查看字典项。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-25",
+              "text": "步骤1：结果中可以定位D_A，其名称、编码、状态与准备记录一致。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-26",
+              "text": "步骤2：右侧展示D_A的字典项，不串到D_B。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-27",
+      "module": "数据字典",
+      "function": "字典查询",
+      "title": "重置查询后清空条件并恢复可见类型列表",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73we-28",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-29",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-30",
+              "text": "P5有D_A、D_B；已使用完整编码查询D_A，记录初始可见数据范围。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-31",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-32",
+              "text": "1、点击查询区【重置】。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-33",
+              "text": "2、检查输入框和类型列表，并分别选择D_A、D_B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-34",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-35",
+              "text": "步骤1—2：查询输入为空，列表恢复当前账号原可见类型范围；D_A、D_B都可定位，选中后右侧数据归属正确。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-37",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "填写有效字典类型后，名称编码状态备注完整保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73we-38",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-39",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-40",
+              "text": "P5提供唯一D_NEW_CODE，格式为字母开头的字母、数字、下划线组合；名称使用本轮唯一D_NEW_NAME。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-41",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-42",
+              "text": "1、点击【新增字典】，填写D_NEW_NAME、D_NEW_CODE，状态选【启用】，备注填“68701字典新增验证”。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-43",
+              "text": "2、点击【保存】，按D_NEW_CODE定位并记录实际类型ID。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-44",
+              "text": "3、刷新并打开该类型【编辑】，核对各字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-45",
+              "text": "4、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-46",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-47",
+              "text": "步骤2：新增一条目标类型，名称、编码、状态正确，没有重复记录。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-48",
+              "text": "步骤3：备注完整回显，类型ID对应同一记录；编码创建后只读。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-49",
+              "text": "步骤4：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-50",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称首尾空格去除后保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73we-51",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-52",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-53",
+              "text": "P5准备尚未使用的类型名“字典去空格验证”，其他字段为有效新值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73we-54",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73we-55",
+              "text": "1、点击【新增字典】，名称输入“  字典去空格验证  ”，填写唯一有效编码和启用状态。"
+            },
+            {
+              "id": "mcp-node-mvhu73we-56",
+              "text": "2、保存后刷新，按编码定位该类型并打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-19",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-1",
+              "text": "步骤2：保存名称为“字典去空格验证”，首尾空格已去除；编码、状态和其他字段按输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-2",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称为空时，不能新增字典类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wf-3",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-4",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-5",
+              "text": "P5有效类型新增数据；仅指定字段为空。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-6",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-7",
+              "text": "1、点击【新增字典】，填写其他有效字段，将【类型名称】留空。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-8",
+              "text": "2、点击【保存】，检查反馈和类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-9",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-10",
+              "text": "步骤2：【类型名称】未通过必填校验，不生成新类型，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-11",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码为空时，不能新增字典类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wf-12",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-13",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-14",
+              "text": "P5有效类型新增数据；仅指定字段为空。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-15",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-16",
+              "text": "1、点击【新增字典】，填写其他有效字段，将【类型编码】留空。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-17",
+              "text": "2、点击【保存】，检查反馈和类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-18",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-20",
+              "text": "步骤2：【类型编码】未通过必填校验，不生成新类型，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-21",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称仅含空格时，去空格后不能保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wf-22",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-23",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-24",
+              "text": "P5提供唯一有效编码，类型名称使用三个普通空格。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-25",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-26",
+              "text": "1、点击【新增字典】，名称输入三个空格，编码和状态填写有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-27",
+              "text": "2、点击【保存】，核对字段反馈及类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-28",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-29",
+              "text": "步骤2：去首尾空格后名称为空，不能保存；不创建空名称类型，其他有效输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-30",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "去首尾空格后与已有类型重名时，新增被拒绝",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wf-31",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-32",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-33",
+              "text": "P5存在D_A；准备不同且未使用的新类型编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-34",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-35",
+              "text": "1、点击【新增字典】，名称填写D_A名称并在首尾各加两个空格，编码填新的有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-36",
+              "text": "2、点击【保存】，核对原D_A和待新增编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-37",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-38",
+              "text": "步骤2：按去空格后的名称校验重复，新增被拒绝；D_A不改变，新的编码没有产生记录。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-39",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码与已有类型相同时，不能重复创建",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wf-40",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-41",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-42",
+              "text": "P5存在D_A，使用新的类型名称但复用D_A完整编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-43",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-44",
+              "text": "1、点击【新增字典】，填写新名称、D_A编码及有效状态。"
+            },
+            {
+              "id": "mcp-node-mvhu73wf-45",
+              "text": "2、点击【保存】，核对类型列表及D_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wf-46",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wf-47",
+              "text": "步骤2：平台唯一编码冲突阻止新增，D_A仍只有原记录且字段不变，输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-48",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码为“1jyltest”时，格式校验阻止保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-48",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-1",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-2",
+              "text": "P5提供唯一名称；本场景编码为明确不符合文档格式的测试值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-4",
+              "text": "1、点击【新增字典】，类型编码填“1jyltest”，其余必填字段使用有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-5",
+              "text": "2、点击【保存】，核对字段反馈和列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-6",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-7",
+              "text": "步骤2：不符合字母开头且仅字母、数字、下划线的规则，类型不创建，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-8",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码为“_jyltest”时，格式校验阻止保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-9",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-10",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-11",
+              "text": "P5提供唯一名称；本场景编码为明确不符合文档格式的测试值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-12",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-13",
+              "text": "1、点击【新增字典】，类型编码填“_jyltest”，其余必填字段使用有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-14",
+              "text": "2、点击【保存】，核对字段反馈和列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-16",
+              "text": "步骤2：不符合字母开头且仅字母、数字、下划线的规则，类型不创建，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-17",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码为“JYL-TEST”时，格式校验阻止保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-20",
+              "text": "P5提供唯一名称；本场景编码为明确不符合文档格式的测试值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-22",
+              "text": "1、点击【新增字典】，类型编码填“JYL-TEST”，其余必填字段使用有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-23",
+              "text": "2、点击【保存】，核对字段反馈和列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-25",
+              "text": "步骤2：不符合字母开头且仅字母、数字、下划线的规则，类型不创建，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-26",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称达到50字符时，完整保存该类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-28",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-29",
+              "text": "P-LEN提供本字段边界值；P5保证名称和编码唯一且编码符合格式，其他字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-31",
+              "text": "1、点击【新增字典】，将【类型名称】填写为P-LEN对应的50字符值，填写其他有效字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-32",
+              "text": "2、点击【保存】，记录实际ID，刷新并打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-34",
+              "text": "步骤2：【类型名称】完整保存50字符并逐字回显，不截断；仍为同一个类型记录。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-35",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称超过50字符时，不以截断内容保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-37",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-38",
+              "text": "P-LEN提供仅长度超限的输入；其他新增字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-39",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-40",
+              "text": "1、点击【新增字典】，尝试将【类型名称】填写为51字符测试值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-41",
+              "text": "2、检查限制反馈并尝试保存，再核对类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-42",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-43",
+              "text": "步骤1—2：51字符不能按原值保存；不得静默截断后将变更后的内容当作本次完整输入保存。未完成合法提交时不产生新类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-44",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码达到100字符时，完整保存该类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wg-45",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-46",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-47",
+              "text": "P-LEN提供本字段边界值；P5保证名称和编码唯一且编码符合格式，其他字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-49",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-50",
+              "text": "1、点击【新增字典】，将【类型编码】填写为P-LEN对应的100字符值，填写其他有效字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73wg-51",
+              "text": "2、点击【保存】，记录实际ID，刷新并打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wg-52",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wg-53",
+              "text": "步骤2：【类型编码】完整保存100字符并逐字回显，不截断；仍为同一个类型记录。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-54",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型编码超过100字符时，不以截断内容保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-38",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-1",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-2",
+              "text": "P-LEN提供仅长度超限的输入；其他新增字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-4",
+              "text": "1、点击【新增字典】，尝试将【类型编码】填写为101字符测试值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-5",
+              "text": "2、检查限制反馈并尝试保存，再核对类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-6",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-7",
+              "text": "步骤1—2：101字符不能按原值保存；不得静默截断后将变更后的内容当作本次完整输入保存。未完成合法提交时不产生新类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-8",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "备注达到500字符时，完整保存该类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-9",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-10",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-11",
+              "text": "P-LEN提供本字段边界值；P5保证名称和编码唯一且编码符合格式，其他字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-12",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-13",
+              "text": "1、点击【新增字典】，将【备注】填写为P-LEN对应的500字符值，填写其他有效字段。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-14",
+              "text": "2、点击【保存】，记录实际ID，刷新并打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-16",
+              "text": "步骤2：【备注】完整保存500字符并逐字回显，不截断；仍为同一个类型记录。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-17",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "备注超过500字符时，不以截断内容保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-20",
+              "text": "P-LEN提供仅长度超限的输入；其他新增字段有效。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-22",
+              "text": "1、点击【新增字典】，尝试将【备注】填写为501字符测试值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-23",
+              "text": "2、检查限制反馈并尝试保存，再核对类型列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-25",
+              "text": "步骤1—2：501字符不能按原值保存；不得静默截断后将变更后的内容当作本次完整输入保存。未完成合法提交时不产生新类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-26",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "取消新增字典后，不创建已填写的类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-28",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-29",
+              "text": "P5提供唯一类型名称D_CANCEL_NAME和编码D_CANCEL_CODE。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-31",
+              "text": "1、点击【新增字典】，填写名称、编码、状态及备注。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-32",
+              "text": "2、点击【取消】，刷新并按D_CANCEL_CODE查询。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-34",
+              "text": "步骤2：未创建该类型，已有类型及其字典项不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-35",
+      "module": "数据字典",
+      "function": "新增字典",
+      "title": "类型名称和编码各为1字符时，可保存最小长度输入",
+      "note": "依据：S4/S7最小长度及可空备注。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-37",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-39",
+              "text": "P5确认类型名称“甲”和编码“A”在隔离测试数据范围内未占用；仅在可用前置下执行，不删除未知既有记录。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-40",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-41",
+              "text": "1、点击【新增字典】，名称填“甲”、编码填“A”，状态选【启用】，备注留空。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-42",
+              "text": "2、点击【保存】，记录类型ID并重新打开编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-43",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-44",
+              "text": "步骤2：类型可保存，名称为“甲”、编码为“A”，没有补空格或额外字符；空备注保存为空。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-46",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "修改类型名称和备注后，稳定编码及字典项归属保持不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wh-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wh-48",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wh-49",
+              "text": "P5存在D_A及I_A1；记录类型ID、编码和项的父类型ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wh-50",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-43",
+              "text": "1、在D_A行点击【编辑】，名称改为本轮唯一“字典更名验证”，备注改为“编辑备注验证”。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-1",
+              "text": "2、点击【保存】，刷新并按原类型编码定位，查看右侧I_A1。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-2",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-3",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-4",
+              "text": "步骤2：类型名称及备注更新，ID和编码保持原值；I_A1仍属于同一类型，项值及自身ID未改变。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-5",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-6",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "已创建类型的编码只读，不能通过编辑改值",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wi-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-9",
+              "text": "P5记录D_A编码和ID，提供另一个有效编码作为尝试输入。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-11",
+              "text": "1、打开D_A【编辑】，查看【类型编码】并尝试修改。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-12",
+              "text": "2、取消编辑，再按原编码回查D_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-14",
+              "text": "步骤1：编码只读或控件禁用，不能输入新的编码。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-15",
+              "text": "步骤2：D_A仍使用原编码，没有产生新类型或更换稳定编码。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-16",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "将类型名称改成其他已有类型名称时，原记录不被覆盖",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wi-17",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-18",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-19",
+              "text": "P5存在名称不同的D_A和D_B，已记录两者全部字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-20",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-21",
+              "text": "1、打开D_A【编辑】，名称改为D_B的完整名称，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-22",
+              "text": "2、在隔离A会话或刷新后分别核对D_A、D_B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-23",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-24",
+              "text": "步骤1：名称重复阻止保存，当前输入保留。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-25",
+              "text": "步骤2：两类型仍保持各自原名称和配置，不合并、不覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-26",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "取消类型编辑后，名称状态备注保持原值",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wi-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-28",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-29",
+              "text": "P5记录D_A原名称、状态、备注。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-31",
+              "text": "1、打开D_A【编辑】，更改名称、状态和备注。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-32",
+              "text": "2、点击【取消】，刷新后重新打开D_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-34",
+              "text": "步骤2：三个字段均与准备快照一致，没有保存本次修改。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-35",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "无引用空字典由启用改为停用后，状态可回查",
+      "note": "依据：S4/S7类型启用停用。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wi-36",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-37",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-38",
+              "text": "P5提供无字典项、无引用的D_EMPTY，当前状态为启用，记录其ID/编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-39",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-40",
+              "text": "1、在D_EMPTY行点击【编辑】，将状态从【启用】改为【停用】，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-41",
+              "text": "2、刷新并按原编码重新打开D_EMPTY。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-42",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-44",
+              "text": "步骤1—2：状态保存为停用，名称、编码和ID仍为原值，不创建或删除其他类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-45",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "无引用空字典由停用改为启用后，状态可回查",
+      "note": "依据：S4/S7类型启用停用。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wi-46",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-47",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-48",
+              "text": "P5提供无字典项、无引用的D_EMPTY，当前状态为停用，记录其ID/编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wi-49",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wi-50",
+              "text": "1、在D_EMPTY行点击【编辑】，将状态从【停用】改为【启用】，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wi-51",
+              "text": "2、刷新并按原编码重新打开D_EMPTY。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-36",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-1",
+              "text": "步骤1—2：状态保存为启用，名称、编码和ID仍为原值，不创建或删除其他类型。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-46",
+      "module": "数据字典",
+      "function": "编辑字典",
+      "title": "类型编辑服务失败时，保留输入且不改变有效记录",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wp-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-48",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-49",
+              "text": "P5记录D_A原名称和备注；P-FAIL提供针对本次保存的确定失败条件。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-50",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-51",
+              "text": "1、打开D_A【编辑】，名称改为本类型范围内唯一“服务失败验证”，备注填“保留本次输入”。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-52",
+              "text": "2、在P-FAIL条件下点击【保存】，检查反馈和输入；再由隔离A会话读取原对象。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wq-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wq-1",
+              "text": "步骤2：反馈保存未完成，名称和备注输入保留；服务端有效记录仍为准备快照，没有部分覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-3",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "在选定类型下新增字典项，仅写入该类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-5",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-6",
+              "text": "P5存在D_A、D_B；D_A内新名称I_NEW_NAME、值I_NEW_VALUE均唯一；备注留空。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-7",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-8",
+              "text": "1、在左侧选择D_A，点击右侧【新增字典项】，填写I_NEW_NAME、I_NEW_VALUE，状态选【启用】，默认不勾选，备注留空。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-9",
+              "text": "2、点击【保存】，记录实际项ID，刷新后分别查看D_A和D_B。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-10",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-11",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-12",
+              "text": "步骤2：D_A下出现该项，名称、值、启用状态和非默认状态正确，空备注可保存；D_B未出现该项，父类型ID为D_A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-13",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-14",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项名称为空时，不创建字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-15",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-16",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-17",
+              "text": "P5选定D_A，其他新增字段为有效值；只清空指定必填字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-18",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-19",
+              "text": "1、在D_A下点击【新增字典项】，将【字典项名称】留空，其他字段填写有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-20",
+              "text": "2、点击【保存】，检查表单和D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-21",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-22",
+              "text": "步骤2：【字典项名称】必填校验未通过；不创建新项，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-23",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项值为空时，不创建字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-24",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-25",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-26",
+              "text": "P5选定D_A，其他新增字段为有效值；只清空指定必填字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-27",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-28",
+              "text": "1、在D_A下点击【新增字典项】，将【字典项值】留空，其他字段填写有效值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-29",
+              "text": "2、点击【保存】，检查表单和D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-30",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-31",
+              "text": "步骤2：【字典项值】必填校验未通过；不创建新项，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-32",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "同类型内字典项名称重复时，不能新增",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-33",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-34",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-35",
+              "text": "P5的D_A已有I_A1；与本场景无关的另一唯一字段使用新值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-37",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-38",
+              "text": "1、选择D_A并点击【新增字典项】，将【字典项名称】填写为I_A1的名称，其他字段有效且不重复。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-39",
+              "text": "2、点击【保存】，核对I_A1与本次待新增项。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-40",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-41",
+              "text": "步骤2：同类型内字典项名称重复阻止新增，I_A1不被改写或复制，输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-42",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "不同类型使用相同字典项名称时，各自保存且不串类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-43",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-44",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-45",
+              "text": "P5的D_A已有I_A1；D_B中不存在I_A1的名称，另一字段也在D_B内唯一。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-46",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-47",
+              "text": "1、选择D_B并点击【新增字典项】，将【字典项名称】填写为I_A1的名称，其他字段使用D_B内有效唯一值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-48",
+              "text": "2、点击【保存】，记录新项ID，刷新后分别查看D_A、D_B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-49",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-50",
+              "text": "步骤2：D_B新项可保存，与D_A的I_A1具有各自实际ID和父类型ID；不会因跨类型同字典项名称被当作同一项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-51",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "同类型内字典项值重复时，不能新增",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wj-52",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wj-53",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wj-54",
+              "text": "P5的D_A已有I_A1；与本场景无关的另一唯一字段使用新值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wj-55",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-5",
+              "text": "1、选择D_A并点击【新增字典项】，将【字典项值】填写为I_A1的值，其他字段有效且不重复。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-1",
+              "text": "2、点击【保存】，核对I_A1与本次待新增项。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-2",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-3",
+              "text": "步骤2：同类型内字典项值重复阻止新增，I_A1不被改写或复制，输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-4",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "不同类型使用相同字典项值时，各自保存且不串类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-6",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-7",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-8",
+              "text": "P5的D_A已有I_A1；D_B中不存在I_A1的值，另一字段也在D_B内唯一。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-9",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-10",
+              "text": "1、选择D_B并点击【新增字典项】，将【字典项值】填写为I_A1的值，其他字段使用D_B内有效唯一值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-11",
+              "text": "2、点击【保存】，记录新项ID，刷新后分别查看D_A、D_B。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-12",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-13",
+              "text": "步骤2：D_B新项可保存，与D_A的I_A1具有各自实际ID和父类型ID；不会因跨类型同字典项值被当作同一项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-14",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项名称为50字符时，字典项完整保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-15",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-16",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-17",
+              "text": "P5选定D_A；P-LEN提供对应长度的值，名称和值在D_A内唯一。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-18",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-19",
+              "text": "1、在D_A下新增字典项，将【字典项名称】输入为P-LEN的50字符值，其他字段有效。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-20",
+              "text": "2、点击【保存】，记录项ID并重新打开该项编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-21",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-22",
+              "text": "步骤2：该字段完整回显50字符，项仍属于D_A，其他属性与输入一致。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-23",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项名称超过50字符时，不截断后保存字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-24",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-25",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-26",
+              "text": "P5选定D_A；仅本场景字段超长，其他字段满足约束。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-27",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-28",
+              "text": "1、新增字典项，尝试在【字典项名称】填写P-LEN的51字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-29",
+              "text": "2、检查限制反馈并尝试保存，刷新核对D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-30",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-31",
+              "text": "步骤1—2：超长值不能作为有效输入保存；不得静默截断后创建与本次输入不一致的项。未完成合法提交时不创建新项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-32",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项值为100字符时，字典项完整保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-33",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-34",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-35",
+              "text": "P5选定D_A；P-LEN提供对应长度的值，名称和值在D_A内唯一。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-36",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-37",
+              "text": "1、在D_A下新增字典项，将【字典项值】输入为P-LEN的100字符值，其他字段有效。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-38",
+              "text": "2、点击【保存】，记录项ID并重新打开该项编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-39",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-40",
+              "text": "步骤2：该字段完整回显100字符，项仍属于D_A，其他属性与输入一致。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-41",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项值超过100字符时，不截断后保存字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-42",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-43",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-44",
+              "text": "P5选定D_A；仅本场景字段超长，其他字段满足约束。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-45",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-46",
+              "text": "1、新增字典项，尝试在【字典项值】填写P-LEN的101字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wk-47",
+              "text": "2、检查限制反馈并尝试保存，刷新核对D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wk-48",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wk-49",
+              "text": "步骤1—2：超长值不能作为有效输入保存；不得静默截断后创建与本次输入不一致的项。未完成合法提交时不创建新项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-50",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "备注为500字符时，字典项完整保存",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wk-51",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-51",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-1",
+              "text": "P5选定D_A；P-LEN提供对应长度的值，名称和值在D_A内唯一。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-2",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-3",
+              "text": "1、在D_A下新增字典项，将【备注】输入为P-LEN的500字符值，其他字段有效。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-4",
+              "text": "2、点击【保存】，记录项ID并重新打开该项编辑。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-5",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-6",
+              "text": "步骤2：该字段完整回显500字符，项仍属于D_A，其他属性与输入一致。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-7",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "备注超过500字符时，不截断后保存字典项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wl-8",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-9",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-10",
+              "text": "P5选定D_A；仅本场景字段超长，其他字段满足约束。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-11",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-12",
+              "text": "1、新增字典项，尝试在【备注】填写P-LEN的501字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-13",
+              "text": "2、检查限制反馈并尝试保存，刷新核对D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-14",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-15",
+              "text": "步骤1—2：超长值不能作为有效输入保存；不得静默截断后创建与本次输入不一致的项。未完成合法提交时不创建新项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-16",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "修改已引用字典项的显示名称，稳定值和引用关系不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wl-17",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-18",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-19",
+              "text": "P-REF提供D_A中已引用项I_REF及引用对象REF_ITEM的实际ID和字段；记录原项ID、值、父类型ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-20",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-21",
+              "text": "1、在D_A下找到I_REF并点击【编辑】，把名称改为D_A内唯一“字典项更名验证”，备注改为“保留引用验证”，保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-22",
+              "text": "2、刷新后回查该项，并按P-REF只读入口定位REF_ITEM。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-23",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-25",
+              "text": "步骤1—2：显示名称和备注更新，项ID、稳定值、父类型ID保持原值；REF_ITEM仍关联原ID/值，业务记录没有丢失关联。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-26",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-27",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "已创建字典项的值只读，不能通过编辑更换",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wl-28",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-29",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-30",
+              "text": "P5记录I_A1的项ID和值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-31",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-32",
+              "text": "1、在D_A右侧找到I_A1，点击【编辑】，尝试修改【字典项值】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-33",
+              "text": "2、取消编辑，刷新后核对同一项ID的值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-34",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-35",
+              "text": "步骤1：值字段只读或禁用，不能输入替换值。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-36",
+              "text": "步骤2：实际值保持原值，没有生成替代项。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-37",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "编辑为同类型已有项名称时，两个项均不被改写",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wl-38",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-39",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-40",
+              "text": "P5的I_A1、I_A2名称不同，同属D_A；记录快照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-41",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-42",
+              "text": "1、打开I_A2【编辑】，名称改成I_A1的名称，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-43",
+              "text": "2、在隔离A会话或刷新后核对两项ID及字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wl-44",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-45",
+              "text": "步骤1：同类型名称重复阻止保存，输入保留。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-46",
+              "text": "步骤2：两项保持各自原名称和值，不合并或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-47",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "取消字典项编辑后，名称状态默认标记和备注不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wl-48",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wl-49",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wl-50",
+              "text": "P5中I_A2为启用非默认项，记录全部属性。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-28",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-1",
+              "text": "1、打开I_A2【编辑】，修改名称、状态、默认勾选和备注，不保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-2",
+              "text": "2、点击【取消】，刷新D_A项列表并重新打开I_A2。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-3",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-4",
+              "text": "步骤2：各属性与准备快照一致，原默认项未因取消操作被替换。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-5",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "取消新增字典项后，当前类型没有新增记录",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-6",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-7",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-8",
+              "text": "P5选定D_A，准备唯一名称和值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-9",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-10",
+              "text": "1、点击【新增字典项】，填写唯一名称、值、状态和备注。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-11",
+              "text": "2、点击【取消】，刷新D_A项列表。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-12",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-13",
+              "text": "步骤2：本次名称和值对应的项不存在，已有项及默认选择不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-14",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项名称和值各为1字符时，可在所选类型保存",
+      "note": "依据：S4/S7字典项最小长度。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-15",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-16",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-17",
+              "text": "P5的D_A内名称“甲”和值“1”均未使用；本场景使用独立数据。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-18",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-19",
+              "text": "1、选择D_A，点击【新增字典项】，名称填“甲”、值填“1”，状态选【启用】，默认不勾选。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-20",
+              "text": "2、点击【保存】，记录实际项ID，刷新后重新打开。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-21",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-22",
+              "text": "步骤2：D_A下新增该项，名称和值各保持1字符，ID与父类型归属可回查。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wq-2",
+      "module": "数据字典",
+      "function": "新增与编辑字典项",
+      "title": "字典项编辑服务失败时，保留输入且不改变有效记录",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wq-3",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wq-4",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wq-5",
+              "text": "P5记录I_A2原名称和备注；P-FAIL提供针对本次保存的确定失败条件。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wq-6",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wq-7",
+              "text": "1、打开I_A2【编辑】，名称改为本类型范围内唯一“服务失败验证”，备注填“保留本次输入”。"
+            },
+            {
+              "id": "mcp-node-mvhu73wq-8",
+              "text": "2、在P-FAIL条件下点击【保存】，检查反馈和输入；再由隔离A会话读取原对象。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wq-9",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wq-10",
+              "text": "步骤2：反馈保存未完成，名称和备注输入保留；服务端有效记录仍为准备快照，没有部分覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-24",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "选择新默认项后，旧默认取消且其他类型默认不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-25",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-26",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-27",
+              "text": "P5中D_A的I_A1为默认、I_A2启用非默认；D_B的I_B1为默认。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-29",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-30",
+              "text": "1、选择D_A，编辑I_A2并勾选【默认】，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-31",
+              "text": "2、刷新后核对D_A的所有有效默认标记，再选择D_B核对I_B1。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-32",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-34",
+              "text": "步骤1—2：D_A只保留I_A2一个有效默认项，I_A1默认已取消；I_B1仍是D_B默认项，跨类型不受影响。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-35",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-36",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "新默认项保存失败时，旧默认仍有效",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-37",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-38",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-39",
+              "text": "P5中I_A1为D_A默认，I_A2为非默认；P-FAIL配置本次默认切换保存被确定拒绝。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-40",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-41",
+              "text": "1、编辑I_A2并勾选【默认】，在P-FAIL条件下点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-42",
+              "text": "2、使用隔离A会话读取D_A全部项的有效默认状态。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-43",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-44",
+              "text": "步骤1：提示未完成保存，输入保留。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-45",
+              "text": "步骤2：I_A1仍为默认，I_A2仍非默认，没有先清旧默认而未设置新默认的部分更新。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-46",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "未调整默认选择时，不能直接停用默认项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-48",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-49",
+              "text": "P5中I_A1为D_A当前有效默认，I_A2可作为替代但本场景不调整。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-50",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-51",
+              "text": "1、编辑I_A1，尝试把状态从【启用】改为【停用】并保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wm-52",
+              "text": "2、刷新核对I_A1状态及D_A默认选择。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wm-53",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-54",
+              "text": "步骤1—2：在默认选择未先调整前不能直接完成停用；有效默认仍为启用的I_A1，不出现指向停用项的有效默认。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-55",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "未调整默认选择时，不能直接删除默认项",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wm-56",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wm-57",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-15",
+              "text": "P5中I_A1为D_A默认且无其他业务引用，本场景不调整默认。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-1",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-2",
+              "text": "1、在I_A1行点击【删除】，按实际确认流程尝试提交删除。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-3",
+              "text": "2、刷新D_A并核对I_A1及默认标记。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-4",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-5",
+              "text": "步骤1—2：默认选择未先调整，删除不能直接生效；I_A1仍存在且保持有效默认。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-6",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "先切换默认项再删除旧默认项，新默认保持有效",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wn-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-9",
+              "text": "P5的I_A1为默认且无业务引用，I_A2启用可替代；记录两项ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-11",
+              "text": "1、编辑I_A2并设为默认，保存后确认I_A1已不再默认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-12",
+              "text": "2、删除I_A1并确认，刷新D_A。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-14",
+              "text": "步骤1：有效默认转为I_A2，I_A1默认取消。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-16",
+              "text": "步骤2：I_A1删除，I_A2仍存在且为唯一有效默认，其他项未被删除。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-17",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "停用仅用于历史显示的非默认项，历史内容仍保留",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wn-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-20",
+              "text": "P-HISTORY提供I_HISTORY：非默认、无会因停用失效的在用业务，存在指定历史记录HISTORY_ID及原显示内容。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-22",
+              "text": "1、编辑I_HISTORY，将状态改为【停用】并保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-23",
+              "text": "2、刷新项列表核对状态，按P-HISTORY只读路径打开HISTORY_ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-25",
+              "text": "步骤1—2：字典项状态为停用；历史记录仍存在且原显示内容保留，没有变成空白、错误值或丢失关联。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-26",
+      "module": "数据字典",
+      "function": "默认项与启停",
+      "title": "停用会导致在用业务失效的引用项时，操作被阻止",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wn-27",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-28",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-29",
+              "text": "P-REF提供I_ACTIVE及已确认会受停用影响的活动引用REF_ACTIVE，项为非默认；记录两者状态。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-30",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-31",
+              "text": "1、编辑I_ACTIVE，将状态改为【停用】并尝试保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-32",
+              "text": "2、刷新该项，按P-REF读取REF_ACTIVE当前有效状态。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-33",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-34",
+              "text": "步骤1：引用限制阻止直接停用，反馈能说明不能完成本次变更。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-35",
+              "text": "步骤2：字典项有效状态及在用业务状态保持准备时值，不因本次操作失效。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-48",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "类型下仍有字典项时，不能删除该类型",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wn-49",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-50",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-51",
+              "text": "P5的D_A下存在I_A1和I_A2，记录类型及项ID和字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-52",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-53",
+              "text": "1、在D_A行点击【删除】并尝试确认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wn-54",
+              "text": "2、刷新并重新选择D_A，核对其全部字典项。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wn-55",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wn-56",
+              "text": "步骤1：有字典项的类型删除被阻止，不能无提示级联删除。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-54",
+              "text": "步骤2：D_A及两个项的ID和内容保持原样。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-1",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "没有字典项但已被业务引用的类型，不能删除",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [
+        "other:question"
+      ],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-2",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-3",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-4",
+              "text": "P-REF提供无字典项但被REF_TYPE引用的D_REF；记录类型ID及引用关系。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-5",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-6",
+              "text": "1、在D_REF行点击【删除】并尝试确认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-7",
+              "text": "2、刷新类型列表，按P-REF读取REF_TYPE引用。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-8",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-9",
+              "text": "步骤1—2：类型删除被引用约束阻止；D_REF仍存在，REF_TYPE仍关联原类型，业务记录不被级联删除。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-10",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "删除未引用的非默认项，其他项和默认选择保持不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-11",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-12",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-13",
+              "text": "P5的I_A2为D_A下未引用、非默认项；I_A1为默认，记录两者ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-14",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-15",
+              "text": "1、在I_A2行点击【删除】，核对项名称和值后确认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-16",
+              "text": "2、刷新D_A项列表，核对I_A1及其他项。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-17",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-18",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-19",
+              "text": "步骤2：仅I_A2被删除，I_A1及其默认标记、其他项的值和引用保持不变。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-20",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-21",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "已被引用的非默认项不能删除，业务引用继续有效",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-22",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-23",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-24",
+              "text": "P-REF提供非默认的I_REF及REF_ITEM，记录项ID/值和引用对象ID。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-25",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-26",
+              "text": "1、在I_REF行点击【删除】并尝试确认。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-27",
+              "text": "2、刷新项列表，再按P-REF读取REF_ITEM。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-28",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-29",
+              "text": "步骤1—2：删除被引用限制阻止；I_REF仍存在且值不变，REF_ITEM引用有效，业务对象未删除。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-30",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "取消删除类型后，原记录仍可回查",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-31",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-32",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-33",
+              "text": "P5记录D_EMPTY全部字段，并确认对象为本场景独占测试数据。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-34",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-35",
+              "text": "1、在左侧类型列表找到D_EMPTY并点击【删除】，在确认环节取消。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-36",
+              "text": "2、刷新页面，按D_EMPTY的实际ID和编码/值重新定位。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-37",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-38",
+              "text": "步骤2：对象仍存在，全部字段、所属关系和原有状态保持不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-39",
+      "module": "数据字典",
+      "function": "删除字典和字典项",
+      "title": "取消删除字典项后，原记录仍可回查",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-40",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-41",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-42",
+              "text": "P5记录I_A2全部字段，并确认对象为本场景独占测试数据。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-43",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-44",
+              "text": "1、在D_A右侧项列表找到I_A2并点击【删除】，在确认环节取消。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-45",
+              "text": "2、刷新页面，按I_A2的实际ID和编码/值重新定位。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-46",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-47",
+              "text": "步骤2：对象仍存在，全部字段、所属关系和原有状态保持不变。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-49",
+      "module": "数据字典",
+      "function": "字典项排序",
+      "title": "拖动同类型字典项后，顺序保存且项值和引用不变",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wo-50",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-51",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wo-52",
+              "text": "P5的D_A有三项，顺序I_A1、I_A2、I_A3；记录每项ID/值/默认及P-REF相关引用，D_B作对照。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wo-53",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wo-55",
+              "text": "1、在D_A右侧列表将I_A3拖到I_A1之前，按P-SORT核实后的保存方式完成排序。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-15",
+              "text": "2、刷新并重新选择D_A，核对次序、项值、默认及引用，再查看D_B。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-1",
+              "text": "3、按同目录case-preparation.md的P-LOG，用本场景实际对象ID、操作账号和起止时间查询该次操作日志。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-2",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-3",
+              "text": "步骤1—2：D_A顺序为I_A3、I_A1、I_A2并保持；项ID、值、所属类型、默认选择及业务引用不变；D_B未受影响。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-4",
+              "text": "步骤3：日志对应本场景对象及动作，记录实际操作人、时间和关键前后值；新增、修改、删除、默认或顺序变化应与本次实际变更一致，不用其他记录的日志代替。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-5",
+      "module": "数据字典",
+      "function": "字典项排序",
+      "title": "使用上下箭头调整字典项后，保存同类型内的新次序",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wp-6",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-7",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-8",
+              "text": "P5的D_A三项顺序I_A1、I_A2、I_A3；使用中间项，避免把首尾按钮显示方式当成已确认规则。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-9",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-10",
+              "text": "1、在I_A2行点击【↑】，按P-SORT完成必要保存并刷新。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-11",
+              "text": "2、在I_A2行点击【↓】，完成保存并再次刷新。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-12",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-13",
+              "text": "步骤1：顺序为I_A2、I_A1、I_A3，项值和归属不变。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-14",
+              "text": "步骤2：顺序回到I_A1、I_A2、I_A3，未新增/删除项，默认和引用保持原值。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-16",
+      "module": "数据字典",
+      "function": "字典项排序",
+      "title": "排序保存失败后，有效次序和引用仍为原值",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wp-17",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-18",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-19",
+              "text": "P5记录D_A原项顺序和引用；P-FAIL提供确定拒绝排序保存的条件。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-20",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-21",
+              "text": "1、调整D_A字典项顺序，在P-FAIL条件下触发保存。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-22",
+              "text": "2、在隔离A会话重新读取D_A项顺序和值、引用。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-23",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-24",
+              "text": "步骤1：明确反馈保存失败。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-25",
+              "text": "步骤2：有效次序仍为原顺序，项值和引用未被部分更新。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-27",
+      "module": "数据字典",
+      "function": "访问权限",
+      "title": "未获数据字典菜单权限的账号不能进入维护页面",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wp-28",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-29",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-30",
+              "text": "P0账号U未获数据字典菜单和操作权限；A已记录真实字典维护页地址。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-31",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-32",
+              "text": "1、在U隔离会话登录金叶轮管理端，查看【平台设置】入口。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-33",
+              "text": "2、使用U会话直接打开A记录的数据字典页面地址。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-34",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-35",
+              "text": "步骤1—2：无可用的字典维护入口，直接访问也不能取得未授权维护能力；不泄露可操作的字典编辑内容。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-36",
+      "module": "数据字典",
+      "function": "访问权限",
+      "title": "已有字典页在操作权限撤销后，提交编辑被拒绝",
+      "note": "依据：S4/S7数据字典3.30；S9排序确认。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73wp-37",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-38",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-39",
+              "text": "P0账号C原可编辑，已打开D_A；A在隔离会话撤销该操作权限；记录D_A原值。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-40",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-41",
+              "text": "1、在C已打开的表单修改D_A名称，点击【保存】。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-42",
+              "text": "2、以A按D_A实际ID重新读取有效记录。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73wp-43",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73wp-44",
+              "text": "步骤1：保存因当前权限不足被拒绝，输入保留。"
+            },
+            {
+              "id": "mcp-node-mvhu73wp-45",
+              "text": "步骤2：D_A有效名称与其他字段保持原值，不能利用旧页面绕过权限校验。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    }
+  ]
+}

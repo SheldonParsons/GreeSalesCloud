@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-10-28T16:08:23.342246+08:00",
+  "authorization": "用户2026-10-28要求多个会话并行，主脑与GPT-6.1 Terra交互，并由主脑创建和视觉检查BUG。",
+  "business_owner_thread_id": "01a15800-d006-7412-b639-9d37ccbe45b8",
+  "global_case_status_and_mind_writer": "01a18177-e668-79d0-a41f-fbd147241cf4",
+  "final_local_bug_writer": "01a15800-d006-7412-b639-9d37ccbe45b8",
+  "git_commit_owner": "主脑统一提交本轮新资料；执行会话暂停独立暂存和提交，待协调",
+  "shards": [
+    {
+      "key": "menu",
+      "count": 65,
+      "thread_id": "01a18177-e668-79d0-a41f-fbd147241cf4",
+      "page_ids": [
+        2,
+        3
+      ],
+      "account_role_mutation_owner": true
+    },
+    {
+      "key": "dictionary",
+      "count": 68,
+      "thread_id": "01a1818d-9ad8-75e1-a34b-3d29bc82961f",
+      "page_ids": [
+        4
+      ],
+      "account_role_mutation_owner": false,
+      "start_gate": "必须先有独占页面分配；不可操作page2/3，不可重复登录或改变账号角色",
+      "page_allocation_verified": true,
+      "shared_context": "jyl68701-admin；独占页面，共享登录态，不退出或重新登录管理员"
+    }
+  ]
+}
