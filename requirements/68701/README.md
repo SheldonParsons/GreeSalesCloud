@@ -6,6 +6,7 @@
 - 任务 ID：`01a15800-d006-7412-b639-9d37ccbe45b8`，主机：`local`。
 - 工作目录：`/Users/sheldon/Documents/GithubProject/GreeSalesCloud`，未创建 worktree。
 - 开场范围：阅读已提供背景图及责任范围，接收两个模块详细材料。
+- 2026-10-28分工纠正：本会话作为业务大脑，负责规则、调度、结果和BUG归因审查，不再直接执行UI；专职执行为[68701｜金叶轮 UI 执行（GPT-6.1 Terra）](codex://threads/01a18177-e668-79d0-a41f-fbd147241cf4)，创建时明确指定`gpt-6.1-terra`，使用同一本地目录。先交接已有数据、结果、页面和Mind状态，再由Terra单独接续执行，不重复创建、不并发争用。
 
 ## 当前状态与范围
 
