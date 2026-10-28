@@ -1,0 +1,24 @@
+{
+  "node_id": "mcp-node-mvhu73w8-35",
+  "environment": "QA",
+  "account_ref_admin": "qa.jinyelun.admin",
+  "account_ref_tester": "qa.jinyelun.tester",
+  "objects": {
+    "target_id": 109,
+    "comparison_id": 111,
+    "unchanged_root_id": 104
+  },
+  "actual": "角色12临时关联三根菜单并回读叶子ID集合[115,106,107,111]，测试账号导航顺序为111、109、104；管理员单次修改109名称和备注后刷新，名称回显为菜单编辑验证B，备注为空，其他可见字段未变；测试账号刷新显示新名称且其他两根仍在，角色未重新分配。日志入口未确认。",
+  "verdict": "failed",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/menu-edit-nonfirst-before.png",
+    ".local/68701/qa-ui-20261028/menu-nonfirst-edit-before.png",
+    ".local/68701/qa-ui-20261028/menu-nonfirst-edit-after.png",
+    ".local/68701/qa-ui-20261028/menu-nonfirst-account-after.png",
+    ".local/68701/qa-ui-20261028/network-2-13564.network-request",
+    ".local/68701/qa-ui-20261028/network-2-13565.network-response",
+    ".local/68701/qa-ui-20261028/network-2-14498.network-response"
+  ],
+  "candidate": "BUG-68701-002同类备注回显待主脑归因",
+  "restoration": "账号恢复原角色6并查看回读；角色12权限响应恢复叶子集合[106,107]；ID109名称变更保留供复核。"
+}

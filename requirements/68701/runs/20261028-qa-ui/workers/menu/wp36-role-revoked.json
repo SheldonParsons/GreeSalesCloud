@@ -1,0 +1,24 @@
+{
+  "trial_id": "dict-revoke-20261028-1",
+  "node_id": "mcp-node-mvhu73wp-36",
+  "target_id": 53,
+  "account_id": 6,
+  "before_role": 6,
+  "after_roles": [
+    12
+  ],
+  "role_12_menu_ids": [
+    106,
+    107
+  ],
+  "role_readback": "角色查看页平台设置和数据字典均未勾选，账号查看页仅QA68701菜单专用角色；账号角色只读响应为[12]，角色菜单响应为[106,107]。",
+  "page3": "保持字典worker旧表单，不操作、不刷新、不提交。",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/wp36-account-role12.png",
+    ".local/68701/qa-ui-20261028/wp36-role12-no-dictionary.png",
+    ".local/68701/qa-ui-20261028/network-2-15772.network-response",
+    ".local/68701/qa-ui-20261028/network-2-16082.network-response"
+  ],
+  "revoked_at": "2026-10-28T17:49:58.199756+08:00",
+  "restore_state": "尚未恢复角色6；等待字典worker提交及管理员回查明确、主脑通知后恢复。"
+}

@@ -1,0 +1,1 @@
+{"node_id":"mcp-node-mvhu73w4-22","environment":"QA","account_ref":"qa.jinyelun.admin","input":"甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲","input_length":30,"actual":"名称输入框仅保留20个汉字；不能继续按30字符执行保存及回显。取消退出，没有创建菜单。","verdict":"failed","evidence":".local/68701/qa-ui-20261028/menu-name-30-truncated.png","candidate":"workers/menu/candidate-menu-name-length.md"}

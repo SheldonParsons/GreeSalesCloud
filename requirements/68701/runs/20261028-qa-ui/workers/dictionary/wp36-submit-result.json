@@ -1,0 +1,57 @@
+{
+  "trial_id": "dict-revoke-20261028-1",
+  "node_id": "mcp-node-mvhu73wp-36",
+  "target_id": 53,
+  "account_id": 6,
+  "revocation_evidence": "requirements/68701/runs/20261028-qa-ui/workers/menu/wp36-role-revoked.json",
+  "submit": {
+    "page_id": 3,
+    "dispatch_count": 1,
+    "request_id": 4444,
+    "method": "PUT",
+    "path": "/gree-gis-api/v1/common/dicts/types/update/53",
+    "http_status": 200,
+    "business_response": {
+      "code": "00000",
+      "msg": "一切ok"
+    },
+    "ui_feedback": "编辑字典类型成功；原编辑对话框关闭，输入未保留",
+    "unknown_result": false
+  },
+  "before": {
+    "id": 53,
+    "name": "68701权限撤销基线",
+    "code": "jyl_68701_revoke_1028_1",
+    "status": 1,
+    "remark": "",
+    "items": []
+  },
+  "desired": {
+    "name": "68701权限撤销尝试"
+  },
+  "after": {
+    "id": 53,
+    "name": "68701权限撤销尝试",
+    "code": "jyl_68701_revoke_1028_1",
+    "status": 1,
+    "remark_display": "空",
+    "items_display": "空",
+    "verified_by": "page4管理员以唯一编码重新查询，响应reqid9512及编辑弹窗回读"
+  },
+  "expected": "权限撤销后旧表单提交因权限不足被拒绝并保留输入；管理员回读原名称及其他字段不变",
+  "suggested_status": "failed",
+  "reason": "撤权确认后旧页面单次提交成功，管理员独立回读名称已变；具体前后端归属待主脑审查。",
+  "ready_for_role_restore": true,
+  "role_restore_state": "尚未恢复；由菜单执行方负责并回读。",
+  "evidence": [
+    "requirements/68701/runs/20261028-qa-ui/workers/menu/wp36-role-revoked.json",
+    ".local/68701/qa-ui-20261028/workers/dictionary/wp36-before-submit-revoked.png",
+    ".local/68701/qa-ui-20261028/workers/dictionary/wp36-tester-after-submit.png",
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4444.network-request",
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4444.network-response",
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4445.network-response",
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9512.network-response",
+    ".local/68701/qa-ui-20261028/workers/dictionary/wp36-admin-readback.png"
+  ],
+  "recorded_at": "2026-10-28T17:55:28.390842+08:00"
+}

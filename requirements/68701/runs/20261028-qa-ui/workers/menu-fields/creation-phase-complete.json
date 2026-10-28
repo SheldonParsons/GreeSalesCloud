@@ -1,0 +1,62 @@
+{
+  "completed_at": "2026-10-28T17:04:11.569524+08:00",
+  "status": "complete",
+  "page_id": 4,
+  "released_node_ids": [
+    "mcp-node-mvhu73w5-3",
+    "mcp-node-mvhu73w5-12",
+    "mcp-node-mvhu73w5-40",
+    "mcp-node-mvhu73w5-49",
+    "mcp-node-mvhu73w7-6",
+    "mcp-node-mvhu73w7-15",
+    "mcp-node-mvhu73w6-8",
+    "mcp-node-mvhu73w6-17"
+  ],
+  "counts": {
+    "passed": 4,
+    "failed": 4,
+    "blocked": 0,
+    "in_progress": 0,
+    "not_started": 0
+  },
+  "created_objects": [
+    {
+      "id": 116,
+      "code": "QA68701FPerm100"
+    },
+    {
+      "id": 117,
+      "code": "QA68701FPerm101"
+    },
+    {
+      "id": 118,
+      "code": "QA68701FSort10000"
+    },
+    {
+      "id": 119,
+      "code": "QA68701FSortDecimal"
+    },
+    {
+      "id": 121,
+      "code": "QA68701FRemark200"
+    },
+    {
+      "id": 124,
+      "code": "QA68701FRemark201"
+    }
+  ],
+  "verification": "最新页面树响应 network-4-9100 回读上述各编码各一条及ID；备注200第一次点击时无创建请求，上传完成后仅派发一次创建；所有已派发创建均已按编码和ID确认，无未知创建结果。",
+  "coordination": "字段分片创建与状态回查结束；不再新增或修改菜单数据，主执行者可恢复复制全部/批量及共享树断言。",
+  "limitations": "备注201创建请求含201字符，响应和编辑不回显备注，存储状态未知；这是已确认的创建结果，不是未知创建。",
+  "result_revision": {
+    "at": "2026-10-28T17:07:10.400998+08:00",
+    "reason": "用户最新排序验收补充，10000和1.5两场景依据已回读的合法保存值由失败修订为通过；创建释放状态不变。",
+    "previous_counts": {
+      "passed": 2,
+      "failed": 6,
+      "blocked": 0,
+      "in_progress": 0,
+      "not_started": 0
+    }
+  }
+}

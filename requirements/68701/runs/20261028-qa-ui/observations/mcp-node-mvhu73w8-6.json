@@ -1,0 +1,19 @@
+{
+  "node_id": "mcp-node-mvhu73w8-6",
+  "environment": "QA",
+  "account_ref": "qa.jinyelun.admin",
+  "object": {
+    "id": 114,
+    "code": "QA68701InfoRoot1028",
+    "type": 4,
+    "parentId": 0
+  },
+  "actual": "第一层信息节点ID114行仅显示编辑、复制、删除，没有新增子级按钮。字段分片创建结束后重新读取树，按ID比较操作前的114个节点（不将新增10节点误算为变更），原有节点字段及parentId均未变。未尝试非UI写入。",
+  "verdict": "passed",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/menu-info-no-add.png",
+    ".local/68701/qa-ui-20261028/network-2-7988.network-response",
+    ".local/68701/qa-ui-20261028/network-2-8922.network-response"
+  ],
+  "restoration": "保留独占信息节点ID114"
+}

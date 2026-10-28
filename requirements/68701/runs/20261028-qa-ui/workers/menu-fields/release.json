@@ -1,0 +1,19 @@
+{
+  "released_node_ids": [
+    "mcp-node-mvhu73w5-3",
+    "mcp-node-mvhu73w5-12",
+    "mcp-node-mvhu73w5-40",
+    "mcp-node-mvhu73w5-49",
+    "mcp-node-mvhu73w7-6",
+    "mcp-node-mvhu73w7-15",
+    "mcp-node-mvhu73w6-8",
+    "mcp-node-mvhu73w6-17"
+  ],
+  "excluded": [
+    {"node_id":"mcp-node-mvhu73w6-26","status":"passed","reason":"已执行并同步"},
+    {"node_id":"mcp-node-mvhu73w6-44","status":"failed","reason":"已执行并同步，候选待审"},
+    {"node_id":"mcp-node-mvi0xm4k-10","status":"failed","reason":"已执行并同步，备注回显候选待归因"}
+  ],
+  "notes": "释放节点均未执行、无场景证据；w5-3在正式Mind已仅按新增页面采样修正操作文字，并保留100字符须符合现有格式规则，未派发业务写入。使用page4及QA68701F独占对象，禁止操作104等已有对象、账号角色、正式Mind和全局台账；结果及步骤修订写本分片。创建写入只派发一次，结果未知按实际对象回查。",
+  "coordination": "菜单执行方暂不执行复制全部、批量导入及要求全树不变的断言，直至本分片创建结束。"
+}

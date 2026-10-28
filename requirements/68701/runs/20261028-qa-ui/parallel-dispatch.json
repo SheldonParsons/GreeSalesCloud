@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T16:08:23.342246+08:00",
+  "updated_at": "2026-10-28T19:06:44.848339+08:00",
   "authorization": "用户2026-10-28要求多个会话并行，主脑与GPT-6.1 Terra交互，并由主脑创建和视觉检查BUG。",
   "business_owner_thread_id": "01a15800-d006-7412-b639-9d37ccbe45b8",
   "global_case_status_and_mind_writer": "01a18177-e668-79d0-a41f-fbd147241cf4",
@@ -8,13 +8,24 @@
   "shards": [
     {
       "key": "menu",
-      "count": 65,
+      "count": 57,
       "thread_id": "01a18177-e668-79d0-a41f-fbd147241cf4",
       "page_ids": [
         2,
         3
       ],
-      "account_role_mutation_owner": true
+      "account_role_mutation_owner": true,
+      "excluded_node_ids": [
+        "mcp-node-mvhu73w5-3",
+        "mcp-node-mvhu73w5-12",
+        "mcp-node-mvhu73w5-40",
+        "mcp-node-mvhu73w5-49",
+        "mcp-node-mvhu73w7-6",
+        "mcp-node-mvhu73w7-15",
+        "mcp-node-mvhu73w6-8",
+        "mcp-node-mvhu73w6-17"
+      ],
+      "phase_status": "completed_with_blockers"
     },
     {
       "key": "dictionary",
@@ -26,7 +37,45 @@
       "account_role_mutation_owner": false,
       "start_gate": "必须先有独占页面分配；不可操作page2/3，不可重复登录或改变账号角色",
       "page_allocation_verified": true,
-      "shared_context": "jyl68701-admin；独占页面，共享登录态，不退出或重新登录管理员"
+      "shared_context": "jyl68701-admin；独占页面，共享登录态，不退出或重新登录管理员",
+      "phase_status": "completed_with_blockers",
+      "temporary_page_note": "wp36串行交接已完成，账号角色恢复已回读，UI已停止。"
+    },
+    {
+      "key": "menu-fields",
+      "count": 8,
+      "thread_id": "01a1818d-9ad8-75e1-a34b-3d29bc82961f",
+      "page_ids": [
+        4
+      ],
+      "node_ids": [
+        "mcp-node-mvhu73w5-3",
+        "mcp-node-mvhu73w5-12",
+        "mcp-node-mvhu73w5-40",
+        "mcp-node-mvhu73w5-49",
+        "mcp-node-mvhu73w7-6",
+        "mcp-node-mvhu73w7-15",
+        "mcp-node-mvhu73w6-8",
+        "mcp-node-mvhu73w6-17"
+      ],
+      "account_role_mutation_owner": false,
+      "start_gate": "已由菜单会话release.json明确释放",
+      "creation_prefix": "QA68701F",
+      "completion_signal": "workers/menu-fields/creation-phase-complete.json",
+      "coordination": "创建阶段已释放；原始分片结果保留，最终整场景状态含主执行P2补验和边界阻塞复核，以case-status.json为准。",
+      "phase_status": "completed",
+      "raw_worker_counts": {
+        "passed": 4,
+        "failed": 4
+      },
+      "final_case_counts": {
+        "failed": 5,
+        "blocked": 1,
+        "passed": 2
+      }
     }
-  ]
+  ],
+  "coordination_phase": "closed_with_blockers",
+  "ui_execution_stopped": true,
+  "pending_business_writes": "none_known"
 }

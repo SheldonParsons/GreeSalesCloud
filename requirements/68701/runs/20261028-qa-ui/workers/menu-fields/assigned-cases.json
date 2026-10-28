@@ -1,0 +1,401 @@
+{
+  "module": "菜单管理",
+  "phase": "菜单字段补测",
+  "owner_thread_id": "01a1818d-9ad8-75e1-a34b-3d29bc82961f",
+  "count": 8,
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhu73w5-3",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "编码为100字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-4",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-5",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-6",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-7",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-8",
+              "text": "1、点击【新增】，将【编码】填为P-LEN对应的100个符合现有格式规则的ASCII字符边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-9",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-10",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-11",
+              "text": "步骤2：该字段完整保存100字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-12",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "编码超过100字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-13",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-14",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-15",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-16",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-17",
+              "text": "1、点击【新增】，尝试在【编码】输入P-LEN对应的101字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-18",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-19",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-20",
+              "text": "步骤1—2：该字段受到100字符上限限制；不能保存含101字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-40",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "权限为100字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w5-41",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-42",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-43",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-44",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-45",
+              "text": "1、点击【新增】，将【权限】填为P-LEN对应的100个符合现有格式规则的字符边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w5-46",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w5-47",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w5-48",
+              "text": "步骤2：该字段完整保存100字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-49",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "权限超过100字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-47",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-1",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-2",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-3",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-4",
+              "text": "1、点击【新增】，尝试在【权限】输入P-LEN对应的101字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-5",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-6",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-7",
+              "text": "步骤1—2：该字段受到100字符上限限制；不能保存含101字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-6",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写10000时，不能保存该值",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-7",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-8",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-9",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-10",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-11",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为10000。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-12",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-13",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-14",
+              "text": "步骤2：排序不符合0—9999整数范围，不能保存该值；未新增目标菜单，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-15",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "排序填写1.5时，不能保存该值",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w7-16",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-17",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-18",
+              "text": "P2有效根菜单基线；仅改变排序字段，使用独立新编码。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-19",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-20",
+              "text": "1、点击【新增】，完成P2必填项，将【排序】填写为1.5。"
+            },
+            {
+              "id": "mcp-node-mvhu73w7-21",
+              "text": "2、点击【保存】；可保存时记录ID并重新打开核对排序。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w7-22",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w7-23",
+              "text": "步骤2：排序不符合0—9999整数范围，不能保存该值；未新增目标菜单，其他输入保留。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-8",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "备注为200字符时，可完整保存并回显",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-9",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-10",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-11",
+              "text": "P2有效新增基线；P-LEN提供按本字段规则构造的边界值，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-12",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-13",
+              "text": "1、点击【新增】，将【备注】填为P-LEN对应的200个汉字边界值，其余按P2填写。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-14",
+              "text": "2、点击【保存】，记录实际菜单ID，重新打开该菜单核对该字段。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-15",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-16",
+              "text": "步骤2：该字段完整保存200字符，重新打开后与输入逐字一致；其他字段不被截断或覆盖。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-17",
+      "module": "菜单管理",
+      "function": "新增菜单",
+      "title": "备注超过200字符时，不保存超长内容",
+      "note": "依据：S3、S8、S9。执行状态：未执行。操作控件与执行条件核对见同目录case-preparation.md；未核实部分不声称可自动执行。",
+      "markers": [],
+      "branches": [
+        {
+          "id": "mcp-node-mvhu73w6-18",
+          "text": "准备条件",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-19",
+              "text": "按同目录case-preparation.md的P0核对金叶轮管理端环境、账号及页面；未另述角色时使用有本场景权限的A。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-20",
+              "text": "P2有效新增基线；P-LEN提供仅长度超限的输入，其他字段固定。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-21",
+          "text": "操作步骤",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-22",
+              "text": "1、点击【新增】，尝试在【备注】输入P-LEN对应的201字符值。"
+            },
+            {
+              "id": "mcp-node-mvhu73w6-23",
+              "text": "2、检查长度限制反馈，并尝试提交仍超限的表单。"
+            }
+          ]
+        },
+        {
+          "id": "mcp-node-mvhu73w6-24",
+          "text": "预期结果",
+          "children": [
+            {
+              "id": "mcp-node-mvhu73w6-25",
+              "text": "步骤1—2：该字段受到200字符上限限制；不能保存含201字符的值。若输入控件已限制长度，记录限制现象，不将其当成服务端超长拒绝证据。"
+            }
+          ]
+        }
+      ],
+      "inherited_status": "not_started"
+    }
+  ],
+  "source_note": "首次正式全量基线的规则/预期；实际步骤按页面采样修订，交唯一Mind写入者。"
+}

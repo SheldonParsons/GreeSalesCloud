@@ -1,0 +1,20 @@
+{
+  "node_id": "mcp-node-mvhu73w8-15",
+  "environment": "QA",
+  "account_ref": "qa.jinyelun.admin",
+  "object": {
+    "id": 120,
+    "code": "QA68701InlineRoot1028",
+    "type": 3,
+    "page": 0,
+    "parentId": 0
+  },
+  "actual": "第一层非新开按钮ID120行仅显示编辑、复制、删除，没有新增子级按钮。字段分片创建结束后重新读取树，按ID比较操作前的120个节点（另有新增4节点），原有节点字段及parentId均未变。",
+  "verdict": "passed",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/menu-inline-no-add.png",
+    ".local/68701/qa-ui-20261028/network-2-8305.network-response",
+    ".local/68701/qa-ui-20261028/network-2-8922.network-response"
+  ],
+  "restoration": "保留独占按钮节点ID120"
+}

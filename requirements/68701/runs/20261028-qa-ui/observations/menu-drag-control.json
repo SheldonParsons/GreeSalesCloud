@@ -1,0 +1,15 @@
+{
+  "environment": "QA",
+  "account_ref": "qa.jinyelun.admin",
+  "objects": {
+    "parent_id": 104,
+    "source_id": 106,
+    "target_id": 105
+  },
+  "actual": "原生MCP分别从子项106手柄到同父子项105手柄、从106节点到105节点拖动；工具均返回成功，但未见排序请求或明确提示。刷新后105、106仍属104，排序分别10、20。",
+  "conclusion": "同平台成功拖动对照仍未建立；与字典使用相同工具不代表菜单DOM行为相同。不能将跨父级或升根无变化当作产品拦截通过，也不能凭工具返回判业务成功。",
+  "evidence": ".local/68701/qa-ui-20261028/network-2-15107.network-response",
+  "restoration": "父级及排序回读与原值一致",
+  "additional_control": "参考字典分片原生MCP drag(from_uid,to_uid)成功调用，菜单组件重新观察后，反向从同父项105树节点拖至106树节点；工具返回成功但未见排序请求或明确反馈。刷新后105/106仍属104，排序10/20。",
+  "additional_evidence": ".local/68701/qa-ui-20261028/network-2-15429.network-response"
+}

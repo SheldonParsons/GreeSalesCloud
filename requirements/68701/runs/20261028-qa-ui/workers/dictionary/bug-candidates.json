@@ -1,0 +1,407 @@
+[
+  {
+    "candidate_id": "dictionary-remark-001",
+    "node_ids": [
+      "mcp-node-mvhu73we-37",
+      "mcp-node-mvhu73wh-46"
+    ],
+    "title": "新增字典类型填写备注后，刷新编辑不回显",
+    "basis": "该场景预期步骤3备注完整回显，来源S4/S7数据字典3.30；正式用例要求。",
+    "preconditions": "QA平台管理员，类型名称和编码唯一；实际构建未知",
+    "steps": [
+      "进入平台设置-数据字典，点击新增字典类型",
+      "填写名称68701字典测试A1028、编码jyl_68701_dict_a_1028、启用，备注68701字典新增验证，点击提交",
+      "刷新页面，在该类型行点击编辑"
+    ],
+    "actual": "备注输入框为空；名称、编码、启用回显。新增请求中remark为68701字典新增验证。",
+    "expected": "编辑时备注完整回显。",
+    "object": "类型ID 43已在删除保护场景被删除，不再保留；原备注问题截图和提交请求保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-43-edit-empty-remark.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-316.network-request",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-317.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8123.network-request",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-remark-empty.png"
+    ],
+    "dom": "编辑弹窗备注 textbox uid=110_13 无value；编码 uid=110_9 disabled。",
+    "attribution": "归因待查：列表响应未包含备注，尚未确认存储还是回显链路。",
+    "confidence": "现象高，归属未确定",
+    "bug_refs": [
+      "BUG-68701-003"
+    ],
+    "additional": "编辑类型51名称和备注时，PUT请求含编辑备注验证；刷新后名称与编码、字典项保持，但编辑框备注为空。"
+  },
+  {
+    "candidate_id": "dictionary-delete-002",
+    "node_ids": [
+      "mcp-node-mvhu73wn-48"
+    ],
+    "title": "含字典项的类型可删除",
+    "basis": "需求README明确有字典项的类型禁止删除；S4/S7及当前用例预期。",
+    "preconditions": "QA平台管理员；独占类型ID43，含项ID139、140，实际构建未知。",
+    "steps": [
+      "进入平台设置-数据字典，选择类型68701字典测试A1028，确认右侧两项存在",
+      "点击类型行删除，确认删除",
+      "刷新页面，按编码jyl_68701_dict_a_1028查询"
+    ],
+    "actual": "确认后类型消失，刷新查询仍无类型；UI无法选择类型核验项。是否级联删除项尚未确认。",
+    "expected": "应阻止删除；类型与两项均保持。",
+    "object": "类型ID43已删除；项139、140存储状态未知。",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-629.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-633.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-delete-reload.png"
+    ],
+    "dom": "删除确认框显示目标名称及删除不可恢复，确认按钮uid=135_11；刷新后搜索暂无数据。",
+    "attribution": "页面发出DELETE后服务端HTTP 200且后续查询无类型，删除保护未生效；业务返回正文缺失，前后端职责仍待核实。",
+    "confidence": "现象和规则高；项存储状态及责任归属未知",
+    "network": "页面实际请求 DELETE /gree-gis-api/v1/common/dicts/types/delete/43，HTTP 200；调用网络体保存未生成响应体文件，业务返回内容未取得。后续页面列表查询响应records=[]、total=0；刷新后原编码查询无记录。",
+    "bug_refs": [
+      "BUG-68701-004"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-item-value-003",
+    "node_ids": [
+      "mcp-node-mvhu73wl-27"
+    ],
+    "title": "编辑已创建字典项时值字段可修改",
+    "basis": "需求 sources/dictionary-requirements.md 第37行：字典项值创建后只读；正式场景预期不得输入替换值。",
+    "preconditions": "QA平台管理员；类型44下独占项141，原值jyl_68701_b_item_1。",
+    "steps": [
+      "打开平台设置-数据字典，选择类型68701字典测试B1028",
+      "点击项68701补验项B1的编辑",
+      "选中字典项值并输入jyl_68701_attempt_changed"
+    ],
+    "actual": "输入框可聚焦并显示新值；取消并刷新后仍显示原值。未提交修改，不能断言实际持久化。",
+    "expected": "已创建项的值应只读或禁用，不能输入替换值。",
+    "object": "类型44，项141，原值保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-value-editable.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response"
+    ],
+    "dom": "编辑弹窗项值textbox uid=196_9，未标disabled，输入后value变为jyl_68701_attempt_changed",
+    "attribution": "前端控件可编辑已确认；后端是否保护未验证。",
+    "confidence": "现象高；持久化及后端责任未知",
+    "bug_refs": [
+      "BUG-68701-006"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-item-name-004",
+    "node_ids": [
+      "mcp-node-mvhu73wj-32"
+    ],
+    "title": "同一字典类型允许新增同名项",
+    "basis": "requirements/68701/sources/dictionary-requirements.md 字典项名称同类型唯一。",
+    "preconditions": "QA管理员，类型44已有项141名称68701补验项B1。",
+    "steps": [
+      "平台设置-数据字典选择68701字典测试B1028",
+      "新增字典项，名称输入68701补验项B1，值输入jyl_68701_duplicate_name，提交",
+      "刷新并选择该类型"
+    ],
+    "actual": "新增成功，刷新后同名两项并存，值不同；响应记录ID141与142。",
+    "expected": "同类型名称重复应阻止新增，原项保持且输入保留。",
+    "object": "类型44，项141与142保留供复核",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-duplicate-name-reload.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+    ],
+    "attribution": "服务端接受新增且页面展示；具体归属待审。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-007"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-type-trim-005",
+    "node_ids": [
+      "mcp-node-mvhu73wf-30",
+      "mcp-node-mvhu73we-50"
+    ],
+    "title": "类型名称首尾空格未去除并可新增与已有类型重复的名称",
+    "basis": "字典需求类型名称去除首尾空格并唯一，正式场景明确去空格后重名禁止新增。",
+    "preconditions": "QA管理员，独占类型44名称68701字典测试B1028；新编码查询为空。",
+    "steps": [
+      "新增字典类型，名称在68701字典测试B1028首尾各输入两个空格，编码jyl_68701_name_dup_1028",
+      "提交后按新编码查询"
+    ],
+    "actual": "新增成功，类型46名称保留首尾空格，原类型44仍存在。",
+    "expected": "去掉首尾空格后名称与原类型相同，应阻止新增。",
+    "object": "原类型44及新类型46保留；类型46无项",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-duplicate-created.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3423.network-request",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3424.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4972.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-unique-edit.png"
+    ],
+    "attribution": "请求和响应均保留空格；前后端责任待审。",
+    "confidence": "高",
+    "additional": "独立唯一名称补验：类型47，编码jyl_68701_trim_unique_1028；输入首尾各两个空格，刷新编辑读取仍保留，长度11。",
+    "bug_refs": [
+      "BUG-68701-009"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-default-006",
+    "node_ids": [
+      "mcp-node-mvhu73wm-24",
+      "mcp-node-mvhu73wn-6"
+    ],
+    "title": "同类型切换默认项后两个启用项均为默认",
+    "basis": "数据字典需求同一类型仅一个默认项，正式场景明确设置新默认应取消旧默认。",
+    "preconditions": "QA管理员；类型44下项141为默认、142为启用非默认，类型45项143为默认。",
+    "steps": [
+      "平台设置-数据字典，选择类型44（jyl_68701_dict_b_1028）",
+      "编辑值为jyl_68701_duplicate_name的项142，开启是否默认并提交",
+      "刷新页面并重新选择该类型"
+    ],
+    "actual": "项141及142的默认均显示是；刷新后的列表响应两个ID的isDefaulted均为1；类型45项143仍为默认。",
+    "expected": "仅项142为默认，项141自动取消默认；其他类型不受影响。",
+    "object": "类型44、项141/142保留两个默认以便复核；类型45项143默认",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4044.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4355.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/two-defaults-after-refresh.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/two-defaults-wide.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7801.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/default-switch-before-delete.png"
+    ],
+    "attribution": "保存后列表响应同时返回两个默认，具体归属待审。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-010"
+    ],
+    "visual_note": "1920x1080页面视口截图，左侧显示类型编码，右侧完整显示两项不同值及两个默认是；未修改业务数据。",
+    "additional": "在另一个独占类型45独立执行切换后，143和144仍均默认；因此后续删除前置未满足，未删除旧项。"
+  },
+  {
+    "candidate_id": "dictionary-item-edit-name-007",
+    "node_ids": [
+      "mcp-node-mvhu73wl-37"
+    ],
+    "title": "编辑字典项允许改成同类型已有名称",
+    "basis": "sources/dictionary-requirements.md：字典项名称同类型唯一；正式场景要求编辑重复时拒绝。",
+    "preconditions": "QA管理员；类型45项143名称68701补验项B1，项144原名称68701跨类型相同值。",
+    "steps": [
+      "在数据字典选择类型45 jyl_68701_dict_c_1028",
+      "编辑值jyl_68701_b_item_1的项144，名称改为68701补验项B1并提交",
+      "刷新并重新选择类型45"
+    ],
+    "actual": "修改成功，刷新后项143和144同名，两项值仍不同。",
+    "expected": "重复名称应拒绝保存并保留输入，两项原名称和值保持。",
+    "object": "类型45项143和144，保留复核",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-duplicate-reload.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4663.network-response"
+    ],
+    "attribution": "PUT更新成功；与BUG-68701-007新增同类型重名现象相似，根因是否相同待主脑判断。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-007"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-code-length-008",
+    "node_ids": [
+      "mcp-node-mvhu73wg-54",
+      "mcp-node-mvhu73wg-44"
+    ],
+    "title": "字典类型编码输入超过60字符时静默截断并保存",
+    "basis": "来源字典需求类型编码1–100字符；现行场景明确101字符不得静默截断后保存。",
+    "preconditions": "QA管理员，名称68701编码101长度验证原查询无记录。",
+    "steps": [
+      "新增字典类型，填名称68701编码101长度验证",
+      "编码通过键盘输入101字符：jyl_68701_后加91个a",
+      "点击提交，按名称查询"
+    ],
+    "actual": "编码输入实际限制60字符，提交成功创建ID48，保存的是jyl_68701_后50个a。",
+    "expected": "超出100字符不应将截断后的内容作为完整输入保存。",
+    "object": "类型ID48保留供复核",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-code-101-before-submit.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5285.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-before.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-after.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5297.network-response"
+    ],
+    "attribution": "前端输入框maxlength=60，服务端接受60字符；具体归属待审。",
+    "confidence": "两个长度场景均经真实键盘和保存回读验证。",
+    "additional": "合法100字符边界补验：键盘输入100字符仅进入60字符，保存类型49后刷新回显60字符，未达到需求上限。",
+    "bug_refs": [
+      "BUG-68701-011"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-type-edit-name-009",
+    "node_ids": [
+      "mcp-node-mvhu73wi-16"
+    ],
+    "title": "编辑类型名称可改成其他类型已有名称",
+    "basis": "sources/dictionary-requirements.md第34行类型名称唯一，现行场景预期编辑时拒绝重复。",
+    "preconditions": "QA平台管理员，类型50名称为50个乙，类型45名称68701字典测试C1028。",
+    "steps": [
+      "在数据字典找到编码jyl_68701_name50_1028的类型50并编辑",
+      "将名称改为68701字典测试C1028并提交",
+      "刷新类型列表"
+    ],
+    "actual": "编辑成功，类型50和45名称相同且不同编码；刷新仍存在。",
+    "expected": "阻止重复名称保存，两个类型保持各自原名称。",
+    "object": "类型50及45保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-duplicate.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5606.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5913.network-response"
+    ],
+    "attribution": "PUT更新后两ID名称相同；与去空格新增候选涉及同一唯一性规则，不推断内部根因。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-012"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-type-remark-length-010",
+    "node_ids": [
+      "mcp-node-mvhu73wh-8",
+      "mcp-node-mvhu73wh-17"
+    ],
+    "title": "字典类型备注输入限制255字符，无法输入合法500字符",
+    "basis": "sources/dictionary-requirements.md 类型备注上限500字符；用例要求500字符完整保存。",
+    "preconditions": "QA管理员，新增字典类型表单。",
+    "steps": [
+      "打开新增字典类型，填写有效名称和编码",
+      "在备注键盘输入500字符"
+    ],
+    "actual": "控件只接收255字符，DOM maxlength=255；未提交。",
+    "expected": "应允许输入并保存完整500字符备注。",
+    "object": "类型52为501字符场景创建；500字符场景未创建。",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-500-limit.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-501-before.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7793.network-request",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7794.network-response"
+    ],
+    "dom": "备注textarea uid=410_11，length=255，maxLength=255；键盘尝试输入500。",
+    "attribution": "输入上限与需求不一致；保存链路未验证，和备注不回显BUG-68701-003不同现象。",
+    "confidence": "高",
+    "additional": "独立501字符输入被限制为255并提交创建类型52，创建请求备注长度255。",
+    "bug_refs": [
+      "BUG-68701-014"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-item-value-length-011",
+    "node_ids": [
+      "mcp-node-mvhu73wk-32",
+      "mcp-node-mvhu73wk-41"
+    ],
+    "title": "字典项值只能输入60字符，无法输入合法100字符",
+    "basis": "sources/dictionary-requirements.md 字典项值必填1–100字符。",
+    "preconditions": "QA平台管理员，类型45新增字典项。",
+    "steps": [
+      "在类型45新增字典项，填写唯一名称",
+      "在项值输入框通过键盘输入100字符"
+    ],
+    "actual": "输入框只接收60字符，DOM maxlength=60；未提交。",
+    "expected": "应支持完整100字符项值并保存。",
+    "object": "无新增对象",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-value-100-limit.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-value-101-before.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7787.network-response"
+    ],
+    "dom": "项值textbox uid=412_8，实际长度60，maxlength=60。",
+    "attribution": "输入限制60并可保存截断结果，具体职责待审。",
+    "confidence": "高",
+    "additional": "非法101字符另行真实键盘输入，控件截断为60并提交，创建类型51下项150，响应确认60字符。",
+    "bug_refs": [
+      "BUG-68701-011"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-default-disable-012",
+    "node_ids": [
+      "mcp-node-mvhu73wm-46"
+    ],
+    "title": "未调整默认选择时可直接停用默认字典项",
+    "basis": "sources/dictionary-requirements.md第39行停用默认项前先调整默认选择。",
+    "preconditions": "QA管理员，类型49含启用默认项147及启用非默认备用项148，均为独占无外部引用。",
+    "steps": [
+      "数据字典选择类型49，确认项147为默认且启用",
+      "编辑项147，将状态改为停用，不改默认，提交",
+      "刷新重新选择类型49"
+    ],
+    "actual": "提交成功，刷新后项147显示停用且默认是；响应status=0、isDefaulted=1。",
+    "expected": "未先调整默认时禁止停用，项147保持启用且为有效默认。",
+    "object": "类型49项147停用且默认，148启用非默认，保留供复核",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7156.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7465.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/default-disabled.png"
+    ],
+    "attribution": "保存后列表响应返回停用默认状态；具体归属待审。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-015"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-default-delete-013",
+    "node_ids": [
+      "mcp-node-mvhu73wm-55"
+    ],
+    "title": "未调整默认选择时可直接删除默认字典项",
+    "basis": "sources/dictionary-requirements.md第39行删除默认项前先调整默认选择。",
+    "preconditions": "QA管理员；独占类型48中的项149启用且为唯一默认，未被业务引用。",
+    "steps": [
+      "在数据字典选择类型48，确认项149默认且启用",
+      "点击项149删除并确认",
+      "刷新后重新选择类型48"
+    ],
+    "actual": "项149删除成功，刷新列表为空，列表响应data=[]。",
+    "expected": "未调整默认选择时禁止删除，项149仍存在且有效默认。",
+    "object": "类型48仍在，项149已删除。",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7468.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7775.network-response",
+      ".local/68701/qa-ui-20261028/workers/dictionary/default-delete-after.png"
+    ],
+    "attribution": "默认项删除保护未生效；具体责任待审。",
+    "confidence": "高",
+    "bug_refs": [
+      "BUG-68701-015"
+    ]
+  },
+  {
+    "candidate_id": "dictionary-item-remark-length-014",
+    "node_ids": [
+      "mcp-node-mvhu73wk-50",
+      "mcp-node-mvhu73wl-7"
+    ],
+    "title": "字典项备注输入最多255字符，无法输入合法500字符",
+    "basis": "sources/dictionary-requirements.md 字典项备注上限500字符。",
+    "preconditions": "QA管理员，类型51新增项。",
+    "steps": [
+      "新增字典项，填写有效名称和值",
+      "备注框键盘输入500字符"
+    ],
+    "actual": "控件只接收255字符，DOM maxlength=255，未提交。",
+    "expected": "应能输入并保存完整500字符。",
+    "object": "类型51项151为501字符场景所创建；500字符场景未创建。",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-500-limit.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-501-before.png",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7790.network-request",
+      ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7791.network-response"
+    ],
+    "dom": "textarea uid=471_9，length=255、maxlength=255",
+    "attribution": "前端输入限制；保存链路未验证，与类型备注边界相似但不同字段。",
+    "confidence": "高",
+    "additional": "501字符键盘输入被截断为255，提交创建项151；创建请求备注255字符。",
+    "bug_refs": [
+      "BUG-68701-014"
+    ]
+  }
+]

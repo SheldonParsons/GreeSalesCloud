@@ -1,0 +1,12 @@
+{
+  "allocated_at": "2026-10-28 Asia/Shanghai",
+  "browser_bridge": ".local/68701/qa-ui-20261028/call.py",
+  "bridge_state": ".local/68701/qa-ui-20261028/bridge-state.json",
+  "isolated_context": "jyl68701-admin",
+  "page_id": 4,
+  "url": "http://gree-gis-frontend.gis-qa/system/dict",
+  "observed": "页面显示平台管理员、平台设置-数据字典、字典类型和字典项；仅观察，未修改字典业务数据。",
+  "exclusive_scope": "page 4及本轮独占测试字典和字典项；结果、证据、候选问题写workers/dictionary，写入前回查唯一标识，提交后核对真实状态。",
+  "restrictions": "不操作page 2/3，不修改账号角色、公共脚本、全局台账、正式Mind或Git；不关闭桥，不操作共享字典；不重复派发结果未知的写入。",
+  "shared_context_note": "与page 2共享管理员登录态和存储，页面独占但会话并非隔离；不要退出登录或更改全局会话。"
+}

@@ -1,0 +1,1225 @@
+{
+  "module": "数据字典",
+  "total": 68,
+  "environment": "QA；目标V7.32，实际构建未知",
+  "page_id": 4,
+  "counts": {
+    "passed": 33,
+    "failed": 22,
+    "blocked": 13,
+    "in_progress": 0,
+    "not_started": 0
+  },
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhu73wf-2",
+      "status": "passed",
+      "object": "未创建；测试编码 jyl_68701_dict_emptyname",
+      "steps": [
+        "新增字典类型，名称留空，填写编码及备注并提交",
+        "取消后以编码查询，列表暂无数据；另以现有类型编码确认查询支持编码"
+      ],
+      "expected": "名称必填，其他输入保留且不生成类型",
+      "actual": "提示请输入类型名称，编码与备注保留；编码查询无记录",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/empty-name.png"
+      ],
+      "restoration": "取消表单，无业务对象创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-11",
+      "status": "passed",
+      "object": "未创建；测试名称 68701字典空编码验证",
+      "steps": [
+        "新增字典类型，填写名称和备注、编码留空并提交",
+        "取消后按名称查询"
+      ],
+      "expected": "编码必填，其他输入保留且不生成类型",
+      "actual": "提示请输入类型编码，名称及备注保留；名称查询无记录",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/empty-code.png"
+      ],
+      "restoration": "取消表单，无业务对象创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-37",
+      "status": "failed",
+      "object": "类型ID 43，编码 jyl_68701_dict_a_1028，名称 68701字典测试A1028",
+      "steps": [
+        "先按名称及编码查询均无记录",
+        "新增表单填写名称、编码、启用、备注，提交一次",
+        "列表回查仅一条，接口只读响应确认ID 43",
+        "刷新页面，再打开ID 43编辑，备注为空"
+      ],
+      "expected": "名称编码状态备注完整保存，编码只读，并验证操作日志",
+      "actual": "新增请求包含备注；刷新后编辑ID 43，备注输入框为空，名称编码状态回显；日志未核验。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-317.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-316.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-43-edit-empty-remark.png"
+      ],
+      "restoration": "类型ID43随后在删除保护场景被删除，原证据保留。",
+      "candidate": "dictionary-remark-001",
+      "bug_refs": [
+        "BUG-68701-003"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-6",
+      "status": "passed",
+      "object": "类型ID 43，编码 jyl_68701_dict_a_1028",
+      "steps": [
+        "刷新后打开ID 43编辑；尝试点击编码输入框",
+        "取消编辑，按原编码查询"
+      ],
+      "expected": "编码只读或禁用，不能输入；取消后原编码不变",
+      "actual": "编码框disabled，点击不能输入；原编码查询仍显示同一目标，只有一条",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-43-edit-empty-remark.png"
+      ],
+      "restoration": "未修改，保留类型"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-14",
+      "status": "passed",
+      "object": "类型ID 43；测试项值empty_name_68701，未创建项",
+      "steps": [
+        "在空类型ID 43点击新增字典项，名称留空，填写项值、备注并提交",
+        "取消后查看类型项列表"
+      ],
+      "expected": "名称必填，其他输入保留，不创建项",
+      "actual": "提示请输入字典项名称，项值及备注保留；取消后项列表为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-empty-name.png"
+      ],
+      "restoration": "取消表单，未创建项"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-23",
+      "status": "passed",
+      "object": "类型ID 43；测试项名称68701空项值验证，未创建项",
+      "steps": [
+        "在空类型ID 43新增字典项，填写名称和备注，项值留空并提交",
+        "取消后查看类型项列表"
+      ],
+      "expected": "项值必填，其他输入保留，不创建项",
+      "actual": "提示请输入字典项值，名称和备注保留；取消后项列表为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-empty-value.png"
+      ],
+      "restoration": "取消表单，未创建项"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-3",
+      "status": "blocked",
+      "object": "类型ID 43，项ID 139，值 jyl_68701_item_1",
+      "steps": [
+        "类型43原项列表为空，新增名称68701测试项一、值jyl_68701_item_1、启用、非默认、空备注并提交一次",
+        "列表回查显示名称、值、启用、非默认；只读响应确认项ID 139及类型编码",
+        "补验：在新独占类型44创建项141，名称68701补验项B1，值jyl_68701_b_item_1，启用非默认、备注空；列表请求回读",
+        "刷新后查看类型44及项141",
+        "新建独占类型45并查看其空项列表"
+      ],
+      "expected": "刷新后只在D_A出现该项，D_B不受影响；查询日志",
+      "actual": "补验：类型44下项141刷新后UI显示名称、值、启用、非默认；独占对照类型45项列表为空。操作日志入口未确认，不能完成日志断言。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-627.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1260.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-empty.png"
+      ],
+      "restoration": "保留类型44、45及项141；原类型43已删。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-48",
+      "status": "failed",
+      "object": "类型ID 43，项ID 139、140，值分别jyl_68701_item_1/2",
+      "steps": [
+        "已通过UI准备两个独占非默认项，查询响应回读ID和字段",
+        "点击类型行删除，确认删除",
+        "刷新后按原编码查询"
+      ],
+      "expected": "有字典项时类型删除被阻止，刷新后类型和两项不变",
+      "actual": "确认删除后类型列表为空；刷新按原编码仍无类型，无法在UI选择原类型核对两项；是否级联删除未确定。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-629.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-delete-reload.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-633.network-response"
+      ],
+      "restoration": "类型43已删除，项139、140的存储状态未确定；不重建同编码掩盖问题",
+      "candidate": "dictionary-delete-002",
+      "bug_refs": [
+        "BUG-68701-004"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-48",
+      "status": "passed",
+      "object": "名称68701编码格式数字开头，编码1jyltest；未创建",
+      "steps": [
+        "新增类型，填写唯一名称和编码1jyltest并提交",
+        "取消后以名称查询"
+      ],
+      "expected": "编码必须字母开头；不创建且保留输入",
+      "actual": "提示类型编码须以字母开头、仅含字母数字下划线；名称及编码保留；按名称查询无结果",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-digit.png"
+      ],
+      "restoration": "取消表单，无类型创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-8",
+      "status": "passed",
+      "object": "名称68701编码格式下划线开头，编码_jyltest；未创建",
+      "steps": [
+        "新增类型，填写名称和编码_jyltest并提交",
+        "取消后以名称查询"
+      ],
+      "expected": "编码须以字母开头，不创建且保留输入",
+      "actual": "提示类型编码须以字母开头；输入保留；名称查询无结果",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-underscore.png"
+      ],
+      "restoration": "取消表单，无类型创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-17",
+      "status": "passed",
+      "object": "名称68701编码格式连字符，编码JYL-TEST；未创建",
+      "steps": [
+        "新增类型，填写名称和编码JYL-TEST并提交",
+        "取消后以名称查询"
+      ],
+      "expected": "编码仅允许字母数字下划线，不创建且保留输入",
+      "actual": "提示请输入英文、数字或下划线；输入保留；名称查询无结果",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-hyphen.png"
+      ],
+      "restoration": "取消表单，无类型创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-30",
+      "status": "passed",
+      "object": "空类型ID45，名称68701字典测试C1028，编码jyl_68701_dict_c_1028",
+      "steps": [
+        "记录类型字段后点击删除",
+        "确认框点击取消",
+        "刷新后打开类型编辑回查字段及右侧项列表"
+      ],
+      "expected": "原类型及字段、所属和状态不变",
+      "actual": "取消后刷新仍有类型，名称、编码、启用、空备注回显；项列表为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1260.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-cancel-delete.png"
+      ],
+      "restoration": "类型保留，无业务删除"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-26",
+      "status": "passed",
+      "object": "类型ID45，名称68701字典测试C1028、启用、备注空",
+      "steps": [
+        "编辑中把名称改为68701取消编辑名称、状态关闭、备注改为取消编辑备注",
+        "点击取消，刷新重新打开编辑"
+      ],
+      "expected": "名称状态备注与原值一致",
+      "actual": "刷新后名称恢复原名称，状态启用、备注为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-edit-before-cancel.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-edit-after-cancel.png"
+      ],
+      "restoration": "取消修改，类型保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-6",
+      "status": "passed",
+      "object": "类型ID44（B）和ID45（C）；B下项ID141",
+      "steps": [
+        "按B完整名称68701字典测试B1028搜索",
+        "核对名称编码状态后点击B名称，查看右侧项"
+      ],
+      "expected": "定位B，右侧显示B项而非C项",
+      "actual": "一条B，编码jyl_68701_dict_b_1028、启用；右侧显示项141名称与值；对照类型45为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-b-name.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response"
+      ],
+      "restoration": "只读操作，数据保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-17",
+      "status": "passed",
+      "object": "类型ID44和45，ID44下项141",
+      "steps": [
+        "按完整编码jyl_68701_dict_b_1028搜索",
+        "核对类型名称编码状态并点击名称查看项"
+      ],
+      "expected": "定位B且右侧仅B项",
+      "actual": "一条B，名称68701字典测试B1028、启用，右侧显示项141；类型45项为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-b-code.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response"
+      ],
+      "restoration": "只读操作，数据保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-27",
+      "status": "passed",
+      "object": "类型44、45；项141",
+      "steps": [
+        "按类型44完整编码查询后，点击搜索框清除图标",
+        "清空后类型列表恢复；选择45再选择44"
+      ],
+      "expected": "输入清空，恢复账号可见列表，两个类型均可定位且各项归属正确",
+      "actual": "搜索框为空，列表共43条；类型45项为空，切换44显示项141",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-clear.png"
+      ],
+      "restoration": "仅查询，数据保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-27",
+      "status": "failed",
+      "object": "类型44下字典项ID141，原值jyl_68701_b_item_1",
+      "steps": [
+        "打开项141编辑，尝试选择并输入jyl_68701_attempt_changed",
+        "取消编辑，刷新并选择类型44"
+      ],
+      "expected": "值字段只读或禁用，不能输入；取消后原值不变",
+      "actual": "值字段可输入替换值；取消刷新后列表仍为原值；未提交修改，服务端是否允许保存未知",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-editable.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2487.network-response"
+      ],
+      "restoration": "取消编辑，原项仍显示原值，未提交",
+      "candidate": "dictionary-item-value-003",
+      "bug_refs": [
+        "BUG-68701-006"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-39",
+      "status": "passed",
+      "object": "类型44下项141，名称68701补验项B1，值jyl_68701_b_item_1",
+      "steps": [
+        "在项141行点击删除，确认环节取消",
+        "刷新页面、选择类型44并打开项编辑回查"
+      ],
+      "expected": "项仍存在，全部字段、归属和状态不变",
+      "actual": "项仍在类型44，名称、值、启用、非默认与空备注保持，排序0；原ID141的只读响应见证据",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-cancel-delete.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2487.network-response"
+      ],
+      "restoration": "取消删除，项保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-32",
+      "status": "failed",
+      "object": "类型44，原项141，新项142；同名68701补验项B1，值分别jyl_68701_b_item_1和jyl_68701_duplicate_name",
+      "steps": [
+        "类型44新增字典项，名称与项141相同，值为唯一新值，提交一次",
+        "刷新并选择类型44"
+      ],
+      "expected": "同类型重复名称阻止新增，原项不改写且输入保留",
+      "actual": "新增成功，刷新后出现同名两项，响应确认ID141与142；表单关闭",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-duplicate-name-reload.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "restoration": "保留两个独占项供复核",
+      "candidate": "dictionary-item-name-004",
+      "bug_refs": [
+        "BUG-68701-007"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-51",
+      "status": "passed",
+      "object": "类型44，原项141，测试名称68701重复值验证",
+      "steps": [
+        "新增字典项，名称为唯一新值，字典项值填原项141的值并提交",
+        "查看提示后取消并查看列表"
+      ],
+      "expected": "同类型重复值阻止新增，原项不改写且输入保留",
+      "actual": "提示字典项值已存在，表单仍保留输入；取消后仍显示原两项，未新增测试名称",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-duplicate-value.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "restoration": "取消表单，原有两项保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wj-42",
+      "status": "passed",
+      "object": "类型44项141；类型45新项143，名称均68701补验项B1",
+      "steps": [
+        "选择原为空的类型45，以项141相同名称和类型45内唯一值jyl_68701_c_item_1新增",
+        "列表响应回读新项143及类型编码",
+        "刷新后分别选择类型45、44核对项"
+      ],
+      "expected": "跨类型同名可保存，各自ID和归属不串",
+      "actual": "刷新后类型45显示项143及其值，类型44显示项141、142及各自值；两类型项归属不同。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2798.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-name-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-name-b.png"
+      ],
+      "restoration": "两类型及项保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-53",
+      "status": "passed",
+      "object": "类型44含项141/142，类型45含项143",
+      "steps": [
+        "选择类型44核对两项",
+        "切换类型45，再切回类型44"
+      ],
+      "expected": "各类型只显示自己项，名称、值、状态、默认属性正确",
+      "actual": "类型45显示143的值jyl_68701_c_item_1；切回44显示141、142的各自值，均启用非默认",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/switch-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/switch-b.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2798.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "restoration": "只读切换，数据保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-21",
+      "status": "passed",
+      "object": "测试编码jyl_68701_spaces_1028，未创建类型",
+      "steps": [
+        "新增类型，名称输入三个空格，编码填写jyl_68701_spaces_1028并提交",
+        "取消后按编码查询"
+      ],
+      "expected": "名称去空格后为空，阻止保存并保留其他输入",
+      "actual": "提示类型名称不能为空，编码保留；取消后按编码查询暂无数据",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-space-name.png"
+      ],
+      "restoration": "取消表单，无对象"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-26",
+      "status": "passed",
+      "object": "唯一名称68701取消新增测试1028、编码jyl_68701_cancel_1028，未创建",
+      "steps": [
+        "按名称和编码查询无记录",
+        "新增表单填写名称编码、启用及备注，点击取消",
+        "刷新按编码查询，再清空条件查看现有类型44及其项"
+      ],
+      "expected": "未创建目标类型，已有类型及字典项不变",
+      "actual": "按编码查询为空；类型44、45可见，类型44的项141与142名称和值均仍在",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-create-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-create-cancel-existing.png"
+      ],
+      "restoration": "取消表单，未新增类型"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-39",
+      "status": "passed",
+      "object": "原类型ID44，编码jyl_68701_dict_b_1028；新名称68701类型重复编码1028",
+      "steps": [
+        "先查询新名称无记录；新增表单填新名称与原类型编码后提交",
+        "取消后按原编码查询"
+      ],
+      "expected": "重复编码阻止新增；原类型只有一条，字段及输入不变",
+      "actual": "提示字典编码已存在，输入保留；原编码查询仍一条原类型，原字典项显示",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-duplicate-code.png"
+      ],
+      "restoration": "取消表单，原类型保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wf-30",
+      "status": "failed",
+      "object": "原类型44；新建类型46，编码jyl_68701_name_dup_1028",
+      "steps": [
+        "确认新编码无记录；新增类型名称在原类型名称两端各加两个空格，填写新编码并提交",
+        "按新编码回读列表响应"
+      ],
+      "expected": "去首尾空格后同名，阻止新增",
+      "actual": "新增成功；响应ID46名称仍保留首尾空格，原类型ID44存在。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-duplicate-created.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3423.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3424.network-response"
+      ],
+      "restoration": "类型46保留供复核",
+      "candidate": "dictionary-type-trim-005",
+      "bug_refs": [
+        "BUG-68701-009"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-4",
+      "status": "passed",
+      "object": "类型44项141与类型45新项144，值均jyl_68701_b_item_1",
+      "steps": [
+        "在类型45新增唯一名称68701跨类型相同值，项值与类型44项141相同，提交一次；回读项144",
+        "刷新后分别选择类型45和44核对"
+      ],
+      "expected": "跨类型同值可保存且归属不串",
+      "actual": "刷新后类型45显示项144及值，类型44显示原项141及相同值；两个项ID不同、归属不同。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3431.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-value-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-value-b.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "restoration": "两个类型及项保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-5",
+      "status": "passed",
+      "object": "类型44，未创建测试名称68701取消新增项、值jyl_68701_cancel_item",
+      "steps": [
+        "在类型44的项列表确认名称和值均不存在",
+        "新增表单填写名称、值、启用和备注后取消",
+        "刷新并选择类型44"
+      ],
+      "expected": "未生成待新增项，已有项及默认不变",
+      "actual": "刷新后仍只有原项141/142，均为非默认；待新增名称和值不存在",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-create-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-create-cancel-after.png"
+      ],
+      "restoration": "取消表单，未创建项"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-24",
+      "status": "failed",
+      "object": "类型44原默认项141、新默认项142；对照类型45默认项143",
+      "steps": [
+        "确认44中141默认、142非默认，45中143默认",
+        "编辑142勾选默认并提交一次",
+        "刷新后选择类型44和45查看默认标记"
+      ],
+      "expected": "44仅142默认，141取消；45的143仍默认；核验日志",
+      "actual": "刷新后类型44的141、142均为默认，45的143仍默认；日志未核验",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4044.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4355.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/two-defaults-after-refresh.png"
+      ],
+      "restoration": "保留类型44两个默认项供复核；未自行修正",
+      "candidate": "dictionary-default-006",
+      "bug_refs": [
+        "BUG-68701-010"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-47",
+      "status": "passed",
+      "object": "类型45默认项143，启用非默认项144",
+      "steps": [
+        "编辑项144修改名称、停用、勾选默认及备注后取消",
+        "刷新选择类型45并打开项144"
+      ],
+      "expected": "项144各属性与原值一致，项143仍为默认",
+      "actual": "刷新后项144名称、值、启用、非默认、空备注回显；项143仍为默认",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-cancel-after.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response"
+      ],
+      "restoration": "取消编辑，项143/144保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-37",
+      "status": "failed",
+      "object": "类型45项143、144；编辑144使其名称与143相同",
+      "steps": [
+        "记录两项不同名称及值",
+        "编辑144把名称改为143的名称，提交一次；列表响应确认两个名称相同",
+        "刷新选择类型45后回查"
+      ],
+      "expected": "重复名称阻止保存，两项原名称及值不变",
+      "actual": "编辑成功，刷新后项143与144仍同名，值未合并；应阻止修改。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-duplicate.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4663.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-duplicate-reload.png"
+      ],
+      "restoration": "暂保留供复核",
+      "candidate": "dictionary-item-edit-name-007",
+      "bug_refs": [
+        "BUG-68701-007"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73we-50",
+      "status": "failed",
+      "object": "类型47，编码jyl_68701_trim_unique_1028",
+      "steps": [
+        "先查询名称与编码均无记录",
+        "输入名称两侧各两个空格并提交，列表响应回读名称保留空格",
+        "刷新后打开类型47编辑，读取名称输入原始值"
+      ],
+      "expected": "保存后名称去首尾空格",
+      "actual": "刷新后编辑输入值仍为首尾各两个空格；DOM读取长度11、首尾空格均为true，编码及启用状态保持。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4972.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-unique-edit.png"
+      ],
+      "restoration": "保留以复核",
+      "candidate": "dictionary-type-trim-005",
+      "bug_refs": [
+        "BUG-68701-009"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-35",
+      "status": "passed",
+      "object": "名称为51个甲，编码jyl_68701_name51_1028；未创建",
+      "steps": [
+        "先按编码确认无记录",
+        "输入51字符名称及编码，读取输入实际长度为51后提交",
+        "取消后再次按编码查询"
+      ],
+      "expected": "51字符不得保存或静默截断",
+      "actual": "提示类型名称长度须在1-50之间；输入未截断，按编码查无记录",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-name-51.png"
+      ],
+      "restoration": "取消表单，未创建类型"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-54",
+      "status": "failed",
+      "object": "测试类型ID48，输入101字符，实际保存60字符编码",
+      "steps": [
+        "名称查询无记录",
+        "通过页面填入101字符编码，DOM一度读取101；提交后编码框变空并提示请输入类型编码",
+        "取消后按名称查询",
+        "补验使用MCP真实键盘输入101字符，控件只接收60字符；提交一次并回读类型48"
+      ],
+      "expected": "不能以101字符或静默截断值保存类型",
+      "actual": "真实键盘输入101字符时，maxlength=60使输入截断到60；提交成功并创建类型48。早先fill_form异常回执不作为结论。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-101.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-101-before-submit.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5285.network-response"
+      ],
+      "restoration": "类型48保留供复核",
+      "limitation": "真实键盘补验覆盖早先fill_form异常观察。",
+      "candidate": "dictionary-code-length-008",
+      "bug_refs": [
+        "BUG-68701-011"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-44",
+      "status": "failed",
+      "object": "类型49，100字符输入实际保存60字符",
+      "steps": [
+        "名称查询无记录；键盘输入100字符编码，DOM显示60且maxlength=60",
+        "提交一次，响应回读类型49编码60字符",
+        "刷新后打开类型49编辑"
+      ],
+      "expected": "完整保存100字符并回显",
+      "actual": "输入100字符，控件限制60；保存后刷新编辑回显60字符，未完整保存。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5297.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-after.png"
+      ],
+      "restoration": "保留类型49供复核",
+      "candidate": "dictionary-code-length-008",
+      "bug_refs": [
+        "BUG-68701-011"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wg-26",
+      "status": "passed",
+      "object": "类型ID50，编码jyl_68701_name50_1028，名称50个乙",
+      "steps": [
+        "查询名称及编码无记录；输入50字符名称提交",
+        "列表响应回读ID50和完整50字符",
+        "刷新后打开类型50编辑回读名称"
+      ],
+      "expected": "刷新编辑完整回显50字符",
+      "actual": "刷新后编辑框名称长度50且逐字等于50个乙，编码状态保持；ID50。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5606.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-name-50-edit.png"
+      ],
+      "restoration": "保留供复核"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wd-44",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；当前QA存在字典类型；未提供隔离的空字典环境，不能删除共享字典制造空态。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "当前QA存在字典类型；未提供隔离的空字典环境，不能删除共享字典制造空态。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-46",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；尚无确定拒绝类型编辑保存的P-FAIL条件，不能假造服务故障。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "尚无确定拒绝类型编辑保存的P-FAIL条件，不能假造服务故障。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wq-2",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；尚无确定拒绝字典项编辑的P-FAIL条件。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "尚无确定拒绝字典项编辑的P-FAIL条件。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-36",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；尚无确定拒绝默认项保存的P-FAIL条件。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "尚无确定拒绝默认项保存的P-FAIL条件。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-16",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；尚无确定拒绝排序保存的P-FAIL条件。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "尚无确定拒绝排序保存的P-FAIL条件。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-16",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；未定位可核验真实引用对象及项ID的P-REF；不得跨范围写业务构造。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "未定位可核验真实引用对象及项ID的P-REF；不得跨范围写业务构造。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-17",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；未定位仅用于历史显示且可核验历史对象的独占项。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "未定位仅用于历史显示且可核验历史对象的独占项。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-26",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；未定位在用业务引用及其可核验对象，不能造业务引用。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "未定位在用业务引用及其可核验对象，不能造业务引用。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-1",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；未定位无项但被业务引用的类型及引用对象。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "未定位无项但被业务引用的类型及引用对象。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-21",
+      "status": "blocked",
+      "object": null,
+      "steps": [],
+      "expected": "见分派场景原始预期",
+      "actual": "未执行；未定位已引用的非默认项及引用对象。",
+      "evidence": [],
+      "restoration": "无业务写入",
+      "blocker": "未定位已引用的非默认项及引用对象。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-27",
+      "status": "passed",
+      "object": "测试账号ID6，临时仅角色12（仅菜单104），随后恢复角色6",
+      "steps": [
+        "菜单执行者核对角色12仅授权测试根菜单及账号仅绑定角色12",
+        "测试账号隔离会话查看本人导航",
+        "在同一测试账号会话直接打开/system/dict",
+        "测试账号恢复原角色6并回读"
+      ],
+      "expected": "无字典维护入口，直接访问不提供可操作的字典维护内容",
+      "actual": "本人导航无平台设置；直接打开字典页面显示404，无字典列表及维护控件；UI路径范围通过，未做直接接口权限测试。",
+      "evidence": [
+        "requirements/68701/runs/20261028-qa-ui/observations/permission-role12-readonly.json",
+        ".local/68701/qa-ui-20261028/tester-role12-navigation.png",
+        ".local/68701/qa-ui-20261028/tester-no-dict-permission.png"
+      ],
+      "restoration": "菜单执行者已恢复账号原角色6并回读；角色12保留。",
+      "history": [
+        {
+          "status": "blocked",
+          "blocker": "缺少经确认无字典菜单及操作权限的独立账号/会话；角色统一由菜单执行者管理。",
+          "actual": "未执行；缺少经确认无字典菜单及操作权限的独立账号/会话；角色统一由菜单执行者管理。"
+        }
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-36",
+      "status": "failed",
+      "object": "独占字典类型ID53，账号6临时仅角色12",
+      "steps": [
+        "管理员单次新增类型53并确认无项",
+        "测试账号原角色6打开编辑表单并填写待提交名称",
+        "菜单执行方撤权并回读账号仅角色12、无数据字典权限",
+        "原page3表单单次提交；page4管理员按唯一编码回读"
+      ],
+      "expected": "权限撤销后旧表单提交因权限不足被拒绝并保留输入；管理员回读原名称及其他字段不变",
+      "actual": "撤权后旧表单单次PUT成功；管理员回读ID53名称已从68701权限撤销基线变为68701权限撤销尝试，编码与启用状态保持。",
+      "evidence": [
+        "requirements/68701/runs/20261028-qa-ui/workers/menu/wp36-role-revoked.json",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp36-before-submit-revoked.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp36-tester-after-submit.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4444.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4444.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-3-4445.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9512.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp36-admin-readback.png",
+        "requirements/68701/runs/20261028-qa-ui/workers/menu/wp36-role-restored.json",
+        ".local/68701/qa-ui-20261028/network-2-16418.network-response"
+      ],
+      "restoration": "账号6已恢复原角色6；菜单执行方查看页和角色响应[6]回读确认。类型53保留已变更名称供复核。",
+      "history": [
+        {
+          "status": "blocked",
+          "actual": "未执行；缺少可验证权限撤销的独立账号和关系；本会话不能修改账号角色。",
+          "blocker": "缺少可验证权限撤销的独立账号和关系；本会话不能修改账号角色。"
+        }
+      ],
+      "bug_refs": [
+        "BUG-68701-016"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-16",
+      "status": "failed",
+      "object": "类型50原名称50个乙，类型45名称68701字典测试C1028",
+      "steps": [
+        "编辑50，将名称改为45名称并提交一次",
+        "列表响应显示ID50与45同名、编码不同",
+        "刷新重新核对两类型"
+      ],
+      "expected": "拒绝同名编辑，两条原记录不覆盖",
+      "actual": "编辑类型50成功，刷新后其名称仍与类型45相同，编码和ID不同；未拒绝保存。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5606.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5913.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-duplicate.png"
+      ],
+      "restoration": "两条保留供复核",
+      "candidate": "dictionary-type-edit-name-009",
+      "bug_refs": [
+        "BUG-68701-012"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-14",
+      "status": "passed",
+      "object": "类型45新项145，名称甲，值1",
+      "steps": [
+        "确认类型45内无名称甲和值1；新增项甲/1，启用、非默认",
+        "列表响应确认ID145和所属编码",
+        "刷新选择类型45并打开项145编辑"
+      ],
+      "expected": "刷新编辑后名称、值及归属保持",
+      "actual": "刷新选择类型45，项145仍显示名称甲和值1，编辑回显；原响应确认ID及类型编码。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-6220.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-one-char-edit.png"
+      ],
+      "restoration": "保留项145"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-14",
+      "status": "passed",
+      "object": "类型45项146，名称50个丙，值jyl_68701_item_name50",
+      "steps": [
+        "在类型45新增50字符名称及唯一值",
+        "列表响应回读ID146；打开编辑并读取名称长度与内容"
+      ],
+      "expected": "名称完整50字符且归属类型45",
+      "actual": "编辑框长度50且逐字相同，列表响应dictCode为类型45编码，值和状态保持",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-6527.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-name-50-edit.png"
+      ],
+      "restoration": "项146保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-35",
+      "status": "passed",
+      "object": "独占类型48，无项、无外部引用，原启用",
+      "steps": [
+        "按名称选择类型48，确认项为空",
+        "编辑状态开关为停用并提交一次",
+        "刷新定位同编码类型48并打开编辑"
+      ],
+      "expected": "刷新仍停用，名称、编码、ID保持",
+      "actual": "刷新列表与编辑框均显示停用，名称编码不变；记录ID48。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5285.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-disabled.png"
+      ],
+      "restoration": "后续启用场景已恢复原启用状态。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wi-45",
+      "status": "passed",
+      "object": "独占类型48，停用、无项无外部引用",
+      "steps": [
+        "编辑类型48，从停用改启用并提交一次",
+        "刷新定位同编码并打开编辑"
+      ],
+      "expected": "刷新回读启用，名称编码和ID不变",
+      "actual": "刷新后类型48列表和编辑回读启用，名称编码保持；原启用状态已恢复。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-disabled.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-enabled.png"
+      ],
+      "restoration": "已恢复启用"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-8",
+      "status": "failed",
+      "object": "未创建；测试名称68701类型备注500验证，编码jyl_68701_remark500",
+      "steps": [
+        "新增表单填写有效名称编码；键盘输入500字符备注",
+        "DOM回读输入框只有255字符、maxlength=255；未提交并取消"
+      ],
+      "expected": "完整保存并回显500字符备注",
+      "actual": "输入控件仅接收255字符，无法输入完整合法500字符；未提交",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-500-limit.png"
+      ],
+      "restoration": "取消表单，无新类型",
+      "candidate": "dictionary-type-remark-length-010",
+      "bug_refs": [
+        "BUG-68701-014"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-32",
+      "status": "failed",
+      "object": "类型45，名称68701项值100边界，未创建",
+      "steps": [
+        "确认类型45项中无目标名称和值；新增表单通过键盘输入100字符项值",
+        "DOM读回仅60字符、maxlength=60；取消"
+      ],
+      "expected": "项值100字符可完整保存与回显",
+      "actual": "控件仅接收60字符，合法100字符无法输入；未提交",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-100-limit.png"
+      ],
+      "restoration": "取消表单，无新增项",
+      "candidate": "dictionary-item-value-length-011",
+      "bug_refs": [
+        "BUG-68701-011"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-46",
+      "status": "failed",
+      "object": "类型49默认项147、备用项148",
+      "steps": [
+        "记录147启用默认及148启用非默认",
+        "编辑147状态停用并提交一次，未调整默认",
+        "刷新并选择类型49回查"
+      ],
+      "expected": "未先调整默认不可停用默认项",
+      "actual": "提交后刷新，项147为停用且默认是，备用项148启用非默认；响应status=0、isDefaulted=1。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7156.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-disabled.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7465.network-response"
+      ],
+      "restoration": "暂保留供复核",
+      "candidate": "dictionary-default-disable-012",
+      "bug_refs": [
+        "BUG-68701-015"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wm-55",
+      "status": "failed",
+      "object": "类型48独占项149，启用默认，无外部引用",
+      "steps": [
+        "类型48原为空；新增独占默认项149并回读",
+        "点击项149删除并确认",
+        "刷新后选择类型48回查"
+      ],
+      "expected": "不调整默认不得删除默认项",
+      "actual": "确认删除后项消失；刷新后类型48项列表为空，响应data=[]。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7468.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-delete-after.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7775.network-response"
+      ],
+      "restoration": "项149已删除，不重建同ID",
+      "candidate": "dictionary-default-delete-013",
+      "bug_refs": [
+        "BUG-68701-015"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-35",
+      "status": "passed",
+      "object": "类型ID51，名称甲、编码A",
+      "steps": [
+        "按A搜索两页确认无精确编码A，按甲搜索无名称",
+        "新增甲/A、启用、空备注并提交",
+        "回读ID51并打开编辑"
+      ],
+      "expected": "名称编码各一字符完整保存，空备注为空",
+      "actual": "类型51名称甲、编码A，编辑回显启用及空备注",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7781.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-one-char-edit.png"
+      ],
+      "restoration": "类型51保留"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-23",
+      "status": "passed",
+      "object": "类型51，测试名称51个丁、值jyl_68701_item_name51，未创建",
+      "steps": [
+        "确认类型51项列表为空；键盘输入51字符名称与有效值并提交",
+        "取消后查看项列表"
+      ],
+      "expected": "51字符不保存，不静默截断保存",
+      "actual": "提示字典项名称长度须在1-50之间，输入实际长度51；列表仍为空",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-name-51.png"
+      ],
+      "restoration": "取消表单，未创建项"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-41",
+      "status": "failed",
+      "object": "类型51项150，名称68701项值101边界；输入101个y，保存60个y",
+      "steps": [
+        "类型51项列表为空，填写唯一名称",
+        "键盘输入101字符项值，控件限制为60，提交一次；列表响应回查"
+      ],
+      "expected": "101字符不应静默截断后保存",
+      "actual": "输入被限制到60，提交创建项150，列表响应返回60字符",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-101-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7787.network-response"
+      ],
+      "restoration": "项150保留复核",
+      "candidate": "dictionary-item-value-length-011",
+      "bug_refs": [
+        "BUG-68701-011"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wk-50",
+      "status": "failed",
+      "object": "类型51，名称68701项备注500验证，未创建",
+      "steps": [
+        "在类型51新增字典项填唯一名称及值",
+        "键盘输入500字符备注，回读仅255字符，取消"
+      ],
+      "expected": "备注500字符完整保存及回显",
+      "actual": "控件只接收255字符，无法输入合法500字符，未提交",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-500-limit.png"
+      ],
+      "restoration": "取消表单，未创建项",
+      "candidate": "dictionary-item-remark-length-014",
+      "bug_refs": [
+        "BUG-68701-014"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wl-7",
+      "status": "failed",
+      "object": "类型51项151，名称68701项备注501验证",
+      "steps": [
+        "在类型51新增项，备注键盘输入501字符，仅进入255字符",
+        "提交一次，列表响应回读ID151；创建请求备注长度255"
+      ],
+      "expected": "501字符不可静默截断后保存",
+      "actual": "控件截断255后提交并创建项151，创建请求仅255字符备注",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-501-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7790.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7791.network-response"
+      ],
+      "restoration": "项151保留供复核",
+      "candidate": "dictionary-item-remark-length-014",
+      "bug_refs": [
+        "BUG-68701-014"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-17",
+      "status": "failed",
+      "object": "类型52，名称68701类型备注501验证",
+      "steps": [
+        "确认名称无记录；新增表单键盘输入501字符备注，控件仅接收255",
+        "提交一次，创建请求回读备注255字符、列表确认ID52"
+      ],
+      "expected": "501字符不应静默截断后保存",
+      "actual": "控件截断为255并成功创建类型52，提交请求备注长度255",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-501-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7793.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7794.network-response"
+      ],
+      "restoration": "类型52保留供复核",
+      "candidate": "dictionary-type-remark-length-010",
+      "bug_refs": [
+        "BUG-68701-014"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wn-6",
+      "status": "failed",
+      "object": "类型45，旧默认项143，新候选项144，均无外部引用",
+      "steps": [
+        "记录143启用默认、144启用非默认",
+        "编辑144设为默认并保存，核对旧默认"
+      ],
+      "expected": "144成为唯一默认、143取消默认，之后才能删除143",
+      "actual": "144设为默认后，143仍为默认；前置断言失败，未执行删除。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7801.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-switch-before-delete.png"
+      ],
+      "restoration": "未删除143；类型45两项默认保留供复核",
+      "candidate": "dictionary-default-006",
+      "bug_refs": [
+        "BUG-68701-010"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-49",
+      "status": "blocked",
+      "object": "类型51依次项150、151、152；对照类型45",
+      "steps": [
+        "确认三项ID、值、默认与归属，未发现业务引用；日志入口未确认",
+        "原生MCP拖动项152手柄到项150手柄",
+        "刷新选择类型51，回查顺序；另查类型45与排序前响应一致"
+      ],
+      "expected": "拖动152至150之前，刷新次序保存且值默认引用不变",
+      "actual": "实际拖动并刷新后类型51顺序152、150、151；值、默认及类型45对照响应不变。缺少真实业务引用和日志入口，不能完成全预期。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7807.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8115.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8117.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/sort-after-refresh.png"
+      ],
+      "restoration": "排序留为152、150、151；值和归属不变",
+      "blocker": "无可核验业务引用及操作日志入口。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wp-5",
+      "status": "passed",
+      "object": "类型51编码A；相邻项153、152、150，项151为第四项对照",
+      "steps": [
+        "管理员page4回读类型51原顺序153、152、150、151及ID/值/状态/默认",
+        "原生MCP拖动项152到153之前，排序请求reqid9564；刷新重选类型51并回查",
+        "原生MCP拖动项152至153之后，排序请求reqid9870；再次刷新重选类型51并回查"
+      ],
+      "expected": "以拖动使中间项152上移一位并刷新保持，再下移一位恢复并刷新；值、归属、默认和项集合不变。",
+      "actual": "原顺序153、152、150、151；上移后152、153、150、151；下移并刷新后恢复153、152、150、151。各项ID、名称、值、归属、状态及默认标记保持，第四项151未受影响。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9563.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9564.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9564.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9869.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-after-up-refresh.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9870.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9870.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-10175.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-after-down-refresh.png"
+      ],
+      "restoration": "已恢复原顺序153、152、150、151，字段、默认及项集合保持。",
+      "history": [
+        {
+          "status": "blocked",
+          "actual": "页面实际显示拖动手柄，未见上下箭头；需求允许拖动或上下移动，不能凭手柄替代该特定箭头场景。",
+          "blocker": "指定上下箭头控件未见；需业务大脑确认该独立用例如何调整。",
+          "reason": "主脑根据S4/S7及既有S9原文，按已授权真实页面操作修订，纠正原用例写死上下箭头的表述。"
+        }
+      ],
+      "boundary": "本轮新建独占类型及项，无已知外部业务引用；未声称覆盖已引用项保护，相关P-REF场景仍阻塞。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wh-46",
+      "status": "failed",
+      "object": "类型51，编码A，原名称甲；含项150、151、152",
+      "steps": [
+        "确认新名称字典更名验证未占用",
+        "编辑类型51名称和备注并提交一次",
+        "刷新选择类型51，查看项及编辑框"
+      ],
+      "expected": "名称备注更新，类型及字典项ID和值稳定，日志可查",
+      "actual": "刷新后名称字典更名验证、编码A及项列表保持；编辑框备注为空，未回显编辑备注验证。日志未核验。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8123.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8115.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-remark-empty.png"
+      ],
+      "restoration": "保留类型及项",
+      "candidate": "dictionary-remark-001"
+    },
+    {
+      "node_id": "mcp-node-mvhu73wo-10",
+      "status": "blocked",
+      "object": "类型51默认项153、待删除非默认独占项154；其他项150/151/152",
+      "steps": [
+        "新增无外部引用的153默认项与154非默认项，回读ID及值",
+        "在154行点击删除并确认",
+        "刷新选择类型51回读项列表"
+      ],
+      "expected": "删除154后仅该项消失，其余项和默认不变，日志完整",
+      "actual": "刷新后154消失，153仍启用默认；150/151/152值及状态保持。操作日志入口未确认，完整预期尚未满足。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8433.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8742.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/nondefault-delete-after.png"
+      ],
+      "restoration": "项154已按场景删除；其他项及153默认保留",
+      "blocker": "缺少本操作日志入口。"
+    }
+  ]
+}

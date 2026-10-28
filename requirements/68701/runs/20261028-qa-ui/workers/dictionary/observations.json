@@ -1,0 +1,49 @@
+[
+  {
+    "type": "fixture",
+    "object": "类型ID44，名称68701字典测试B1028，编码jyl_68701_dict_b_1028，启用",
+    "precheck": "名称及编码查询无结果",
+    "action": "UI新增一次、列表查询回读ID44；当前无项",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-949.network-response",
+    "restoration": "保留供后续独占场景"
+  },
+  {
+    "type": "fixture",
+    "object": "类型ID45，名称68701字典测试C1028，编码jyl_68701_dict_c_1028，启用，无项",
+    "precheck": "名称及编码查询无结果",
+    "action": "UI新增一次，列表回读ID45，右侧无项",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1260.network-response",
+    "restoration": "保留供后续独占场景"
+  },
+  {
+    "type": "fixture-update",
+    "object": "类型44项141",
+    "precheck": "原为启用非默认，项142非默认",
+    "action": "UI编辑项141打开默认开关并提交一次，响应回读项141默认、142非默认",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4044.network-response",
+    "restoration": "保留为默认场景前置"
+  },
+  {
+    "type": "fixture-update",
+    "object": "类型45项143",
+    "precheck": "原启用非默认，项144非默认",
+    "action": "UI编辑项143启用默认并提交，列表响应回读",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response",
+    "restoration": "保留为默认场景前置"
+  },
+  {
+    "type": "fixture",
+    "object": "类型49项147，名称68701默认约束项，值jyl_68701_default_guard，启用默认",
+    "precheck": "类型49为本轮新建且项列表为空，无外部引用",
+    "action": "UI新增默认项一次，回读ID147和默认状态",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7154.network-response",
+    "restoration": "保留用于默认约束专项"
+  },
+  {
+    "type": "fixture",
+    "object": "类型49项148，启用非默认，值jyl_68701_default_alternative",
+    "action": "UI新增一次，列表回读147默认、148非默认",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7156.network-response",
+    "restoration": "留作默认约束对照"
+  }
+]

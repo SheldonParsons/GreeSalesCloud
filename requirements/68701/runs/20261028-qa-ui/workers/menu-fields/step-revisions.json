@@ -1,0 +1,23 @@
+[
+  {
+    "node_ids": [
+      "mcp-node-mvhu73w5-3",
+      "mcp-node-mvhu73w5-12",
+      "mcp-node-mvhu73w5-40",
+      "mcp-node-mvhu73w5-49",
+      "mcp-node-mvhu73w7-6",
+      "mcp-node-mvhu73w7-15",
+      "mcp-node-mvhu73w6-8",
+      "mcp-node-mvhu73w6-17"
+    ],
+    "change": "实际入口为【新增菜单】右侧抽屉，选择【菜单】类型并上传SVG，按钮为【提 交】或【取 消】；长度边界使用真实键盘输入和字段长度回读。"
+  },
+  {
+    "node_ids": [
+      "mcp-node-mvhu73w7-6",
+      "mcp-node-mvhu73w7-15"
+    ],
+    "change": "用户确认非法排序允许自动修正或提示拦截，保存值须为0—9999整数；正式Mind由唯一写入者修订。",
+    "source": "requirements/68701/sources/menu-sort-acceptance-20261028.md"
+  }
+]

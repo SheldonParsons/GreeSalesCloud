@@ -1,0 +1,19 @@
+{
+  "trial_id": "dict-revoke-20261028-1",
+  "node_id": "mcp-node-mvhu73wp-36",
+  "target_id": 53,
+  "account_id": 6,
+  "before_roles": [
+    12
+  ],
+  "restored_roles": [
+    6
+  ],
+  "readback": "账号查看页显示sheldon 的角色，账号角色只读响应为[6]；本次恢复没有修改角色12的菜单权限。",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/wp36-account-role-restored.png",
+    ".local/68701/qa-ui-20261028/network-2-16418.network-response"
+  ],
+  "restored_at": "2026-10-28T17:59:52.410295+08:00",
+  "status": "restored_and_verified"
+}

@@ -18,10 +18,15 @@
       "function": "菜单树与访问",
       "title": "未关联目标角色的账号不能看到或直达该菜单",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺已核验受保护且已实现的目标页和独立未授权N；现有菜单104路径为404，不可用作权限拒绝证据。",
+      "mind_synced": true,
+      "execution_notes": [
+        "等待受限目标及对照账号准备。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w2-2",
@@ -29,10 +34,14 @@
       "function": "菜单树与访问",
       "title": "展开再收起根菜单，子级显示与父子归属保持一致",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w2-2.json"
+      ],
+      "bug_refs": [],
+      "actual": "展开显示105/106、收起隐藏、再展开显示，树响应确认父ID104；对照根不变。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w2-12",
@@ -40,10 +49,17 @@
       "function": "菜单树与访问",
       "title": "没有菜单管理权限的账号不能进入菜单维护页",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/permission-role12-readonly.json"
+      ],
+      "bug_refs": [],
+      "actual": "账号6仅角色12时导航无对应入口，直接打开维护路径显示404且无维护控件；已恢复原角色6。仅限UI路径验证。",
+      "mind_synced": true,
+      "execution_notes": [
+        "账号角色前置已补足并恢复；不代表接口权限验证。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w2-22",
@@ -51,10 +67,16 @@
       "function": "菜单树与访问",
       "title": "撤销操作权限后提交已打开的菜单编辑，配置不改变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w2-22.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-016"
+      ],
+      "actual": "账号切换到无菜单管理权限角色12后，旧编辑表单仍提交成功，管理员回读ID104名称已改变；账号已恢复角色6。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w2-33",
@@ -62,13 +84,20 @@
       "function": "新增菜单",
       "title": "新增菜单绑定角色和账号后，账号显示正确名称与图标",
       "baseline_markers": [],
-      "status": "in_progress",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": [],
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w2-33.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
       "sampled_steps": [
         1,
-        2
+        2,
+        3,
+        4,
+        5
       ],
       "inputs": {
         "name": "QA68701主菜单A",
@@ -82,8 +111,10 @@
         "新增时输入备注，刷新后编辑备注为空，正在核对接口返回"
       ],
       "execution_notes": [
-        "权限输入从下划线测试值改为当前页面允许的字母数字冒号值；非空输入的MCP填充发生追加，已用真实全选清空后重新填写并回读。此前前端校验阻止提交，未产生新增请求。"
-      ]
+        "日志断言阻塞；本人导航及账号原角色恢复已核对。"
+      ],
+      "actual": "菜单104编辑备注不回显（BUG-68701-002）；角色12与账号6绑定及本人导航名称图标、刷新和重登已回读；日志入口未确认，账号已恢复原角色6。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4i-1",
@@ -157,10 +188,14 @@
       "function": "新增菜单",
       "title": "名称留空时，根菜单不能保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w4-3.json"
+      ],
+      "bug_refs": [],
+      "actual": "名称空提示必填，其他输入保留；取消后刷新菜单树无该测试编码。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w4-22",
@@ -168,10 +203,16 @@
       "function": "新增菜单",
       "title": "名称为30字符时，可完整保存并回显",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w4-22.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-005"
+      ],
+      "actual": "输入30个汉字仅保留20个，未提交截断值；保存和回显未执行。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w4-31",
@@ -179,10 +220,17 @@
       "function": "新增菜单",
       "title": "名称超过30字符时，不保存超长内容",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73w4-22.json"
+      ],
+      "bug_refs": [],
+      "actual": "控件连30字符只接收20，无法构造31字符表单验证30上限及服务端拒绝；依赖BUG-68701-005。",
+      "mind_synced": true,
+      "execution_notes": [
+        "阻塞于BUG-68701-005，不将20字符限制判作30字符限制通过。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w4-13",
@@ -190,10 +238,14 @@
       "function": "新增菜单",
       "title": "编码留空时，根菜单不能保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w4-13.json"
+      ],
+      "bug_refs": [],
+      "actual": "编码空提示必填，其他输入保留；取消后刷新菜单树无该测试名称。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w5-3",
@@ -201,10 +253,19 @@
       "function": "新增菜单",
       "title": "编码为100字符时，可完整保存并回显",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/code100-limit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-017"
+      ],
+      "actual": "控件maxlength=50，实际只接收50字符，无法输入完整100字符；未提交。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见菜单字段分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w5-12",
@@ -212,10 +273,17 @@
       "function": "新增菜单",
       "title": "编码超过100字符时，不保存超长内容",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/code101-limit.png"
+      ],
+      "bug_refs": [],
+      "actual": "控件maxlength=50，键盘101字符实际接收50；没有101字符可提交。仅验证控件，不代表服务端拒绝；50而非100上限另由合法边界场景判定。",
+      "mind_synced": true,
+      "execution_notes": [
+        "结果待补齐基线或边界，见workers/menu-fields/review-handoff.md。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi0xm4j-2",
@@ -223,10 +291,14 @@
       "function": "新增菜单",
       "title": "图标未选择时，点击保存不能创建菜单",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4j-2.json"
+      ],
+      "bug_refs": [],
+      "actual": "图标为空提示必填，其他输入保留；取消后刷新树无测试编码。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4j-10",
@@ -234,10 +306,14 @@
       "function": "新增菜单",
       "title": "选择小于1MB的合法SVG后，菜单图标可保存并回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4j-10.json"
+      ],
+      "bug_refs": [],
+      "actual": "900000字节SVG创建ID108，刷新编辑回显文件名，关联资源长度和FNV与本地一致。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4j-20",
@@ -245,10 +321,15 @@
       "function": "新增菜单",
       "title": "SVG文件大小恰好为1MB上限时，可以保存",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "1MB精确边界的十进制或二进制字节口径缺少权威依据，未执行。",
+      "mind_synced": true,
+      "execution_notes": [
+        "等待明确1MB字节口径；其他大小场景独立执行。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi0xm4j-29",
@@ -256,10 +337,14 @@
       "function": "新增菜单",
       "title": "SVG文件超过1MB时，图标校验阻止菜单保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4j-29.json"
+      ],
+      "bug_refs": [],
+      "actual": "1100000字节SVG被拒，提交提示请选择图标；取消刷新树无测试编码。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4j-38",
@@ -267,10 +352,14 @@
       "function": "新增菜单",
       "title": "选择PNG文件时，不能按SVG图标要求保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4j-38.json"
+      ],
+      "bug_refs": [],
+      "actual": "PNG被页面拒绝，提交提示图标必填；取消刷新树无测试编码，未验证后端独立格式校验。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4j-47",
@@ -278,10 +367,14 @@
       "function": "新增菜单",
       "title": "重新选择另一份合法SVG后，保存的是最后选择的图标",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4j-47.json"
+      ],
+      "bug_refs": [],
+      "actual": "先后选择两SVG，单次创建ID109；刷新仅一条且图标与第二文件长度和FNV一致。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4k-20",
@@ -289,10 +382,14 @@
       "function": "新增菜单",
       "title": "权限和备注留空时，仍可保存满足必填项的菜单",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4k-20.json"
+      ],
+      "bug_refs": [],
+      "actual": "权限备注空且排序0创建ID110，刷新编辑各字段回读一致。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w5-40",
@@ -300,10 +397,19 @@
       "function": "新增菜单",
       "title": "权限为100字符时，可完整保存并回显",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w5-40.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "P2基线补验ID127：权限100字符完整回显，备注未回显；前两次请求无权限不能作为结论。",
+      "mind_synced": true,
+      "execution_notes": [
+        "前两次准备失误已记录，未重放未知写入；本场景失败仅因备注未回显。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w5-49",
@@ -311,10 +417,22 @@
       "function": "新增菜单",
       "title": "权限超过100字符时，不保存超长内容",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9075.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9080.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-edit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-018"
+      ],
+      "actual": "保存成功，树响应及编辑框均为完整101字符，违反100字符上限。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见菜单字段分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w6-26",
@@ -322,10 +440,14 @@
       "function": "新增菜单",
       "title": "排序填写0时，可保存该整数",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w6-26.json"
+      ],
+      "bug_refs": [],
+      "actual": "明确填写0创建ID111，树响应及刷新编辑排序均为0；备注额外发现已关联BUG-68701-002。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w6-35",
@@ -333,43 +455,79 @@
       "function": "新增菜单",
       "title": "排序填写9999时，可保存该整数",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w6-35.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-013"
+      ],
+      "actual": "输入9999失焦变为1000；取消表单，未提交错误值。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w6-44",
       "module": "菜单管理",
       "function": "新增菜单",
-      "title": "排序填写-1时，不能保存该值",
+      "title": "排序填写-1后，最终保存值为合法整数",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w6-44.json",
+        "observations/menu-sort-invalid-reassessment.json"
+      ],
+      "bug_refs": [],
+      "actual": "输入-1后创建ID112，刷新持久化排序0，为0—9999整数。",
+      "mind_synced": true,
+      "execution_notes": [
+        "用户2026-10-28确认自动修正或提示均可，只要最终保存值合法；原失败判定按新预期修订，原实际：输入-1失焦变0，单次提交创建ID112，请求和刷新编辑排序0；是否违反原始验收待业务审核。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w7-6",
       "module": "菜单管理",
       "function": "新增菜单",
-      "title": "排序填写10000时，不能保存该值",
+      "title": "排序填写10000后，最终保存值为合法整数",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-input.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9084.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9085.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-edit.png",
+        "observations/menu-sort-invalid-reassessment.json"
+      ],
+      "bug_refs": [],
+      "actual": "输入10000后创建ID118，刷新持久化排序1000，为0—9999整数。",
+      "mind_synced": true,
+      "execution_notes": [
+        "用户2026-10-28确认自动修正或提示均可，只要最终保存值合法；原失败判定按新预期修订，原实际：输入10000失焦自动变1000；提交创建菜单ID118，回显1000，未拒绝创建且输入未保留。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w7-15",
       "module": "菜单管理",
       "function": "新增菜单",
-      "title": "排序填写1.5时，不能保存该值",
+      "title": "排序填写1.5后，最终保存值为合法整数",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-input.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9089.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9090.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-edit.png",
+        "observations/menu-sort-invalid-reassessment.json"
+      ],
+      "bug_refs": [],
+      "actual": "输入1.5后创建ID119，刷新持久化排序1，为0—9999整数。",
+      "mind_synced": true,
+      "execution_notes": [
+        "用户2026-10-28确认自动修正或提示均可，只要最终保存值合法；原失败判定按新预期修订，原实际：提交请求排序为1.5，创建成功，树及编辑回读排序1；未拒绝也未保留输入。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w6-8",
@@ -377,10 +535,22 @@
       "function": "新增菜单",
       "title": "备注为200字符时，可完整保存并回显",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9094.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9095.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-edit-empty.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "创建请求备注200个测，编辑框为空，其他可见字段回读；不满足完整回显。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见菜单字段分片result.json；超长备注存储状态未知。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w6-17",
@@ -388,10 +558,22 @@
       "function": "新增菜单",
       "title": "备注超过200字符时，不保存超长内容",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-edit-empty.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-019"
+      ],
+      "actual": "输入控件允许201字符并提交创建成功；请求含201字符，编辑备注为空，存储状态未知。控件未按200上限限制，也未拒绝超限提交。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见菜单字段分片result.json；超长备注存储状态未知。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi0xm4k-10",
@@ -399,10 +581,16 @@
       "function": "新增菜单",
       "title": "取消启用勾选后新增菜单，保存为停用状态",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4k-10.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "ID113停用状态正确，但输入备注刷新后未回显；场景其他字段完整性预期未满足。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w5-21",
@@ -410,10 +598,15 @@
       "function": "新增菜单",
       "title": "URL路径为200字符时，可完整保存并回显",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "尚未定位URL路径字段及适用入口。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w5-31",
@@ -421,10 +614,15 @@
       "function": "新增菜单",
       "title": "URL路径超过200字符时，不保存超长内容",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "尚未定位URL路径字段及适用入口。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w3-23",
@@ -432,10 +630,14 @@
       "function": "新增菜单",
       "title": "取消新增根菜单后，不创建已填写的菜单",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w3-23.json"
+      ],
+      "bug_refs": [],
+      "actual": "填写并取消后，菜单树响应与操作前完全一致，测试编码不存在。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi0xm4k-29",
@@ -443,10 +645,14 @@
       "function": "新增菜单",
       "title": "通过右上角关闭并放弃输入后，不创建菜单",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvi0xm4k-29.json"
+      ],
+      "bug_refs": [],
+      "actual": "关闭抽屉后刷新树与操作前响应一致，测试编码不存在。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w7-34",
@@ -454,10 +660,15 @@
       "function": "新增子菜单",
       "title": "新增子菜单绑定角色和账号后，账号能从正确父菜单打开目标页",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺已实现且受授权保护的目标页PAGE_NEW。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w7-46",
@@ -465,10 +676,16 @@
       "function": "新增子菜单",
       "title": "二级节点不能继续新增第三级菜单",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w7-46.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-008"
+      ],
+      "actual": "二级105下创建第三层107，刷新后仍存在且parentId=105。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w8-6",
@@ -476,10 +693,17 @@
       "function": "新增子菜单",
       "title": "信息节点不允许新增子级",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w8-6.json"
+      ],
+      "bug_refs": [],
+      "actual": "根级目标类别行无新增子级入口；并行新增后按ID对比操作前原有节点字段及父级均未变。",
+      "execution_notes": [
+        "新增的独占菜单与原节点变化分开统计。"
+      ],
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w8-15",
@@ -487,10 +711,17 @@
       "function": "新增子菜单",
       "title": "非新开按钮节点不允许新增子级",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w8-15.json"
+      ],
+      "bug_refs": [],
+      "actual": "根级目标类别行无新增子级入口；并行新增后按ID对比操作前原有节点字段及父级均未变。",
+      "execution_notes": [
+        "新增的独占菜单与原节点变化分开统计。"
+      ],
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w8-24",
@@ -498,10 +729,16 @@
       "function": "新增子菜单",
       "title": "第一层新开页面按钮允许新增第二层子级",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w8-24.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "按钮122下创建子项123且父级正确；刷新编辑备注未回显，字段一致断言未满足。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w8-35",
@@ -509,10 +746,16 @@
       "function": "编辑菜单",
       "title": "修改非首个菜单名称后，绑定账号显示新名称且其他菜单不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w8-35.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "账号导航新名称显示且对照仍在；备注未回显，日志未核验；账号和角色均恢复。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvi1s9vr-9",
@@ -520,10 +763,15 @@
       "function": "编辑菜单",
       "title": "更换菜单图标后，绑定账号显示新图标且入口仍可用",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺可核验可跳转并受授权保护的目标页。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi1s9vr-20",
@@ -531,10 +779,15 @@
       "function": "编辑菜单",
       "title": "修改菜单跳转目标后，绑定账号进入新目标页",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺可编辑跳转字段及已完成的PAGE_A/PAGE_B。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w9-46",
@@ -542,10 +795,16 @@
       "function": "编辑菜单",
       "title": "编辑已有菜单时类型不可改，其他可见字段保存后可回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w9-46.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-002"
+      ],
+      "actual": "类型不可改；其他修改字段刷新回显，备注为空，请求含备注，树不含备注。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w9-11",
@@ -553,10 +812,14 @@
       "function": "编辑菜单",
       "title": "取消菜单编辑后，绑定账号仍看到原名称和原顺序",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73w9-11.json"
+      ],
+      "bug_refs": [],
+      "actual": "取消编辑后ID109字段及本人导航名称和相对次序保持，账号和角色权限均恢复回读。",
+      "mind_synced": true
     },
     {
       "node_id": "mcp-node-mvhu73w9-20",
@@ -564,10 +827,15 @@
       "function": "编辑菜单",
       "title": "菜单保存被服务拒绝后，绑定账号的有效菜单不改变",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺确定拒绝菜单保存的P-FAIL条件。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi1pj3e-3",
@@ -575,10 +843,15 @@
       "function": "启用与停用",
       "title": "停用已绑定菜单后，账号不再获得该菜单的可用入口",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺已完成的受保护独占叶子目标页及可用对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvi1pj3e-14",
@@ -586,10 +859,15 @@
       "function": "启用与停用",
       "title": "启用仍有有效绑定关系的菜单后，账号可重新进入目标页",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺已完成受保护目标页及停用后有效绑定的回读。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73w9-32",
@@ -597,10 +875,20 @@
       "function": "复制菜单",
       "title": "复制带子级菜单后，管理树和绑定账号菜单都不增加副本",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/menu-single-copy-sampling.json",
+        "observations/clipboard-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "单节点复制提示成功但实际粘贴为空，未取得导出；无法确认拒绝条件及校验签名。",
+      "mind_synced": true,
+      "execution_notes": [
+        "等待可核验的剪贴板条件及有效输出，不将成功提示当结果。",
+        "固定哨兵真实复制粘贴对照也失败，按工具/环境阻塞，不归因产品。",
+        "再次点击独占菜单复制后console无error/warn；哨兵粘贴失败，不能归因产品。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wa-7",
@@ -608,10 +896,20 @@
       "function": "复制菜单",
       "title": "复制全部生成可供批量新增读取的内容，原树不增加节点",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json",
+        "observations/clipboard-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "复制提示成功，但真实粘贴为空，未取得导出内容；取消后树不变，复制行为与隔离剪贴板原因待区分。",
+      "mind_synced": true,
+      "execution_notes": [
+        "不能仅凭成功提示或原树不变判整例通过。",
+        "固定哨兵真实复制粘贴对照也失败，按工具/环境阻塞，不归因产品。",
+        "再次点击独占菜单复制后console无error/warn；哨兵粘贴失败，不能归因产品。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wa-18",
@@ -619,10 +917,20 @@
       "function": "复制菜单",
       "title": "剪贴板不可用时，可手工取得复制弹框中的完整内容",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/menu-single-copy-sampling.json",
+        "observations/clipboard-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "单节点复制提示成功但实际粘贴为空，未取得导出；无法确认拒绝条件及校验签名。",
+      "mind_synced": true,
+      "execution_notes": [
+        "等待可核验的剪贴板条件及有效输出，不将成功提示当结果。",
+        "固定哨兵真实复制粘贴对照也失败，按工具/环境阻塞，不归因产品。",
+        "再次点击独占菜单复制后console无error/warn；哨兵粘贴失败，不能归因产品。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wa-29",
@@ -630,10 +938,17 @@
       "function": "批量新增",
       "title": "批量新增选中菜单并绑定账号后，账号显示所选结构且能打开目标页",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺有效签名B_VALID和已实现受保护目标页。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wb-6",
@@ -641,10 +956,17 @@
       "function": "批量新增",
       "title": "导入包含已有节点的有效内容，不重复创建已有节点",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺有效签名B_MIX及已有与待新增样本。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wb-16",
@@ -652,10 +974,17 @@
       "function": "批量新增",
       "title": "有节点缺少父级时，整批不新增",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺仅父级缺失且签名有效样本及合法对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wb-26",
@@ -663,10 +992,17 @@
       "function": "批量新增",
       "title": "批量中编码冲突时整批不新增，账号现有菜单保持不变",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺有效签名的编码冲突样本及合法对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wb-35",
@@ -674,10 +1010,17 @@
       "function": "批量新增",
       "title": "复制内容结构无效时，整批不新增",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺仅结构错误的样本及合法对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wc-2",
@@ -685,10 +1028,17 @@
       "function": "批量新增",
       "title": "复制内容签名无效时，整批不新增",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺仅签名无效的样本及合法对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wc-11",
@@ -696,10 +1046,17 @@
       "function": "批量新增",
       "title": "取消已完成预览的批量新增后，不创建所选节点",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wa-7.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺可预览的有效签名B_VALID。",
+      "mind_synced": true,
+      "execution_notes": [
+        "复制未取得真实导出，不手写签名或伪造样本。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wc-21",
@@ -707,10 +1064,15 @@
       "function": "删除菜单",
       "title": "删除已绑定根菜单后，账号不再显示该菜单及全部子级",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺受保护目标、P-BIZ业务对象快照及操作日志入口。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wc-34",
@@ -718,10 +1080,17 @@
       "function": "删除菜单",
       "title": "取消删除菜单后，绑定账号仍保留原菜单和子级",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/mcp-node-mvhu73wc-34.json"
+      ],
+      "bug_refs": [],
+      "actual": "绑定根109并回读叶子115后，账号导航只见根，子级基线未建立；未执行取消删除。",
+      "mind_synced": true,
+      "execution_notes": [
+        "需可识别的账号侧子级导航前置；账号及角色已恢复。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wc-44",
@@ -729,10 +1098,15 @@
       "function": "删除菜单",
       "title": "删除已绑定叶子菜单后，账号只失去该入口且兄弟菜单仍可用",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺两个已完成且可核验的叶子目标页。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-3",
@@ -740,10 +1114,18 @@
       "function": "菜单排序",
       "title": "同级菜单排序保存后，绑定账号按新顺序显示且跳转不变",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "evidence": [
+        "observations/menu-drag-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "缺三个已完成目标页及日志入口，菜单拖动需有效对照。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。",
+        "同父项105→106反向原生拖动对照无排序请求或位移，未证明动作触发。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-14",
@@ -751,10 +1133,21 @@
       "function": "菜单排序",
       "title": "把子菜单拖到另一个父菜单下，父子结构不改变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73wd-14.json",
+        "observations/menu-drag-control.json",
+        "observations/menu-drag-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "MCP拖动未见请求或反馈，刷新相关父级排序未变；无法区分拦截与动作未触发。",
+      "mind_synced": true,
+      "execution_notes": [
+        "需同平台成功拖动对照或明确交互反馈。",
+        "同父级原生拖动对照未观察到请求或位移，仍无法证明动作触发。",
+        "同父项105→106反向原生拖动对照无排序请求或位移，未证明动作触发。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-24",
@@ -762,10 +1155,21 @@
       "function": "菜单排序",
       "title": "把二级菜单拖为根级，仍保留原层级",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/mcp-node-mvhu73wd-24.json",
+        "observations/menu-drag-control.json",
+        "observations/menu-drag-control.json"
+      ],
+      "bug_refs": [],
+      "actual": "MCP拖动未见请求或反馈，刷新后106仍属104；动作有效性未确认。",
+      "mind_synced": true,
+      "execution_notes": [
+        "需同平台成功拖动对照或明确反馈。",
+        "同父级原生拖动对照未观察到请求或位移，仍无法证明动作触发。",
+        "同父项105→106反向原生拖动对照无排序请求或位移，未证明动作触发。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-33",
@@ -773,10 +1177,15 @@
       "function": "菜单排序",
       "title": "排序保存失败时，有效顺序保持原值",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "缺确定拒绝排序保存的P-FAIL条件。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未执行；按case-preparation.md准备相应真实前置。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-44",
@@ -784,10 +1193,15 @@
       "function": "字典查询",
       "title": "字典为空时展示空态，不自动生成示例数据",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；当前QA存在字典类型；未提供隔离的空字典环境，不能删除共享字典制造空态。",
+      "mind_synced": true,
+      "execution_notes": [
+        "当前QA存在字典类型；未提供隔离的空字典环境，不能删除共享字典制造空态。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wd-53",
@@ -795,10 +1209,20 @@
       "function": "字典查询",
       "title": "切换字典类型后，右侧只显示所选类型的字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/switch-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/switch-b.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2798.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "类型45显示143的值jyl_68701_c_item_1；切回44显示141、142的各自值，均启用非默认",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73we-6",
@@ -806,10 +1230,18 @@
       "function": "字典查询",
       "title": "按字典名称查询能定位目标类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-b-name.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "一条B，编码jyl_68701_dict_b_1028、启用；右侧显示项141名称与值；对照类型45为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73we-17",
@@ -817,10 +1249,18 @@
       "function": "字典查询",
       "title": "按字典编码查询能定位目标类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-b-code.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "一条B，名称68701字典测试B1028、启用，右侧显示项141；类型45项为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73we-27",
@@ -828,10 +1268,17 @@
       "function": "字典查询",
       "title": "重置查询后清空条件并恢复可见类型列表",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/query-clear.png"
+      ],
+      "bug_refs": [],
+      "actual": "搜索框为空，列表共43条；类型45项为空，切换44显示项141",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73we-37",
@@ -839,10 +1286,21 @@
       "function": "新增字典",
       "title": "填写有效字典类型后，名称编码状态备注完整保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-317.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-316.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-43-edit-empty-remark.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-003"
+      ],
+      "actual": "新增请求包含备注；刷新后编辑ID 43，备注输入框为空，名称编码状态回显；日志未核验。",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json；失败场景日志未核验。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73we-50",
@@ -850,10 +1308,20 @@
       "function": "新增字典",
       "title": "类型名称首尾空格去除后保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4972.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-unique-edit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-009"
+      ],
+      "actual": "刷新后编辑输入值仍为首尾各两个空格；DOM读取长度11、首尾空格均为true，编码及启用状态保持。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-2",
@@ -861,10 +1329,17 @@
       "function": "新增字典",
       "title": "类型名称为空时，不能新增字典类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/empty-name.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示请输入类型名称，编码与备注保留；编码查询无记录",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-11",
@@ -872,10 +1347,17 @@
       "function": "新增字典",
       "title": "类型编码为空时，不能新增字典类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/empty-code.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示请输入类型编码，名称及备注保留；名称查询无记录",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-21",
@@ -883,10 +1365,17 @@
       "function": "新增字典",
       "title": "类型名称仅含空格时，去空格后不能保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-space-name.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示类型名称不能为空，编码保留；取消后按编码查询暂无数据",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-30",
@@ -894,10 +1383,21 @@
       "function": "新增字典",
       "title": "去首尾空格后与已有类型重名时，新增被拒绝",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-trim-duplicate-created.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3423.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3424.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-009"
+      ],
+      "actual": "新增成功；响应ID46名称仍保留首尾空格，原类型ID44存在。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-39",
@@ -905,10 +1405,17 @@
       "function": "新增字典",
       "title": "类型编码与已有类型相同时，不能重复创建",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-duplicate-code.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示字典编码已存在，输入保留；原编码查询仍一条原类型，原字典项显示",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wf-48",
@@ -916,10 +1423,17 @@
       "function": "新增字典",
       "title": "类型编码为“1jyltest”时，格式校验阻止保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-digit.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示类型编码须以字母开头、仅含字母数字下划线；名称及编码保留；按名称查询无结果",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-8",
@@ -927,10 +1441,17 @@
       "function": "新增字典",
       "title": "类型编码为“_jyltest”时，格式校验阻止保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-underscore.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示类型编码须以字母开头；输入保留；名称查询无结果",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-17",
@@ -938,10 +1459,17 @@
       "function": "新增字典",
       "title": "类型编码为“JYL-TEST”时，格式校验阻止保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-hyphen.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示请输入英文、数字或下划线；输入保留；名称查询无结果",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-26",
@@ -949,10 +1477,18 @@
       "function": "新增字典",
       "title": "类型名称达到50字符时，完整保存该类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5606.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-name-50-edit.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后编辑框名称长度50且逐字等于50个乙，编码状态保持；ID50。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-35",
@@ -960,10 +1496,17 @@
       "function": "新增字典",
       "title": "类型名称超过50字符时，不以截断内容保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-name-51.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示类型名称长度须在1-50之间；输入未截断，按编码查无记录",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-44",
@@ -971,10 +1514,21 @@
       "function": "新增字典",
       "title": "类型编码达到100字符时，完整保存该类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5297.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-100-after.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-011"
+      ],
+      "actual": "输入100字符，控件限制60；保存后刷新编辑回显60字符，未完整保存。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wg-54",
@@ -982,10 +1536,21 @@
       "function": "新增字典",
       "title": "类型编码超过100字符时，不以截断内容保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-101.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-code-101-before-submit.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5285.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-011"
+      ],
+      "actual": "真实键盘输入101字符时，maxlength=60使输入截断到60；提交成功并创建类型48。早先fill_form异常回执不作为结论。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wh-8",
@@ -993,10 +1558,19 @@
       "function": "新增字典",
       "title": "备注达到500字符时，完整保存该类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-500-limit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-014"
+      ],
+      "actual": "输入控件仅接收255字符，无法输入完整合法500字符；未提交",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wh-17",
@@ -1004,10 +1578,21 @@
       "function": "新增字典",
       "title": "备注超过500字符时，不以截断内容保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-remark-501-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7793.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7794.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-014"
+      ],
+      "actual": "控件截断为255并成功创建类型52，提交请求备注长度255",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wh-26",
@@ -1015,10 +1600,18 @@
       "function": "新增字典",
       "title": "取消新增字典后，不创建已填写的类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-create-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-create-cancel-existing.png"
+      ],
+      "bug_refs": [],
+      "actual": "按编码查询为空；类型44、45可见，类型44的项141与142名称和值均仍在",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wh-35",
@@ -1026,10 +1619,18 @@
       "function": "新增字典",
       "title": "类型名称和编码各为1字符时，可保存最小长度输入",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7781.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-one-char-edit.png"
+      ],
+      "bug_refs": [],
+      "actual": "类型51名称甲、编码A，编辑回显启用及空备注",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wh-46",
@@ -1037,10 +1638,21 @@
       "function": "编辑字典",
       "title": "修改类型名称和备注后，稳定编码及字典项归属保持不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8123.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8115.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-remark-empty.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-003"
+      ],
+      "actual": "刷新后名称字典更名验证、编码A及项列表保持；编辑框备注为空，未回显编辑备注验证。日志未核验。",
+      "mind_synced": true,
+      "execution_notes": [
+        "同备注候选待归因审核。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wi-6",
@@ -1048,10 +1660,17 @@
       "function": "编辑字典",
       "title": "已创建类型的编码只读，不能通过编辑改值",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-43-edit-empty-remark.png"
+      ],
+      "bug_refs": [],
+      "actual": "编码框disabled，点击不能输入；原编码查询仍显示同一目标，只有一条",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wi-16",
@@ -1059,10 +1678,21 @@
       "function": "编辑字典",
       "title": "将类型名称改成其他已有类型名称时，原记录不被覆盖",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5606.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5913.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-edit-duplicate.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-012"
+      ],
+      "actual": "编辑类型50成功，刷新后其名称仍与类型45相同，编码和ID不同；未拒绝保存。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wi-26",
@@ -1070,10 +1700,18 @@
       "function": "编辑字典",
       "title": "取消类型编辑后，名称状态备注保持原值",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-edit-before-cancel.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-edit-after-cancel.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后名称恢复原名称，状态启用、备注为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wi-35",
@@ -1081,10 +1719,18 @@
       "function": "编辑字典",
       "title": "无引用空字典由启用改为停用后，状态可回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-5285.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-disabled.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新列表与编辑框均显示停用，名称编码不变；记录ID48。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wi-45",
@@ -1092,10 +1738,18 @@
       "function": "编辑字典",
       "title": "无引用空字典由停用改为启用后，状态可回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-disabled.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type48-enabled.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后类型48列表和编辑回读启用，名称编码保持；原启用状态已恢复。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wp-46",
@@ -1103,10 +1757,15 @@
       "function": "编辑字典",
       "title": "类型编辑服务失败时，保留输入且不改变有效记录",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；尚无确定拒绝类型编辑保存的P-FAIL条件，不能假造服务故障。",
+      "mind_synced": true,
+      "execution_notes": [
+        "尚无确定拒绝类型编辑保存的P-FAIL条件，不能假造服务故障。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-3",
@@ -1114,10 +1773,21 @@
       "function": "新增与编辑字典项",
       "title": "在选定类型下新增字典项，仅写入该类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-627.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1260.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1261.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-empty.png"
+      ],
+      "bug_refs": [],
+      "actual": "补验：类型44下项141刷新后UI显示名称、值、启用、非默认；独占对照类型45项列表为空。操作日志入口未确认，不能完成日志断言。",
+      "mind_synced": true,
+      "execution_notes": [
+        "日志入口未知，步骤3阻塞；问号标记并注明阻塞。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-14",
@@ -1125,10 +1795,17 @@
       "function": "新增与编辑字典项",
       "title": "字典项名称为空时，不创建字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-empty-name.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示请输入字典项名称，项值及备注保留；取消后项列表为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-23",
@@ -1136,10 +1813,17 @@
       "function": "新增与编辑字典项",
       "title": "字典项值为空时，不创建字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-empty-value.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示请输入字典项值，名称和备注保留；取消后项列表为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-32",
@@ -1147,10 +1831,20 @@
       "function": "新增与编辑字典项",
       "title": "同类型内字典项名称重复时，不能新增",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-duplicate-name-reload.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-007"
+      ],
+      "actual": "新增成功，刷新后出现同名两项，响应确认ID141与142；表单关闭",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-42",
@@ -1158,10 +1852,20 @@
       "function": "新增与编辑字典项",
       "title": "不同类型使用相同字典项名称时，各自保存且不串类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2798.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-name-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-name-b.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后类型45显示项143及其值，类型44显示项141、142及各自值；两类型项归属不同。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wj-51",
@@ -1169,10 +1873,18 @@
       "function": "新增与编辑字典项",
       "title": "同类型内字典项值重复时，不能新增",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-duplicate-value.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "提示字典项值已存在，表单仍保留输入；取消后仍显示原两项，未新增测试名称",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-4",
@@ -1180,10 +1892,20 @@
       "function": "新增与编辑字典项",
       "title": "不同类型使用相同字典项值时，各自保存且不串类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-3431.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-value-c.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/cross-value-b.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2489.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后类型45显示项144及值，类型44显示原项141及相同值；两个项ID不同、归属不同。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-14",
@@ -1191,10 +1913,18 @@
       "function": "新增与编辑字典项",
       "title": "字典项名称为50字符时，字典项完整保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-6527.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-name-50-edit.png"
+      ],
+      "bug_refs": [],
+      "actual": "编辑框长度50且逐字相同，列表响应dictCode为类型45编码，值和状态保持",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-23",
@@ -1202,10 +1932,17 @@
       "function": "新增与编辑字典项",
       "title": "字典项名称超过50字符时，不截断后保存字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-name-51.png"
+      ],
+      "bug_refs": [],
+      "actual": "提示字典项名称长度须在1-50之间，输入实际长度51；列表仍为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-32",
@@ -1213,10 +1950,19 @@
       "function": "新增与编辑字典项",
       "title": "字典项值为100字符时，字典项完整保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-100-limit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-011"
+      ],
+      "actual": "控件仅接收60字符，合法100字符无法输入；未提交",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-41",
@@ -1224,10 +1970,20 @@
       "function": "新增与编辑字典项",
       "title": "字典项值超过100字符时，不截断后保存字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-101-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7787.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-011"
+      ],
+      "actual": "输入被限制到60，提交创建项150，列表响应返回60字符",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wk-50",
@@ -1235,10 +1991,19 @@
       "function": "新增与编辑字典项",
       "title": "备注为500字符时，字典项完整保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-500-limit.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-014"
+      ],
+      "actual": "控件只接收255字符，无法输入合法500字符，未提交",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wl-7",
@@ -1246,10 +2011,21 @@
       "function": "新增与编辑字典项",
       "title": "备注超过500字符时，不截断后保存字典项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-remark-501-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7790.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7791.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-014"
+      ],
+      "actual": "控件截断255后提交并创建项151，创建请求仅255字符备注",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wl-16",
@@ -1257,10 +2033,15 @@
       "function": "新增与编辑字典项",
       "title": "修改已引用字典项的显示名称，稳定值和引用关系不变",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；未定位可核验真实引用对象及项ID的P-REF；不得跨范围写业务构造。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未定位可核验真实引用对象及项ID的P-REF；不得跨范围写业务构造。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wl-27",
@@ -1268,10 +2049,21 @@
       "function": "新增与编辑字典项",
       "title": "已创建字典项的值只读，不能通过编辑更换",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-value-editable.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2487.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-006"
+      ],
+      "actual": "值字段可输入替换值；取消刷新后列表仍为原值；未提交修改，服务端是否允许保存未知",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wl-37",
@@ -1279,10 +2071,21 @@
       "function": "新增与编辑字典项",
       "title": "编辑为同类型已有项名称时，两个项均不被改写",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-duplicate.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4663.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-duplicate-reload.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-007"
+      ],
+      "actual": "编辑成功，刷新后项143与144仍同名，值未合并；应阻止修改。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wl-47",
@@ -1290,10 +2093,19 @@
       "function": "新增与编辑字典项",
       "title": "取消字典项编辑后，名称状态默认标记和备注不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-edit-cancel-after.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后项144名称、值、启用、非默认、空备注回显；项143仍为默认",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-5",
@@ -1301,10 +2113,18 @@
       "function": "新增与编辑字典项",
       "title": "取消新增字典项后，当前类型没有新增记录",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-create-cancel-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-create-cancel-after.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后仍只有原项141/142，均为非默认；待新增名称和值不存在",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-14",
@@ -1312,10 +2132,18 @@
       "function": "新增与编辑字典项",
       "title": "字典项名称和值各为1字符时，可在所选类型保存",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-6220.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-one-char-edit.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新选择类型45，项145仍显示名称甲和值1，编辑回显；原响应确认ID及类型编码。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wq-2",
@@ -1323,10 +2151,15 @@
       "function": "新增与编辑字典项",
       "title": "字典项编辑服务失败时，保留输入且不改变有效记录",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；尚无确定拒绝字典项编辑的P-FAIL条件。",
+      "mind_synced": true,
+      "execution_notes": [
+        "尚无确定拒绝字典项编辑的P-FAIL条件。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-24",
@@ -1334,10 +2167,21 @@
       "function": "默认项与启停",
       "title": "选择新默认项后，旧默认取消且其他类型默认不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4044.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4355.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/two-defaults-after-refresh.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-010"
+      ],
+      "actual": "刷新后类型44的141、142均为默认，45的143仍默认；日志未核验",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-36",
@@ -1345,10 +2189,15 @@
       "function": "默认项与启停",
       "title": "新默认项保存失败时，旧默认仍有效",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；尚无确定拒绝默认项保存的P-FAIL条件。",
+      "mind_synced": true,
+      "execution_notes": [
+        "尚无确定拒绝默认项保存的P-FAIL条件。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-46",
@@ -1356,10 +2205,21 @@
       "function": "默认项与启停",
       "title": "未调整默认选择时，不能直接停用默认项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7156.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-disabled.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7465.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-015"
+      ],
+      "actual": "提交后刷新，项147为停用且默认是，备用项148启用非默认；响应status=0、isDefaulted=1。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wm-55",
@@ -1367,10 +2227,21 @@
       "function": "默认项与启停",
       "title": "未调整默认选择时，不能直接删除默认项",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7468.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-delete-after.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7775.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-015"
+      ],
+      "actual": "确认删除后项消失；刷新后类型48项列表为空，响应data=[]。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wn-6",
@@ -1378,10 +2249,21 @@
       "function": "默认项与启停",
       "title": "先切换默认项再删除旧默认项，新默认保持有效",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-4047.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7801.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/default-switch-before-delete.png"
+      ],
+      "bug_refs": [
+        "BUG-68701-010"
+      ],
+      "actual": "144设为默认后，143仍为默认；前置断言失败，未执行删除。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wn-17",
@@ -1389,10 +2271,15 @@
       "function": "默认项与启停",
       "title": "停用仅用于历史显示的非默认项，历史内容仍保留",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；未定位仅用于历史显示且可核验历史对象的独占项。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未定位仅用于历史显示且可核验历史对象的独占项。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wn-26",
@@ -1400,10 +2287,15 @@
       "function": "默认项与启停",
       "title": "停用会导致在用业务失效的引用项时，操作被阻止",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；未定位在用业务引用及其可核验对象，不能造业务引用。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未定位在用业务引用及其可核验对象，不能造业务引用。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wn-48",
@@ -1411,10 +2303,21 @@
       "function": "删除字典和字典项",
       "title": "类型下仍有字典项时，不能删除该类型",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-629.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-delete-reload.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-633.network-response"
+      ],
+      "bug_refs": [
+        "BUG-68701-004"
+      ],
+      "actual": "确认删除后类型列表为空；刷新按原编码仍无类型，无法在UI选择原类型核对两项；是否级联删除未确定。",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-1",
@@ -1424,10 +2327,15 @@
       "baseline_markers": [
         "other:question"
       ],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；未定位无项但被业务引用的类型及引用对象。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未定位无项但被业务引用的类型及引用对象。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-10",
@@ -1435,10 +2343,19 @@
       "function": "删除字典和字典项",
       "title": "删除未引用的非默认项，其他项和默认选择保持不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8433.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8742.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/nondefault-delete-after.png"
+      ],
+      "bug_refs": [],
+      "actual": "刷新后154消失，153仍启用默认；150/151/152值及状态保持。操作日志入口未确认，完整预期尚未满足。",
+      "mind_synced": true,
+      "execution_notes": [
+        "缺少本操作日志入口。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-21",
@@ -1446,10 +2363,15 @@
       "function": "删除字典和字典项",
       "title": "已被引用的非默认项不能删除，业务引用继续有效",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；未定位已引用的非默认项及引用对象。",
+      "mind_synced": true,
+      "execution_notes": [
+        "未定位已引用的非默认项及引用对象。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-30",
@@ -1457,10 +2379,18 @@
       "function": "删除字典和字典项",
       "title": "取消删除类型后，原记录仍可回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-1260.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/type-c-cancel-delete.png"
+      ],
+      "bug_refs": [],
+      "actual": "取消后刷新仍有类型，名称、编码、启用、空备注回显；项列表为空",
+      "mind_synced": true,
+      "execution_notes": [
+        "字典分片结果已合入，详情见workers/dictionary/result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-39",
@@ -1468,10 +2398,19 @@
       "function": "删除字典和字典项",
       "title": "取消删除字典项后，原记录仍可回查",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/item-cancel-delete.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-952.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-2487.network-response"
+      ],
+      "bug_refs": [],
+      "actual": "项仍在类型44，名称、值、启用、非默认与空备注保持，排序0；原ID141的只读响应见证据",
+      "mind_synced": true,
+      "execution_notes": [
+        "详见字典分片result.json。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wo-49",
@@ -1479,21 +2418,48 @@
       "function": "字典项排序",
       "title": "拖动同类型字典项后，顺序保存且项值和引用不变",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "blocked",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-7807.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8115.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-8117.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/sort-after-refresh.png"
+      ],
+      "bug_refs": [],
+      "actual": "实际拖动并刷新后类型51顺序152、150、151；值、默认及类型45对照响应不变。缺少真实业务引用和日志入口，不能完成全预期。",
+      "mind_synced": true,
+      "execution_notes": [
+        "无可核验业务引用及操作日志入口。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wp-5",
       "module": "数据字典",
       "function": "字典项排序",
-      "title": "使用上下箭头调整字典项后，保存同类型内的新次序",
+      "title": "拖动字典项上移再下移，保存同类型内的次序",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9563.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-before.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9564.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9564.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9869.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-after-up-refresh.png",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9870.network-request",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9870.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/network-4-10175.network-response",
+        ".local/68701/qa-ui-20261028/workers/dictionary/wp5-after-down-refresh.png"
+      ],
+      "bug_refs": [],
+      "actual": "类型51项152上移后刷新顺序152、153、150、151，下移并刷新恢复153、152、150、151；项ID、值、归属、状态及默认保持。独占数据无已知外部业务引用，未验证实际被引用对象关系。",
+      "mind_synced": true,
+      "execution_notes": [
+        "主脑依据S4/S7/S9及真实控件纠正原箭头操作；本轮独占无已知外部引用基线通过，不替代P-REF场景。",
+        "原阻塞与部分观察保留于分片result.json历史。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wp-16",
@@ -1501,10 +2467,15 @@
       "function": "字典项排序",
       "title": "排序保存失败后，有效次序和引用仍为原值",
       "baseline_markers": [],
-      "status": "not_started",
+      "status": "blocked",
       "steps_sampled": false,
       "evidence": [],
-      "bug_refs": []
+      "bug_refs": [],
+      "actual": "未执行；尚无确定拒绝排序保存的P-FAIL条件。",
+      "mind_synced": true,
+      "execution_notes": [
+        "尚无确定拒绝排序保存的P-FAIL条件。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wp-27",
@@ -1512,10 +2483,17 @@
       "function": "访问权限",
       "title": "未获数据字典菜单权限的账号不能进入维护页面",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "passed",
+      "steps_sampled": true,
+      "evidence": [
+        "observations/permission-role12-readonly.json"
+      ],
+      "bug_refs": [],
+      "actual": "账号6仅角色12时导航无对应入口，直接打开维护路径显示404且无维护控件；已恢复原角色6。仅限UI路径验证。",
+      "mind_synced": true,
+      "execution_notes": [
+        "账号角色前置已补足并恢复；不代表接口权限验证。"
+      ]
     },
     {
       "node_id": "mcp-node-mvhu73wp-36",
@@ -1523,17 +2501,45 @@
       "function": "访问权限",
       "title": "已有字典页在操作权限撤销后，提交编辑被拒绝",
       "baseline_markers": [],
-      "status": "not_started",
-      "steps_sampled": false,
-      "evidence": [],
-      "bug_refs": []
+      "status": "failed",
+      "steps_sampled": true,
+      "evidence": [
+        "workers/dictionary/wp36-submit-result.json",
+        "workers/menu/wp36-role-revoked.json",
+        "workers/menu/wp36-role-restored.json"
+      ],
+      "bug_refs": [
+        "BUG-68701-016"
+      ],
+      "actual": "账号6切至无字典权限角色12后，旧表单单次更新成功；管理员回读ID53名称改变；账号已恢复角色6并回读。",
+      "mind_synced": true,
+      "execution_notes": [
+        "按授权校验规则与菜单撤权场景归并，不断言内部实现同根因。"
+      ]
     }
   ],
-  "run_state": "ready_for_terra",
+  "run_state": "completed_with_blockers",
   "ui_execution_stopped": true,
   "handoff_at": "2026-10-28T15:54:11+08:00",
   "execution_owner_thread_id": "01a18177-e668-79d0-a41f-fbd147241cf4",
   "execution_owner_model": "GPT-6.1 Terra",
   "business_owner_thread_id": "01a15800-d006-7412-b639-9d37ccbe45b8",
-  "mind_agent_connection_released": true
+  "mind_agent_connection_released": true,
+  "ui_execution_stopped_at": "2026-10-28T18:25:37.445773+08:00",
+  "account_restoration": {
+    "account_id": 6,
+    "restored_roles": [
+      6
+    ],
+    "evidence": "workers/menu/wp36-role-restored.json"
+  },
+  "pending_write_results": "none_known",
+  "mind_document_saved": true,
+  "mind_document_dirty": false,
+  "mind_release_detail": "wp-5同步后结束本会话连接返回ok=true、ended=true；活动session和执行数均为0，窗口锁为空。",
+  "closeout_counts": {
+    "blocked": 42,
+    "passed": 54,
+    "failed": 37
+  }
 }

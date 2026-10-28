@@ -1,0 +1,11 @@
+{
+  "basis": "sources/menu-sort-acceptance-20261028.md：用户确认自动修正或提示均可，最终持久化排序必须为0—9999的整数。",
+  "reassessed_at": "2026-10-28 Asia/Shanghai",
+  "cases": [
+    {"node_id":"mcp-node-mvhu73w6-44","input":-1,"menu_id":112,"request_sort":0,"refresh_sort":0,"prior_status":"failed","status":"passed","original_evidence":"observations/mcp-node-mvhu73w6-44.json"},
+    {"node_id":"mcp-node-mvhu73w7-6","input":10000,"menu_id":118,"request_sort":1000,"refresh_sort":1000,"prior_status":"failed","status":"passed","original_evidence":"workers/menu-fields/result.json"},
+    {"node_id":"mcp-node-mvhu73w7-15","input":1.5,"menu_id":119,"request_sort":1.5,"refresh_sort":1,"prior_status":"failed","status":"passed","original_evidence":"workers/menu-fields/result.json"}
+  ],
+  "refresh_evidence": ".local/68701/qa-ui-20261028/network-2-9227.network-response",
+  "boundary": "按新确认只判断最终持久化排序合法；保留原始执行证据和历史判定，不以自动改值判缺陷。合法9999被改1000的BUG-68701-013不受影响。"
+}

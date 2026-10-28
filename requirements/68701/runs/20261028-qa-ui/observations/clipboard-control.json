@@ -1,0 +1,16 @@
+{
+  "environment": "QA任务专用无界面浏览器",
+  "page_id": 2,
+  "control": "在批量手动粘贴框通过真实键盘输入固定非敏感哨兵文本，使用Shift+Home选择全部并核对选区，再分别尝试Meta+C/Meta+V和Control+C/Control+V；每次删除后执行粘贴。",
+  "actual": "两种快捷键路径均在确认选区完整且删除后得到空文本，固定哨兵无法复制/粘贴回填。本次哨兵对照未读取或回显用户既有剪贴板内容。页面为非安全上下文且navigator.clipboard不存在。",
+  "conclusion": "本环境原生剪贴板复制粘贴哨兵对照失败，页面当次无可读错误；无法归因菜单导出为空为产品缺陷。相关复制与批量场景保持工具/前置阻塞。",
+  "restoration": "取消弹窗，无业务提交",
+  "console_control": "再次点击独占菜单109的复制按钮后，页面当次console error/warn为空；没有可读的剪贴板错误可区分产品与工具。",
+  "additional_connection_probe": {
+    "connection": "chrome_devtools（非headless，与原任务桥独立）",
+    "page": "独占合成about:blank，未登录业务",
+    "actual": "原生键盘复制固定哨兵后目标仍为空，连接可用但复制粘贴能力未获证明。",
+    "evidence": ".local/68701/qa-ui-20261028/workers/dictionary/chrome-native-clipboard-probe.json",
+    "scope": "工具对照，不是菜单业务测试，不读取用户既有剪贴板。"
+  }
+}

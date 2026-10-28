@@ -1,0 +1,189 @@
+{
+  "module": "菜单字段分片",
+  "page_id": 4,
+  "total": 8,
+  "counts": {
+    "passed": 4,
+    "failed": 4,
+    "blocked": 0,
+    "in_progress": 0,
+    "not_started": 0
+  },
+  "cases": [
+    {
+      "node_id": "mcp-node-mvhu73w5-3",
+      "status": "failed",
+      "object": "未创建，名称QA68701F编码100",
+      "steps": [
+        "新增菜单选择菜单类型，输入独占名称",
+        "通过键盘输入符合格式的100字符编码，读取控件实际长度",
+        "取消表单"
+      ],
+      "expected": "可完整输入并保存回显100字符编码",
+      "actual": "控件maxlength=50，实际只接收50字符，无法输入完整100字符；未提交。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/code100-limit.png"
+      ],
+      "restoration": "取消表单，无菜单创建",
+      "candidate": "menu-fields-code-length-001"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-12",
+      "status": "passed",
+      "object": "未创建；名称QA68701F编码101",
+      "steps": [
+        "新增菜单选择类型菜单，填写名称",
+        "通过键盘输入101字符编码，读取输入长度及控件上限",
+        "因输入已限长，没有仍为101字符的表单可提交，取消"
+      ],
+      "expected": "不能保存101字符，控件限长时记录限制",
+      "actual": "控件maxlength=50，键盘101字符实际接收50；没有101字符可提交。仅验证控件，不代表服务端拒绝；50而非100上限另由合法边界场景判定。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/code101-limit.png"
+      ],
+      "restoration": "取消表单，无菜单创建"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-40",
+      "status": "passed",
+      "object": "菜单ID116，编码QA68701FPerm100，父ID0",
+      "steps": [
+        "树响应核对编码未占用",
+        "选择菜单、输入名称、编码、100字符权限，选择icon-ok.svg",
+        "单次提交；树响应回读ID116",
+        "重新打开ID116编辑，核对权限长度及逐字一致"
+      ],
+      "expected": "权限100字符完整保存并回显，其他字段保持",
+      "actual": "权限100字符逐字一致，名称、编码、菜单类型、启用、图标与提交一致；排序未显式输入，系统赋值1。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9068.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission100-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9074.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9075.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission100-edit.png"
+      ],
+      "restoration": "菜单ID116保留，供汇总；图标上传重复触发两次，菜单创建仅提交一次。"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w5-49",
+      "status": "failed",
+      "object": "菜单ID117，编码QA68701FPerm101，父ID0",
+      "steps": [
+        "检查先前树响应无同编码",
+        "输入101字符权限，实际长度101；选择有效图标",
+        "单次提交并回读树，确认ID117",
+        "打开编辑回读权限"
+      ],
+      "expected": "101字符权限不得保存",
+      "actual": "保存成功，树响应及编辑框均为完整101字符，违反100字符上限。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9075.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9080.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-edit.png"
+      ],
+      "restoration": "菜单ID117保留供复核",
+      "candidate": "menu-fields-permission-101-002"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-6",
+      "status": "passed",
+      "object": "菜单ID118，编码QA68701FSort10000",
+      "steps": [
+        "填写独占名称编码和排序10000，输入框显示10000",
+        "选择有效图标后失焦，排序变为1000",
+        "单次提交后树响应确认ID118、排序1000",
+        "重新打开ID118编辑"
+      ],
+      "expected": "非法输入允许自动修正为0—9999整数后保存，或提示/拦截；保存后必须回查合法值。",
+      "actual": "菜单ID118保存后树及编辑回读排序1000，为0—9999整数；按用户最新验收规则通过。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-input.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9084.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9085.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-edit.png"
+      ],
+      "restoration": "菜单ID118保留；结果按最新验收规则修订。",
+      "history": [
+        {
+          "status": "failed",
+          "expected": "不创建目标菜单且保留输入",
+          "actual": "输入10000失焦自动变1000；提交创建菜单ID118，回显1000，未拒绝创建且输入未保留。",
+          "reason": "原用例要求拒绝创建，已被用户2026-10-28排序验收补充覆盖。"
+        }
+      ],
+      "acceptance_source": "requirements/68701/sources/menu-sort-acceptance-20261028.md"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w7-15",
+      "status": "passed",
+      "object": "菜单ID119，编码QA68701FSortDecimal",
+      "steps": [
+        "填写菜单基线及排序1.5，选择图标后仍显示1.5",
+        "提交一次；请求带1.5，树响应返回ID119、排序1",
+        "打开编辑回读"
+      ],
+      "expected": "非法输入允许自动修正为0—9999整数后保存，或提示/拦截；保存后必须回查合法值。",
+      "actual": "菜单ID119保存后树及编辑回读排序1，为0—9999整数；按用户最新验收规则通过。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-input.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9089.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9090.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-edit.png"
+      ],
+      "restoration": "菜单ID119保留；结果按最新验收规则修订。",
+      "history": [
+        {
+          "status": "failed",
+          "expected": "小数不保存，不创建菜单并保留输入",
+          "actual": "提交请求排序为1.5，创建成功，树及编辑回读排序1；未拒绝也未保留输入。",
+          "reason": "原用例要求拒绝创建，已被用户2026-10-28排序验收补充覆盖。"
+        }
+      ],
+      "acceptance_source": "requirements/68701/sources/menu-sort-acceptance-20261028.md"
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-8",
+      "status": "failed",
+      "object": "菜单ID121，编码QA68701FRemark200",
+      "steps": [
+        "新增菜单填写独占名称编码，键盘输入200个测，选择SVG图标",
+        "第一次提交时图标上传尚未完成，核对无创建请求；上传完成后提交，创建请求一次",
+        "树回读ID121，重新打开编辑"
+      ],
+      "expected": "备注200字符完整保存并回显",
+      "actual": "创建请求备注200个测，编辑框为空，其他可见字段回读；不满足完整回显。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9094.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9095.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-edit-empty.png"
+      ],
+      "restoration": "菜单ID121保留供复核",
+      "candidate": "menu-fields-remark200-005",
+      "bug_refs": [
+        "BUG-68701-002"
+      ]
+    },
+    {
+      "node_id": "mcp-node-mvhu73w6-17",
+      "status": "failed",
+      "object": "菜单ID124，编码QA68701FRemark201",
+      "steps": [
+        "新增菜单填写名称编码及图标，输入201个界，表单实际201字符",
+        "单次提交并回读创建响应ID124",
+        "打开编辑核对备注"
+      ],
+      "expected": "201字符备注不得保存",
+      "actual": "输入控件允许201字符并提交创建成功；请求含201字符，编辑备注为空，存储状态未知。控件未按200上限限制，也未拒绝超限提交。",
+      "evidence": [
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-before.png",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-request",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-response",
+        ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-edit-empty.png"
+      ],
+      "restoration": "菜单ID124保留",
+      "candidate": "menu-fields-remark201-006"
+    }
+  ]
+}

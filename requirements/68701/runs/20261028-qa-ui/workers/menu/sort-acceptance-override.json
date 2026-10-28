@@ -1,0 +1,1 @@
+{"source":"sources/menu-sort-acceptance-20261028.md","node_ids":["mcp-node-mvhu73w6-44","mcp-node-mvhu73w7-6","mcp-node-mvhu73w7-15"],"status":"passed","supersedes":"包括workers/menu-fields/result.json中的旧失败判定；原执行事实保留，勿用旧分片状态覆盖全局台账和Mind。","evidence":"observations/menu-sort-invalid-reassessment.json","not_affected":"BUG-68701-013：合法9999被改为1000"}

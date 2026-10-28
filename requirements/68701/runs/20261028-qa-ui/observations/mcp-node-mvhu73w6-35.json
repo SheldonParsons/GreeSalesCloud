@@ -1,0 +1,1 @@
+{"node_id":"mcp-node-mvhu73w6-35","environment":"QA","account_ref":"qa.jinyelun.admin","actual":"填写排序9999，失焦后自动变为1000；无法按9999保存，取消表单未创建菜单。","verdict":"failed","evidence":".local/68701/qa-ui-20261028/menu-sort-9999-clamped.png","candidate":"workers/menu/candidate-menu-sort-range.md"}

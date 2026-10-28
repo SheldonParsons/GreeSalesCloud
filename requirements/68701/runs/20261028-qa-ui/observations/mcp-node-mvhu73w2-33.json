@@ -1,0 +1,47 @@
+{
+  "node_id": "mcp-node-mvhu73w2-33",
+  "environment": "QA",
+  "account_ref_admin": "qa.jinyelun.admin",
+  "account_ref_tester": "qa.jinyelun.tester",
+  "menu": {
+    "id": 104,
+    "code": "QA68701RootA1028",
+    "name": "QA68701主菜单A",
+    "type": 1,
+    "parentId": null,
+    "sort": 10,
+    "enabled": true,
+    "icon": "icon-ok.svg",
+    "remark_input": "68701 QA独占菜单A",
+    "remark_edit_display": "空"
+  },
+  "binding": {
+    "role_id": 12,
+    "role_name": "QA68701菜单专用角色",
+    "user_id": 6,
+    "original_role_id": 6,
+    "role_menu_readback": "角色查看页仅菜单104勾选",
+    "user_role_readback": "临时切换后用户查看页仅角色12；随后已恢复角色6并回读"
+  },
+  "navigation": {
+    "identity": "sheldon1",
+    "after_role_switch_and_refresh": "本人导航显示QA68701主菜单A为根级，截图蓝色方形与icon-ok.svg一致",
+    "after_restoration_and_refresh": "恢复原角色6后刷新，sheldon1导航显示平台设置等原入口，测试菜单不在侧栏；历史标签仍可见，不把标签当作授权入口。",
+    "after_relogin": "退出并确认，使用测试账号真实登录和滑块验证，身份sheldon1；本人根导航显示QA68701主菜单A及蓝色方形图标。路径为尚未交付的目标并显示404，未判跳转通过。"
+  },
+  "pending": {
+    "audit_log": "入口尚未确认，步骤5日志断言阻塞"
+  },
+  "bug_refs": [
+    "BUG-68701-002"
+  ],
+  "verdict": "failed",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/tester-menu-104.png",
+    ".local/68701/qa-ui-20261028/menu-104-remark-empty.png",
+    ".local/68701/qa-ui-20261028/network-2-440.network-request",
+    ".local/68701/qa-ui-20261028/network-2-747.network-response",
+    ".local/68701/qa-ui-20261028/tester-relogin-menu-104.png"
+  ],
+  "restoration": "测试账号角色已恢复角色6并经用户查看页回读；菜单104及专用角色12保留。"
+}

@@ -1,0 +1,27 @@
+{
+  "node_id": "mcp-node-mvhu73w9-11",
+  "environment": "QA",
+  "account_ref_admin": "qa.jinyelun.admin",
+  "account_ref_tester": "qa.jinyelun.tester",
+  "object": {
+    "id": 109,
+    "original_name": "QA68701图标替换",
+    "original_sort": 10,
+    "original_remark": "空",
+    "comparison_root_id": 104
+  },
+  "binding": "角色12修改后界面显示根104、109勾选，角色菜单只读响应叶子ID为[115,106,107]；测试账号6切至仅角色12并回读。",
+  "actual": "管理员编辑目标名称、备注、排序后取消；刷新编辑仍为原名称、空备注、排序10；树中104、109、115的父级及排序与基线一致。测试账号刷新本人导航仍为QA68701图标替换、权限变化测试，次序不变，未显示取消的新名称。",
+  "verdict": "passed",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/menu-cancel-edit-before.png",
+    ".local/68701/qa-ui-20261028/menu-cancel-edit-after.png",
+    ".local/68701/qa-ui-20261028/menu-cancel-account-before.png",
+    ".local/68701/qa-ui-20261028/menu-cancel-account-after.png",
+    ".local/68701/qa-ui-20261028/network-2-10469.network-response",
+    ".local/68701/qa-ui-20261028/network-2-10151.network-response",
+    ".local/68701/qa-ui-20261028/network-2-11391.network-response",
+    ".local/68701/qa-ui-20261028/network-2-12022.network-response"
+  ],
+  "restoration": "测试账号恢复原角色6并查看回读；角色12菜单响应恢复原叶子集合[106,107]，与操作前一致。"
+}

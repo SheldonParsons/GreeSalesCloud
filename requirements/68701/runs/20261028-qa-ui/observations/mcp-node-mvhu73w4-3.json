@@ -1,0 +1,11 @@
+{
+  "node_id":"mcp-node-mvhu73w4-3",
+  "environment":"QA",
+  "account_ref":"qa.jinyelun.admin",
+  "actions":["菜单管理点击新增菜单并选择菜单类型","名称留空，填写唯一编码QA68701EmptyName1028、权限、排序10，选择合法SVG并提交","核对必填反馈及其余输入，取消后刷新菜单树并按编码查回"],
+  "actual":"提示请输入名称，编码、图标、权限及排序保留；刷新后菜单树响应不存在该编码。",
+  "verdict":"passed",
+  "evidence":".local/68701/qa-ui-20261028/menu-empty-name.png",
+  "tree_response":".local/68701/qa-ui-20261028/network-2-1768.network-response",
+  "restoration":"取消表单；未生成菜单"
+}

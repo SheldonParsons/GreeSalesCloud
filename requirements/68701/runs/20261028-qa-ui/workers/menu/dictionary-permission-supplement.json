@@ -1,0 +1,1 @@
+{"node_id":"mcp-node-mvhu73wp-27","status":"passed","supersedes":"workers/dictionary/result.json中本场景原账号权限前置阻塞，已由角色管理负责方补足并恢复","evidence":"observations/permission-role12-readonly.json","scope":"UI路径访问，不包含接口鉴权测试"}

@@ -1,0 +1,40 @@
+{
+  "trial_id": "dict-revoke-20261028-1",
+  "node_id": "mcp-node-mvhu73wp-36",
+  "target_id": 53,
+  "before": {
+    "name": "68701权限撤销基线",
+    "code": "jyl_68701_revoke_1028_1",
+    "status": "启用",
+    "remark": "",
+    "items": []
+  },
+  "desired": {
+    "name": "68701权限撤销尝试",
+    "code": "jyl_68701_revoke_1028_1",
+    "status": "启用",
+    "remark": ""
+  },
+  "page": {
+    "page_id": 3,
+    "context": "jyl68701-tester",
+    "url": "http://gree-gis-frontend.gis-qa/system/dict",
+    "identity_display": "sheldon1",
+    "account_id": 6,
+    "identity_basis": "page3页面显示sheldon1；测试账号ID6及原角色6由菜单执行方交接与账号查看回读确认",
+    "original_role_id": 6,
+    "role_evidence": "requirements/68701/runs/20261028-qa-ui/workers/menu/dictionary-permission-handoff.md",
+    "form_open": true,
+    "submitted": false,
+    "name_field_uid": "765_6",
+    "submit_button_uid": "765_15"
+  },
+  "created_by": "page4管理员单次新增并回读",
+  "evidence": [
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9492.network-response",
+    ".local/68701/qa-ui-20261028/workers/dictionary/network-4-9493.network-response",
+    ".local/68701/qa-ui-20261028/workers/dictionary/wp36-form-ready.png"
+  ],
+  "ready_at": "2026-10-28T17:46:02.359650+08:00",
+  "next_gate": "等待菜单执行方撤销权限并以角色回读确认；收到主脑明确通知前不得提交或刷新page3。"
+}

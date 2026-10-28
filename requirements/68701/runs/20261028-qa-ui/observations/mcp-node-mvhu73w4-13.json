@@ -1,0 +1,10 @@
+{
+  "node_id":"mcp-node-mvhu73w4-13",
+  "environment":"QA",
+  "account_ref":"qa.jinyelun.admin",
+  "actions":["新增菜单选择菜单类型，填写唯一名称QA68701空编码菜单、权限和排序10，选择合法SVG，编码留空","上传尚未完成时第一次前端校验同时提示图标，等待图标完成后再次点击提交","检查编码提示及其他输入，取消后刷新菜单树核对名称"],
+  "actual":"提示请输入编码；名称、图标、权限和排序保留。刷新后的菜单树已加载，未出现该名称。",
+  "verdict":"passed",
+  "evidence":".local/68701/qa-ui-20261028/menu-empty-code.png",
+  "restoration":"取消表单；未生成菜单"
+}

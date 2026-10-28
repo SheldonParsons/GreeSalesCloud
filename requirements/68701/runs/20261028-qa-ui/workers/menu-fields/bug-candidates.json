@@ -1,0 +1,157 @@
+[
+  {
+    "candidate_id": "menu-fields-code-length-001",
+    "node_ids": [
+      "mcp-node-mvhu73w5-3"
+    ],
+    "title": "新增菜单编码仅可输入50字符，无法输入合法100字符",
+    "basis": "本场景预期100字符编码可完整保存；P2及P-LEN菜单编码上限100。",
+    "preconditions": "QA管理员、page4新增菜单。",
+    "steps": [
+      "点击新增菜单并选择菜单类型，填写名称",
+      "编码框键盘输入100个符合格式规则的ASCII字符"
+    ],
+    "actual": "控件maxlength=50，实际仅接收50字符，未提交。",
+    "expected": "应允许输入并保存完整100字符编码。",
+    "object": "未创建",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/code100-limit.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/code101-limit.png"
+    ],
+    "dom": "编码输入框maxlength=50，实际输入100后长度50。",
+    "attribution": "前端输入限制；服务端100字符处理未验证。",
+    "confidence": "高"
+  },
+  {
+    "candidate_id": "menu-fields-permission-101-002",
+    "node_ids": [
+      "mcp-node-mvhu73w5-49"
+    ],
+    "title": "新增菜单可保存101字符权限值",
+    "basis": "现行场景预期权限最多100字符，101字符不能保存。",
+    "preconditions": "QA管理员；独占菜单编码QA68701FPerm101此前不存在。",
+    "steps": [
+      "新增菜单选择菜单类型，填写名称QA68701F权限101、编码QA68701FPerm101及有效SVG图标",
+      "权限输入101字符qa68701f:加92个q，提交",
+      "打开新菜单编辑"
+    ],
+    "actual": "创建成功，ID117树响应及编辑框均显示101字符权限。",
+    "expected": "超出100字符的权限值不得保存。",
+    "object": "菜单ID117保留供复核",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-before.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9080.network-response",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/permission101-edit.png"
+    ],
+    "dom": "权限输入maxlength255，键盘输入及编辑框实测长度101。",
+    "attribution": "界面及服务端均接受该长度；具体责任待审。",
+    "confidence": "高"
+  },
+  {
+    "candidate_id": "menu-fields-sort10000-003",
+    "node_ids": [
+      "mcp-node-mvhu73w7-6"
+    ],
+    "title": "菜单排序输入10000被自动改为1000并创建菜单",
+    "basis": "正式用例要求排序仅0–9999整数，10000不应创建菜单且其他输入保留。",
+    "preconditions": "QA管理员，独占菜单编码QA68701FSort10000。",
+    "steps": [
+      "新增菜单填写名称编码、合法图标，排序输入10000",
+      "离开排序框后点击提交",
+      "打开新菜单编辑"
+    ],
+    "actual": "输入失焦由10000变为1000，提交成功生成ID118，编辑回显1000。",
+    "expected": "应拒绝10000并保留输入，不创建目标菜单。",
+    "object": "菜单ID118保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-input.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9084.network-request",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9085.network-response",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/sort10000-edit.png"
+    ],
+    "attribution": "控件最大值1000造成输入被改写；具体归属待审。",
+    "confidence": "高",
+    "status": "withdrawn",
+    "withdrawal_reason": "用户2026-10-28确认非法排序可自动修正为合法整数；本场景已回读合法保存值。",
+    "acceptance_source": "requirements/68701/sources/menu-sort-acceptance-20261028.md"
+  },
+  {
+    "candidate_id": "menu-fields-sort-decimal-004",
+    "node_ids": [
+      "mcp-node-mvhu73w7-15"
+    ],
+    "title": "菜单排序填写小数1.5仍创建并保存为1",
+    "basis": "正式场景要求排序为0–9999整数，输入1.5应拒绝且不创建。",
+    "preconditions": "QA管理员，独占编码QA68701FSortDecimal。",
+    "steps": [
+      "新增菜单填写有效名称、编码及SVG图标",
+      "排序输入1.5，点击提交",
+      "打开新菜单编辑"
+    ],
+    "actual": "请求包含sort=1.5，创建ID119，树和编辑回读排序1。",
+    "expected": "拒绝小数，不创建菜单并保留输入。",
+    "object": "菜单ID119保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-input.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9089.network-request",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9090.network-response",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/sort-decimal-edit.png"
+    ],
+    "attribution": "提交请求保留1.5，返回树为1；具体责任待审。",
+    "confidence": "高",
+    "status": "withdrawn",
+    "withdrawal_reason": "用户2026-10-28确认非法排序可自动修正为合法整数；本场景已回读合法保存值。",
+    "acceptance_source": "requirements/68701/sources/menu-sort-acceptance-20261028.md"
+  },
+  {
+    "candidate_id": "menu-fields-remark200-005",
+    "node_ids": [
+      "mcp-node-mvhu73w6-8"
+    ],
+    "bug_refs": [
+      "BUG-68701-002"
+    ],
+    "title": "新增菜单备注200字符后编辑不回显",
+    "basis": "当前场景要求备注200字符完整保存并回显，菜单备注回显已建BUG-68701-002。",
+    "preconditions": "QA管理员，独占编码QA68701FRemark200。",
+    "steps": [
+      "新增菜单填写名称、编码、有效图标，备注输入200个测",
+      "提交并打开新菜单编辑"
+    ],
+    "actual": "创建请求含完整200字符，ID121编辑备注框为空。",
+    "expected": "备注200字符完整回显。",
+    "object": "菜单ID121保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-before.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9094.network-request",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/remark200-edit-empty.png"
+    ],
+    "attribution": "与BUG-68701-002相同的菜单备注不回显现象；存储状态未确定。",
+    "confidence": "高"
+  },
+  {
+    "candidate_id": "menu-fields-remark201-006",
+    "node_ids": [
+      "mcp-node-mvhu73w6-17"
+    ],
+    "title": "新增菜单备注允许输入并提交201字符",
+    "basis": "当前用例要求备注不超过200字符，超限不能保存。",
+    "preconditions": "QA管理员，独占菜单编码QA68701FRemark201。",
+    "steps": [
+      "新增菜单填写名称编码和有效图标",
+      "备注输入201个界并提交",
+      "查看创建结果并打开编辑"
+    ],
+    "actual": "控件允许201字符，请求含完整201字符且创建成功ID124；编辑备注为空，不能据此确认实际存储。",
+    "expected": "应限制或拒绝超出200字符的备注。",
+    "object": "菜单ID124保留",
+    "evidence": [
+      ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-before.png",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-request",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/network-4-9099.network-response",
+      ".local/68701/qa-ui-20261028/workers/menu-fields/remark201-edit-empty.png"
+    ],
+    "attribution": "界面及创建请求未限制201字符；备注是否存储未知，需结合BUG-68701-002定位。",
+    "confidence": "输入与接受提交高，持久化未知。"
+  }
+]
