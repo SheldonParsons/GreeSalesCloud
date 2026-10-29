@@ -1,0 +1,16 @@
+{
+  "bugId": 345005,
+  "sourceBug": "BUG-68701-002",
+  "date": "2026-10-29",
+  "round": 2,
+  "authorization": "用户告知开发再次修复，要求再次复测；通过后仍先审核备注和截图，未授权直接关闭",
+  "previousResult": "../20261029-fixed-bugs-retest/menu/result.json",
+  "previousOutcome": "新增短备注及编辑200字符备注保存、刷新后均为空，菜单树响应缺少remark",
+  "zentaoPreflight": {"status": "resolved", "resolution": "fixed", "resolvedBuild": 3274, "resolvedDate": "2026-10-29T03:52:00Z"},
+  "environment": "原QA，实际部署构建待核对；禅道版本不能代替部署核验",
+  "uiExecutorThreadId": "01a18177-e668-79d0-a41f-fbd147241cf4",
+  "closeAuthorized": false,
+  "closeDispatched": false,
+  "mindWriteAuthorized": false,
+  "transport": "本轮独立回执目录，复用上轮已正常退出且无进程锁的专用浏览器资料目录；不复制Cookie或Token，不改全局配置；当前身份由执行者重新核对"
+}

@@ -98,5 +98,15 @@
     "notInstanceWideSearch": true
   },
   "accountValueStoredInIndex": false,
-  "verifiedAt": "2026-10-29T01:39:28.011Z"
+  "verifiedAt": "2026-10-29T01:39:28.011Z",
+  "latestRetest": {
+    "date": "2026-10-29",
+    "round": 2,
+    "status": "passed",
+    "record": "../20261029-bug345005-retest-round2/menu/result.json",
+    "approval": "../20261029-bug345005-retest-round2/approval-draft.json",
+    "closeDispatched": false,
+    "previousFailureRetained": "../20261029-fixed-bugs-retest/menu/result.json"
+  },
+  "nextStep": "第二轮新增短备注及编辑200字符回显通过，等待用户确认拟备注和截图后再通过API关闭。"
 }

@@ -1,0 +1,21 @@
+{
+  "bugId": 345005,
+  "round": 2,
+  "phase": "awaiting_user_confirmation",
+  "retestStatus": "passed",
+  "comment": "复测通过，新增和编辑备注均可完整回显。",
+  "image": "menu/edit-after.png",
+  "imageSha256": "4fc1954d06bdbb2750d8a7bd1a0d87ef7f9cbc3dc09c022634f44fe813ae58aa",
+  "imageVisuallyReviewed": true,
+  "result": "menu/result.json",
+  "approvalReceived": false,
+  "closeDispatched": false,
+  "brainReview": {
+    "createReadbackExact": true,
+    "edit200ReadbackExact": true,
+    "otherFieldsUnchanged": true,
+    "uiAndScreenshotReviewed": true
+  },
+  "transportClosed": true,
+  "boundary": "只完成指定BUG复测；实际QA构建未知，关联完整场景及Mind既存dirty未处理；待用户确认后再关闭。"
+}

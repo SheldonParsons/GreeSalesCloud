@@ -1,0 +1,134 @@
+{
+  "bug_id": 345005,
+  "local_bug": "BUG-68701-002",
+  "round": 2,
+  "status": "passed",
+  "environment": {
+    "system": "金叶轮",
+    "qa_origin": "http://gree-gis-frontend.gis-qa",
+    "actual_build_version": "unknown",
+    "zentao_reported_fixed_build": "3274，仅禅道报告，不代表已核验部署版本",
+    "network_note": "首次DNS解析失败；同一QA域名随后恢复，本轮未切换环境。"
+  },
+  "actor": {
+    "credential_ref": "qa.jinyelun.admin",
+    "identity": "复用既有正常登录；用户中心账号与管理员凭据引用匹配，昵称平台管理员；菜单管理入口可见",
+    "role": "平台管理员"
+  },
+  "object": {
+    "id": 141,
+    "name": "QA68701备注复测二",
+    "code": "QA68701RemarkRound2",
+    "parentId": 0,
+    "retained": true
+  },
+  "cases": [
+    {
+      "entry": "新增短备注",
+      "status": "passed",
+      "steps": [
+        "确认本轮名称与编码不存在，选择菜单类型，填写名称、编码、权限、排序10、图标、启用和短备注，单次提交",
+        "记录ID141，刷新菜单树并重新打开编辑，读取备注与其他字段"
+      ],
+      "expected": "新增保存后备注逐字回显，其他字段保持输入",
+      "actual": "创建请求含二轮新增备注验证；刷新树响应及编辑框均逐字回显该备注，长度8；名称、编码、权限、图标、排序、状态保持。",
+      "sanitized_network": {
+        "create_reqid": 328,
+        "request_remark": "二轮新增备注验证",
+        "response_code": "00000",
+        "created_id": 141,
+        "refreshed_tree_reqid": 631,
+        "refreshed_tree_remark": "二轮新增备注验证",
+        "ui_length": 8,
+        "ui_exact": true
+      },
+      "evidence": [
+        "create-before.png",
+        "create-after.png"
+      ]
+    },
+    {
+      "entry": "编辑200字符备注",
+      "status": "passed",
+      "steps": [
+        "在ID141编辑抽屉替换备注为199个测及末尾验，真实键盘输入并失焦后读取长度和逐字一致",
+        "单次提交；刷新菜单树并重新打开编辑，分别读取UI与树响应的备注并比较其他字段"
+      ],
+      "expected": "200字符备注完整保存并逐字回显，其他字段不变",
+      "actual": "输入前检查UI长度200且逐字一致；PUT请求备注长度200、逐字一致；刷新后UI和树响应各为200字符且与输入逐字一致、末尾为验；其他字段与编辑前一致。",
+      "sanitized_network": {
+        "update_reqid": 637,
+        "method": "PUT",
+        "target_id": 141,
+        "request_remark_length": 200,
+        "request_remark_exact": true,
+        "request_remark_sha256": "e89d9daf77e875e6f123602b5110604311181b3d631da3d71e95c38e7f0e6b55",
+        "response_code": "00000",
+        "refreshed_tree_reqid": 942,
+        "tree_remark_length": 200,
+        "tree_remark_exact": true,
+        "ui_length": 200,
+        "ui_exact": true,
+        "ui_last_char": "验",
+        "other_fields_unchanged": true,
+        "compared_fields": [
+          "id",
+          "name",
+          "code",
+          "type",
+          "parentId",
+          "permission",
+          "icon",
+          "sort",
+          "status"
+        ]
+      },
+      "evidence": [
+        "edit-before.png",
+        "edit-after.png"
+      ]
+    }
+  ],
+  "conclusion": "BUG345005所涉菜单新增短备注及编辑200字符备注刷新回显均复测通过；本轮未补测其他完整场景断言。",
+  "suggested_comment": "复测通过，新增和编辑备注均可完整回显。",
+  "representative_image": {
+    "file": "edit-after.png",
+    "bytes": 273907,
+    "sha256": "4fc1954d06bdbb2750d8a7bd1a0d87ef7f9cbc3dc09c022634f44fe813ae58aa",
+    "visual_reviewed": true,
+    "visible": "备注末尾验及200/255计数"
+  },
+  "screenshots": {
+    "create-before.png": {
+      "bytes": 268283,
+      "sha256": "897f154018bfa0a7223ff8978007c8dc3997839502b2652f3c722e3cd8dd9823"
+    },
+    "create-after.png": {
+      "bytes": 269893,
+      "sha256": "123ce9211586c01c69f9353cb6d778e7f4aa49102d99e529dd782d2488c7bb7a"
+    },
+    "edit-before.png": {
+      "bytes": 273272,
+      "sha256": "6aca7b83ee788bba4d27fc880459ada247c32941b994d48f33e0d4d895c4cff1"
+    },
+    "edit-after.png": {
+      "bytes": 273907,
+      "sha256": "4fc1954d06bdbb2750d8a7bd1a0d87ef7f9cbc3dc09c022634f44fe813ae58aa"
+    }
+  },
+  "network_evidence_local": [
+    ".local/68701/bug345005-r2-20261029/network-3-328.network-request",
+    ".local/68701/bug345005-r2-20261029/network-3-631.network-response",
+    ".local/68701/bug345005-r2-20261029/network-3-637.network-request",
+    ".local/68701/bug345005-r2-20261029/network-3-942.network-response"
+  ],
+  "restoration": {
+    "menu": "独占菜单ID141保留供复核，创建和编辑各单次提交并回查；旧ID140未更改",
+    "page": "本轮page3编辑抽屉已取消并关闭，桥接保留；未退出管理员会话",
+    "account": "未修改账号及角色"
+  },
+  "zentao_action": "none",
+  "mind_action": "none",
+  "approval_for_closure": "pending_user_review",
+  "recorded_at": "2026-10-29T15:43:57.500786+08:00"
+}
