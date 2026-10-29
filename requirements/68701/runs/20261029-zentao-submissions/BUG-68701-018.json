@@ -97,7 +97,7 @@
   "receiverIndependentVerification": false,
   "localReceipt": "Sheldon-Docs/bug/68701/assets/BUG-68701-018/zentao-submission-20261029.json",
   "evidenceBoundary": "历史真实UI输入、创建请求记录、树响应与编辑逐字回读；未重跑QA。请求体未独立保存，不另称逐字段核对过请求体。",
-  "nextStep": "按最新255字符口径复测通过，等待用户审核拟备注及决定BUG处理；不再按旧100/101边界复测。",
+  "nextStep": "按用户确认的255字符口径复测通过，已获确认并单次API关闭；本次仅回读关闭状态、备注及图片关联，未额外进行重开或图片下载校验。",
   "processReview": "原稿图片位于期望之后，已移入结果段；提交后计划由0单独补齐3117。其余字段和正式图片关联一次创建即正确。",
   "latestRetest": {
     "date": "2026-10-29",
@@ -105,6 +105,15 @@
     "currentRule": "用户确认菜单权限由100改为255字符，本次仅验证255可保存回显",
     "record": "../20261029-bug345010-permission255-retest/menu/result.json",
     "approval": "../20261029-bug345010-permission255-retest/approval-draft.json",
-    "zentaoWriteDispatched": false
+    "zentaoWriteDispatched": true
+  },
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7163211,
+    "comment": "按最新口径复测，255字符权限可完整保存并回显。",
+    "imageFileId": 987875,
+    "receipt": "../20261029-bug345010-permission255-retest/closure.json",
+    "verificationScope": "仅一次关闭后GET回读；按用户要求未额外下载或重开截图校验"
   }
 }

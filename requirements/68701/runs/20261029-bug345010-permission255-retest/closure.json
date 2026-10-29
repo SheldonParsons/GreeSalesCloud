@@ -1,0 +1,19 @@
+{
+  "approvalReceived": true,
+  "bugId": 345010,
+  "httpStatus": 200,
+  "status": "closed",
+  "previousStatus": "resolved",
+  "resolution": "fixed",
+  "closedBy": "李博",
+  "closedDate": "2026-10-29T08:48:47Z",
+  "actionId": 7163211,
+  "comment": "按最新口径复测，255字符权限可完整保存并回显。",
+  "commentMatches": true,
+  "imageFileId": 987875,
+  "imageObjectType": "bug",
+  "imageObjectID": 345010,
+  "closeDispatched": true,
+  "closeDispatchCount": 1,
+  "verificationScope": "仅一次关闭后GET回读；按用户要求未额外下载或重开截图校验"
+}
