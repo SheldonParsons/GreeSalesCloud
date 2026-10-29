@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-29",
+  "counts": {
+    "passed": 4,
+    "failed": 1,
+    "blocked": 0
+  },
+  "phase": "awaiting_user_confirmation",
+  "environment": "QA；实际部署构建未知",
+  "passed": [
+    {
+      "bugId": 344999,
+      "status": "passed",
+      "comment": "复测通过，编辑类型重名已拦截。",
+      "image": "dictionary/344999-duplicate.png",
+      "imageSha256": "37233aff4beff1278c1940e8e403e0e6d112330e1f8326c45e5ceddee07d0e81",
+      "imageVisuallyReviewed": true,
+      "result": "dictionary/result.json",
+      "approvalReceived": false,
+      "closeDispatched": false
+    },
+    {
+      "bugId": 344994,
+      "status": "passed",
+      "comment": "复测通过，名称去空格及重名校验正常。",
+      "image": "dictionary/344994-duplicate.png",
+      "imageSha256": "7d04825a0e647ba0808863b4083c9ffa690ecbae3573c7844dd33d9a2c28a817",
+      "imageVisuallyReviewed": true,
+      "result": "dictionary/result.json",
+      "approvalReceived": false,
+      "closeDispatched": false
+    },
+    {
+      "bugId": 344989,
+      "status": "passed",
+      "comment": "复测通过，新增和编辑同名项均已拦截。",
+      "image": "dictionary/344989-edit-duplicate.png",
+      "imageSha256": "6b64bab32153c7afaf5af0e55381e20454e51a135fa60a0b3afc4c34b56285cd",
+      "imageVisuallyReviewed": true,
+      "result": "dictionary/result.json",
+      "approvalReceived": false,
+      "closeDispatched": false
+    },
+    {
+      "bugId": 344982,
+      "status": "passed",
+      "comment": "复测通过，新增及编辑备注均正常回显。",
+      "image": "dictionary/344982-with-items.png",
+      "imageSha256": "eda04a4af2b6b7a2983e72a26058c4886ce87adeb580512e015e483562977243",
+      "imageVisuallyReviewed": true,
+      "result": "dictionary/result.json",
+      "approvalReceived": false,
+      "closeDispatched": false
+    }
+  ],
+  "failed": [
+    {
+      "bugId": 345005,
+      "reason": "新增短备注及编辑200字符备注提交后，刷新重新编辑均为空；菜单树读取未返回remark字段。不能断言数据库是否保存。",
+      "image": "menu/edit-after.png",
+      "result": "menu/result.json",
+      "closeDispatched": false
+    }
+  ],
+  "approvalBoundary": "仅准备拟关闭备注和截图，未上传、未发评论、未关闭或激活这5条禅道BUG；确认后按明确批准对象执行。",
+  "mind": "既存dirty文档保留未改；本次为指定BUG复测，不修改133场景历史标记。",
+  "transport": "本批新建共享MCP连接已正常shutdown；测试数据保留，未结束其他连接。"
+}

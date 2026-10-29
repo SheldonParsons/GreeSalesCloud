@@ -1,0 +1,38 @@
+{
+  "bug_id": 345005,
+  "environment": "QA http://gree-gis-frontend.gis-qa",
+  "actual_build_version": "unknown",
+  "created_page_before_channel_pause": {
+    "server": "chrome-devtools-headless",
+    "page_id": 2,
+    "observed_url": "/login",
+    "credentials_entered": false,
+    "business_actions": false,
+    "release": "独立headless page2已关闭"
+  },
+  "input_plan": {
+    "name": "QA68701备注复测1029",
+    "code": "QA68701RemarkRetest1029",
+    "new_remark": "68701新增备注复测",
+    "edited_remark": "测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测验",
+    "edited_remark_length": 200,
+    "edited_remark_sha256": "e89d9daf77e875e6f123602b5110604311181b3d631da3d71e95c38e7f0e6b55",
+    "sort": 10,
+    "status": "启用",
+    "icon_fixture": ".local/68701/qa-ui-20261028/fixtures/icon-ok.svg"
+  },
+  "status": "completed_failed",
+  "steps": [
+    "新QA页确认当前身份及菜单管理权限",
+    "按编码确认不存在，新增短备注并单次提交，刷新编辑回读",
+    "编辑备注为200个中文字符并单次提交，刷新编辑回读长度和内容、其他字段",
+    "保留真实截图、脱敏请求及读取证据；关闭自己创建的页面"
+  ],
+  "write_dispatched": true,
+  "created_menu_id": 140,
+  "create_request_id": 348,
+  "created_code": "QA68701RemarkRetest1029",
+  "note": "新增短备注与编辑200字符备注提交后刷新均未回显；已关闭本执行页，证据及完整结论见result.json。",
+  "edit_request_id": 653,
+  "edit_expected_length": 200
+}

@@ -1,0 +1,108 @@
+{
+  "environment": "QA；实际部署构建未知",
+  "page_id": 3,
+  "account": "qa.jinyelun.admin（页面显示平台管理员）",
+  "results": [
+    {
+      "bug_id": 344982,
+      "status": "passed",
+      "object": "类型ID55，编码jyl_68701_fix_a_1029",
+      "steps": [
+        "独占类型输入新增备注并单次保存；刷新编辑回显新增备注",
+        "编辑备注为68701复测编辑备注并单次保存；刷新编辑回显新备注，编码不变；类型仍无项",
+        "类型55已有项157、158后再次编辑备注为68701复测有项编辑备注，刷新重开完整回显；项ID、值及所属编码回读不变"
+      ],
+      "evidence": [
+        "344982-edit.png",
+        ".local/68701/fixed-retest-20261029/network-3-307.network-response",
+        "344982-with-items.png",
+        ".local/68701/fixed-retest-20261029/network-3-2464.network-response"
+      ],
+      "proposed_comment": "复测通过，新增及编辑备注均可回显。",
+      "restoration": "类型55保留，含项157、158，备注为68701复测有项编辑备注",
+      "representative_image": "344982-with-items.png"
+    },
+    {
+      "bug_id": 344999,
+      "status": "passed",
+      "object": "类型55 A、类型56 B",
+      "steps": [
+        "编辑56为类型55名称，提交提示字典类型名称已存在且输入保留",
+        "取消并刷新，55/56各自原名称及编码保持",
+        "编辑56为唯一名称68701复测字典B修改1029，保存刷新回查成功"
+      ],
+      "evidence": [
+        "344999-duplicate.png"
+      ],
+      "proposed_comment": "复测通过，类型重名被拦截，唯一名称可正常保存。",
+      "restoration": "类型56保留唯一修改名，类型55不变",
+      "representative_image": "344999-duplicate.png"
+    },
+    {
+      "bug_id": 344994,
+      "status": "passed",
+      "object": "类型55作为重名基准；独立类型57",
+      "steps": [
+        "输入基准名首尾各两个空格及新编码，提交提示名称已存在，输入保留；按新编码查询无记录",
+        "输入独立名称首尾各两个空格及另一编码提交成功，刷新后类型57名称已去空格"
+      ],
+      "evidence": [
+        "344994-duplicate.png",
+        ".local/68701/fixed-retest-20261029/network-3-1536.network-request",
+        ".local/68701/fixed-retest-20261029/network-3-1536.network-response",
+        ".local/68701/fixed-retest-20261029/network-3-1538.network-request",
+        ".local/68701/fixed-retest-20261029/network-3-1538.network-response",
+        ".local/68701/fixed-retest-20261029/network-3-1841.network-response"
+      ],
+      "proposed_comment": "复测通过，名称去空格及重复校验正常。",
+      "restoration": "独占类型57保留，重名测试未创建",
+      "representative_image": "344994-duplicate.png"
+    },
+    {
+      "bug_id": 344989,
+      "status": "passed",
+      "object": "类型55，项157、158",
+      "steps": [
+        "先以不同名称和值新增项157、158并回读",
+        "新增同名项甲且值唯一，提交提示字典项名称已存在，输入保留",
+        "编辑项158改为项甲名称且值不变，提交提示名称已存在，输入保留",
+        "取消刷新后回读两项ID、名称和值均保持，无重复新增"
+      ],
+      "evidence": [
+        "344989-create-duplicate.png",
+        "344989-edit-duplicate.png",
+        "344989-readback.png",
+        ".local/68701/fixed-retest-20261029/network-3-1848.network-response",
+        ".local/68701/fixed-retest-20261029/network-3-2157.network-response"
+      ],
+      "proposed_comment": "复测通过，新增和编辑同名均被拦截。",
+      "restoration": "类型55及项157、158保留，负向未产生新项或改名",
+      "representative_image": "344989-edit-duplicate.png"
+    }
+  ],
+  "counts": {
+    "passed": 4,
+    "failed": 0,
+    "blocked": 0,
+    "in_progress": 0,
+    "not_started": 0
+  },
+  "source_scenarios": {
+    "344982": [
+      "mcp-node-mvhu73we-37",
+      "mcp-node-mvhu73wh-46"
+    ],
+    "344999": [
+      "mcp-node-mvhu73wi-16"
+    ],
+    "344994": [
+      "mcp-node-mvhu73wf-30",
+      "mcp-node-mvhu73we-50"
+    ],
+    "344989": [
+      "mcp-node-mvhu73wj-32",
+      "mcp-node-mvhu73wl-37"
+    ]
+  },
+  "note": "仅四项指定缺陷行为复测；实际部署构建未知，未覆盖日志或其他阻塞用例。编辑弹窗已取消关闭，数据保留。"
+}

@@ -1,0 +1,97 @@
+{
+  "bug_id": 345005,
+  "local_bug": "BUG-68701-002",
+  "status": "failed",
+  "environment": {
+    "system": "金叶轮",
+    "qa_origin": "http://gree-gis-frontend.gis-qa",
+    "actual_build_version": "unknown",
+    "zentao_reported_fixed_build": "3274（仅禅道报告，不代表已核验QA实际部署）"
+  },
+  "actor": {
+    "credential_ref": "qa.jinyelun.admin",
+    "identity_verified": "登录响应账号与本机凭据引用匹配，页面显示平台管理员",
+    "role": "平台管理员"
+  },
+  "object": {
+    "id": 140,
+    "code": "QA68701RemarkRetest1029",
+    "name": "QA68701备注复测1029",
+    "parent_id": 0
+  },
+  "cases": [
+    {
+      "entry": "新增",
+      "status": "failed",
+      "steps": [
+        "QA菜单管理按名称和编码确认不存在，新增菜单填写名称、编码、权限、排序10、合法SVG，备注68701新增备注复测并单次提交",
+        "记录ID140，刷新菜单树，打开ID140编辑并读取备注"
+      ],
+      "expected": "新建保存后的备注应完整回显，其他字段保持输入",
+      "actual": "创建请求备注为68701新增备注复测，业务响应code 00000、ID140；刷新编辑备注为空、长度0；树响应该节点不含remark字段。名称、编码、权限、图标、排序、状态保持。",
+      "sanitized_network": {
+        "create_request_id": 348,
+        "request_remark": "68701新增备注复测",
+        "response_code": "00000",
+        "created_id": 140,
+        "refresh_tree_request_id": 651,
+        "tree_remark_field_present": false
+      },
+      "evidence": [
+        "create-before.png",
+        "create-after.png"
+      ]
+    },
+    {
+      "entry": "编辑_200字符",
+      "status": "failed",
+      "steps": [
+        "打开本次独占菜单ID140编辑，在备注通过真实键盘输入200个中文字符（199个测加末尾验），失焦后读取长度和逐字相等",
+        "单次提交，记录更新请求；刷新页面，重新打开ID140编辑并读取备注长度及内容"
+      ],
+      "expected": "200字符备注提交后重新打开应完整逐字回显，其他字段不变",
+      "actual": "提交前输入框长度200且与测试文本一致，PUT请求备注长度200且逐字一致、响应code 00000；刷新编辑备注长度0、不等于输入，树响应不含remark。名称、编码、权限、图标、排序及状态与创建前输入一致。",
+      "sanitized_network": {
+        "update_request_id": 653,
+        "method": "PUT",
+        "target_id": 140,
+        "request_remark_length": 200,
+        "request_remark_exact": true,
+        "request_remark_sha256": "e89d9daf77e875e6f123602b5110604311181b3d631da3d71e95c38e7f0e6b55",
+        "response_code": "00000",
+        "refresh_tree_request_id": 957,
+        "tree_remark_field_present": false,
+        "ui_before_length": 200,
+        "ui_before_exact": true,
+        "ui_after_length": 0,
+        "ui_after_exact": false
+      },
+      "evidence": [
+        "edit-before.png",
+        "edit-after.png"
+      ]
+    }
+  ],
+  "conclusion": "新增和编辑两个入口复测均未通过，仍存在保存请求含备注而刷新编辑不回显；不能据此断言数据库丢失。无需按通过流程关闭。",
+  "suggested_comment": "复测未通过：新增及编辑备注刷新后仍未回显。",
+  "representative_image": {
+    "file": "edit-after.png",
+    "sha256": "15966dd43e5db22b132c225762937a30b10212b07aee3a6966147ed2927c0c37",
+    "bytes": 266773,
+    "visual_reviewed": true
+  },
+  "restoration": {
+    "menu": "独占菜单ID140保留供复核，未删除；已单次创建、单次编辑，均完成回查",
+    "page": "共享桥page2编辑抽屉已取消并关闭page2；字典worker的page3未操作，未退出共享管理员会话；此前独立headless登录页page2已关闭",
+    "account": "共享管理员正常会话保留，未修改角色或账号"
+  },
+  "network_evidence_local": [
+    ".local/68701/fixed-retest-20261029/network-2-348.network-request",
+    ".local/68701/fixed-retest-20261029/network-2-651.network-response",
+    ".local/68701/fixed-retest-20261029/network-2-653.network-request",
+    ".local/68701/fixed-retest-20261029/network-2-957.network-response"
+  ],
+  "zentao_action": "none",
+  "mind_action": "none",
+  "recorded_at": "2026-10-29T14:32:22.697323+08:00"
+}

@@ -1,0 +1,26 @@
+{
+  "reviewer": "68701主脑续接",
+  "screenshots": "5条代表图及必要回查图均已视觉核对",
+  "networkFacts": [
+    {
+      "requestId": 1536,
+      "requestName": "  68701复测字典A1029  ",
+      "requestCode": "jyl_68701_fix_trimdup_1029",
+      "responseCode": "A0306",
+      "responseMessage": "字典类型名称已存在"
+    },
+    {
+      "requestId": 1538,
+      "requestName": "  68701复测去空格1029  ",
+      "requestCode": "jyl_68701_fix_trimok_1029",
+      "responseCode": "00000",
+      "responseMessage": "一切ok"
+    }
+  ],
+  "dictionaryItemsUnchangedAfterDuplicateAttempts": true,
+  "additionalReadbacks": [
+    1841,
+    2464
+  ],
+  "menuEvidence": "请求含备注，UI刷新为空；已核对新增/编辑两入口截图和执行分片"
+}
