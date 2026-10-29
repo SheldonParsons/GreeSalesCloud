@@ -1,0 +1,83 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-009",
+  "date": "2026-10-29",
+  "zentaoBugId": 344994,
+  "url": "https://ztpm.gree.com:8888/bug-view-344994.html",
+  "title": "【QA-数据字典】类型名称首尾空格未去除，去空格后重名的类型仍可保存",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create",
+  "createCount": 1,
+  "postCreateEdit": {
+    "method": "REST PUT",
+    "bugId": 344994,
+    "fields": [
+      "plan"
+    ],
+    "before": 0,
+    "after": 3117,
+    "reason": "创建传入plan3117，回读为0；同一BUG单独补齐，原因未确认"
+  },
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "account": "A80809",
+    "name": "叶芳华"
+  },
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionCount": 11,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6466,
+    "status": "all",
+    "matches": 0,
+    "nearMatchReviewed": 344989,
+    "nearMatchDifference": "344989为字典项同类型重名，本条为字典类型名称首尾空格绕过去重。"
+  },
+  "checks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 1,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false,
+    "renderedBodyChecks": {
+      "accountAndPasswordMatches": true,
+      "accountBeforeSteps": true,
+      "imagesInsideResult": true
+    },
+    "filesBoundToBug": true,
+    "imageSourceHashMatchedAfterCreateEditAndReopen": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "image": {
+    "fileId": 987317,
+    "src": "https://ztpm.gree.com:8888/file-read-987317.png",
+    "http": 200,
+    "mime": "image/png",
+    "bytes": 238040,
+    "sha256": "8cfcf703a763bb3d13382b3e82dcbf1425cfed27a753765d73a974e1e546beef",
+    "sourceMatch": true,
+    "width": 1440,
+    "height": 900
+  },
+  "businessEvidenceBoundary": "本次仅复核2026-10-28既有截图、创建请求与查询响应，未重新执行QA场景；服务端实际保存了首尾空格，前后端具体实现责任未作源码确认。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-009/zentao-submission-20261029.json",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-009-类型名称空格绕过唯一校验.md",
+  "sourceReportSha256": "d2968322cf81c6b390632aab71221b3361446c13d533d9d9e55169d45ca7dceb",
+  "processReview": "本条发现本地截图在期望段之后，提交前已移入结果段；创建计划仍未保存，已单次PUT补齐并回读，不推断原因。",
+  "scope": "仅提交BUG-68701-009；未重跑QA场景、未提交其他BUG、未新增测试探针BUG。"
+}
