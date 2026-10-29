@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-29",
+  "results": [
+    {
+      "bugId": 344999,
+      "ready": true,
+      "status": "closed",
+      "commentVisible": true,
+      "imageLoaded": true,
+      "sensitiveVisible": false,
+      "image": {
+        "fileId": 987686,
+        "httpStatus": 200,
+        "mime": "image/png",
+        "bytes": 204070,
+        "sha256": "37233aff4beff1278c1940e8e403e0e6d112330e1f8326c45e5ceddee07d0e81",
+        "size": [
+          1440,
+          900
+        ]
+      },
+      "fileObjectType": "bug",
+      "fileObjectID": 344999
+    },
+    {
+      "bugId": 344994,
+      "ready": true,
+      "status": "closed",
+      "commentVisible": true,
+      "imageLoaded": true,
+      "sensitiveVisible": false,
+      "image": {
+        "fileId": 987687,
+        "httpStatus": 200,
+        "mime": "image/png",
+        "bytes": 278786,
+        "sha256": "7d04825a0e647ba0808863b4083c9ffa690ecbae3573c7844dd33d9a2c28a817",
+        "size": [
+          1440,
+          900
+        ]
+      },
+      "fileObjectType": "bug",
+      "fileObjectID": 344994
+    },
+    {
+      "bugId": 344989,
+      "ready": true,
+      "status": "closed",
+      "commentVisible": true,
+      "imageLoaded": true,
+      "sensitiveVisible": false,
+      "image": {
+        "fileId": 987688,
+        "httpStatus": 200,
+        "mime": "image/png",
+        "bytes": 280915,
+        "sha256": "6b64bab32153c7afaf5af0e55381e20454e51a135fa60a0b3afc4c34b56285cd",
+        "size": [
+          1440,
+          900
+        ]
+      },
+      "fileObjectType": "bug",
+      "fileObjectID": 344989
+    },
+    {
+      "bugId": 344982,
+      "ready": true,
+      "status": "closed",
+      "commentVisible": true,
+      "imageLoaded": true,
+      "sensitiveVisible": false,
+      "image": {
+        "fileId": 987690,
+        "httpStatus": 200,
+        "mime": "image/png",
+        "bytes": 274919,
+        "sha256": "eda04a4af2b6b7a2983e72a26058c4886ce87adeb580512e015e483562977243",
+        "size": [
+          1440,
+          900
+        ]
+      },
+      "fileObjectType": "bug",
+      "fileObjectID": 344982
+    }
+  ],
+  "allVisuallyReviewed": true,
+  "independentAccountTested": false
+}

@@ -79,5 +79,16 @@
   "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-009-类型名称空格绕过唯一校验.md",
   "sourceReportSha256": "d2968322cf81c6b390632aab71221b3361446c13d533d9d9e55169d45ca7dceb",
   "processReview": "本条发现本地截图在期望段之后，提交前已移入结果段；创建计划仍未保存，已单次PUT补齐并回读，不推断原因。",
-  "scope": "仅提交BUG-68701-009；未重跑QA场景、未提交其他BUG、未新增测试探针BUG。"
+  "scope": "仅提交BUG-68701-009；未重跑QA场景、未提交其他BUG、未新增测试探针BUG。",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7160091,
+    "comment": "复测通过，名称去空格及重名校验正常。",
+    "imageFileId": 987687,
+    "receipt": "../20261029-fixed-bugs-retest/closures/344994.json",
+    "retest": "../20261029-fixed-bugs-retest/dictionary/result.json",
+    "imagesVerifiedAfterCloseAndReopen": true
+  },
+  "nextStep": "本BUG指定行为已复测并经用户确认后关闭；不据此自动更改未完整复测场景的历史标记。"
 }

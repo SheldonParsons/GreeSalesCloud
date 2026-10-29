@@ -5,7 +5,7 @@
     "failed": 1,
     "blocked": 0
   },
-  "phase": "awaiting_user_confirmation",
+  "phase": "four_closed_verified",
   "environment": "QA；实际部署构建未知",
   "passed": [
     {
@@ -16,8 +16,14 @@
       "imageSha256": "37233aff4beff1278c1940e8e403e0e6d112330e1f8326c45e5ceddee07d0e81",
       "imageVisuallyReviewed": true,
       "result": "dictionary/result.json",
-      "approvalReceived": false,
-      "closeDispatched": false
+      "approvalReceived": true,
+      "closeDispatched": true,
+      "approvalText": "你刚才复测通过的4条拟备注信息我复核完了，发送关闭API吧",
+      "closeDispatchCount": 1,
+      "zentaoStatus": "closed",
+      "closeActionId": 7160090,
+      "imageFileId": 987686,
+      "closureReceipt": "closures/344999.json"
     },
     {
       "bugId": 344994,
@@ -27,8 +33,14 @@
       "imageSha256": "7d04825a0e647ba0808863b4083c9ffa690ecbae3573c7844dd33d9a2c28a817",
       "imageVisuallyReviewed": true,
       "result": "dictionary/result.json",
-      "approvalReceived": false,
-      "closeDispatched": false
+      "approvalReceived": true,
+      "closeDispatched": true,
+      "approvalText": "你刚才复测通过的4条拟备注信息我复核完了，发送关闭API吧",
+      "closeDispatchCount": 1,
+      "zentaoStatus": "closed",
+      "closeActionId": 7160091,
+      "imageFileId": 987687,
+      "closureReceipt": "closures/344994.json"
     },
     {
       "bugId": 344989,
@@ -38,8 +50,14 @@
       "imageSha256": "6b64bab32153c7afaf5af0e55381e20454e51a135fa60a0b3afc4c34b56285cd",
       "imageVisuallyReviewed": true,
       "result": "dictionary/result.json",
-      "approvalReceived": false,
-      "closeDispatched": false
+      "approvalReceived": true,
+      "closeDispatched": true,
+      "approvalText": "你刚才复测通过的4条拟备注信息我复核完了，发送关闭API吧",
+      "closeDispatchCount": 1,
+      "zentaoStatus": "closed",
+      "closeActionId": 7160112,
+      "imageFileId": 987688,
+      "closureReceipt": "closures/344989.json"
     },
     {
       "bugId": 344982,
@@ -49,8 +67,14 @@
       "imageSha256": "eda04a4af2b6b7a2983e72a26058c4886ce87adeb580512e015e483562977243",
       "imageVisuallyReviewed": true,
       "result": "dictionary/result.json",
-      "approvalReceived": false,
-      "closeDispatched": false
+      "approvalReceived": true,
+      "closeDispatched": true,
+      "approvalText": "你刚才复测通过的4条拟备注信息我复核完了，发送关闭API吧",
+      "closeDispatchCount": 1,
+      "zentaoStatus": "closed",
+      "closeActionId": 7160115,
+      "imageFileId": 987690,
+      "closureReceipt": "closures/344982.json"
     }
   ],
   "failed": [
@@ -62,7 +86,7 @@
       "closeDispatched": false
     }
   ],
-  "approvalBoundary": "仅准备拟关闭备注和截图，未上传、未发评论、未关闭或激活这5条禅道BUG；确认后按明确批准对象执行。",
+  "approvalBoundary": "四条通过BUG经用户确认后已各单次API关闭，备注、图片正式关联、关闭后/重开读取及详情显示均核对；345005未通过且未关闭、未激活、未修改。",
   "mind": "既存dirty文档保留未改；本次为指定BUG复测，不修改133场景历史标记。",
   "transport": "本批新建共享MCP连接已正常shutdown；测试数据保留，未结束其他连接。"
 }

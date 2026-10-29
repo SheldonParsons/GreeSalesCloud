@@ -116,5 +116,16 @@
   "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-012-编辑字典类型允许名称重复.md",
   "sourceReportSha256": "51e2fa8339f3b02268aa5d5ccc51100eafe42c4d1ca666258416ad5042e074b0",
   "processReview": "修正原稿截图置于期望之后及归属待提供。回读发现计划漏存、初次图片未关联，均在同一BUG补齐并核验；未扩大测试范围。",
-  "scope": "仅BUG-68701-012；未提交其他BUG、未新增测试探针、未重跑QA。"
+  "scope": "仅BUG-68701-012；未提交其他BUG、未新增测试探针、未重跑QA。",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7160090,
+    "comment": "复测通过，编辑类型重名已拦截。",
+    "imageFileId": 987686,
+    "receipt": "../20261029-fixed-bugs-retest/closures/344999.json",
+    "retest": "../20261029-fixed-bugs-retest/dictionary/result.json",
+    "imagesVerifiedAfterCloseAndReopen": true
+  },
+  "nextStep": "本BUG指定行为已复测并经用户确认后关闭；不据此自动更改未完整复测场景的历史标记。"
 }

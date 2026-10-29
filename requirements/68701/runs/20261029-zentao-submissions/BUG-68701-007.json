@@ -42,5 +42,16 @@
   "businessEvidenceBoundary": "新增及编辑保存后刷新仍有同类型同名且ID不同的两条项；两入口内部实现是否同一根因尚未确认。",
   "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-007/zentao-submission-20261029.json",
   "scope": "仅提交BUG-68701-007，未操作其他BUG。",
-  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/-BUG-68701-007-同类型允许新增同名字典项.md"
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/-BUG-68701-007-同类型允许新增同名字典项.md",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7160112,
+    "comment": "复测通过，新增和编辑同名项均已拦截。",
+    "imageFileId": 987688,
+    "receipt": "../20261029-fixed-bugs-retest/closures/344989.json",
+    "retest": "../20261029-fixed-bugs-retest/dictionary/result.json",
+    "imagesVerifiedAfterCloseAndReopen": true
+  },
+  "nextStep": "本BUG指定行为已复测并经用户确认后关闭；不据此自动更改未完整复测场景的历史标记。"
 }

@@ -1,0 +1,49 @@
+{
+  "approvalReceived": true,
+  "requestMethod": "POST",
+  "endpoint": "/api.php/v1/bugs/344989/close",
+  "bodyFormat": "multipart/form-data: comment + uid",
+  "bugId": 344989,
+  "phase": "closed_verified",
+  "status": "closed",
+  "resolution": "fixed",
+  "httpStatus": 200,
+  "closedBy": "李博",
+  "closedDate": "2026-10-29T06:44:29Z",
+  "actionId": 7160112,
+  "actionDate": "2026-10-29 14:44:29",
+  "comment": "复测通过，新增和编辑同名项均已拦截。",
+  "commentReadbackMatches": true,
+  "fileId": 987688,
+  "fileObjectType": "bug",
+  "fileObjectID": 344989,
+  "imageAfterClose": {
+    "httpStatus": 200,
+    "mime": "image/png",
+    "bytes": 280915,
+    "sha256": "6b64bab32153c7afaf5af0e55381e20454e51a135fa60a0b3afc4c34b56285cd",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  "originalFieldsUnchanged": true,
+  "closeDispatched": true,
+  "closeDispatchCount": 1,
+  "verified": true,
+  "imageAfterReopen": {
+    "fileId": 987688,
+    "httpStatus": 200,
+    "mime": "image/png",
+    "bytes": 280915,
+    "sha256": "6b64bab32153c7afaf5af0e55381e20454e51a135fa60a0b3afc4c34b56285cd",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  "imageRenderedAndVisuallyReviewed": true,
+  "independentAccountTested": false,
+  "reopenFileObjectVerified": true,
+  "detailScreenshot": "344989-closed.png"
+}

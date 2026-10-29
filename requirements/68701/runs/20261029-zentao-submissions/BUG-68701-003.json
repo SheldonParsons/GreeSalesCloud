@@ -33,5 +33,16 @@
     "receiverIndependentVerification": false
   },
   "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-003/zentao-submission-20261029.json",
-  "scope": "仅BUG-003；BUG-002由原需求会话处理，未修改其记录。"
+  "scope": "仅BUG-003；BUG-002由原需求会话处理，未修改其记录。",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7160115,
+    "comment": "复测通过，新增及编辑备注均正常回显。",
+    "imageFileId": 987690,
+    "receipt": "../20261029-fixed-bugs-retest/closures/344982.json",
+    "retest": "../20261029-fixed-bugs-retest/dictionary/result.json",
+    "imagesVerifiedAfterCloseAndReopen": true
+  },
+  "nextStep": "本BUG指定行为已复测并经用户确认后关闭；不据此自动更改未完整复测场景的历史标记。"
 }
