@@ -1,0 +1,78 @@
+{
+  "sourceBug": "BUG-68701-016",
+  "date": "2026-10-29",
+  "status": "submitted_verified",
+  "bugId": 345008,
+  "url": "https://ztpm.gree.com:8888/bug-view-345008.html",
+  "title": "【QA-菜单管理与数据字典】撤销权限后，旧编辑页面仍可保存",
+  "creationCount": 1,
+  "creationMethod": "REST API",
+  "creator": {
+    "account": "A80646",
+    "realname": "李博"
+  },
+  "assignedTo": {
+    "account": "A80809",
+    "realname": "叶芳华"
+  },
+  "product": 150,
+  "project": 1058,
+  "execution": 4428,
+  "plan": 3117,
+  "openedBuild": 3274,
+  "story": 68701,
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "postCreateEdits": [
+    {
+      "method": "REST PUT",
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "count": 1,
+      "reason": "创建时传入计划3117，实际回读为0，单独编辑补齐；未确认漏存机制"
+    }
+  ],
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 17,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6472,
+    "relatedStoryChecked": 17,
+    "matches": 0,
+    "nearDuplicate": {
+      "id": 344860,
+      "difference": "无权限按钮展示；本条为撤权后旧表单仍写入真实数据"
+    }
+  },
+  "checks": {
+    "simpleFourStepsPreserved": true,
+    "menuAndDictionaryBothPreserved": true,
+    "accountAndPasswordMatchSource": true,
+    "accountBeforeSteps": true,
+    "imageCount": 3,
+    "imagesInResultBeforeExpected": true,
+    "allFilesLinkedToBug": true,
+    "afterSaveAndReopenNoCacheImageHashesMatch": true,
+    "detailImagesVisuallyVerified": true,
+    "receiverIndependentVerification": false
+  },
+  "fileIds": [
+    987369,
+    987370,
+    987371
+  ],
+  "localReceipt": "Sheldon-Docs/bug/68701/assets/BUG-68701-016/zentao-submission-20261029.json",
+  "verificationReceipt": "Sheldon-Docs/bug/68701/assets/BUG-68701-016/zentao-verification-20261029.json",
+  "businessEvidence": [
+    "runs/20261028-qa-ui/workers/menu/candidate-revoked-menu-edit.md",
+    "runs/20261028-qa-ui/workers/dictionary/wp36-submit-result.json",
+    "runs/20261028-qa-ui/workers/menu/wp36-role-revoked.json"
+  ],
+  "next": "待开发修复后按原撤权场景复测；未执行独立同事账号图片验证",
+  "scope": "仅提交BUG-016；未改变QA角色、未编辑Mind、未提交其他BUG"
+}
