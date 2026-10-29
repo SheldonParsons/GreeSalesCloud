@@ -1,0 +1,23 @@
+{
+  "bugId": 345005,
+  "ready": true,
+  "status": "closed",
+  "commentVisible": true,
+  "imageLoaded": true,
+  "sensitiveVisible": false,
+  "image": {
+    "fileId": 987778,
+    "httpStatus": 200,
+    "mime": "image/png",
+    "bytes": 273907,
+    "sha256": "4fc1954d06bdbb2750d8a7bd1a0d87ef7f9cbc3dc09c022634f44fe813ae58aa",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  "fileObjectType": "bug",
+  "fileObjectID": 345005,
+  "imageRenderedAndVisuallyReviewed": true,
+  "independentAccountTested": false
+}

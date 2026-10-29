@@ -105,8 +105,17 @@
     "status": "passed",
     "record": "../20261029-bug345005-retest-round2/menu/result.json",
     "approval": "../20261029-bug345005-retest-round2/approval-draft.json",
-    "closeDispatched": false,
+    "closeDispatched": true,
     "previousFailureRetained": "../20261029-fixed-bugs-retest/menu/result.json"
   },
-  "nextStep": "第二轮新增短备注及编辑200字符回显通过，等待用户确认拟备注和截图后再通过API关闭。"
+  "nextStep": "第二轮指定行为复测通过，经用户确认后已关闭；未完整复测的关联用例及Mind既存dirty问题仍保持独立边界。",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7161926,
+    "comment": "复测通过，新增和编辑备注均可完整回显。",
+    "imageFileId": 987778,
+    "receipt": "../20261029-bug345005-retest-round2/closure.json",
+    "imagesVerifiedAfterCloseAndReopen": true
+  }
 }
