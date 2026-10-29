@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "sourceBug": "BUG-68701-018",
+  "date": "2026-10-29",
+  "status": "verified",
+  "bugId": 345010,
+  "url": "https://ztpm.gree.com:8888/bug-view-345010.html",
+  "title": "【QA-菜单管理】权限字段超过100字符仍可保存并完整回显",
+  "createdBy": {
+    "account": "A80646",
+    "realname": "李博"
+  },
+  "assignedTo": {
+    "account": "A80809",
+    "realname": "叶芳华"
+  },
+  "targetFields": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "story": 68701,
+    "openedBuild": [
+      {
+        "id": "3274",
+        "title": "【2026】金叶轮-1102-MVP 版本"
+      }
+    ],
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror"
+  },
+  "creationCount": 1,
+  "postCreateEdits": [
+    {
+      "method": "REST PUT",
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "count": 1,
+      "otherFieldsAndBodyPreserved": true
+    }
+  ],
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 18,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotal": 6474,
+    "matches": 0,
+    "scope": "执行返回的18条及产品status=all最近300条；不声称全库无重复。"
+  },
+  "bodyChecks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 1,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false,
+    "plainSectionTitles": true
+  },
+  "files": [
+    {
+      "id": 987375,
+      "objectType": "bug",
+      "objectID": 345010
+    }
+  ],
+  "imageVerification": {
+    "afterSave": {
+      "fileId": 987375,
+      "http": 200,
+      "mime": "image/png",
+      "bytes": 206933,
+      "sha256": "37dd91ad1eb610d976e5cec39ae5eb2ea9af4b9bcf9278b3914844ee8b0a275a",
+      "sourceMatch": true,
+      "width": 1440,
+      "height": 900
+    },
+    "afterReopen": {
+      "fileId": 987375,
+      "src": "https://ztpm.gree.com:8888/file-read-987375.png",
+      "http": 200,
+      "mime": "image/png",
+      "bytes": 206933,
+      "sha256": "37dd91ad1eb610d976e5cec39ae5eb2ea9af4b9bcf9278b3914844ee8b0a275a",
+      "sourceMatch": true,
+      "width": 1440,
+      "height": 900
+    },
+    "actualRenderingVerified": true
+  },
+  "receiverIndependentVerification": false,
+  "localReceipt": "Sheldon-Docs/bug/68701/assets/BUG-68701-018/zentao-submission-20261029.json",
+  "evidenceBoundary": "历史真实UI输入、创建请求记录、树响应与编辑逐字回读；未重跑QA。请求体未独立保存，不另称逐字段核对过请求体。",
+  "nextStep": "待开发修复后复测权限字段100/101字符边界。",
+  "processReview": "原稿图片位于期望之后，已移入结果段；提交后计划由0单独补齐3117。其余字段和正式图片关联一次创建即正确。"
+}
