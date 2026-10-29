@@ -1,0 +1,59 @@
+{
+  "sourceBug": "BUG-68701-011",
+  "zentaoBugId": 344998,
+  "url": "https://ztpm.gree.com:8888/bug-view-344998.html",
+  "status": "verified",
+  "assignedTo": {
+    "account": "zhangwenbo",
+    "realname": "张文波"
+  },
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701,
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror"
+  },
+  "createdCount": 1,
+  "postCreateEditCount": 4,
+  "planCompletionEdits": 1,
+  "imageAssociationRepairEdits": 3,
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 12,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6467,
+    "matches": 0,
+    "note": "需求68701及标题现象核对；产品status=all前三页，非全库查重"
+  },
+  "bodyChecks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 2,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false
+  },
+  "imageChecks": {
+    "associatedWithBug": true,
+    "savedAndReopenedNoCacheRead": true,
+    "sourceSha256Match": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false,
+    "finalFileIds": [
+      987340,
+      987341
+    ]
+  },
+  "receiptRelativeToLocalBugFolder": "assets/BUG-68701-011/zentao-submission-20261029.json",
+  "evidenceBoundary": "类型编码100/101字符均被前端限制为60后保存；字典项值100字符仅输入后取消，101字符提交后回读60；未向后端提交原始超长值。",
+  "processReview": "精简保留两字段及未提交边界；本次实际暴露图片可读取但未正式关联，不能用读取成功代替关联核对。连续同uid上传编辑已补正，原因未确认。",
+  "verifiedAt": "2026-10-29T09:14:38.442633+08:00"
+}
