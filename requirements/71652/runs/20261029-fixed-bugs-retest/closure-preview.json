@@ -1,9 +1,9 @@
 {
   "date": "2026-10-29",
-  "status": "awaiting_user_confirmation",
-  "authorized_to_close": false,
+  "status": "closed_api_verified",
+  "authorized_to_close": true,
   "requires_fresh_remote_read_before_close": true,
-  "remote_writes_performed": false,
+  "remote_writes_performed": true,
   "items": [
     {
       "bug_id": 344562,
@@ -16,7 +16,10 @@
         1440,
         900
       ],
-      "image_note": "技术咨询查看页代表图；其余三入口已分别核对。"
+      "image_note": "技术咨询查看页代表图；其余三入口已分别核对。",
+      "closure_status": "closed",
+      "closure_action_id": 7163229,
+      "uploaded_file_id": 987879
     },
     {
       "bug_id": 344582,
@@ -29,7 +32,10 @@
         3456,
         1606
       ],
-      "image_note": "401字符拦截代表图；400字符保存结果另有回读记录。"
+      "image_note": "401字符拦截代表图；400字符保存结果另有回读记录。",
+      "closure_status": "closed",
+      "closure_action_id": 7163261,
+      "uploaded_file_id": 987885
     },
     {
       "bug_id": 344650,
@@ -42,7 +48,15 @@
         1440,
         900
       ],
-      "image_note": "截图为导入后的回填状态；保存值已通过重开详情另行核对。"
+      "image_note": "截图为导入后的回填状态；保存值已通过重开详情另行核对。",
+      "closure_status": "closed",
+      "closure_action_id": 7163270,
+      "uploaded_file_id": 987889
     }
-  ]
+  ],
+  "approval": {
+    "date": "2026-10-29",
+    "source": "本需求主会话直接用户消息",
+    "text": "行，关闭这 3 个 BUG 吧"
+  }
 }
