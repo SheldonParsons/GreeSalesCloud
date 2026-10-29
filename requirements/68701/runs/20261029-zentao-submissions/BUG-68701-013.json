@@ -1,0 +1,85 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-013",
+  "date": "2026-10-29",
+  "zentaoBugId": 345000,
+  "url": "https://ztpm.gree.com:8888/bug-view-345000.html",
+  "title": "【QA-菜单管理】输入排序9999后，失焦时被自动改为1000",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create",
+  "createCount": 1,
+  "postCreateEdit": {
+    "method": "REST PUT",
+    "bugId": 345000,
+    "fields": [
+      "plan"
+    ],
+    "before": 0,
+    "after": 3117,
+    "reason": "创建传入plan3117，回读为0；同一BUG单次补齐计划，原因未确认"
+  },
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "account": "zhangwenbo",
+    "name": "张文波"
+  },
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 14,
+    "executionTotalReturned": 14,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6469,
+    "productRange": [
+      344999,
+      330863
+    ],
+    "status": "all",
+    "page": 1,
+    "matches": 0,
+    "nearMatchReviewed": 344981,
+    "nearMatchDifference": "344981是打开新增表单时排序未初始化为0，本条是输入合法9999后失焦改为1000。",
+    "scope": "执行全量14条与产品status=all第1页最近300条；不宣称产品全库无重复。"
+  },
+  "checks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 1,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false,
+    "filesBoundToBug": true,
+    "imageSourceHashMatchedAfterCreateEditAndReopen": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "image": {
+    "fileId": 987334,
+    "src": "/file-read-987334.png",
+    "http": 200,
+    "mime": "image/png",
+    "bytes": 177337,
+    "sha256": "2ede148e62a7ac9e31244f5ffb8c2aa7f8d28e965f3b539346dca96687931476",
+    "sourceMatch": true,
+    "width": 1440,
+    "height": 900
+  },
+  "businessEvidenceBoundary": "本次复核2026-10-28真实输入、失焦回读及截图；当时取消表单，未发起保存请求、未创建菜单，无保存后回读。控件max=1000仅作前端定位线索，不宣称后端改值。未重跑QA。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-013/zentao-submission-20261029.json",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-013-菜单排序9999被改为1000.md",
+  "sourceReportSha256": "2a3b27b6d36b84db9fe55a01bc21e741d732bcd3cda7bc9b106c385e9b8a03aa",
+  "processReview": "原标注图位于期望段之后，已移入结果段并核对本地及禅道渲染；保留输入失焦改值、未保存的证据边界。",
+  "scope": "仅BUG-68701-013；不修改正式Mind，不提交其他BUG，不新增试验BUG。"
+}
