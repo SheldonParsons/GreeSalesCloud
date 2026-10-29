@@ -1,0 +1,56 @@
+{
+  "bug_id": 344562,
+  "updated_at": "2026-10-29T16:04:41.251876+08:00",
+  "environment": "QA，实际部署版本未知",
+  "overall": "passed",
+  "entries": [
+    {
+      "type": "非标产品选型",
+      "page": "查看",
+      "status": "passed",
+      "child": "重明220261027006JS-002",
+      "evidence": ".local/71652/20261029-history/nonstandard-view.png",
+      "actual": "历史1及当前380字；无需展开，首中尾可见",
+      "browser_mode": "隔离可见Chrome（用户更新要求之前）"
+    },
+    {
+      "type": "非标产品选型",
+      "page": "审批",
+      "status": "passed",
+      "child": "重明220261027006JS-002",
+      "evidence": ".local/71652/20261029-history/nonstandard-approval.png",
+      "actual": "首节点，当前380字无需展开，首中尾可见",
+      "browser_mode": "隔离可见Chrome（用户更新要求之前）"
+    },
+    {
+      "type": "技术咨询",
+      "page": "查看",
+      "status": "passed",
+      "child": "重明220261027002JS-001",
+      "evidence": ".local/71652/20261029-history/technical-view.png",
+      "actual": "同S已接单，历史1—4及当前228字，未点击展开可见首中尾；历史3单行有展开",
+      "browser_mode": "headless"
+    },
+    {
+      "type": "技术咨询",
+      "page": "审批",
+      "status": "passed",
+      "child": "重明220261027002JS-001",
+      "evidence": ".local/71652/20261029-history/technical-approval.png",
+      "actual": "首节点同S，当前228字未点击展开可见首中尾；取消后回读已接单",
+      "browser_mode": "headless"
+    }
+  ],
+  "recovery": {
+    "technical_child": "重明220261027002JS-001",
+    "status": "已接单，商经部首节点，当前2026-10-29 15:43:59长文",
+    "nonstandard_child": "重明220261027006JS-002",
+    "nonstandard_status": "已接单，首节点",
+    "sheldon_accept_dispatched": true,
+    "pending": "无"
+  },
+  "scope": "344562四入口当前长文核心复测；不代表完整原场景",
+  "representative": ".local/71652/20261029-history/technical-view-annotated.png",
+  "qa_deployed_version": "未知",
+  "zentao_status": "已解决，解决版本2026-商用订单-1102 V7.32版本，非QA部署证明"
+}

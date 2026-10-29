@@ -1,0 +1,12 @@
+{
+  "bug": 344650,
+  "result": "passed",
+  "environment": "QA，部署构建版本未知",
+  "expected": "两条有效数据中第二行核价留空时可导入，回填并保存为否，保留原手工卡",
+  "actual": "原BUG文件GCM620和GCM620D两行校验2/2/0；第二行核价未勾选，提交后重开对应子单，型号及选型文字匹配，页面详情响应核价字段为false。",
+  "data": "重明220261029003JS，001为GCM620，002为GCM620D及核价空白，待确认技术主管审批",
+  "input_sha256": "507f924e990bb3032dbc3051aa3362d189916f83ece50c9a63d98ffc14a13764",
+  "evidence_local": ["exact-validation.png", "exact-card.png", "exact-saved.png"],
+  "representative": ".local/71652/retest-import/price-representative.png",
+  "not_covered": "Excel界面下拉及手工清空提示、显式是未测；旧Mind预期需按最新规则审核"
+}

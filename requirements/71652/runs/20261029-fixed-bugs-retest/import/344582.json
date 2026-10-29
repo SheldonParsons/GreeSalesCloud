@@ -1,0 +1,13 @@
+{
+  "bug": 344582,
+  "result": "passed",
+  "environment": "QA，部署构建版本未知",
+  "expected": "401字符拒绝并给出长度原因，不新增卡且保留原卡；400字符可导入并完整保存",
+  "actual": "401行1/0/1，导入禁用，失败原因为选型要求超过长度（400）；400行1/1/0，生成卡片且重开详情回读400个测；手工卡保留。",
+  "data": "重明220261029001JS，手工001，400字符002，单行核价空白对照003，待确认技术主管审批",
+  "input_sha256_401": "2da6684ee672283ee3c15f671231bc84f2f7851adeb81f6bd1d5695d46c379c8",
+  "input_sha256_400": "dd3724032206237178278b4158542474967192f49a6d9ae859d8b473553a900b",
+  "evidence_local": ["401-result.png", "saved400.png", "fail401.xlsx"],
+  "representative": ".local/71652/retest-import/401-representative.png",
+  "not_covered": "原Mind混合文件中的其他重复判断断言未由本批覆盖"
+}
