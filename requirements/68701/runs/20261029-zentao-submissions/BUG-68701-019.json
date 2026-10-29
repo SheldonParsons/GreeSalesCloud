@@ -1,0 +1,94 @@
+{
+  "localBugId": "BUG-68701-019",
+  "zentaoId": 345011,
+  "url": "https://ztpm.gree.com:8888/bug-view-345011.html",
+  "title": "【QA-菜单管理】备注允许输入并提交201字符，超过200字符上限",
+  "state": "verified",
+  "verifiedAt": "2026-10-29T09:40:50.612433+08:00",
+  "targetFields": {
+    "title": "【QA-菜单管理】备注允许输入并提交201字符，超过200字符上限",
+    "module": 0,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "story": 68701,
+    "assignedTo": "zhangwenbo",
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror",
+    "openedBuild": [
+      "3274"
+    ]
+  },
+  "createdBy": {
+    "account": "A80646",
+    "name": "李博"
+  },
+  "assignedTo": {
+    "account": "zhangwenbo",
+    "name": "张文波"
+  },
+  "createCount": 1,
+  "postCreateEdits": [
+    {
+      "method": "PUT",
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "reason": "创建传plan3117，回读0；仅补计划一次。原因未确认。"
+    }
+  ],
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionReturned": 20,
+    "executionChecked": 20,
+    "product": 150,
+    "productStatus": "all",
+    "productRecentChecked": 300,
+    "productTotal": 6475,
+    "matches": 0,
+    "excludedRelated": [
+      345005,
+      345001
+    ],
+    "scope": "执行接口返回20条及产品status=all最近300条，不代表全库查重。"
+  },
+  "bodyChecks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 1,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false
+  },
+  "image": {
+    "fileId": 987381,
+    "objectType": "bug",
+    "objectID": 345011,
+    "mime": "image/png",
+    "bytes": 227347,
+    "width": 1440,
+    "height": 900,
+    "sha256": "a8c4de4ad03b34e03bc2098bfbb9e023e083be64f08b2307bbaad38ba035d2ca",
+    "sourceMatch": true,
+    "verifiedAfterCreate": true,
+    "verifiedAfterPlanPatch": true,
+    "verifiedAfterReopen": true,
+    "detailVisuallyVerified": true
+  },
+  "receiverIndependentVerification": false,
+  "businessEvidenceBoundary": "确认201字符可输入、请求含完整201字符且菜单ID124创建成功；编辑备注为空，201字符实际持久化未确认。",
+  "evidenceSources": [
+    "requirements/68701/sources/menu-requirements-extract.txt",
+    "requirements/68701/runs/20261028-qa-ui/workers/menu-fields/result.json",
+    "requirements/68701/runs/20261028-qa-ui/workers/menu-fields/bug-candidates.json"
+  ],
+  "sourceReport": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-019-菜单备注超200字符仍可提交.md",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-019/zentao-submission-20261029.json",
+  "flowReview": "原稿截图位于期望之后，已移入结果段；保留超长提交与实际存储的证据区别。计划漏存后仅补计划一次，原因未确认。",
+  "nextStep": "开发修复后复测菜单备注200/201字符边界；实际保存与回显仍需业务证据。"
+}
