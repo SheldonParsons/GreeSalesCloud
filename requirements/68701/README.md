@@ -2,6 +2,8 @@
 
 ## 需求会话
 
+- 2026-10-29因原主会话过长、响应慢，用户明确要求迁移主脑职责。新主会话：[68701｜金叶轮主脑续接](codex://threads/01a1863b-28e4-7011-bbec-74789d4d9831)，直接使用本地目录，不复制长聊天历史、不创建worktree。当前交接见[主脑续接说明](handoff-20261029-main-session.md)；下方原会话及执行会话记录保留为沿革。
+
 - 创建时指定标题：68701｜金叶轮：菜单管理与数据字典。
 - 任务 ID：`01a15800-d006-7412-b639-9d37ccbe45b8`，主机：`local`。
 - 工作目录：`/Users/sheldon/Documents/GithubProject/GreeSalesCloud`，未创建 worktree。
