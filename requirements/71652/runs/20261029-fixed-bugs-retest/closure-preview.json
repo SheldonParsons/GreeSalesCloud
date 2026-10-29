@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-29",
+  "status": "awaiting_user_confirmation",
+  "authorized_to_close": false,
+  "requires_fresh_remote_read_before_close": true,
+  "remote_writes_performed": false,
+  "items": [
+    {
+      "bug_id": 344562,
+      "title": "当前长文展示",
+      "result": "passed",
+      "comment": "QA复测通过：技术咨询及非标选型的查看、审批页，当前长文均默认完整显示。",
+      "screenshot": ".local/71652/20261029-history/technical-view-annotated.png",
+      "screenshot_sha256": "5963474d36e7cb350a4b885af35096c70f8d91d2a7ce14f809b8f581fa1af784",
+      "image_dimensions": [
+        1440,
+        900
+      ],
+      "image_note": "技术咨询查看页代表图；其余三入口已分别核对。"
+    },
+    {
+      "bug_id": 344582,
+      "title": "选型要求长度限制",
+      "result": "passed",
+      "comment": "QA复测通过：401字符被拦截并提示超限；400字符可导入且保存完整，原手工卡保留。",
+      "screenshot": ".local/71652/retest-import/401-representative.png",
+      "screenshot_sha256": "76d0fcc639c4ac94ca4c17b914ac19b91463e007381d8eb21603cf4f3bbfd6a6",
+      "image_dimensions": [
+        3456,
+        1606
+      ],
+      "image_note": "401字符拦截代表图；400字符保存结果另有回读记录。"
+    },
+    {
+      "bug_id": 344650,
+      "title": "核价留空默认否",
+      "result": "passed",
+      "comment": "QA复测通过：GCM620/GCM620D两行数据中，第二行核价留空可导入，提交重开后保存为“否”。",
+      "screenshot": ".local/71652/retest-import/price-representative.png",
+      "screenshot_sha256": "eb26daab863382806944acab0639f552f884ccc908207cf74ab59826b2b695b5",
+      "image_dimensions": [
+        1440,
+        900
+      ],
+      "image_note": "截图为导入后的回填状态；保存值已通过重开详情另行核对。"
+    }
+  ]
+}
