@@ -1,0 +1,102 @@
+{
+  "sourceBug": "BUG-68701-002",
+  "date": "2026-10-29",
+  "status": "verified",
+  "bugId": 345005,
+  "url": "https://ztpm.gree.com:8888/bug-view-345005.html",
+  "sourceFile": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/--BUG-68701-002-菜单备注未回显.md",
+  "localReceipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-002/zentao-submission-20261029.json",
+  "creationMethod": "REST API",
+  "creationCalls": 1,
+  "fields": {
+    "id": 345005,
+    "title": "【QA-菜单管理】新增或编辑填写备注后，重新打开均未回显备注",
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "story": 68701,
+    "openedBuild": [
+      {
+        "id": "3274",
+        "title": "【2026】金叶轮-1102-MVP 版本"
+      }
+    ],
+    "assignedTo": {
+      "id": 1376,
+      "account": "A80809",
+      "avatar": "",
+      "realname": "叶芳华"
+    },
+    "openedBy": {
+      "id": 1211,
+      "account": "A80646",
+      "avatar": "",
+      "realname": "李博"
+    },
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror"
+  },
+  "planCorrection": {
+    "method": "REST PUT",
+    "field": "plan",
+    "value": 3117
+  },
+  "bodyChecks": {
+    "accountWithPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imagesInsideResult": true,
+    "headings": [
+      {
+        "heading": "[步骤]",
+        "present": true
+      },
+      {
+        "heading": "[结果]",
+        "present": true
+      },
+      {
+        "heading": "[期望]",
+        "present": true
+      }
+    ],
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false
+  },
+  "images": [
+    {
+      "id": 987347,
+      "objectType": "bug",
+      "objectID": 345005
+    },
+    {
+      "id": 987348,
+      "objectType": "bug",
+      "objectID": 345005
+    }
+  ],
+  "imageChecks": {
+    "formalAssociation": true,
+    "afterCreateNoCacheMatch": true,
+    "afterEditNoCacheMatch": true,
+    "reopenedNoCacheMatch": true,
+    "detailImagesRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "duplicateCheck": {
+    "scope": "产品150列表status=all，pages1-22，limit300",
+    "product": 150,
+    "reportedTotal": 6465,
+    "uniqueChecked": 6465,
+    "execution": 4428,
+    "executionRecords": 10,
+    "noSameMenuRemarkBug": true,
+    "freshRecentPageRecheckedBeforeCreate": true,
+    "similarDictionaryBug": 344982,
+    "notInstanceWideSearch": true
+  },
+  "accountValueStoredInIndex": false,
+  "verifiedAt": "2026-10-29T01:39:28.011Z"
+}
