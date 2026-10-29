@@ -1,0 +1,66 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-017",
+  "date": "2026-10-29",
+  "zentaoBugId": 345009,
+  "url": "https://ztpm.gree.com:8888/bug-view-345009.html",
+  "title": "【QA-菜单管理】编码仅能输入50字符，无法输入合法100字符",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create",
+  "createCount": 1,
+  "postCreateEdits": [
+    {
+      "method": "REST PUT",
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "count": 1,
+      "reason": "创建后计划回读为0，单独补齐；漏存原因未确认"
+    }
+  ],
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "name": "张文波",
+    "account": "zhangwenbo"
+  },
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 18,
+    "product": 150,
+    "status": "all",
+    "productRecentChecked": 300,
+    "productTotalReturned": 6473,
+    "matches": 0,
+    "distinguished": [
+      344984,
+      344998
+    ],
+    "scope": "执行返回18条和产品最近300条，非全库查重"
+  },
+  "checks": {
+    "accountAndPasswordBeforeSteps": true,
+    "allBodyTextMatches": true,
+    "annotatedImageInsideResult": true,
+    "fileBoundToBug": true,
+    "savePlanEditAndReopenImagesSourceHashMatch": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "businessEvidenceBoundary": "原需求字段表编码上限100。既有真实键盘输入100字符实际只接收50字符，取消后未创建；未验证服务端100字符处理，不声称保存失败。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-017/zentao-submission-20261029.json",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-017-菜单编码只能输入50字符.md",
+  "reviewNote": "原稿截图在期望之后，已移入结果段；菜单编码与344984菜单名称、344998字典编码/项值限长问题分别核对。",
+  "nextStep": "待开发修复后复测输入100字符边界；保存及回显另需真实验证。"
+}
