@@ -1,0 +1,37 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-003",
+  "date": "2026-10-29",
+  "zentaoBugId": 344982,
+  "url": "https://ztpm.gree.com:8888/bug-view-344982.html",
+  "title": "【QA-数据字典】字典类型新增或编辑填写备注后，刷新未回显备注",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create; REST PUT plan completion",
+  "createCount": 1,
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "name": "叶芳华",
+    "account": "A80809",
+    "basis": "新增和编辑请求包含备注，新增后列表响应缺少备注字段，先由叶芳华排查；数据库保存及最终责任仍待定位。"
+  },
+  "severity": 3,
+  "priority": 3,
+  "checks": {
+    "accountAndPasswordBeforeSteps": true,
+    "allTextMatches": true,
+    "twoAnnotatedImagesInsideResult": true,
+    "filesBoundToBug": true,
+    "reopenedImagesSourceHashMatch": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-003/zentao-submission-20261029.json",
+  "scope": "仅BUG-003；BUG-002由原需求会话处理，未修改其记录。"
+}
