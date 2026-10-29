@@ -1,0 +1,63 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-014",
+  "date": "2026-10-29",
+  "zentaoBugId": 345001,
+  "url": "https://ztpm.gree.com:8888/bug-view-345001.html",
+  "title": "【QA-数据字典】类型和字典项备注均限制255字符，无法输入合法500字符",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create",
+  "createCount": 1,
+  "postCreateEdit": {
+    "method": "REST PUT",
+    "fields": [
+      "plan"
+    ],
+    "from": 0,
+    "to": 3117,
+    "count": 1,
+    "cause": "创建字段未保存，原因未查清"
+  },
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "name": "张文波",
+    "account": "zhangwenbo"
+  },
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionReturned": 14,
+    "executionChecked": 14,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6469,
+    "statusFilter": "all",
+    "matches": 0,
+    "distinguishedBug": 344982,
+    "distinction": "既有BUG是备注保存后未回显；本次是输入上限255与需求500冲突，独立501场景截断后提交。",
+    "scope": "执行返回14条及产品最近300条；不声明全库查重"
+  },
+  "checks": {
+    "accountAndPasswordBeforeSteps": true,
+    "allTextMatches": true,
+    "twoAnnotatedImagesInsideResult": true,
+    "filesBoundToBug": true,
+    "savedAndReopenedImagesSourceHashMatch": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "businessEvidenceBoundary": "500字符两个场景未提交；501字符场景请求备注均255字符，列表确认类型52和项151；不声称备注已正确回显或数据库存储已核验。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-014/zentao-submission-20261029.json",
+  "scope": "仅提交BUG-68701-014，创建1次；仅对该BUG补齐计划1次。未修改正式Mind或其他BUG。",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-014-字典备注只能输入255字符.md",
+  "reviewNote": "保留500字符未提交与501字符截断后提交的区别；与344982备注未回显独立。真实详情正文位于应用iframe，图片查看器自动包裹链接，不属于正文普通超链接。"
+}
