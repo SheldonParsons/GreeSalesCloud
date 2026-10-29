@@ -1,0 +1,46 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-005",
+  "date": "2026-10-29",
+  "zentaoBugId": 344984,
+  "url": "https://ztpm.gree.com:8888/bug-view-344984.html",
+  "title": "【QA-菜单管理】名称上限应为30字符，实际输入仅保留20个汉字",
+  "status": "submitted_verified",
+  "method": "REST file upload and REST bug create",
+  "createCount": 1,
+  "postCreateEdit": {
+    "method": "REST PUT",
+    "fields": [
+      "plan"
+    ],
+    "from": 0,
+    "to": 3117
+  },
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "name": "张文波",
+    "account": "zhangwenbo"
+  },
+  "severity": 3,
+  "priority": 3,
+  "checks": {
+    "accountAndPasswordBeforeSteps": true,
+    "allTextMatches": true,
+    "annotatedImageInsideResult": true,
+    "fileBoundToBug": true,
+    "reopenedImageSourceHashMatch": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "businessEvidenceBoundary": "真实输入30个普通汉字后仅保留20个；未提交被截断名称，保存和再次编辑未执行。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-005/zentao-submission-20261029.json",
+  "scope": "仅提交BUG-68701-005，未操作其他BUG。",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/-BUG-68701-005-菜单名称30字符被截断.md"
+}
