@@ -2180,8 +2180,14 @@
       "actual": "刷新后类型44的141、142均为默认，45的143仍默认；日志未核验",
       "mind_synced": true,
       "execution_notes": [
-        "详见字典分片result.json。"
-      ]
+        "详见字典分片result.json。",
+        "2026-10-29复测：BUG-68701-010（禅道345020）默认切换核心行为复测通过并关闭。独占类型54的项155/156正反切换后刷新均为唯一默认，最后一次正向切换前后对照类型45不变；原类型44因重复名称校验无法建立前置，未改变。日志断言及删除旧默认项步骤未补测，整例其余断言未完整复测，保留历史失败与证据。正式Mind因既存未保存差异尚未同步。"
+      ],
+      "retest_evidence": [
+        "requirements/68701/runs/20261029-bug345020-retest/retest.json",
+        "requirements/68701/runs/20261029-bug345020-retest/closure.json"
+      ],
+      "retest_mind_synced": false
     },
     {
       "node_id": "mcp-node-mvhu73wm-36",
@@ -2262,8 +2268,14 @@
       "actual": "144设为默认后，143仍为默认；前置断言失败，未执行删除。",
       "mind_synced": true,
       "execution_notes": [
-        "详见字典分片result.json。"
-      ]
+        "详见字典分片result.json。",
+        "2026-10-29复测：BUG-68701-010（禅道345020）默认切换核心行为复测通过并关闭。独占类型54的项155/156正反切换后刷新均为唯一默认，最后一次正向切换前后对照类型45不变；原类型44因重复名称校验无法建立前置，未改变。日志断言及删除旧默认项步骤未补测，整例其余断言未完整复测，保留历史失败与证据。正式Mind因既存未保存差异尚未同步。"
+      ],
+      "retest_evidence": [
+        "requirements/68701/runs/20261029-bug345020-retest/retest.json",
+        "requirements/68701/runs/20261029-bug345020-retest/closure.json"
+      ],
+      "retest_mind_synced": false
     },
     {
       "node_id": "mcp-node-mvhu73wn-17",

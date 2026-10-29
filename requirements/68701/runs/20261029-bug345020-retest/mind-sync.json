@@ -1,0 +1,35 @@
+{
+  "status": "blocked_dirty_document",
+  "checked_at": "2026-10-29T14:14:52.987862+08:00",
+  "source_file": "/Users/sheldon/Documents/crm/2026/1030/V7.32版本_金叶轮菜单管理与数据字典_lb_20261030.amind",
+  "window_key": "mind:workspace#doc:1793168265931:46ca625d0b563",
+  "preexisting_dirty": true,
+  "comparison": "Mind MCP读取的窗口与磁盘各1335节点；文本、备注及折叠元数据共17处差异，含多处U+FFFD替换字符。不是两个目标场景的预定备注修改。",
+  "examples": [
+    "mcp-node-mvi0xm4i-1",
+    "mcp-node-mvhu73w5-3",
+    "mcp-node-mvhu73wl-17"
+  ],
+  "target_nodes": [
+    "mcp-node-mvhu73wm-24",
+    "mcp-node-mvhu73wn-6"
+  ],
+  "target_markers_before": [
+    "other:error",
+    "other:error"
+  ],
+  "mind_write_dispatched": false,
+  "ledger_write_dispatched": true,
+  "dirty_false_verified": false,
+  "historical_counts": {
+    "passed": 54,
+    "failed": 37,
+    "blocked": 42
+  },
+  "retest_reference": "requirements/68701/runs/20261029-bug345020-retest/retest.json",
+  "closure_reference": "requirements/68701/runs/20261029-bug345020-retest/closure.json",
+  "proposed_append": "2026-10-29 BUG-68701-010（禅道345020）默认切换核心行为复测通过并关闭：独占类型54的项155/156正反切换后刷新均唯一默认，最后一次正向切换前后对照类型45不变；原类型44因重复名称校验无法建立前置，保持未改。日志断言及删除旧默认项步骤未补测，整例其余断言未完整复测，保留历史失败标记与证据。证据见 requirements/68701/runs/20261029-bug345020-retest/retest.json、closure.json。",
+  "next_step": "正式Mind保留原状，待文档负责人处理既存未保存差异后另行同步；无需为本轮关闭BUG立即处理。",
+  "ledger_readback_verified": true,
+  "ledger_status": "两个场景追加复测备注与证据引用，retest_mind_synced=false；历史failed、原证据及54/37/42保持。"
+}

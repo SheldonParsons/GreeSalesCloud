@@ -1,0 +1,33 @@
+{
+  "bugId": 345020,
+  "sourceBug": "BUG-68701-010",
+  "date": "2026-10-29",
+  "authorization": "用户指定复测345020，确认修复后通过API关闭，备注非常简短，可附一张图",
+  "businessOwnerThreadId": "01a1863b-28e4-7011-bbec-74789d4d9831",
+  "uiExecutorThreadId": "01a1818d-9ad8-75e1-a34b-3d29bc82961f",
+  "before": {
+    "status": "resolved",
+    "resolution": "fixed",
+    "resolvedBy": "叶芳华",
+    "resolvedDate": "2026-10-29 11:52:25 +08:00",
+    "resolvedBuild": 3274,
+    "authenticatedActor": "李博"
+  },
+  "scope": "QA数据字典同类型默认项切换、保存刷新回查及其他类型对照；实际QA部署构建待核对",
+  "relatedCases": [
+    {
+      "nodeId": "mcp-node-mvhu73wm-24",
+      "title": "选择新默认项后，旧默认取消且其他类型默认不变",
+      "historicalStatus": "failed"
+    },
+    {
+      "nodeId": "mcp-node-mvhu73wn-6",
+      "title": "先切换默认项再删除旧默认项，新默认保持有效",
+      "historicalStatus": "failed"
+    }
+  ],
+  "coverageBoundary": "BUG修复复测不自动等于两条完整场景通过，未执行的删除和日志验证保持明确边界",
+  "closeApi": "POST /api.php/v1/bugs/345020/close",
+  "officialApiReference": "https://www.zentao.net/book/api/1121.html",
+  "closeDispatchedAtPreflight": false
+}

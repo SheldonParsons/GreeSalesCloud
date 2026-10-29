@@ -86,5 +86,15 @@
   "sourceReportSha256": "e6325ce6734a7cfc7709a50bd5229b844c411e42d42d94eb26dae322b5449cae",
   "scope": "仅BUG-010；未重跑QA、未改正式Mind或需求总README",
   "processReview": "原稿图片在期望后，已移入结果；需求原图已核对默认切换规则。创建漏存计划已回读发现并单字段补齐。",
-  "nextStep": "等待开发修复后按原默认项切换场景复测"
+  "nextStep": "本BUG已复测并关闭；其关联完整场景尚有日志及删除步骤未补测。",
+  "closure": {
+    "date": "2026-10-29",
+    "status": "closed",
+    "actionId": 7159367,
+    "comment": "复测通过，默认项切换正常。",
+    "imageFileId": 987616,
+    "receipt": "../20261029-bug345020-retest/closure.json",
+    "retest": "../20261029-bug345020-retest/retest.json",
+    "boundary": "默认切换核心行为复测通过；完整场景的日志和删除旧默认项步骤未补测，历史总数不自动改写"
+  }
 }

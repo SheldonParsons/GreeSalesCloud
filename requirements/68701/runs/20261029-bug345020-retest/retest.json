@@ -1,0 +1,115 @@
+{
+  "bug": "345020",
+  "status": "passed",
+  "environment": "QA gree-gis-frontend.gis-qa；实际部署构建未知（禅道报告修复版本3274不代表已核验部署版本）",
+  "account": "页面身份sheldon1，测试账号上下文；页面具备字典编辑权限",
+  "baseline": "原类型44项141、142均为默认；尝试取消142默认被名称重复校验拒绝，未改变原数据。另建独占类型54，项155为默认、156非默认。",
+  "steps": [
+    "类型54将项156设默认，保存后刷新：155否、156是，响应req631确认",
+    "反向将155设默认，保存后刷新：155是、156否，页面快照确认；旧导航响应未能保留",
+    "记录对照类型45当前状态后，再将156设默认并刷新：155否、156是，响应req1251确认",
+    "再查类型45，响应与切换前完全相同；143和144原本均为默认，未宣称对照数据本身满足唯一性"
+  ],
+  "control_before": [
+    {
+      "id": 143,
+      "name": "68701补验项B1",
+      "value": "jyl_68701_c_item_1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 1
+    },
+    {
+      "id": 144,
+      "name": "68701补验项B1",
+      "value": "jyl_68701_b_item_1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 1
+    },
+    {
+      "id": 145,
+      "name": "甲",
+      "value": "1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 0
+    },
+    {
+      "id": 146,
+      "name": "丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙",
+      "value": "jyl_68701_item_name50",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 0
+    }
+  ],
+  "control_after": [
+    {
+      "id": 143,
+      "name": "68701补验项B1",
+      "value": "jyl_68701_c_item_1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 1
+    },
+    {
+      "id": 144,
+      "name": "68701补验项B1",
+      "value": "jyl_68701_b_item_1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 1
+    },
+    {
+      "id": 145,
+      "name": "甲",
+      "value": "1",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 0
+    },
+    {
+      "id": 146,
+      "name": "丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙",
+      "value": "jyl_68701_item_name50",
+      "dictCode": "jyl_68701_dict_c_1028",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 0
+    }
+  ],
+  "final_response": [
+    {
+      "id": 155,
+      "name": "复测旧默认",
+      "value": "retest_345020_old",
+      "dictCode": "jyl_68701_retest_345020_1029",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 0
+    },
+    {
+      "id": 156,
+      "name": "复测新默认",
+      "value": "retest_345020_new",
+      "dictCode": "jyl_68701_retest_345020_1029",
+      "sort": 0,
+      "status": 1,
+      "isDefaulted": 1
+    }
+  ],
+  "restore": "独占类型54保留，项156为唯一默认；原类型44未改变。",
+  "case_scope": "默认切换核心行为通过；原mcp-node-mvhu73wm-24的日志断言未补验，mcp-node-mvhu73wn-6涉及删除未执行，不能整体标通过。",
+  "evidence": [
+    "forward.png"
+  ],
+  "limitations": "未核实实际部署构建；对照45在本次最后一次切换前后不变，首次切换前未读取对照；反向切换刷新以UI快照为证，网络体因导航后不可取。"
+}
