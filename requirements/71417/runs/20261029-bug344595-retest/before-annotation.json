@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "coordinate_space": {
+    "width": 1728,
+    "height": 803
+  },
+  "font_size": 20,
+  "line_width": 3,
+  "annotations": [
+    {
+      "box": {
+        "x": 1218,
+        "y": 587,
+        "width": 370,
+        "height": 40
+      },
+      "label": {
+        "x": 740,
+        "y": 550
+      },
+      "text": "1、勾选协议后单点入口可点击",
+      "max_text_width": 360,
+      "color": "#ff2020",
+      "arrow": true,
+      "location_source": "CRM page DOM bounding rectangle, same viewport"
+    }
+  ]
+}

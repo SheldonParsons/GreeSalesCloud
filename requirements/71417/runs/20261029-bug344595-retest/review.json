@@ -1,0 +1,48 @@
+{
+  "before": {
+    "checkedAt": "2026-10-29T07:51:17.870Z",
+    "source": "禅道只读REST，经Chrome DevTools当前李博会话读取",
+    "bugId": 344595,
+    "title": "【QA-单点登录】切换手机号登录再返回账密页后，已勾选协议仍无法发起单点登录",
+    "status": "resolved",
+    "resolution": "fixed",
+    "resolvedDate": "2026-10-27T09:13:00Z",
+    "resolvedBy": "陈仲唐",
+    "resolvedBuild": {
+      "id": "3270",
+      "title": "CRM-1102 V7.32 版本"
+    },
+    "assignedTo": "李博",
+    "story": 71417,
+    "product": 136,
+    "project": 998,
+    "plan": 3115,
+    "bodyWithoutCredentials": "[账号及凭据段已隐藏][步骤]1、新开未登录的浏览器会话，打开 QA 的 CRM 登录页。2、点击【手机号登录】，保持手机号、验证码及该页签的隐私协议为空/未勾选。3、点击【账号密码登录】，勾选当前可见的隐私协议复选框。4、点击【单点登录】，观察页面是否进入格力互联。[结果]当前可见的隐私协议已经勾选，但【单点登录】仍不能发起认证，点击后停留在 CRM 登录页，没有进入格力互联。在新的独立会话中，仅用上述页面点击即可复现；不需要填写账号密码。前端单点入口仍处于禁止鼠标交互状态。管理端、订货客户端执行同样步骤能进入格力互联，本问题目前仅在 CRM 复现。[期望]从手机号登录切回账号密码登录后，勾选当前可见的隐私协议，应能够通过【单点登录】进入格力互联，不应受已隐藏页签的协议状态影响，也不应要求填写业务账号密码或短信验证码。",
+    "qaDeploymentBuildVerified": false,
+    "businessRetestPerformedByMain": false,
+    "trackerMutations": false
+  },
+  "after": {
+    "checkedAt": "2026-10-29T07:55:49.683Z",
+    "http": 200,
+    "id": 344595,
+    "status": "resolved",
+    "resolution": "fixed",
+    "resolvedBuild": {
+      "id": "3270",
+      "title": "CRM-1102 V7.32 版本"
+    },
+    "lastEditedDate": "2026-10-27T09:14:04Z",
+    "closedDate": null
+  },
+  "review": {
+    "originalBugPathPassed": true,
+    "actualQaBuild": "unknown",
+    "trackerStateUnchanged": true,
+    "closed": false,
+    "executorPageClosed": true,
+    "screenshotReviewed": true,
+    "screenshotAnnotationHashesVerified": true,
+    "fullScenarioStatusChanged": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "coordinate_space": {
+    "width": 2048,
+    "height": 952
+  },
+  "font_size": 23,
+  "line_width": 3,
+  "annotations": [
+    {
+      "box": {
+        "x": 1228,
+        "y": 151,
+        "width": 594,
+        "height": 63
+      },
+      "label": {
+        "x": 850,
+        "y": 120
+      },
+      "text": "2、实际进入格力互联认证页",
+      "max_text_width": 330,
+      "color": "#ff2020",
+      "arrow": true,
+      "location_source": "visual estimate on 2048x952 screenshot preview"
+    }
+  ]
+}

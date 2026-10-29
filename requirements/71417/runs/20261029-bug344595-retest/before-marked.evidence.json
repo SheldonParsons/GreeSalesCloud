@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "tool": "screenshot-annotator",
+  "tool_version": "0.1.0",
+  "source": "before-raw.png",
+  "source_sha256": "fb997555029ea9b2b3c261add827db5fd6a4dcd646507e3a61028e7d54c7cf8f",
+  "output": "before-marked.png",
+  "output_sha256": "550c1d28fb9e0e7a896d17d2b6ded7811f91d9067a52b7ad6677f8d9022332d9",
+  "image_size": {
+    "width": 3456,
+    "height": 1606
+  },
+  "coordinate_space": {
+    "width": 1728,
+    "height": 803
+  },
+  "scale": {
+    "x": 2.0,
+    "y": 2.0
+  },
+  "font": "STHeiti Medium.ttc",
+  "runtime": {
+    "python": "3.12.14",
+    "pillow": "12.3.0"
+  },
+  "annotations": [
+    {
+      "box_pixels": {
+        "x": 2436.0,
+        "y": 1174.0,
+        "width": 740.0,
+        "height": 80.0
+      },
+      "label_pixels": {
+        "x": 1480.0,
+        "y": 1100.0,
+        "width": 574,
+        "height": 81
+      },
+      "text": "1、勾选协议后单点入口可点击",
+      "location_source": "CRM page DOM bounding rectangle, same viewport"
+    }
+  ],
+  "note": "Supplied annotations; not a test verdict. No timestamps or absolute paths by default."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "tool": "screenshot-annotator",
+  "tool_version": "0.1.0",
+  "source": "after-redacted.png",
+  "source_sha256": "fa71486ac6adba1919e1a838957f9c6e30497d4c3039bb6ff2a11a43d36ed996",
+  "output": "after-marked.png",
+  "output_sha256": "4c3c45d820d99e1affa4b981788127476501de169603f926c67f353e28ffe5af",
+  "image_size": {
+    "width": 3456,
+    "height": 1606
+  },
+  "coordinate_space": {
+    "width": 2048,
+    "height": 952
+  },
+  "scale": {
+    "x": 1.6875,
+    "y": 1.6869747899159664
+  },
+  "font": "STHeiti Medium.ttc",
+  "runtime": {
+    "python": "3.12.14",
+    "pillow": "12.3.0"
+  },
+  "annotations": [
+    {
+      "box_pixels": {
+        "x": 2072.25,
+        "y": 254.73319327731093,
+        "width": 1002.375,
+        "height": 106.27941176470588
+      },
+      "label_pixels": {
+        "x": 1434.375,
+        "y": 202.43697478991598,
+        "width": 522,
+        "height": 80
+      },
+      "text": "2、实际进入格力互联认证页",
+      "location_source": "visual estimate on 2048x952 screenshot preview"
+    }
+  ],
+  "note": "Supplied annotations; not a test verdict. No timestamps or absolute paths by default."
+}
