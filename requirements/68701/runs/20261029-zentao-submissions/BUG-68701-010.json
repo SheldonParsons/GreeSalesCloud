@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "sourceBug": "BUG-68701-010",
+  "status": "verified",
+  "date": "2026-10-29",
+  "bugId": 345020,
+  "url": "https://ztpm.gree.com:8888/bug-view-345020.html",
+  "creation": {
+    "method": "REST API",
+    "count": 1
+  },
+  "fields": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "openedBuild": 3274,
+    "story": 68701,
+    "assignedTo": {
+      "name": "叶芳华",
+      "account": "A80809"
+    },
+    "severity": 3,
+    "priority": 3,
+    "type": "codeerror"
+  },
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 21,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6478,
+    "productStatus": "all",
+    "productPages": [
+      1,
+      2,
+      3
+    ],
+    "matches": 0,
+    "similarBugReviewed": 344989,
+    "similarBugDifference": "同名项唯一性，与默认切换规则不同"
+  },
+  "businessEvidence": {
+    "rule": "sources/dictionary-requirements.md:39及dictionary-field-rules.png：每类型最多一个有效默认项，选新默认项时原子取消旧默认",
+    "observed": "类型44下141及142的dictCode一致、status均1；保存前142的isDefaulted为0，保存刷新后两项均为1；已核对原始响应及标注图",
+    "attributionBoundary": "保存后查询仍返回两个启用默认项，指派后端；具体实现原因待开发排查",
+    "deployedBuild": "未知",
+    "qaRerun": false
+  },
+  "verification": {
+    "bodyTextMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "localPathPresent": false,
+    "fileId": 987414,
+    "fileObjectType": "bug",
+    "fileObjectID": 345020,
+    "afterSaveAndReopenImageSha256Matches": true,
+    "imageSha256": "1a64e2f6f6296dd15fb873af876292971d4dd00b57512f9e11d6314b3603ac00",
+    "imageBytes": 194553,
+    "imageSize": [
+      1920,
+      1080
+    ],
+    "detailRenderedAndVisuallyReviewed": true,
+    "independentColleagueAccountTested": false
+  },
+  "postCreateEdits": [
+    {
+      "method": "REST PUT",
+      "bugId": 345020,
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "count": 1,
+      "stepsUnchanged": true,
+      "otherFieldsUnchanged": true,
+      "reason": "创建传入计划3117但回读0，已仅补计划；原因未确认"
+    }
+  ],
+  "localReceipt": "Sheldon-Docs/bug/68701/assets/BUG-68701-010/zentao-submission-20261029.json",
+  "sourceReportSha256": "e6325ce6734a7cfc7709a50bd5229b844c411e42d42d94eb26dae322b5449cae",
+  "scope": "仅BUG-010；未重跑QA、未改正式Mind或需求总README",
+  "processReview": "原稿图片在期望后，已移入结果；需求原图已核对默认切换规则。创建漏存计划已回读发现并单字段补齐。",
+  "nextStep": "等待开发修复后按原默认项切换场景复测"
+}
