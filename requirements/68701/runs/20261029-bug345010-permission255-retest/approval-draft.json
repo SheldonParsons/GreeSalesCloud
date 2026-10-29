@@ -1,0 +1,19 @@
+{
+  "bugId": 345010,
+  "phase": "awaiting_user_review",
+  "retestStatus": "passed",
+  "acceptanceSource": "../../sources/menu-permission-length-20261029.md",
+  "comment": "按最新口径复测，255字符权限可完整保存并回显。",
+  "image": "menu/after.png",
+  "imageSha256": "54fc00fecd0c557233a6fec02c96303ba16995544c01555de9e41db5c92bfcb9",
+  "imageVisuallyReviewed": true,
+  "inputLength": 255,
+  "requestResponseAndUiExact": true,
+  "menuId": 142,
+  "actualQaBuild": "unknown",
+  "zentaoStatusAtPreflight": "active",
+  "approvalReceived": false,
+  "closeDispatched": false,
+  "zentaoWriteDispatched": false,
+  "transportClosed": true
+}

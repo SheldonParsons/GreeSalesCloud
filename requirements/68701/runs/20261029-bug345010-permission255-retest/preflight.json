@@ -1,0 +1,15 @@
+{
+  "bugId": 345010,
+  "sourceBug": "BUG-68701-018",
+  "date": "2026-10-29",
+  "userConfirmation": "最新的消息是这个权限字段改为255，而不是100，复测能不能保存255就行了",
+  "currentAcceptance": "菜单权限字段输入恰好255字符，提交后刷新、重新打开，权限内容完整且逐字一致",
+  "scope": "仅255字符可保存的正向验证；不测256、不沿用100/101字符拒绝规则，不扩展角色授权或实际导航",
+  "previousRuleBoundary": "禅道原正文仍按100字符，保留为历史；本次用户明确确认的255口径优先",
+  "zentaoPreflight": {"status": "active", "resolution": "", "title": "【QA-菜单管理】权限字段超过100字符仍可保存并完整回显"},
+  "environment": "原QA；实际部署构建待核对，未知不影响按现行口径记录本次实际结果",
+  "uiExecutorThreadId": "01a18177-e668-79d0-a41f-fbd147241cf4",
+  "closeAuthorized": false,
+  "zentaoWriteAuthorized": false,
+  "mindWriteAuthorized": false
+}

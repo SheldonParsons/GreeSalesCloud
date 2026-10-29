@@ -1,0 +1,83 @@
+{
+  "bug": "345010 / BUG-68701-018",
+  "status": "passed",
+  "scope": "新增菜单权限字段恰好255个有效字符保存并回显",
+  "environment": "金叶轮 QA",
+  "actual_build_version": "unknown",
+  "identity": "qa.jinyelun.admin，平台管理员；可进入菜单管理",
+  "menu": {
+    "id": 142,
+    "name": "QA68701权限255复验",
+    "code": "QA68701Perm255Retest",
+    "retained_for_review": true
+  },
+  "input": {
+    "construction": "qa68701f: + q × 245 + z",
+    "length": 255,
+    "before_blur_exact": true,
+    "last_character": "z",
+    "sha256": "f7ebdd318bd2dd8fc2f05cf85ed430a63b5103e0da82383179a102085fee0c0c"
+  },
+  "network": {
+    "create_request": {
+      "reqid": 322,
+      "http_status": 200,
+      "business_code": null,
+      "menu_id": null,
+      "length": 255,
+      "equals_input": true,
+      "last_character": "z",
+      "sha256": "f7ebdd318bd2dd8fc2f05cf85ed430a63b5103e0da82383179a102085fee0c0c"
+    },
+    "create_response": {
+      "reqid": 322,
+      "http_status": 200,
+      "business_code": "00000",
+      "menu_id": 142,
+      "length": 255,
+      "equals_input": true,
+      "last_character": "z",
+      "sha256": "f7ebdd318bd2dd8fc2f05cf85ed430a63b5103e0da82383179a102085fee0c0c"
+    },
+    "post_create_tree": {
+      "reqid": 323,
+      "http_status": 200,
+      "business_code": "00000",
+      "menu_id": 142,
+      "length": 255,
+      "equals_input": true,
+      "last_character": "z",
+      "sha256": "f7ebdd318bd2dd8fc2f05cf85ed430a63b5103e0da82383179a102085fee0c0c"
+    },
+    "refreshed_tree": {
+      "reqid": 625,
+      "http_status": 200,
+      "business_code": "00000",
+      "menu_id": 142,
+      "length": 255,
+      "equals_input": true,
+      "last_character": "z",
+      "sha256": "f7ebdd318bd2dd8fc2f05cf85ed430a63b5103e0da82383179a102085fee0c0c"
+    }
+  },
+  "reopened_ui": {
+    "after_page_reload": true,
+    "length": 255,
+    "equals_input": true,
+    "last_character": "z"
+  },
+  "screenshots": {
+    "before": {
+      "file": "before.png",
+      "sha256": "005230d69d71bd8fe4d0dcbdd3381d0222c52cc3121e205a0fd8740db706fb18"
+    },
+    "after": {
+      "file": "after.png",
+      "sha256": "54fc00fecd0c557233a6fec02c96303ba16995544c01555de9e41db5c92bfcb9"
+    }
+  },
+  "restoration": "取消编辑弹窗并仅关闭本次页面；保留专用菜单，未退出管理员或关闭桥接",
+  "excluded": "未测试256字符、旧100/101口径或角色导航；未操作禅道、Mind、台账",
+  "proposed_comment": "按最新口径复测，255字符权限可完整保存并回显。",
+  "recorded_at": "2026-10-29T16:43:13.774633+08:00"
+}
