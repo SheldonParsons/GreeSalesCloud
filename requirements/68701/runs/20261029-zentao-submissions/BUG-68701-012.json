@@ -1,0 +1,120 @@
+{
+  "requirement": 68701,
+  "localBug": "BUG-68701-012",
+  "date": "2026-10-29",
+  "zentaoBugId": 344999,
+  "url": "https://ztpm.gree.com:8888/bug-view-344999.html",
+  "title": "【QA-数据字典】编辑类型名称时可保存与其他类型重复的名称",
+  "status": "submitted_verified",
+  "createCount": 1,
+  "postCreateEdits": [
+    {
+      "method": "REST PUT",
+      "fields": [
+        "plan"
+      ],
+      "before": 0,
+      "after": 3117,
+      "reason": "创建传入plan3117但回读为0，补齐同一BUG；原因未确认"
+    },
+    {
+      "method": "REST PUT",
+      "fields": [
+        "uid",
+        "steps.imageSrc"
+      ],
+      "oldFileId": 987330,
+      "newFileId": 987338,
+      "textUnchanged": true,
+      "reason": "首张图可读取但objectType为空、objectID为0；重新上传相同源图后在同一BUG修复关联"
+    }
+  ],
+  "target": {
+    "product": 150,
+    "project": 1058,
+    "execution": 4428,
+    "plan": 3117,
+    "build": 3274,
+    "story": 68701
+  },
+  "assignedTo": {
+    "account": "A80809",
+    "name": "叶芳华"
+  },
+  "severity": 3,
+  "priority": 3,
+  "type": "codeerror",
+  "duplicateCheck": {
+    "execution": 4428,
+    "executionChecked": 13,
+    "product": 150,
+    "productRecentChecked": 300,
+    "productTotalReturned": 6468,
+    "relatedStoryInRecent": 13,
+    "matches": 0,
+    "comparedDetailIds": [
+      344994,
+      344989
+    ],
+    "boundary": "提交前复核执行13条；产品status=all最近300条，非全库查重。"
+  },
+  "checks": {
+    "textMatches": true,
+    "accountAndPasswordMatches": true,
+    "accountBeforeSteps": true,
+    "imageCount": 1,
+    "imagesInsideResult": true,
+    "ordinaryLinks": 0,
+    "boldTags": 0,
+    "localPathPresent": false,
+    "renderedBodyChecks": {
+      "accountAndPasswordMatches": true,
+      "accountBeforeSteps": true,
+      "imageInsideResult": true,
+      "allExpectedTextParagraphsPresent": true,
+      "imageRendered": true
+    },
+    "filesBoundToBug": true,
+    "sourceImageHashMatchedAfterRepairAndReopen": true,
+    "detailRendered": true,
+    "receiverIndependentVerification": false
+  },
+  "image": {
+    "fileId": 987338,
+    "src": "/file-read-987338.png",
+    "http": 200,
+    "mime": "image/png",
+    "bytes": 278954,
+    "width": 1920,
+    "height": 1080,
+    "sha256": "32ee527d9ab528cb461f31e605fe46df0272283970dfe26cec2f2799c4d91829",
+    "sourceMatch": true
+  },
+  "imageRepair": {
+    "initialFile": {
+      "id": 987330,
+      "objectType": "",
+      "objectID": 0,
+      "serverReadable": true
+    },
+    "finalFile": {
+      "id": 987338,
+      "objectType": "bug",
+      "objectID": 344999
+    },
+    "changedRequestDetails": [
+      "编辑页取得独立uid",
+      "REST上传查询参数和FormData均携带同一uid",
+      "上传和编辑请求带X-Requested-With: XMLHttpRequest",
+      "同一BUG PUT uid及图片引用"
+    ],
+    "rootCause": "未单变量确认；不推定并发会话、URL或单一请求参数为根因",
+    "unusedInitialFile": "不再被正文引用；未主动删除"
+  },
+  "businessEvidenceBoundary": "仅核对2026-10-28既有页面截图、类型50修改前响应5606、修改后响应5913及执行记录，未重跑QA；与新增空格绕过是否同一内部根因未确认。",
+  "receipt": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/assets/BUG-68701-012/zentao-submission-20261029.json",
+  "currentReportPath": "/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/68701/BUG-68701-012-编辑字典类型允许名称重复.md",
+  "sourceReportSha256": "51e2fa8339f3b02268aa5d5ccc51100eafe42c4d1ca666258416ad5042e074b0",
+  "processReview": "修正原稿截图置于期望之后及归属待提供。回读发现计划漏存、初次图片未关联，均在同一BUG补齐并核验；未扩大测试范围。",
+  "scope": "仅BUG-68701-012；未提交其他BUG、未新增测试探针、未重跑QA。"
+}
