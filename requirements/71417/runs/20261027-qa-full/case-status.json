@@ -94,23 +94,21 @@
     },
     {
       "node_id": "mcp-node-mvgg85d7-13",
-      "title": "账号具备访问资格，单点登录后回到原业务页面",
+      "title": "账号具备访问资格，单点登录后进入来源系统",
       "group": "格力互联授权与回跳",
-      "status": "失败",
+      "status": "通过",
       "platforms": {
-        "crm": "失败",
-        "admin": "失败",
-        "client": "失败",
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
         "iam": "不适用"
       },
       "evidence": [
         "post-role-success-and-identity.json",
         "return-target-mismatch.json"
       ],
-      "bugs": [
-        "BUG-71417-002"
-      ],
-      "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+      "bugs": [],
+      "reason": "已具备角色的账号在QA三平台真实SSO登录成功并匹配指定身份；用户2026-11-02确认不要求返回登录前页面。",
       "original_markers": [],
       "original_note": "",
       "history": [
@@ -137,31 +135,44 @@
             "bug-001-reproduction.json",
             "account-role-verification.json"
           ]
+        },
+        {
+          "status": "失败",
+          "platforms": {
+            "crm": "失败",
+            "admin": "失败",
+            "client": "失败",
+            "iam": "不适用"
+          },
+          "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+          "bugs": [
+            "BUG-71417-002"
+          ],
+          "superseded_by": "2026-11-02用户确认本期不支持返回登录前页面"
         }
       ],
       "retracted_bugs": [
-        "archive/BUG-71417-001.md"
+        "archive/BUG-71417-001.md",
+        "archive/BUG-71417-002.md"
       ]
     },
     {
       "node_id": "mcp-node-mvgg85d7-4",
-      "title": "外网使用内邮短账号授权，登录后返回原页面",
+      "title": "外网使用内邮短账号授权，登录后进入来源系统",
       "group": "格力互联授权与回跳",
-      "status": "失败",
+      "status": "通过",
       "platforms": {
-        "crm": "失败",
-        "admin": "失败",
-        "client": "失败",
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
         "iam": "不适用"
       },
       "evidence": [
         "post-role-success-and-identity.json",
         "return-target-mismatch.json"
       ],
-      "bugs": [
-        "BUG-71417-002"
-      ],
-      "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+      "bugs": [],
+      "reason": "QA外网三平台使用内邮短账号真实SSO登录并匹配身份；用户2026-11-02确认不要求返回登录前页面。",
       "original_markers": [],
       "original_note": "外网能力、内邮短账号登录及返回原页面来自用户确认；本轮未实际执行。",
       "history": [
@@ -181,10 +192,25 @@
             "bug-001-reproduction.json",
             "account-role-verification.json"
           ]
+        },
+        {
+          "status": "失败",
+          "platforms": {
+            "crm": "失败",
+            "admin": "失败",
+            "client": "失败",
+            "iam": "不适用"
+          },
+          "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+          "bugs": [
+            "BUG-71417-002"
+          ],
+          "superseded_by": "2026-11-02用户确认本期不支持返回登录前页面"
         }
       ],
       "retracted_bugs": [
-        "archive/BUG-71417-001.md"
+        "archive/BUG-71417-001.md",
+        "archive/BUG-71417-002.md"
       ]
     },
     {
@@ -344,21 +370,19 @@
       "node_id": "mcp-node-mvgg85d7-34",
       "title": "业务账号密码留空，仍可单点登录",
       "group": "单点登录校验",
-      "status": "失败",
+      "status": "通过",
       "platforms": {
-        "crm": "失败",
-        "admin": "失败",
-        "client": "失败",
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
         "iam": "不适用"
       },
       "evidence": [
         "post-role-success-and-identity.json",
         "return-target-mismatch.json"
       ],
-      "bugs": [
-        "BUG-71417-002"
-      ],
-      "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+      "bugs": [],
+      "reason": "QA三平台业务账密留空时真实SSO登录并匹配身份；用户2026-11-02确认不要求返回登录前页面。",
       "original_markers": [],
       "original_note": "",
       "history": [
@@ -369,7 +393,24 @@
             "empty-fields-no-slider.json",
             "account-role-verification.json"
           ]
+        },
+        {
+          "status": "失败",
+          "platforms": {
+            "crm": "失败",
+            "admin": "失败",
+            "client": "失败",
+            "iam": "不适用"
+          },
+          "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+          "bugs": [
+            "BUG-71417-002"
+          ],
+          "superseded_by": "2026-11-02用户确认本期不支持返回登录前页面"
         }
+      ],
+      "retracted_bugs": [
+        "archive/BUG-71417-002.md"
       ]
     },
     {
@@ -412,21 +453,19 @@
       "node_id": "mcp-node-mvgg85d7-40",
       "title": "未完成业务滑块，仍可单点登录",
       "group": "单点登录校验",
-      "status": "失败",
+      "status": "通过",
       "platforms": {
-        "crm": "失败",
-        "admin": "失败",
-        "client": "失败",
+        "crm": "通过",
+        "admin": "通过",
+        "client": "通过",
         "iam": "不适用"
       },
       "evidence": [
         "post-role-success-and-identity.json",
         "return-target-mismatch.json"
       ],
-      "bugs": [
-        "BUG-71417-002"
-      ],
-      "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+      "bugs": [],
+      "reason": "QA三平台未完成业务滑块时真实SSO登录并匹配身份；用户2026-11-02确认不要求返回登录前页面。",
       "original_markers": [],
       "original_note": "",
       "history": [
@@ -437,41 +476,76 @@
             "empty-fields-no-slider.json",
             "account-role-verification.json"
           ]
+        },
+        {
+          "status": "失败",
+          "platforms": {
+            "crm": "失败",
+            "admin": "失败",
+            "client": "失败",
+            "iam": "不适用"
+          },
+          "reason": "角色配置后已能登录；三个新会话从已验证可访问的非默认业务页发起SSO，最终均进入系统默认页。账号匹配、空业务账密放行及免业务滑块已观察通过，但本例要求的原页面回跳未满足。",
+          "bugs": [
+            "BUG-71417-002"
+          ],
+          "superseded_by": "2026-11-02用户确认本期不支持返回登录前页面"
         }
+      ],
+      "retracted_bugs": [
+        "archive/BUG-71417-002.md"
       ]
     },
     {
       "node_id": "mcp-node-mvi081rx-5",
       "title": "业务短信验证码留空，仍可单点登录",
       "group": "单点登录校验",
-      "status": "失败",
+      "status": "待确认",
       "platforms": {
-        "crm": "失败",
-        "admin": "失败",
-        "client": "失败",
+        "crm": "待确认",
+        "admin": "通过",
+        "client": "通过",
         "iam": "不适用"
       },
       "evidence": [
         "tab-consent-state-failure.json"
       ],
-      "bugs": [
-        "BUG-71417-003",
-        "BUG-71417-002"
-      ],
-      "reason": "CRM在页签切换后被单点入口状态问题阻断；管理端和客户端完成无短信认证，但均未回原页面。分平台失败点分别关联，不合并为同一BUG。",
+      "bugs": [],
+      "reason": "2026-10-29 CRM切换页签后入口可进入互联且BUG-003已关闭；该次未在切换页签后完成真实认证，CRM完整场景待补。原管理端/客户端已真实完成无业务短信登录，回原页面不再是本期预期。",
       "original_markers": [],
       "original_note": "",
       "history": [
         {
           "status": "阻塞",
           "reason": "三平台手机号和短信验证码保持为空、未请求验证码；按实页切回账密页签后均能进入格力互联。最终业务登录因主账号缺角色未完成。"
+        },
+        {
+          "status": "失败",
+          "platforms": {
+            "crm": "失败",
+            "admin": "失败",
+            "client": "失败",
+            "iam": "不适用"
+          },
+          "reason": "CRM在页签切换后被单点入口状态问题阻断；管理端和客户端完成无短信认证，但均未回原页面。分平台失败点分别关联，不合并为同一BUG。",
+          "bugs": [
+            "BUG-71417-003",
+            "BUG-71417-002"
+          ],
+          "superseded_by": "2026-11-02用户确认本期不支持返回登录前页面"
         }
       ],
       "platform_details": {
-        "crm": "步骤4在可见协议已勾选后无法发起SSO，BUG-71417-003",
-        "admin": "未使用业务短信即可登录，但步骤6未回原页面，BUG-71417-002",
-        "client": "未使用业务短信即可登录，但步骤6未回原页面，BUG-71417-002"
-      }
+        "crm": "入口复测通过，切换页签后的完整认证未重测",
+        "admin": "无需业务短信登录成功",
+        "client": "无需业务短信登录成功"
+      },
+      "retracted_bugs": [
+        "archive/BUG-71417-002.md"
+      ],
+      "historical_bugs": [
+        "BUG-71417-003"
+      ]
     },
     {
       "node_id": "mcp-node-mvgg85d7-43",

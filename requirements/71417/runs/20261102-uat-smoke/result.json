@@ -21,27 +21,27 @@
     {
       "platform": "CRM",
       "login": "成功",
-      "expected": "客户中心 /customer",
       "actual": "系统首页 /home",
-      "return": "失败"
+      "return": "不要求恢复登录前页面（用户确认）；实际落地正常",
+      "original_attempted_page": "客户中心 /customer"
     },
     {
       "platform": "订单管理端",
       "login": "成功",
-      "expected": "订单取消申请 /admin/order-management/cancel-order",
       "actual": "工程额度 /admin/limit-accounting/engineering-quota",
-      "return": "失败"
+      "return": "不要求恢复登录前页面（用户确认）；实际落地正常",
+      "original_attempted_page": "订单取消申请 /admin/order-management/cancel-order"
     },
     {
       "platform": "订单客户端",
       "login": "成功",
-      "expected": "常购清单 /purchase-list",
       "actual": "浏览采购首页 /",
-      "return": "失败"
+      "return": "不要求恢复登录前页面（用户确认）；实际落地正常",
+      "original_attempted_page": "常购清单 /purchase-list"
     }
   ],
   "evidence": "原始截图与认证响应只保存在本机受控目录；管理端已有真实标注图并人工查看。登录数据不进入Git。",
-  "bug": "BUG-71417-002（既有回跳问题，UAT观察关联；未提交禅道）",
+  "bug": "无：原BUG-71417-002撤回",
   "limits": [
     "未执行用户跳过的原账密回归",
     "未验证离职/禁用/弱密码等特殊状态",
@@ -49,5 +49,7 @@
     "协议未勾选时仅观察控件状态，未完成实际点击断言",
     "当前未知具体UAT部署构建"
   ],
-  "business_writes": false
+  "business_writes": false,
+  "user_correction": "2026-11-02用户确认本期没有路由回登录前业务页面的功能；落到默认页面为正常行为，撤回本轮回跳失败和BUG判定。",
+  "historical_bug_judgment": "纠偏前曾误关联BUG-71417-002，现已撤回归档"
 }
