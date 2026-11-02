@@ -3,6 +3,7 @@
 ## 项目与上下文
 
 - 本仓库是两个商用订单管理系统的测试工作台，不是产品源码仓库。
+- 测试工作流 Skill 已于 2026-11-02 独立迁移到 VeriForge：`/Users/sheldon/Documents/GithubProject/VeriForge`。后续 Skill 设计和开发仅在 VeriForge/main 维护；本仓库 `skill-development/README.md` 只保留迁移入口，不重新生成或并行维护 Skill。原项目的业务测试与 UI 通用件仍在本仓库维护。
 - 使用简体中文，说明结论的依据及未确认事项。没有用户要求时不启动子代理。
 - 新需求先读取 `README.md`、相关 `context/` 文档及对应需求目录；缺失信息按需询问，不要求用户重复已确认的背景。
 - 一个需求一个目录、一个主要会话；跨客户端和管理端的同一需求保留在一起。

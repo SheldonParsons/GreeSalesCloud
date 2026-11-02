@@ -2,6 +2,8 @@
 
 本仓库供 Web 测试工程师维护【商用订单管理系统-客户端】和【商用订单管理系统-管理端】的需求分析、思维导图用例、UI / 接口测试证据及交接资料。
 
+测试工作流 Skill 已独立迁移至 [VeriForge](https://github.com/SheldonParsons/VeriForge)，后续设计与开发仅维护新仓库的 main。来源和接续方式见 [迁移入口](skill-development/README.md)。本仓库继续维护原项目的业务测试资料与 UI 通用件。
+
 ## 从这里开始
 
 1. 阅读 [协作规则](AGENTS.md)、[系统范围](context/systems.md) 和 [环境说明](context/environments.md)。
