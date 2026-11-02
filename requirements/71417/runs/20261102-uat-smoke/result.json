@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-02",
+  "recordedAt": "2026-11-02T15:24:08.587967+08:00",
+  "environment": "UAT（页面显示预生产）；实际构建版本未知",
+  "network": "当前电脑可访问三个UAT登录页及格力互联",
+  "scope": "三个适用业务平台的单点入口、协议状态、真实认证、登录身份与具体页面回跳；非全量测试",
+  "authorization": "用户提供UAT地址、指定测试凭据并要求简单测试；后续补充无界面方式",
+  "methods": "普通登录初测使用Chrome DevTools可见会话；接到补充后回跳测试使用Chrome DevTools无界面、独立未登录上下文，真实页面认证；没有令牌注入",
+  "credential_ref": "qa-sso-primary（账号与用户提供的测试身份一致，本轮成功真实认证）",
+  "identity": {
+    "allPlatformsMatchedSuppliedAccount": true,
+    "allThreeUserIdsEqual": true,
+    "method": "openId",
+    "code": "00000"
+  },
+  "consent": {
+    "unchecked": "三个平台协议未勾选时入口可见、pointer-events=none；本轮未实际点击不可点击入口，不能单凭样式称已完成点击拦截测试",
+    "checked": "真实点击勾选后，三个业务端均进入对应预生产格力互联认证页"
+  },
+  "platforms": [
+    {
+      "platform": "CRM",
+      "login": "成功",
+      "expected": "客户中心 /customer",
+      "actual": "系统首页 /home",
+      "return": "失败"
+    },
+    {
+      "platform": "订单管理端",
+      "login": "成功",
+      "expected": "订单取消申请 /admin/order-management/cancel-order",
+      "actual": "工程额度 /admin/limit-accounting/engineering-quota",
+      "return": "失败"
+    },
+    {
+      "platform": "订单客户端",
+      "login": "成功",
+      "expected": "常购清单 /purchase-list",
+      "actual": "浏览采购首页 /",
+      "return": "失败"
+    }
+  ],
+  "evidence": "原始截图与认证响应只保存在本机受控目录；管理端已有真实标注图并人工查看。登录数据不进入Git。",
+  "bug": "BUG-71417-002（既有回跳问题，UAT观察关联；未提交禅道）",
+  "limits": [
+    "未执行用户跳过的原账密回归",
+    "未验证离职/禁用/弱密码等特殊状态",
+    "未执行完整34场景",
+    "协议未勾选时仅观察控件状态，未完成实际点击断言",
+    "当前未知具体UAT部署构建"
+  ],
+  "business_writes": false
+}
