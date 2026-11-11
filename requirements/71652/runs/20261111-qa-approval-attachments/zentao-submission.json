@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-11",
+  "bugId": 346509,
+  "bugUrl": "https://ztpm.gree.com:8888/bug-view-346509.html",
+  "localBug": "BUG-71652-009-审批页移除后一个附件时前一个附件消失.md",
+  "status": "submitted_fields_images_and_rendering_verified",
+  "submissionMethod": "REST files upload and single REST bug creation using the same authenticated browser session and form uid",
+  "sourceSha256AtSubmission": "f36ee39172e1e7f3321abf26f495a8c576830d6ac601443a5f31a82f05d07502",
+  "createRequestCount": 1,
+  "planCompletionRequestCount": 1,
+  "planCompletion": {
+    "updateHttp": 200,
+    "message": "保存成功",
+    "getHttp": 200,
+    "id": 346509,
+    "plan": 3116,
+    "otherFieldsPreserved": true,
+    "files": [
+      {
+        "id": 993204,
+        "objectType": "bug",
+        "objectID": 346509
+      },
+      {
+        "id": 993205,
+        "objectType": "bug",
+        "objectID": 346509
+      }
+    ]
+  },
+  "verification": {
+    "id": 346509,
+    "http": 200,
+    "title": "【QA-管理端-项目技术咨询】审批页移除后一个附件时前一个附件消失",
+    "status": "active",
+    "product": 150,
+    "project": 1058,
+    "execution": 4879,
+    "plan": 3116,
+    "buildIds": [
+      "3269"
+    ],
+    "story": 71652,
+    "assignedTo": "A80664",
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror",
+    "openedBy": "A80646",
+    "openedDate": "2026-11-11T06:11:20Z",
+    "bodyMatchesSource": true,
+    "ordinaryLinkCount": 0,
+    "localPathOrBase64Present": false,
+    "imagesWithinResult": true,
+    "plainSections": true,
+    "imagesAfterReopen": [
+      {
+        "id": 993204,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 135597,
+        "width": 1440,
+        "height": 900,
+        "sha256": "1ab8d70a4e04d9fc9191c84d38e36b9bb5e5f03cb57a10323d708819695a9d2c",
+        "sourceMatch": true
+      },
+      {
+        "id": 993205,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 132915,
+        "width": 1440,
+        "height": 900,
+        "sha256": "2c0de47d2502b5efabe0c59ca9fbc2a26189684a48d01e9b45a3e43d38629784",
+        "sourceMatch": true
+      }
+    ],
+    "fileAssociation": [
+      {
+        "id": 993204,
+        "objectType": "bug",
+        "objectID": 346509
+      },
+      {
+        "id": 993205,
+        "objectType": "bug",
+        "objectID": 346509
+      }
+    ],
+    "independentAccountVerified": false
+  },
+  "renderingAfterReopen": {
+    "topTitle": "BUG #346509 【QA-管理端-项目技术咨询】审批页移除后一个附件时前一个附件消失 - 商用订单管理系统 - 禅道",
+    "topFrameCount": 1,
+    "documents": 2,
+    "errors": [],
+    "images": [
+      {
+        "src": "/file-read-993204.png",
+        "complete": true,
+        "width": 1440,
+        "height": 900,
+        "visible": true
+      },
+      {
+        "src": "/file-read-993205.png",
+        "complete": true,
+        "width": 1440,
+        "height": 900,
+        "visible": true
+      }
+    ],
+    "sectionTextPresent": true
+  },
+  "independentAccountVerified": false,
+  "limitations": [
+    "未使用独立第二账号验证；已验证文件正式关联、保存后及重开后的绕缓存服务器图片、实际详情内两图加载。",
+    "查重范围为产品150、status=all的最近100条，未宣称全库无重复。"
+  ],
+  "scope": "仅用户授权的审批页移除第二附件却移除首附件问题；未提交未复现的下载错位问题。"
+}
