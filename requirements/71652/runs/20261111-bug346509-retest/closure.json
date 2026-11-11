@@ -1,0 +1,85 @@
+{
+  "bugId": 346509,
+  "phase": "closed_api_verified",
+  "approvalText": "可以，提交关闭 BUG 吧",
+  "endpoint": "POST /api.php/v1/bugs/346509/close",
+  "bodyFormat": "multipart/form-data: comment + uid",
+  "closeDispatchCount": 1,
+  "sameSessionAndUidForRestUploadsAndClose": true,
+  "transport": "已登录禅道会话中直接发送HTTP API请求，无页面关闭按钮点击",
+  "verification": {
+    "http": 200,
+    "id": 346509,
+    "status": "closed",
+    "resolution": "fixed",
+    "closedBy": "A80646",
+    "closedDate": "2026-11-11T06:41:52Z",
+    "closedAction": {
+      "id": 7239099,
+      "actor": "李博",
+      "action": "closed",
+      "date": "2026-11-11 14:41:52",
+      "comment": "<p>QA重验通过：子单【重明220261027012JS-001】审批页【转给技术部附件】移除第二项后，仅第二项消失，第一项保留。取消审批并重新打开后，两项附件完整恢复，单据状态仍为答复中。</p><p><img src=\"/file-read-993289.png\" alt=\"重验前：点击第二项移除\" /></p><p><img src=\"/file-read-993290.png\" alt=\"重验后：第一项保留、第二项已移除\" /></p>"
+    },
+    "approvedTextMatches": true,
+    "commentContainsBothImages": true,
+    "originalFieldsUnchanged": true,
+    "mismatches": [],
+    "images": [
+      {
+        "id": 993289,
+        "path": "/file-read-993289.png",
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 135035,
+        "width": 1440,
+        "height": 900,
+        "sha256": "989d25926a24bad88a881ff7507297a6b7957d611192bcd66c2ebb1b20102fcb",
+        "sourceMatch": true,
+        "associated": true
+      },
+      {
+        "id": 993290,
+        "path": "/file-read-993290.png",
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 131114,
+        "width": 1440,
+        "height": 900,
+        "sha256": "6398cd0e477c6fb05a4cef0527a6f8e3cbb408e636ba4df33c44b13f0d95b87d",
+        "sourceMatch": true,
+        "associated": true
+      }
+    ]
+  },
+  "afterReopen": {
+    "documents": 2,
+    "imagesFound": 2,
+    "images": [
+      {
+        "id": 993289,
+        "loaded": true,
+        "width": 1440,
+        "height": 900,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 135035,
+        "sha256": "989d25926a24bad88a881ff7507297a6b7957d611192bcd66c2ebb1b20102fcb",
+        "sourceMatch": true
+      },
+      {
+        "id": 993290,
+        "loaded": true,
+        "width": 1440,
+        "height": 900,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 131114,
+        "sha256": "6398cd0e477c6fb05a4cef0527a6f8e3cbb408e636ba4df33c44b13f0d95b87d",
+        "sourceMatch": true
+      }
+    ]
+  },
+  "independentAccountVerified": false,
+  "qaRetestRepeatedDuringClose": false
+}

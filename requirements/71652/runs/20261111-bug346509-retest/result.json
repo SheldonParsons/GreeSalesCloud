@@ -1,16 +1,24 @@
 {
-  "bug":346509,
-  "environment":"QA",
-  "build":"未知",
-  "status":"通过",
-  "target":"重明220261027012JS-001",
-  "account_ref":"qa.commercial_admin.lily",
-  "baseline":["生产信息-导入模板-2026-11-09.xlsx","非标产品选型-批量导入模板-2026-10-26 (8).xlsx"],
-  "clicked_uid":"4_53",
-  "locator_evidence":"图标祖先包含第二项文件名；原生快照及实页截图核对。",
-  "after":["生产信息-导入模板-2026-11-09.xlsx"],
-  "blocked_write_requests":0,
-  "restored":"取消重开两项按原顺序恢复，再取消；单据仍答复中。",
-  "screenshots":["before-annotated.png","after-annotated.png"],
-  "closure":"仅本地预览，等待用户确认"
+  "bug": 346509,
+  "environment": "QA",
+  "build": "未知",
+  "status": "通过",
+  "target": "重明220261027012JS-001",
+  "account_ref": "qa.commercial_admin.lily",
+  "baseline": [
+    "生产信息-导入模板-2026-11-09.xlsx",
+    "非标产品选型-批量导入模板-2026-10-26 (8).xlsx"
+  ],
+  "clicked_uid": "4_53",
+  "locator_evidence": "图标祖先包含第二项文件名；原生快照及实页截图核对。",
+  "after": [
+    "生产信息-导入模板-2026-11-09.xlsx"
+  ],
+  "blocked_write_requests": 0,
+  "restored": "取消重开两项按原顺序恢复，再取消；单据仍答复中。",
+  "screenshots": [
+    "before-annotated.png",
+    "after-annotated.png"
+  ],
+  "closure": "用户确认备注及两张标注图后，已通过API关闭346509；状态closed/fixed，详见closure.json。"
 }

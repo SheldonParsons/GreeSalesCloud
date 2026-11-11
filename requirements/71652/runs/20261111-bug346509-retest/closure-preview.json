@@ -1,9 +1,9 @@
 {
   "bugId": 346509,
-  "status": "retest_passed_awaiting_user_review",
+  "status": "closed_api_verified",
   "reviewRequiredByUser": true,
   "userInstruction": "关闭 BUG 之前先把提交内容给我看一下",
-  "authorizedToClose": false,
+  "authorizedToClose": true,
   "comment": "QA重验通过：子单【重明220261027012JS-001】审批页【转给技术部附件】移除第二项后，仅第二项消失，第一项保留。取消审批并重新打开后，两项附件完整恢复，单据状态仍为答复中。",
   "images": [
     {
@@ -24,6 +24,16 @@
     "status": "active",
     "resolution": ""
   },
-  "remoteWritesPerformed": false,
-  "createdAt": "2026-11-11T14:37:24.047446+08:00"
+  "remoteWritesPerformed": true,
+  "createdAt": "2026-11-11T14:37:24.047446+08:00",
+  "approvalText": "可以，提交关闭 BUG 吧",
+  "approvedAt": "2026-11-11T14:40:44.929706+08:00",
+  "closedBy": "A80646",
+  "closedDate": "2026-11-11T06:41:52Z",
+  "actionId": 7239099,
+  "uploadedFileIds": [
+    993289,
+    993290
+  ],
+  "receipt": "closure.json"
 }
