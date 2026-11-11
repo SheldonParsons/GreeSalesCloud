@@ -1,0 +1,29 @@
+{
+  "bugId": 346509,
+  "status": "retest_passed_awaiting_user_review",
+  "reviewRequiredByUser": true,
+  "userInstruction": "关闭 BUG 之前先把提交内容给我看一下",
+  "authorizedToClose": false,
+  "comment": "QA重验通过：子单【重明220261027012JS-001】审批页【转给技术部附件】移除第二项后，仅第二项消失，第一项保留。取消审批并重新打开后，两项附件完整恢复，单据状态仍为答复中。",
+  "images": [
+    {
+      "path": ".local/71652/20261111-bug346509-retest/before-annotated.png",
+      "bytes": 135035,
+      "sha256": "989d25926a24bad88a881ff7507297a6b7957d611192bcd66c2ebb1b20102fcb"
+    },
+    {
+      "path": ".local/71652/20261111-bug346509-retest/after-annotated.png",
+      "bytes": 131114,
+      "sha256": "6398cd0e477c6fb05a4cef0527a6f8e3cbb408e636ba4df33c44b13f0d95b87d"
+    }
+  ],
+  "target": "重明220261027012JS-001",
+  "qaRetestResult": "通过",
+  "mainReview": "已核对两张真实标注图和取消恢复图，移除第二项后仅第一项保留，取消重开原两项完整。",
+  "remoteStateAtPreflight": {
+    "status": "active",
+    "resolution": ""
+  },
+  "remoteWritesPerformed": false,
+  "createdAt": "2026-11-11T14:37:24.047446+08:00"
+}
