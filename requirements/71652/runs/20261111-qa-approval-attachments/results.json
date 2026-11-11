@@ -1,0 +1,10 @@
+{
+  "environment":"QA",
+  "build":"未知",
+  "account_ref":"qa.commercial_admin.lily",
+  "target":"重明220261027012JS-001",
+  "checks":[
+    {"id":"download","status":"阻塞","mapping_conclusion":"未复现两项均下载第一份；审批和查看页同一项的文件摘要分别一致，两项摘要不同。","integrity_limitation":"第一项各10123字节且为有效xlsx；第二项各1字节、不是有效xlsx，源附件原始内容未知，无法判断完整性或原因。"},
+    {"id":"remove","status":"失败","evidence":"点击第二项移除后第一项消失；取消重开后两项和原顺序恢复，单据仍答复中。","target_locator":"原生快照第二项下载图标12_34、文件名12_35及扩展名12_36、右侧移除图标12_37；实页截图核对同项，点击12_37。移除图标直接父级为div，共同父级结构未单独记录。","blocked_write_requests":0,"interception_effect":"潜在非GET请求保护期间未拦截任何写请求，未有拦截影响复现；取消重开实际恢复。","bug":"BUG-71652-009"}
+  ]
+}
