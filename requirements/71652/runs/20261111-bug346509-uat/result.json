@@ -1,0 +1,22 @@
+{
+  "bug":346509,
+  "environment":"UAT",
+  "build":"未知",
+  "status":"通过",
+  "reason":"经用户授权在专用单完成转交及退回，两份已保存附件重开回填后，第二项移除正确且取消恢复。",
+  "checked":[
+    {"child":"重庆20261102002JS-001","state":"已接单（李博）","approval":"可打开","saved_transfer_attachments":0},
+    {"child":"重庆20261102002JS-002","state":"待接单","approval":"无审批入口，未接单"},
+    {"child":"重庆20261102003JS-001","state":"已接单（李博）","approval":"可打开","saved_transfer_attachments":0},
+    {"child":"重庆20260730001JS-001","state":"已接单（李博）","approval":"可打开","saved_transfer_attachments":0},
+    {"child":"重庆20260916005JS-001","state":"已接单（李博）","observation":"仅查看，审批记录为空"}
+  ],
+  "target":"重庆20261102002JS-001",
+  "baseline":["346509-UAT-A.pdf","346509-UAT-B.pdf"],
+  "after":["346509-UAT-A.pdf"],
+  "clicked_uid":"26_53",
+  "blocked_write_requests":0,
+  "restoration":"取消重开A、B按原顺序恢复，再取消，答复中（李博）。",
+  "preparation":"转交及离心机室驳回各提交一次并回读状态；移除未提交。",
+  "screenshots":["before-annotated.png","after-annotated.png","restored.png"]
+}
