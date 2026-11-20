@@ -1,0 +1,12 @@
+{
+  "bug":347482,
+  "environment":"QA",
+  "build":"未知",
+  "target":"重明220261120002JS-001",
+  "status":"通过",
+  "client":"CQRain03保存后查看显示当前技术文件tsxt.xlsx；单据已接单。",
+  "admin_view":"林莉查看显示技术文件tsxt.xlsx、历史1及当前；文件DOM可见。",
+  "admin_approval":"林莉审批显示同一文件、历史1及当前；DOM可见，检查后取消。",
+  "screenshots":["admin-view-annotated.png","admin-approval-annotated.png"],
+  "limits":"未验证下载内容、无历史组合或历史附件；首次查看暂时网络异常后重开成功。"
+}
