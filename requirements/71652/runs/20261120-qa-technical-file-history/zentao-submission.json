@@ -1,0 +1,202 @@
+{
+  "date": "2026-11-20",
+  "bugId": 347482,
+  "bugUrl": "https://ztpm.gree.com:8888/bug-view-347482.html",
+  "localBug": "BUG-71652-010-技术要求有历史记录时管理端不显示技术文件.md",
+  "status": "submitted_fields_images_and_rendering_verified",
+  "authorization": "用户要求提交本BUG，其他信息与上一条BUG346509提单信息相同。",
+  "sourceSha256AtSubmission": "296a2aa64b222de158a0a2ac35cb192f5b8453fe89fce1892c9c880431382af3",
+  "method": "REST files upload and single REST bug creation with the same authenticated session and fresh uid; API plan completion on the same BUG",
+  "createRequestCount": 1,
+  "planCompletionRequestCount": 1,
+  "dedupe": {
+    "http": 200,
+    "total": 6476,
+    "scanned": 100,
+    "idsDescending": true,
+    "related": [
+      {
+        "id": 346509,
+        "title": "【QA-管理端-项目技术咨询】审批页移除后一个附件时前一个附件消失",
+        "story": 71652,
+        "status": "closed",
+        "openedBy": "李博"
+      },
+      {
+        "id": 344650,
+        "title": "【QA-客户端-项目技术咨询】核价留空未默认按“否”处理，导致导入失败",
+        "story": 71652,
+        "status": "closed",
+        "openedBy": "李博"
+      },
+      {
+        "id": 344582,
+        "title": "【QA-客户端-项目技术咨询】批量导入未拦截超过400字符的选型要求",
+        "story": 71652,
+        "status": "closed",
+        "openedBy": "李博"
+      },
+      {
+        "id": 344562,
+        "title": "【QA-管理端-项目技术咨询】当前咨询内容为长文时查看及审批页默认折叠",
+        "story": 71652,
+        "status": "closed",
+        "openedBy": "李博"
+      }
+    ]
+  },
+  "assigneeCandidate": {
+    "http": 200,
+    "candidates": [
+      {
+        "text": "A:陈仲唐",
+        "value": "A80664"
+      }
+    ]
+  },
+  "afterCreate": {
+    "http": 200,
+    "id": 347482,
+    "title": "【QA-管理端-项目技术咨询】技术要求存在历史记录时不显示当前技术文件",
+    "status": "active",
+    "product": 150,
+    "project": 1058,
+    "execution": 4879,
+    "plan": 0,
+    "buildIds": [
+      "3269"
+    ],
+    "story": 71652,
+    "assignedTo": "A80664",
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror",
+    "openedBy": "A80646",
+    "openedDate": "2026-11-20T07:18:07Z",
+    "bodyMatchesSource": true,
+    "expectedBodyTextSHA256": "4039a4022a134ec33b9b51275c9f4a725c03c559d9486d6f051e311ccfab16da",
+    "ordinaryLinkCount": 0,
+    "imagesInsideResult": true,
+    "imageCount": 3,
+    "imagesAfterCreate": [
+      {
+        "id": 996754,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 138103,
+        "width": 1440,
+        "height": 900,
+        "sha256": "57e21cd2f722341db3c95d2b1cb81abc951764bce2a80bcc19c39485aa6f2203",
+        "sourceMatch": true,
+        "associated": true
+      },
+      {
+        "id": 996755,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 88103,
+        "width": 1440,
+        "height": 600,
+        "sha256": "d6608e5060de875715ab714407c0b38f8d8088285283129794287a6f69a592c8",
+        "sourceMatch": true,
+        "associated": true
+      },
+      {
+        "id": 996756,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 89618,
+        "width": 1440,
+        "height": 600,
+        "sha256": "a7f1a46f00b0e7238fe2a0f631dfa72225af4327016dd113adca0dd55427ad30",
+        "sourceMatch": true,
+        "associated": true
+      }
+    ]
+  },
+  "planCompletion": {
+    "updateHttp": 200,
+    "message": "保存成功",
+    "getHttp": 200,
+    "bugId": 347482,
+    "plan": 3116,
+    "otherFieldsPreserved": true
+  },
+  "finalVerification": {
+    "http": 200,
+    "id": 347482,
+    "title": "【QA-管理端-项目技术咨询】技术要求存在历史记录时不显示当前技术文件",
+    "status": "active",
+    "product": 150,
+    "project": 1058,
+    "execution": 4879,
+    "plan": 3116,
+    "buildIds": [
+      "3269"
+    ],
+    "story": 71652,
+    "assignedTo": "A80664",
+    "severity": 3,
+    "pri": 3,
+    "type": "codeerror",
+    "openedBy": "A80646",
+    "openedDate": "2026-11-20T07:18:07Z",
+    "bodyMatchesSource": true,
+    "ordinaryLinkCount": 0,
+    "plainSections": true,
+    "imagesInsideResult": true,
+    "localPathsOrBase64": false,
+    "domDocumentCount": 2,
+    "domImageCount": 3,
+    "imagesAfterReopen": [
+      {
+        "id": 996754,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 138103,
+        "width": 1440,
+        "height": 900,
+        "sha256": "57e21cd2f722341db3c95d2b1cb81abc951764bce2a80bcc19c39485aa6f2203",
+        "sourceMatch": true,
+        "associated": true,
+        "domLoaded": true,
+        "domNaturalWidth": 1440,
+        "domNaturalHeight": 900
+      },
+      {
+        "id": 996755,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 88103,
+        "width": 1440,
+        "height": 600,
+        "sha256": "d6608e5060de875715ab714407c0b38f8d8088285283129794287a6f69a592c8",
+        "sourceMatch": true,
+        "associated": true,
+        "domLoaded": true,
+        "domNaturalWidth": 1440,
+        "domNaturalHeight": 600
+      },
+      {
+        "id": 996756,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 89618,
+        "width": 1440,
+        "height": 600,
+        "sha256": "a7f1a46f00b0e7238fe2a0f631dfa72225af4327016dd113adca0dd55427ad30",
+        "sourceMatch": true,
+        "associated": true,
+        "domLoaded": true,
+        "domNaturalWidth": 1440,
+        "domNaturalHeight": 600
+      }
+    ],
+    "independentAccountVerified": false
+  },
+  "independentAccountVerified": false,
+  "limits": [
+    "未使用独立第二账号亲测；已验证文件正式关联、保存及重开后的绕缓存服务器图片和详情实际渲染。",
+    "查重覆盖产品150的最近100条（status=all、id_desc），未宣称全库无重复。"
+  ]
+}
