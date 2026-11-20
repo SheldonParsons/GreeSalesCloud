@@ -1,0 +1,23 @@
+{
+  "bug": 347482,
+  "environment": "UAT",
+  "build": "未知",
+  "status": "通过",
+  "scope": "当前技术文件在存在历史技术要求时的管理端展示",
+  "order": "重庆20261102003JS-001",
+  "test_data": "既有专用咨询子单；管理端驳回销司，客户端上传并重提，管理端接单",
+  "current_file": "347482-UAT-current.xlsx",
+  "client_saved_detail": "显示当前技术文件",
+  "admin_view": "显示当前技术文件、历史1、历史2和当前技术要求",
+  "admin_approval": "显示当前技术文件、历史1、历史2和当前技术要求；取消退出，未提交审批",
+  "final_order_status": "已接单（李博）",
+  "screenshots": [
+    ".local/71652/20261120-bug347482-uat/admin-view-annotated.png",
+    ".local/71652/20261120-bug347482-uat/admin-approval-annotated.png"
+  ],
+  "limitations": [
+    "实际部署构建未知",
+    "未验证下载内容、无历史或历史文件等其他场景"
+  ],
+  "tracker_or_mind_modified": false
+}
