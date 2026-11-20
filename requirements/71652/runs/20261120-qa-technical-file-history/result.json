@@ -1,0 +1,14 @@
+{
+  "environment":"QA",
+  "build":"未知",
+  "target":"重明220261120002JS-001",
+  "main":"重明220261120002JS",
+  "project":"重明2-26-09",
+  "status":"失败（已复现）",
+  "client":"CQRain03保存后查看，咨询内容技术文件tsxt.xlsx。",
+  "admin_view":"林莉查看，技术要求历史1和当前均显示；技术文件标签及tsxt.xlsx未展示。",
+  "admin_approval":"林莉审批，技术要求历史1和当前均显示；技术文件标签及tsxt.xlsx未展示，已取消。",
+  "response":"管理端页面触发的详情响应technologyItem.technologyFile包含tsxt.xlsx；页面未展示。",
+  "limits":"未验证无历史对照、附件实际下载及历史附件；不推断代码根因。",
+  "bug":"BUG-71652-010"
+}
