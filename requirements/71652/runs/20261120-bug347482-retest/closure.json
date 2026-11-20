@@ -1,0 +1,86 @@
+{
+  "bugId": 347482,
+  "phase": "closed_api_verified",
+  "approvalText": "可以，关闭 BUG",
+  "approvedAfterTextAndTwoImagesPreview": true,
+  "endpoint": "POST /api.php/v1/bugs/347482/close",
+  "bodyFormat": "multipart/form-data: comment + uid",
+  "closeDispatchCount": 1,
+  "sameSessionAndUidForRestUploadsAndClose": true,
+  "transport": "已登录禅道会话中直接发送HTTP API请求，无页面关闭按钮点击",
+  "verification": {
+    "http": 200,
+    "id": 347482,
+    "status": "closed",
+    "resolution": "fixed",
+    "closedBy": "A80646",
+    "closedDate": "2026-11-20T08:03:16Z",
+    "closedAction": {
+      "id": 7285836,
+      "actor": "李博",
+      "action": "closed",
+      "date": "2026-11-20 16:03:17",
+      "comment": "<p>QA复验通过：子单【重明220261120002JS-001】在技术要求存在历史时间线时，管理端【查看】和【审批】页均正常显示当前技术文件【tsxt.xlsx】，与客户端一致。核查后已取消审批，单据仍为“已接单”。</p><p><img src=\"/file-read-996807.png\" alt=\"管理端查看页：技术文件与历史时间线正常显示\" /></p><p><img src=\"/file-read-996808.png\" alt=\"管理端审批页：技术文件与历史时间线正常显示\" /></p>"
+    },
+    "approvedTextMatches": true,
+    "commentContainsBothImages": true,
+    "originalFieldsUnchanged": true,
+    "mismatches": [],
+    "images": [
+      {
+        "id": 996807,
+        "path": "/file-read-996807.png",
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 89501,
+        "width": 1440,
+        "height": 600,
+        "sha256": "9df7c3e789833f09e9ac028980ce29aaf0bb28da406b3398fcfe105f625802d0",
+        "sourceMatch": true,
+        "associated": true
+      },
+      {
+        "id": 996808,
+        "path": "/file-read-996808.png",
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 91003,
+        "width": 1440,
+        "height": 600,
+        "sha256": "41acca27828893e9dc7fc657bbda7375eb35029a57b327a1a683ce5b879b19a5",
+        "sourceMatch": true,
+        "associated": true
+      }
+    ]
+  },
+  "afterReopen": {
+    "documents": 2,
+    "imagesFound": 2,
+    "images": [
+      {
+        "id": 996807,
+        "loaded": true,
+        "width": 1440,
+        "height": 600,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 89501,
+        "sha256": "9df7c3e789833f09e9ac028980ce29aaf0bb28da406b3398fcfe105f625802d0",
+        "sourceMatch": true
+      },
+      {
+        "id": 996808,
+        "loaded": true,
+        "width": 1440,
+        "height": 600,
+        "http": 200,
+        "mime": "image/png",
+        "bytes": 91003,
+        "sha256": "41acca27828893e9dc7fc657bbda7375eb35029a57b327a1a683ce5b879b19a5",
+        "sourceMatch": true
+      }
+    ]
+  },
+  "independentAccountVerified": false,
+  "qaRetestRepeatedDuringClose": false
+}
