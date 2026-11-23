@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-23",
+  "status": "completed",
+  "target": "asynctest-kb",
+  "inserted": 5,
+  "updated": 1,
+  "finalCounts": {
+    "client": 2,
+    "admin": 16
+  },
+  "verificationScope": "已确认正文成功写入并完整回读比对；不代表所有业务组合已测试。",
+  "originalFoundationPreserved": true,
+  "readbackMatchesConfirmedContent": true,
+  "receipts": [
+    {
+      "project": "2",
+      "commit_id": "kcm_e6f0efd1047449fdafc017fc8e0e8b60",
+      "commit_seq": 1,
+      "operation": "insert",
+      "document_count": 2,
+      "verified": true,
+      "trace_id": "MCP-6AD072A8",
+      "confirmation_id": "kcf_87500ae1b3664451aeb4d1169f75b155",
+      "documents": [
+        {
+          "label": "71652 非标产品选型咨询：Excel批量生成卡片与导入校验",
+          "document_id": "doc_812653c1eb634f02ad83ceca10f1b33e",
+          "generation_id": "gen_e1bbe5a27d6a4e06aeee2120ca376769",
+          "content_hash": "e618664f3c3a7e9bcbd3acd6fad70a03b3b9227130435748d882d8508b731132"
+        },
+        {
+          "label": "71652 项目技术咨询：主单技术要求附件",
+          "document_id": "doc_de33189081474f229a69126d1c232ffc",
+          "generation_id": "gen_feff58c75e774f51ab66b7d14716b821",
+          "content_hash": "07f79cc8930969bbcce5f3119f95da9d779e2cf07196698f794c98f1d95ed9e7"
+        }
+      ]
+    },
+    {
+      "project": "6",
+      "commit_id": "kcm_f8c989cfb1a34253830b4023ef5797c5",
+      "commit_seq": 12,
+      "operation": "insert",
+      "document_count": 3,
+      "verified": true,
+      "trace_id": "MCP-26059930",
+      "confirmation_id": "kcf_91cc6ed4132e4d75814920b8e588b63c",
+      "documents": [
+        {
+          "label": "71652 项目技术咨询：要求文字历史版本",
+          "document_id": "doc_6b5e79718d1743ee902e6b982e88fbcf",
+          "generation_id": "gen_6f6b7208c240497d871a69c3fd076709",
+          "content_hash": "f7169f013c1f0da537db2a709b4895ecdc3901dbd71b166f38c6dc67ac713b4f"
+        },
+        {
+          "label": "项目技术咨询：当前技术文件展示与审批附件操作",
+          "document_id": "doc_a814bb46af654e1e835186591f4325bd",
+          "generation_id": "gen_4700a3a9f3c04791bc1cd1031903c763",
+          "content_hash": "56197150c96dd9780e93215c8f584e65d607b1ba64131d676c2608c486120c81"
+        },
+        {
+          "label": "71417 单点登录范围补充：统一用户管理平台不新增自身入口",
+          "document_id": "doc_0569cb459b7344afbdea4363ec3f4035",
+          "generation_id": "gen_8debea49ef1842f48b64d89ebc0d16cf",
+          "content_hash": "3d8af467f327612ca9357e2182b54694a79edf18ee82128172f90be321a2a4d8"
+        }
+      ]
+    },
+    {
+      "project": "6",
+      "commit_id": "kcm_de195c7711744297b4863e434aa6a81d",
+      "commit_seq": 13,
+      "operation": "update",
+      "document_count": 1,
+      "verified": true,
+      "trace_id": "MCP-9B96443E",
+      "confirmation_id": "kcf_df977fc0e1074639b16aea3f5d15c521",
+      "documents": [
+        {
+          "label": "技术咨询单基础规则：咨询单与子单、状态、时间字段及组织归属",
+          "document_id": "doc_2644dc3ef3754f22b82c69964971cbc1",
+          "generation_id": "gen_eb97dca6a5f94fc99611bbb5a9039292",
+          "content_hash": "3fa04d4b32a58cd6dfed2789d966fd7108ef155ce06e69b44ee540e59a55e083"
+        }
+      ]
+    }
+  ],
+  "knowledge": [
+    {
+      "project": "2",
+      "label": "71652 非标产品选型咨询：Excel批量生成卡片与导入校验",
+      "operation": "insert",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjIiLCJ0YXJnZXRfZGlnZXN0IjoiZGEzMjVhNGZmMzkzYmZjNTU0ZDExYmI0Yzg4ZTdhYTM2ZDc0Yjc1OTI4OTM4YmUyMDRkMTAwOGE2NWU4ZTliNSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jXzgxMjY1M2MxZWI2MzRmMDJhZDgzY2VjYTEwZjFiMzNlIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9lMWJiZTVhMjdkNmE0ZTA2YWVlZTIxMjBjYTM3Njc2OSIsInNlY3Rpb25fcGF0aCI6W119XX0.j4F1psWtJO2HjYOt91VyDT8jlIUWVI6ha3Gs_dvkyD8"
+    },
+    {
+      "project": "2",
+      "label": "71652 项目技术咨询：主单技术要求附件",
+      "operation": "insert",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxLCJwb29sX2NvbXBsZXRlIjpmYWxzZSwicHJvamVjdF9pZCI6IjIiLCJ0YXJnZXRfZGlnZXN0IjoiNTZjMDRhMjBmOTdiYjcyZTQ2NjZiODRiYjBhOTdjOTVlOTEwYWJlZGMxMGMxZjRhOWEyZjBlZjU4ODg2NjUxNSIsInRhcmdldHMiOlt7ImRvY3VtZW50X2lkIjoiZG9jX2RlMzMxODkwODE0NzRmMjI5YTY5MTI2ZDFjMjMyZmZjIiwiZ2VuZXJhdGlvbl9pZCI6Imdlbl9mZWZmNThjNzVlNzc0ZjUxYWI2NmI3ZDE0NzE2YjgyMSIsInNlY3Rpb25fcGF0aCI6W119XX0.x7mznBK1-ErZOSNkaN9DhtytW8vF_4q327-soHsOj8Q"
+    },
+    {
+      "project": "6",
+      "label": "71652 项目技术咨询：要求文字历史版本",
+      "operation": "insert",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxMywicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6IjJmMTc3NmU1MDM0ZWExNzYyNTViYmU5ZTUwOGFmYzVhMjc2MWQ3Zjk4YWY4ZjFjZThmZDE5MmMxODBjZTczZmEiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY182YjVlNzk3MThkMTc0M2VlOTAyZTZiOTgyZTg4ZmJjZiIsImdlbmVyYXRpb25faWQiOiJnZW5fNmY2YjcyMDhjMjQwNDk3ZDg3MWE2OWMzZmQwNzY3MDkiLCJzZWN0aW9uX3BhdGgiOltdfV19.CvUFZibfdb56fuT0E56NXPRRBjsRhlE8TVQXVTzw8uQ"
+    },
+    {
+      "project": "6",
+      "label": "项目技术咨询：当前技术文件展示与审批附件操作",
+      "operation": "insert",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxMywicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6ImE0YTUyZDMzYjVmNjZkYWM3ZDNjMWJmZmNlNmYyNDliNDk1MTYyMDY3MWVmZmI2ZjU5NTdhZmM5MjlmZDMwNjgiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY19hODE0YmI0NmFmNjU0ZTFlODM1MTg2NTkxZjQzMjViZCIsImdlbmVyYXRpb25faWQiOiJnZW5fNDcwMGEzYTlmM2MwNDc5MWJjMWNkMTAzMTkwM2M3NjMiLCJzZWN0aW9uX3BhdGgiOltdfV19.SzyCQZ0ne8t5BpScVRpz9a9NGGgkCOQprOXvjLl6Bzs"
+    },
+    {
+      "project": "6",
+      "label": "71417 单点登录范围补充：统一用户管理平台不新增自身入口",
+      "operation": "insert",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxMywicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6IjlkOThkZjNkNGUxMGVjNTk0ZWU5ZmEzNzU4MzcyMzRhZmQ5ODZjNTFhZGViODdjNjJlZjBiMmQwYzc2MGRmYTEiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY18wNTY5Y2I0NTliNzM0NGFmYmRlYTQzNjNlYzNmNDAzNSIsImdlbmVyYXRpb25faWQiOiJnZW5fOGRlYmVhNDllZjE4NDJmNDhiNjRkODllYmMwZDE2Y2YiLCJzZWN0aW9uX3BhdGgiOltdfV19.UeTzbPLXLQR-5qmPPMZCGwD6tlp7cxLS7XJRn2_G8RQ"
+    },
+    {
+      "project": "6",
+      "label": "技术咨询单基础规则：咨询单与子单、状态、时间字段及组织归属",
+      "operation": "append_preserving_existing",
+      "knowledge_ref": "ntc_eyJjb21taXRfc2VxIjoxMywicG9vbF9jb21wbGV0ZSI6ZmFsc2UsInByb2plY3RfaWQiOiI2IiwidGFyZ2V0X2RpZ2VzdCI6IjhjYzJjMGViMWY1NDFiNDhkZjlkOTNkZDRjZDI2Njk4MDllYmM1NmU5NmNkZWJiNjFhY2QxMzVjOWQyZDRjYjEiLCJ0YXJnZXRzIjpbeyJkb2N1bWVudF9pZCI6ImRvY18yNjQ0ZGMzZWYzNzU0ZjIyYjgyYzY5OTY0OTcxY2JjMSIsImdlbmVyYXRpb25faWQiOiJnZW5fZWI5N2RjYTZhNWY5NGZjOTk2MTFiYmI1YTkwMzkyOTIiLCJzZWN0aW9uX3BhdGgiOltdfV19.0-VCtrJJtoNKDeJcfK1kqoHJnVyR0QkWxtbu2qlqlNg"
+    }
+  ],
+  "scopeNote": "只沉淀本会话的业务需求；过程规范复用仓库已有文档。Mind未编辑。引用为本次快照，后续修改前应重新读取现行知识。"
+}
