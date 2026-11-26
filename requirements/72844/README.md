@@ -10,7 +10,7 @@
 - 开测基线为主画板 83 条独立场景，公共准备不计数。正式导图已回读，开测前无执行标记。首批分别核对知识库管理的可用范围，以及 AI 问答入口的有权限与无权限场景。实际版本和部署范围以商用订单 QA 的观察及配置证据为准。
 - 用户明确本轮 QA 必须静默。仅使用正常授权接口，或经核实以 `--headless` / `--headless=new` 和独立临时浏览器资料启动的 Chrome DevTools MCP。需可见窗口或人工登录的环节记录为阻塞。Terra 已核对并清理本轮共享 Chrome 标签 62、63，用户原先的页面保留。[执行记录](runs/20261126-session-start.md)
 - 14:03 里程碑共 83 条，通过 1、失败 0、未执行 82，本地 BUG 0。已用原有独立无界面证据和 IAM 角色回读判定 `sheldon` 的 AI 问答正向入口通过，正式 Mind 已回读。QA 构建版本未知。[执行记录](runs/20261126-session-start.md)
-- 11 月 30 日批次的本地 BUG 正文直接放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/`，标注截图、原图和标注规格放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/assets/`。配套文件名或资产子目录标明需求和 BUG。查重、补字段和更新都以该目录中的现有稿为准，未知信息先留空，发现后先记录。[本地 BUG 目录](/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130)
+- 11 月 30 日批次按需求号分目录。本需求的本地 BUG 正文放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/72844/`，标注截图、原图和标注规格放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/72844/assets/`。配套文件名或资产子目录标明对应 BUG。查重、补字段和更新都以本需求目录中的现有稿为准，未知信息先留空，发现后先记录。[72844 本地 BUG 目录](/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/72844)
 - 13:58 权限统筹使用用户提供的管理员会话实查「智能供销云平台-管理端」。`sheldon` 只有启用的「李的订单-管理」，项目技术咨询、销售公司咨询单与 AI 智能问答已勾选，知识库管理分组、菜单和四项操作均缺配。`lilytest` 只有「林的角色-订单」，知识库管理和四项操作已勾选，AI 问答也已勾选。当前无合格反向对照；权限变更 0 次。[QA 权限核对回执](runs/20261126-qa-iam.md#1358-管理员会话实查)
 - `lilytest` 已在独立无界面 QA 从【咨询单 → 咨询单知识库】进入知识库管理，列表加载完成，显示 2 条并可见新增、查看、编辑、删除按钮。该次是只读采样。用户随后授权为「李的订单-管理」补上知识库权限，IAM 已保存一次并重开角色回读所需菜单及四项操作。原 Terra 先用 `sheldon` 复核业务侧权限生效，再执行无需造数的查询和具备条件的专用样本增删改查。[执行会话](codex://threads/01a215bc-cbe2-7461-ac32-0a7bd49f7cc2) · [QA 权限核对回执](runs/20261126-qa-iam.md)
 
