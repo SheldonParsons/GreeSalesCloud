@@ -12,7 +12,7 @@
 - 本阶段 83 条中，通过 0、失败 0、实测待核验 1、前置阻塞未执行 82、已证实待部署 0、其他未执行 0，本地 BUG 0。构建版本未知。[执行记录](runs/20261126-session-start.md)
 - 11 月 30 日批次的本地 BUG 正文直接放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/`，标注截图、原图和标注规格放在 `/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130/assets/`。配套文件名或资产子目录标明需求和 BUG。查重、补字段和更新都以该目录中的现有稿为准，未知信息先留空，发现后先记录。[本地 BUG 目录](/Users/sheldon/Documents/GithubProject/Sheldon-Docs/bug/1130)
 - 已用独立无界面 Chrome 实测李博账号可见、打开和关闭项目技术咨询页的 AI 智能问答。正向用例的 1 条待核验项是当前角色证明。反向 1 条缺少已核实的对照账号。知识库管理入口在该账号的菜单中未显示，影响管理端 77 条；另有 AI 内容联动 4 条需要可用的管理入口、专用样本和可追溯的问答证据。
-- IAM 无界面登录停在拼图验证，当前无已获授权的静默管理员会话可复用，权限变更 0 次。管理菜单的配置和部署归因均待查。取得合规权限证据后，由原 Terra 用目标账号重新核对业务入口，再续测。[QA 权限核对回执](runs/20261126-qa-iam.md)
+- IAM 无界面登录停在拼图验证。权限统筹随后用新的 `qa-auth` 入口通过 HTTP 请求真实 QA，返回 `human_verification_required`。本机暂无该管理员的有效续约授权，尚未登录 IAM 管理员，权限核对仍受阻，权限变更 0 次。`sheldon` 的知识库菜单及 AI 授权来源、`lilytest` 的反向对照资格均待核实，管理菜单是否部署仍待查。取得可用授权后，由 QA 权限统筹查证，再由原 Terra 用目标账号重新核对业务入口。[QA 权限核对回执](runs/20261126-qa-iam.md)
 
 ## 本轮验收范围
 
